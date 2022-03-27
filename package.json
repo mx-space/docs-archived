@@ -1,0 +1,28 @@
+{
+  "name": "docs-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:serve": "vitepress serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vitepress": "^0.22.3",
+    "@vue/theme": "^1.0.1",
+    "vue": "^3.2.31"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "react",
+        "react-dom",
+        "@types/react"
+      ]
+    }
+  }
+}
