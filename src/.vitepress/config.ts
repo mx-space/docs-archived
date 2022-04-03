@@ -1,5 +1,6 @@
 // @ts-ignore
 import base from '@vue/theme/config'
+import navBar from './configs/navbar';
 import highlight from "./plugins/highlight";
 
 const themeConfig = async() => {
@@ -34,18 +35,12 @@ const config = {
       { icon: 'github', link: 'https://github.com/mx-space' },
     ],
 
-    nav: [
-      { text: '介绍', link: '/introduce/'},
-      { text: '部署', link: '/deploy/' },
-      { text: '设置', link: '/options/' },
-      { text: '帮助', link: '/help/' },
-      { text: '开发', link: '/dev/' },
-    ],
+    nav: navBar,
 
     footer: {
       license: {
-        text: 'MIT License',
-        link: 'https://opensource.org/licenses/MIT'
+        text: 'AGPLv3 License',
+        link: 'https://github.com/mx-space/mx-server/blob/master/LICENSE'
       },
       copyright: `Copyright © 2020-${new Date().getFullYear()} Innei`
     }

@@ -180,7 +180,7 @@ git lfs pull
 
 编辑 `.env`，示例如下：
 
-```
+```bash
 # API 地址
 NEXT_PUBLIC_API_URL=https://server.test.cn/api/v2
 # GATEWAY 地址
