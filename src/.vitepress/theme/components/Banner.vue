@@ -43,7 +43,7 @@ html:not(.banner-dismissed) {
   font-size: 12px;
   font-weight: 600;
   color: #fff;
-  background-color: var(--vt-c-green);
+  background-color: #91bef0;
 }
 
 .banner-dismissed .banner {
