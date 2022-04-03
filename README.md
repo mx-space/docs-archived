@@ -1,4 +1,4 @@
-# Mix Space
+# Mix Space Documentation
 
 ## Contributing 贡献
 
@@ -15,3 +15,11 @@ pnpm run docs:dev
 
 - 关于支持的Markdown扩展和在Markdown内部使用Vue语法的能力，请参阅VitePress文档
 - 有关编写和维护文档内容的规则和建议，请参阅编写指南。
+
+## References 参考
+
+[@vuejs/docs](https://github.com/vuejs/docs)
+
+[@vueuse/vueuse](https://github.com/vueuse/vueuse)
+
+[@vuejs/vitepress](https://github.com/vuejs/vitepress)
