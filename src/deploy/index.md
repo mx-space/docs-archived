@@ -27,7 +27,9 @@
 
 
 
+::: warning
 ❗注意：Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1GiB
+:::
 
 
 
@@ -64,7 +66,9 @@ npm config set registry http://mirrors.cloud.tencent.com/npm/
 
 
 
+::: danger
 🧨警告：前端要求强制 HTTPS，未配置 SSL 将无法正常访问。
+:::
 
 
 
