@@ -48,7 +48,7 @@ const config = {
     nav: [
       { text: '介绍', link: '/introduce/'},
       { text: '部署', link: '/deploy/' },
-      { text: '设置', link: '/setting/' },
+      { text: '设置', link: '/options/' },
       { text: '帮助', link: '/help/' },
       { text: '开发', link: '/dev/' },
     ],
@@ -60,6 +60,9 @@ const config = {
       },
       copyright: `Copyright © 2020-${new Date().getFullYear()} Innei`
     }
+  },
+  vue: {
+    reactivityTransform: true
   }
 }
 // })

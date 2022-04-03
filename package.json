@@ -7,23 +7,32 @@
     "docs:dev": "vitepress dev src --open",
     "docs:build": "vitepress build src",
     "docs:serve": "vitepress serve src",
-    "lint-md": "yarn lint-md:style && yarn lint-md:wording",
+    "lint-md": "npm run lint-md:style && npm run lint-md:wording",
     "lint-md:style": "remark --quiet --frail .",
-    "lint-md:wording": "textlint ./src/**/*.md"
+    "lint-md:wording": "textlint ./src/**/*.md",
+    "lint-md:fix": "textlint ./src/**/*.md --fix"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@vue/theme": "^1.0.1",
+    "shiki": "^0.10.1",
     "vite": "^2.9.1",
     "vitepress": "^0.22.3",
-    "vue": "^3.2.31",
-    "shiki": "^0.10.1"
+    "vue": "^3.2.31"
   },
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.8",
     "@textlint/ast-node-types": "^12.1.0",
     "@textlint/types": "^12.1.0",
+    "remark": "^14.0.2",
+    "remark-cli": "^10.0.1",
+    "remark-html": "^15.0.1",
+    "remark-lint-heading-style": "^3.1.1",
+    "remark-lint-list-item-indent": "^3.1.1",
+    "remark-preset-lint-consistent": "^5.1.1",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "remark-toc": "^8.0.1",
     "textlint": "^11.3.1",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-rule-apostrophe": "^1.0.0",

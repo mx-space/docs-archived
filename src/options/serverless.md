@@ -6,11 +6,11 @@
 
 Mix-space 的云函数实现依赖于动态的路由处理模块，通过云函数可以编写一些简单的API。
 
-<Alert type="info">
+
 
 ❗注意：第三方库的使用是有限制的；第一你需要先安装了这个库；第二是只有受信任的第三方库和某些系统模块可以使用
 
-</Alert>
+
 
 具体信息可以参阅 [Severless.Readme](https://github.com/mx-space/mx-server/blob/master/src/modules/serverless/serverless.readme.md)
 

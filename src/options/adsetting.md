@@ -64,9 +64,9 @@ title: 后台设置详解
 
 你需要先去[百度站长](https://ziyuan.baidu.com/linksubmit/index)完成注册，认证你的域名，然后填写 Token。
 
-<Alert type="info">
+
 注意⚠️：请先确保 系统 - 网站设置 - 前端地址 填写正确
-</Alert>
+
 
 ![](https://raw.githubusercontent.com/mx-space/docs-images/master/images/zEgXj5.png)
 

@@ -3,7 +3,7 @@
  * @author: Wibus
  * @Date: 2022-04-03 08:02:49
  * @LastEditors: Wibus
- * @LastEditTime: 2022-04-03 16:59:03
+ * @LastEditTime: 2022-04-03 18:21:04
  * Coding With IU
  */
 
@@ -12,9 +12,12 @@ import { NavbarFix } from './.vitepress/plugins/navbar'
 
 export default defineConfig(async() => {
   return {
+    define: {
+      __VUE_OPTIONS_API__: false
+    },
     server: {
       hmr: {
-        overlay: false,
+        // overlay: false,
       },
     },
     plugins: [
@@ -25,6 +28,13 @@ export default defineConfig(async() => {
       exclude: [
         '@vue/theme'
       ]
+    },
+    build: {
+      minify: 'terser',
+      chunkSizeWarningLimit: Infinity
+    },
+    json: {
+      stringify: true
     }
   }
 })
