@@ -1,10 +1,5 @@
 ---
 title: 常见问题
-toc: menu
-order: 1
-nav:
-  title: 帮助
-  order: 4
 ---
 # 常见问题
 

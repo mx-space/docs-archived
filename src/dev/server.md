@@ -1,7 +1,5 @@
 ---
 title: 服务端
-toc: menu
-order: 3
 ---
 
 # MServer Next (v3)

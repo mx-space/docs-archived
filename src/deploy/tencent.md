@@ -1,9 +1,3 @@
----
-title: 轻量应用服务器快速部署
-toc: menu
-order: 2
----
-
 # 基于腾讯轻量应用服务器
 
 ## 前言
@@ -107,7 +101,7 @@ wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/.env.example -O .env
 
 用宝塔或者 `vim` 编辑这个  `.env ` 文件，文件示例如下
 
-```env
+```
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
 # SEE https://docs.docker.com/compose/environment-variables/#the-env-file
 JWT_SECRET=aaa                       #此处填写一个随意字符串，示例如：aaa
@@ -157,7 +151,7 @@ git lfs pull
 
 编辑 `.env` ，示例如下：
 
-```env
+```
 # API 地址
 NEXT_PUBLIC_API_URL=https://server.test.cn/api/v2
 # GATEWAY 地址

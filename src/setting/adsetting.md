@@ -1,7 +1,5 @@
 ---
 title: 后台设置详解
-toc: menu
-order: 2
 ---
 
 # 后台设置详解

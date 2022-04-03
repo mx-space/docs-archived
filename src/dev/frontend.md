@@ -1,10 +1,3 @@
----
-title: 前端
-toc: menu
-order: 2
-anchor: Innei
----
-
 # 前端开发指南
 
 > 为什么要写这一节？

@@ -1,22 +1,31 @@
-import { defineConfigWithTheme } from "vitepress";
-import type { Config as ThemeConfig } from '@vue/theme'
 // @ts-ignore
 import base from '@vue/theme/config'
+import highlight from "./plugins/highlight";
 
-const Sidebar = [
-  { text: '介绍', link: '/introduce/' },
-  { text: '部署', link: '/deploy/' },
+const themeConfig = async() => {
+  const config = await base()
+  // @ts-ignore
+  config.markdown.highlight = await highlight()
+  return config
+}
 
-  // 另外一种写法，不过推荐将items内的东西另外定义一个常量，利于修改
-  // { text: '介绍', items: [
-  //   { text: '构建', link: '/introduce/build/' },
-  // ]
-  // },
-]
+// const Sidebar = [
+//   { text: '介绍', link: '/introduce/' },
+//   { text: '部署', link: '/deploy/' },
 
+//   // 另外一种写法，不过推荐将items内的东西另外定义一个常量，利于修改
+//   // { text: '介绍', items: [
+//   //   { text: '构建', link: '/introduce/build/' },
+//   // ]
+//   // },
+// ]
 
-export default defineConfigWithTheme<ThemeConfig>({
-  extends: base,
+/**
+ * @type {import('vitepress').UserConfig}
+ */
+// export default defineConfigWithTheme<ThemeConfig>({
+const config = {
+  extends: themeConfig,
   
   title: 'Mix Space',
   description: 'An alternative personal space.',
@@ -52,4 +61,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       copyright: `Copyright © 2020-${new Date().getFullYear()} Innei`
     }
   }
-})
+}
+// })
+
+export default config

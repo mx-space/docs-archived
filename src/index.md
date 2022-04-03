@@ -1,5 +1,4 @@
 ---
-page: true
 title: Mix Space - An Alternative Personal Space.
 ---
 
