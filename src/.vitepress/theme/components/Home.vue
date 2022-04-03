@@ -1,9 +1,9 @@
 <!--
- * @FilePath: /docs-next/.vitepress/theme/components/Home.vue
+ * @FilePath: /docs-next/src/.vitepress/theme/components/Home.vue
  * @author: Wibus
  * @Date: 2022-04-02 23:08:35
  * @LastEditors: Wibus
- * @LastEditTime: 2022-04-02 23:23:56
+ * @LastEditTime: 2022-04-03 20:09:42
  * Coding With IU
 -->
 <script setup lang="ts">
@@ -22,7 +22,7 @@
     </p>
 
     <p class="actions">
-      <a class="get-started" href="/guide/introduction.html">
+      <a class="get-started" href="/introduce/">
         Get Started
         <svg
           class="icon"
@@ -37,7 +37,7 @@
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">Install</a>
+      <a class="setup" href="/deploy/">Install</a>
     </p>
 
   </section>
