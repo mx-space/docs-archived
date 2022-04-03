@@ -6,7 +6,23 @@ title: 介绍
 
 > 本章将会为您展示 Mix-Space 的功能与特性，并介绍来自开源社区的贡献者，希望你能看完。 :)
 
+## 写在目录前
 
+本次主要改变：
+
+- 文档整体结构调整
+- 增加模块索引
+- 文档逻辑优化
+
+## 目录
+
+| 模块     | 描述                           | 地址                                                     |
+| -------- | ------------------------------ | -------------------------------------------------------- |
+| 部署     | 整个项目的部署方法             | [起飞](/deploy/)                                          |
+| 设置     | 项目各部分设置的介绍           | [起飞](/options/)                                         |
+| 常见问题 | 部署及使用中未提到的问题，收录于此   | [起飞](/help/)                                            |
+| 开发     | 介绍项目的开发，请求处理流程等 | [起飞](/dev/)                                             |
+| 旧版文档 | 旧的文档                       | [走你](https://github.com/mx-space/docs/tree/master/old) |
 
 ## 前后端分离
 
@@ -62,40 +78,21 @@ title: 介绍
 
 - ​	搜索功能，基于 Algolia Search，在前端唤出搜索框 `Command` +`K` 或者 `/` 。注意：Windows下为 `Ctrl` + ` K` 或者 `/` 
 
-## 写在目录前
-
-本次主要改变：
-
-- 文档整体结构调整
-- 增加模块索引
-- 文档逻辑优化
-
-## 目录
-
-| 模块     | 描述                           | 地址                                                     |
-| -------- | ------------------------------ | -------------------------------------------------------- |
-| 部署     | 整个项目的部署方法             | [起飞](/deploy/)                                          |
-| 设置     | 项目各部分设置的介绍           | [起飞](/options/)                                         |
-| 常见问题 | 部署及使用中未提到的问题，收录于此   | [起飞](/help/)                                            |
-| 开发     | 介绍项目的开发，请求处理流程等 | [起飞](/dev/)                                             |
-| 旧版文档 | 旧的文档                       | [走你](https://github.com/mx-space/docs/tree/master/old) |
-
 ## 鸣谢
 
-本版文档由以下贡献者编写
+本版文档由以下贡献者编写（按照字母顺序排序）：
 
-- [提莫酱](https://www.timochan.cn)
-- [喵二](https://www.miaoer.xyz)
 - [623337308](https://blog.cqsjyz.com)
-- [Wibus](https://github.com/wibus-wee)
-- [zsbai](https://github.com/zsbai) 
-- [wuhang2003](https://github.com/wuhang2003)
 - [Elmge](https://github.com/Elmge)
+- [喵二](https://www.miaoer.xyz)
+- [提莫酱](https://www.timochan.cn)
+- [Wibus](https://github.com/wibus-wee)
+- [wuhang2003](https://github.com/wuhang2003)
+- [zsbai](https://github.com/zsbai) 
 
 当然，整个项目的开发者是 [innei](https://innei.ren) 。
 
 感谢社区提出的问题及解决方案、帮助笔者简化许多步骤，也欢迎更多人能够参与到我们的开源社区中[帮助我们优化项目](https://github.com/mx-space)。
-
 
 ## 打赏本项目
 
