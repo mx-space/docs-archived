@@ -21,10 +21,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: 'Mix Space',
   description: 'An alternative personal space.',
   lang: 'zh-CN',
-  srcDir: 'src',
+  // srcDir: 'src',
   scrollOffset: 'header',
 
   themeConfig: {
+    
 
     editLink: {
       repo: 'mx-space/kami',
