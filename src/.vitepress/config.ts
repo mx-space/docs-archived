@@ -9,17 +9,6 @@ const themeConfig = async() => {
   return config
 }
 
-// const Sidebar = [
-//   { text: '介绍', link: '/introduce/' },
-//   { text: '部署', link: '/deploy/' },
-
-//   // 另外一种写法，不过推荐将items内的东西另外定义一个常量，利于修改
-//   // { text: '介绍', items: [
-//   //   { text: '构建', link: '/introduce/build/' },
-//   // ]
-//   // },
-// ]
-
 /**
  * @type {import('vitepress').UserConfig}
  */
