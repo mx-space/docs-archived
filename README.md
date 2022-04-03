@@ -16,6 +16,19 @@ pnpm run docs:dev
 - 关于支持的Markdown扩展和在Markdown内部使用Vue语法的能力，请参阅VitePress文档
 - 有关编写和维护文档内容的规则和建议，请参阅编写指南。
 
+## Guide 编写指南
+
+<u>**新增一个章节**</u>：
+
+1. 克隆此项目
+2. 在`src`文件夹中，新增一个文件夹，请语义化命名，假设为`test`
+3. 编写内容，具体可以借鉴其他文档文件夹
+4. 创建 Pull Request. 其余事情只需要交给我们来做就好了
+
+**<u>编写内容的时候需要注意的事情</u>**：
+
+1. 中文与英文之间请保留一个空格，如`测试 test 测试`
+
 ## References 参考
 
 [@vuejs/docs](https://github.com/vuejs/docs)
