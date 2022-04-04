@@ -2,14 +2,14 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': 17.0.23
-  '@vue/theme': ^1.0.1
+  '@vue/theme': 1.0.1
   husky: 7.0.4
   lint-staged: 12.3.7
   prettier: 2.6.2
-  shiki: ^0.10.1
-  vite: ^2.9.1
-  vitepress: ^0.22.3
-  vue: ^3.2.31
+  shiki: 0.10.1
+  vite: 2.9.1
+  vitepress: 0.22.3
+  vue: 3.2.31
 
 dependencies:
   '@vue/theme': 1.0.1_vue@3.2.31
