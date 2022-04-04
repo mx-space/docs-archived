@@ -4,7 +4,7 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "vitepress dev src --open",
-    "build": "vitepress build src",
+    "build": "vitepress build src --mpa",
     "serve": "vitepress serve src",
     "format": "prettier --write src/**"
   },

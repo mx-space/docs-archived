@@ -1,15 +1,3 @@
-<!--
- * @FilePath: /docs-next/src/.vitepress/theme/components/Home.vue
- * @author: Wibus
- * @Date: 2022-04-02 23:08:35
- * @LastEditors: Wibus
- * @LastEditTime: 2022-04-03 20:09:42
- * Coding With IU
--->
-<script setup lang="ts">
-
-</script>
-
 <template>
   <section id="hero">
     <h1 class="tagline">
@@ -17,54 +5,28 @@
       Space
     </h1>
 
-    <p class="description">
-      An alternative personal space.
-    </p>
+    <p class="description">An alternative personal space.</p>
 
     <p class="actions">
-      <a class="get-started" href="/introduce/">
-        Get Started
-        <svg
-          class="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 24 24"
-          fill="#FFFFFF"
-        >
-          <path
-            d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
-          />
-        </svg>
-      </a>
+      <a class="get-started" href="/introduce/"> Get Started </a>
       <a class="setup" href="/deploy/">Install</a>
     </p>
-
   </section>
 
-
-    <section id="highlights" class="vt-box-container">
+  <section id="highlights" class="vt-box-container">
     <div class="vt-box">
       <h2>开箱即用</h2>
-      <p>
-        上 Docker！
-      </p>
+      <p>上 Docker！</p>
     </div>
     <div class="vt-box">
       <h2>速度快不快</h2>
-      <p>
-        支持 Node 集群，高并发起飞
-      </p>
+      <p>支持 Node 集群，高并发起飞</p>
     </div>
     <div class="vt-box">
       <h2>指标</h2>
-      <p>
-        Kami 100% SEO && 80% Performance
-      </p>
+      <p>Kami 100% SEO && 80% Performance</p>
     </div>
   </section>
-
-
 </template>
 
 <style scoped>
@@ -139,7 +101,7 @@ html:not(.dark) .accent,
   transition: background-color 0.5s, color 0.5s;
   position: relative;
   font-weight: 600;
-  background-color: var(--vt-c-green); 
+  background-color: var(--vt-c-green);
   color: #fff;
   margin-right: 18px;
   padding: 8px 18px;
