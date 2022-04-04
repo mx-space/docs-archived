@@ -7,9 +7,8 @@
  * Coding With IU
  */
 
-import { resolve } from "path";
 import { defineConfig } from "vite";
-import { NavbarFix } from "./src/.vitepress/plugins/navbar";
+import { NavbarFix } from "./.vitepress/plugins/navbar";
 
 export default defineConfig({
   define: {
@@ -25,11 +24,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["@vue/theme"],
   },
-  build: {
-    minify: "esbuild",
-    chunkSizeWarningLimit: Infinity,
-  },
-  root: "./src",
 
   json: {
     stringify: true,
