@@ -9,7 +9,11 @@
 ```bash
 pnpm i
 pnpm run docs:dev
+pnpm run docs:build
+pnpm run docs:serve
 ```
+
+**请注意！请务必在修改后使用 `docs:build` 和 `docs:serve` 查看构建产物是否正常输出！**
 
 ## Working on the content 修改文字
 
