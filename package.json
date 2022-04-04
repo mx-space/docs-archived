@@ -21,11 +21,11 @@
   "author": "Mix Space Term",
   "license": "CC 3.0",
   "dependencies": {
-    "@vue/theme": "^1.0.1",
-    "shiki": "^0.10.1",
-    "vite": "^2.9.1",
-    "vitepress": "^0.22.3",
-    "vue": "^3.2.31"
+    "@vue/theme": "1.0.1",
+    "shiki": "0.10.1",
+    "vite": "2.9.1",
+    "vitepress": "0.22.3",
+    "vue": "3.2.31"
   },
   "pnpm": {
     "peerDependencyRules": {
