@@ -1,32 +1,34 @@
 <template>
-  <section id="hero">
-    <h1 class="tagline">
-      <span class="accent">Mix</span>
-      Space
-    </h1>
+  <div>
+    <section id="hero">
+      <h1 class="tagline">
+        <span class="accent">Mix</span>
+        Space
+      </h1>
 
-    <p class="description">An alternative personal space.</p>
+      <p class="description">An alternative personal space.</p>
 
-    <p class="actions">
-      <a class="get-started" href="/introduce/"> Get Started </a>
-      <a class="setup" href="/deploy/docker">Install</a>
-    </p>
-  </section>
+      <p class="actions">
+        <a class="get-started" href="/introduce/"> Get Started </a>
+        <a class="setup" href="/deploy/docker">Install</a>
+      </p>
+    </section>
 
-  <section id="highlights" class="vt-box-container">
-    <div class="vt-box">
-      <h2>开箱即用</h2>
-      <p>上 Docker！</p>
-    </div>
-    <div class="vt-box">
-      <h2>速度快不快</h2>
-      <p>支持 Node 集群，高并发起飞</p>
-    </div>
-    <div class="vt-box">
-      <h2>指标</h2>
-      <p>Kami 100% SEO && 80% Performance</p>
-    </div>
-  </section>
+    <section id="highlights" class="vt-box-container">
+      <div class="vt-box">
+        <h2>开箱即用</h2>
+        <p>上 Docker！</p>
+      </div>
+      <div class="vt-box">
+        <h2>速度快不快</h2>
+        <p>支持 Node 集群，高并发起飞</p>
+      </div>
+      <div class="vt-box">
+        <h2>指标</h2>
+        <p>Kami 100% SEO && 80% Performance</p>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style scoped>

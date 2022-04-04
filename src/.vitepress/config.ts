@@ -116,6 +116,11 @@ const config: UserConfig = {
       minify: 'terser',
       chunkSizeWarningLimit: Infinity,
     },
+
+    optimizeDeps: {
+      exclude: ["@vue/theme"],
+    },
+    
     json: {
       stringify: true,
     },
