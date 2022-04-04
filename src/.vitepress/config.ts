@@ -42,6 +42,11 @@ const config: UserConfig = {
       text: "编辑此页",
     },
 
+    algolia: {
+      apiKey: "17c9be610f7f8fac9911a340c35ef34f",
+      indexName: "docs",
+    },
+
     socialLinks: [{ icon: "github", link: "https://github.com/mx-space" }],
 
     nav: navBar,
