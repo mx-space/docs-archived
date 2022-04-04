@@ -92,24 +92,10 @@ Q：通过 /qaqdmin 进不去后台
 
 A：可能是 jsd（CDN）抽风了，可以 /proxy/qaqdmin 可以使用纯本地资源。
 
-## 计划任务报错
-
-### 备份 DB 并上传 COS
-
-该处报错对于常规部署可能是缺少 unzip 、mongo-tools，等等。
-
-对于 Docker 部署的来说，可能是 docker 容器内没有安装 rsync ，请使用以下命令安装
-
-进入 Webshell
-
-```bash
-apk add rsync
-```
-
 ## 等待添加
 
 帮助手册仍然不完善 ing.....
 
 ## 写在后面
 
-文档可以进行举一反三，请务必仔细看完 Docs 来了解 Mix-space 的运行逻辑；笔者水平有限，欢迎各位大佬投稿。
+文档可以进行举一反三，请务必仔细看完 Docs 来了解 Mix Space 的运行逻辑；笔者水平有限，欢迎各位大佬投稿。

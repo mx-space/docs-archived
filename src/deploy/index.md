@@ -39,7 +39,7 @@
 
 Node 版本选择 Node 16.X ，稳定版本是 Node 16.13.x
 
-Debian / Ubuntu ，Redhat 系同理（自行参考）。
+Debian / Ubuntu ，RedHat 系同理（自行参考）。
 
 ```bash
 sudo apt update && sudo apt install git curl vim wget git-lfs -y
@@ -70,7 +70,7 @@ sudo curl -fsSL https://get.docker.com | bash -s docker
 # 如果安装比较慢，推荐使用以下命令
 sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 # 或者使用国内 daocloud 一键安装命令
-sudo curl -sSL https://get.daocloud.io/docker | sh
+sudo curl -SSL https://get.daocloud.io/docker | sh
 ```
 
 ### 安装 docker-compose

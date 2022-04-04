@@ -4,7 +4,7 @@ title: 服务端
 
 # MServer Next (v3)
 
-> **适用于 Mix Space 的 RESTful API & GraphQL 服务端应用；基于 [`nestjs`](https://github.com/nestjs/nest) (nodejs)，需安装 [`mongoDB`](https://www.mongodb.com/) 和 [`Redis`](https://redis.io/) 方可完整运行。**
+> **适用于 Mix Space 的 RESTful API & GraphQL 服务端应用；基于 [`nestjs`](https://github.com/nestjs/nest) (nodejs)，需安装 [`MongoDB`](https://www.mongodb.com/) 和 [`Redis`](https://redis.io/) 方可完整运行。**
 
 > v3 还是使用 [`nestjs`](https://github.com/nestjs/nest) 进行重构，之前的版本在 [此仓库](https://github.com/mx-space/server)。
 

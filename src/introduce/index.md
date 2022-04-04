@@ -32,7 +32,7 @@ title: 介绍
 
 这对前端开发将会带来极大的方便，不需要与后端在接口问题上扯皮，同时也方便了为 Mix-Space 开发前端的人，这点我稍后再讲。
 
-## 现有功能
+## 现有功能 (部分)
 
 - 仪表盘
 
@@ -75,6 +75,11 @@ title: 介绍
   该功能可以将所有文章导出为 Markdown YAML 兼容的格式，或者导入 Markdown YAML 兼容的文件。（Hexo 兼容的 Markdown）![导出页](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/server-md.png)
 
 - ​ 搜索功能，基于 Algolia Search，在前端唤出搜索框 `Command` +`K` 或者 `/` 。注意：Windows 下为 `Ctrl` + ` K` 或者 `/`
+- PTY
+
+  ![](https://user-images.githubusercontent.com/41265413/153223043-b211b0b8-977d-474e-8b51-80f77624dd75.jpg)
+
+- [云函数](https://github.com/mx-space/mx-server/blob/master/src/modules/serverless/serverless.readme.md)
 
 ## 鸣谢
 
