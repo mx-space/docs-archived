@@ -1,14 +1,15 @@
 # 基于腾讯轻量应用服务器
 
 ## 前言
-尽管文档比较新手向，但仍需要读者具有一定的 
+
+尽管文档比较新手向，但仍需要读者具有一定的
 
 - Linux 操作系统的知识
 - docker 容器的常识
 - 简单排查错误的能力
 - 使用搜索引擎的能力
 
-尽管笔者尽可能考虑一些常见的错误情况（体现在部署顺序中），如果有一些奇奇怪怪的问题，[请提issues](https://github.com/mx-space/docs/issues)
+尽管笔者尽可能考虑一些常见的错误情况（体现在部署顺序中），如果有一些奇奇怪怪的问题，[请提 issues](https://github.com/mx-space/docs/issues)
 
 ## 域名解析
 
@@ -26,19 +27,15 @@
 
 选择 docker（Ubuntu20.04）的应用镜像。
 
-
-
 ::: warning
-❗注意：Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1GiB
+❗ 注意：Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1GiB
 :::
-
-
 
 ### 安装面板
 
-安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)，在宝塔面板—软件商店，安装  `pm2管理器` ，`Nginx`。
+安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)，在宝塔面板—软件商店，安装 `pm2管理器` ，`Nginx`。
 
-Node版本选择 Node 16.X ，稳定版本是 Node 16.13.x 
+Node 版本选择 Node 16.X ，稳定版本是 Node 16.13.x
 
 ```bash
 sudo apt update && sudo apt install git curl vim wget git-lfs -y
@@ -49,17 +46,13 @@ npm install -g pnpm  pm2
 npm config set registry http://mirrors.cloud.tencent.com/npm/
 ```
 
-### 新建站点并配置SSL
+### 新建站点并配置 SSL
 
 在宝塔面板上新建以上网站，部署好 SSL 证书并开启强制 HTTPS
 
-
 ::: danger
-🧨警告：前端要求强制 HTTPS，未配置 SSL 将无法正常访问。
+🧨 警告：前端要求强制 HTTPS，未配置 SSL 将无法正常访问。
 :::
-
-
-
 
 ### 安装 docker-compose
 
@@ -101,7 +94,7 @@ wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
 wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/.env.example -O .env
 ```
 
-用宝塔或者 `vim` 编辑这个  `.env ` 文件，文件示例如下
+用宝塔或者 `vim` 编辑这个 `.env ` 文件，文件示例如下
 
 ```bash
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
@@ -134,8 +127,9 @@ git clone https://gitee.com/a1435241/kami.git
 更换分支到最后一个稳定版本
 
 ```bash
-cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1) 
+cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
+
 拉取图片文件
 
 ```bash
@@ -193,8 +187,6 @@ yarn prod:pm2
 
 进入宝塔面板—网站，设置后端网站（server.test.cn)
 
-
-
 我们点击左侧的 `配置文件`（网站设置）
 
 在 `access_log` 字段上面，添加如下配置:
@@ -217,12 +209,12 @@ location /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileJsNv8TWb 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -260,12 +252,12 @@ location /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileJsNv8TWb 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -283,8 +275,6 @@ location /
     error_log  /www/wwwlogs/server.test.cn.log;
 }
 ```
-
-
 
 ### 访问后台
 
@@ -312,12 +302,12 @@ location ^~ /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileSw1Jy3nG 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -349,12 +339,12 @@ location ^~ /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileSw1Jy3nG 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -375,8 +365,7 @@ location ^~ /
 }
 ```
 
-
-接下来访问 https://www.test.cn/  ，看看是否正常惹。
+接下来访问 https://www.test.cn/ ，看看是否正常惹。
 
 ## 后台设置
 
@@ -390,7 +379,6 @@ location ^~ /
 
 kami V3 已经搜索功能已经完成，具体配置方法请参考[后台设置-algolia](/options/adsetting.html#algolia-search)。
 
-## Kami设置
+## Kami 设置
 
-该节内容在 [Kami v3设置](/options/)
-
+该节内容在 [Kami v3 设置](/options/)

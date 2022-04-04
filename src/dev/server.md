@@ -165,7 +165,7 @@ ResponseInterceptor -> JSONSerializeInterceptor -> CountingInterceptor -> HttpCa
 
 ## 开发
 
-安装好  `redis` 、`mongodb`
+安装好 `redis` 、`mongodb`
 
 克隆仓库
 
@@ -179,19 +179,18 @@ git clone https://github.com/mx-space/server-next.git --depth 1 server
 cd server && git fetch --tags && git checkout $(git rev-list --tags --max-count=1) && cd ..
 ```
 
-构建，启动server
+构建，启动 server
 
 ```
 pnpm i
 pnpm start
 ```
 
-### API接口
+### API 接口
 
 浏览器访问 <http://127.0.0.1/api-docs> 可以看到 Server 提供的 API 接口。
 
 你还可以对每一个接口进行测试。
-
 
 ### 图形化查询
 

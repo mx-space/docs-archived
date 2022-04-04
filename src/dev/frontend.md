@@ -28,7 +28,7 @@
 | `/notes/latest`          | 最新日记详情页                  | 建议     |
 | `/friends`               | 友链                            | 建议     |
 | `/says`                  | 一言详情页                      | 可选     |
-| `/sitemap`               | 站点地图                        | 建议 |
+| `/sitemap`               | 站点地图                        | 建议     |
 | `/timeline`              | 时间线                          | 可选     |
 | `/recently`              | 动态页                          | 可选     |
 | `/favorite/:type`        | 附加页                          | 可选     |

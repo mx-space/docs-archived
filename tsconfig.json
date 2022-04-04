@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "esnext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
@@ -18,8 +22,15 @@
     "skipDefaultLibCheck": true,
     "noUnusedLocals": true,
     "paths": {
-      "/@theme/*": ["src/.vitepress/theme/*"]
+      "/@theme/*": [
+        "src/.vitepress/theme/*"
+      ]
     }
   },
-  "include": ["env.d.ts", "src/**/*", "src/.vitepress/**/*"]
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/.vitepress/**/*",
+    "vite.config.ts"
+  ]
 }

@@ -16,7 +16,7 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -35,12 +35,12 @@ jobs:
         with:
           version: 6.0.2
           run_install: true
-      - run: pnpm run docs:build
-      - run: echo 'mx-docs.shizuri.net' > src/.vitepress/dist/CNAME
+      - run: pnpm run build
+      - run: echo 'mx-docs.shizuri.net' > dist/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src/.vitepress/dist
+          publish_dir: ./dist
     env:
       CI: true

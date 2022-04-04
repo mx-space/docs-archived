@@ -16,13 +16,13 @@ title: 介绍
 
 ## 目录
 
-| 模块     | 描述                           | 地址                                                     |
-| -------- | ------------------------------ | -------------------------------------------------------- |
-| 部署     | 整个项目的部署方法             | [起飞](/deploy/)                                          |
-| 设置     | 项目各部分设置的介绍           | [起飞](/options/)                                         |
-| 常见问题 | 部署及使用中未提到的问题，收录于此   | [起飞](/help/)                                            |
-| 开发     | 介绍项目的开发，请求处理流程等 | [起飞](/dev/)                                             |
-| 旧版文档 | 旧的文档                       | [走你](https://github.com/mx-space/docs/tree/master/old) |
+| 模块     | 描述                               | 地址                                                     |
+| -------- | ---------------------------------- | -------------------------------------------------------- |
+| 部署     | 整个项目的部署方法                 | [起飞](/deploy/)                                         |
+| 设置     | 项目各部分设置的介绍               | [起飞](/options/)                                        |
+| 常见问题 | 部署及使用中未提到的问题，收录于此 | [起飞](/help/)                                           |
+| 开发     | 介绍项目的开发，请求处理流程等     | [起飞](/dev/)                                            |
+| 旧版文档 | 旧的文档                           | [走你](https://github.com/mx-space/docs/tree/master/old) |
 
 ## 前后端分离
 
@@ -74,9 +74,7 @@ title: 介绍
 
   该功能可以将所有文章导出为 Markdown YAML 兼容的格式，或者导入 Markdown YAML 兼容的文件。（Hexo 兼容的 Markdown）![导出页](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/server-md.png)
 
-
-
-- ​	搜索功能，基于 Algolia Search，在前端唤出搜索框 `Command` +`K` 或者 `/` 。注意：Windows下为 `Ctrl` + ` K` 或者 `/` 
+- ​ 搜索功能，基于 Algolia Search，在前端唤出搜索框 `Command` +`K` 或者 `/` 。注意：Windows 下为 `Ctrl` + ` K` 或者 `/`
 
 ## 鸣谢
 
@@ -88,7 +86,7 @@ title: 介绍
 - [提莫酱](https://www.timochan.cn)
 - [Wibus](https://github.com/wibus-wee)
 - [wuhang2003](https://github.com/wuhang2003)
-- [zsbai](https://github.com/zsbai) 
+- [zsbai](https://github.com/zsbai)
 
 当然，整个项目的开发者是 [innei](https://innei.ren) 。
 

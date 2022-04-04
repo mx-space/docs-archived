@@ -2,14 +2,14 @@
 
 ## 前言
 
-尽管文档比较新手向，但仍需要读者具有一定的 
+尽管文档比较新手向，但仍需要读者具有一定的
 
 - Linux 操作系统的知识
 - docker 容器的常识
 - 简单排查错误的能力
 - 使用搜索引擎的能力
 
-尽管笔者尽可能考虑一些常见的错误情况（体现在部署顺序中），如果有一些奇奇怪怪的问题，[请提issues](https://github.com/mx-space/docs/issues)
+尽管笔者尽可能考虑一些常见的错误情况（体现在部署顺序中），如果有一些奇奇怪怪的问题，[请提 issues](https://github.com/mx-space/docs/issues)
 
 ## 域名解析
 
@@ -25,13 +25,9 @@
 
 ### 系统
 
-
-
 ::: warning
-❗注意：Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1GiB
+❗ 注意：Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1GiB
 :::
-
-
 
 例如 Tencent Server OS、Ubuntu20.04、Debian 最新版等等，不建议使用 CentOS（终究是要停更的）。
 
@@ -39,16 +35,15 @@
 
 ### 安装面板
 
-安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)，在宝塔面板—软件商店，安装  `pm2管理器` ，`Nginx`。
+安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)，在宝塔面板—软件商店，安装 `pm2管理器` ，`Nginx`。
 
-Node版本选择 Node 16.X ，稳定版本是 Node 16.13.x 
+Node 版本选择 Node 16.X ，稳定版本是 Node 16.13.x
 
 Debian / Ubuntu ，Redhat 系同理（自行参考）。
+
 ```bash
 sudo apt update && sudo apt install git curl vim wget git-lfs -y
 ```
-
-
 
 安装相关软件
 
@@ -60,22 +55,15 @@ npm install -g pnpm pm2
 npm config set registry http://mirrors.cloud.tencent.com/npm/
 ```
 
-### 新建网站并配置SSL
+### 新建网站并配置 SSL
 
 在宝塔面板上新建以上网站，部署好 SSL 证书并开启强制 HTTPS
 
-
-
 ::: danger
-🧨警告：前端要求强制 HTTPS，未配置 SSL 将无法正常访问。
+🧨 警告：前端要求强制 HTTPS，未配置 SSL 将无法正常访问。
 :::
 
-
-
-
-### 安装 docker 
-
-
+### 安装 docker
 
 ```bash
 sudo curl -fsSL https://get.docker.com | bash -s docker
@@ -84,8 +72,6 @@ sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 # 或者使用国内 daocloud 一键安装命令
 sudo curl -sSL https://get.daocloud.io/docker | sh
 ```
-
-
 
 ### 安装 docker-compose
 
@@ -160,7 +146,7 @@ git clone https://gitee.com/a1435241/kami.git
 更换分支到最后一个稳定版本
 
 ```bash
-cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1) 
+cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
 
 拉取图片文件
@@ -242,12 +228,12 @@ location /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileJsNv8TWb 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -285,12 +271,12 @@ location /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileJsNv8TWb 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -308,9 +294,6 @@ location /
     error_log  /www/wwwlogs/server.test.cn.log;
 }
 ```
-
-
-
 
 ### 访问后台
 
@@ -338,12 +321,12 @@ location ^~ /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileSw1Jy3nG 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -375,12 +358,12 @@ location ^~ /
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-    
+
     #Set Nginx Cache
-    
-    
+
+
     set $static_fileSw1Jy3nG 0;
     if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
     {
@@ -401,8 +384,6 @@ location ^~ /
 }
 ```
 
-
-
 接下来访问 https://www.test.cn/ ，看看运行是否正常。
 
 ## 后台设置
@@ -417,6 +398,6 @@ location ^~ /
 
 kami V3 已经搜索功能已经完成，具体配置方法请参考[后台设置-algolia](/options/adsetting.html#algolia-search)。
 
-## Kami设置
+## Kami 设置
 
-该节内容在 [Kami v3设置](/options/)
+该节内容在 [Kami v3 设置](/options/)

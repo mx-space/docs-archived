@@ -1,15 +1,25 @@
 {
-  "name": "docs-next",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "docs",
+  "private": true,
   "scripts": {
-    "docs:dev": "vitepress dev src --open",
-    "docs:build": "vitepress build src",
-    "docs:serve": "vitepress serve src"
+    "prepare": "husky install",
+    "dev": "vitepress dev src --open",
+    "build": "vitepress build src",
+    "serve": "vitepress serve src",
+    "format": "prettier --write src/**"
   },
-  "author": "",
-  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md}": [
+      "prettier --ignore-path ./.prettierignore --write "
+    ]
+  },
+  "author": "Mix Space Term",
+  "license": "CC 3.0",
   "dependencies": {
     "@vue/theme": "^1.0.1",
     "shiki": "^0.10.1",
@@ -26,5 +36,11 @@
         "@types/react"
       ]
     }
+  },
+  "devDependencies": {
+    "@types/node": "17.0.23",
+    "husky": "7.0.4",
+    "lint-staged": "12.3.7",
+    "prettier": "2.6.2"
   }
 }
