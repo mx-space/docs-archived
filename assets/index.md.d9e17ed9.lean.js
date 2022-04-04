@@ -1,0 +1,1 @@
+import{c as e,e as t,o as a,H as r}from"./app.03615ad3.js";const l='{"title":"Mix Space - An Alternative Personal Space.","description":"","frontmatter":{"page":true,"title":"Mix Space - An Alternative Personal Space."},"headers":[],"relativePath":"index.md"}',n={},p=Object.assign(n,{setup(c){return(o,s)=>(a(),e("div",null,[t(r)]))}});export{l as __pageData,p as default};
