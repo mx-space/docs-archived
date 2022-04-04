@@ -14,7 +14,5 @@ export default Object.assign({}, VPTheme, {
       banner: () => h(Banner)
     })
   },
-  enhanceApp({ app }: { app: App }){
-    app.provide('DocsHome', Home)
-  }
+  enhanceApp({ app }: { app: App }){}
 })
