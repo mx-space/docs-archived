@@ -6,6 +6,12 @@
 
 开始之前，你需要安装完成 Docker 和 docker compose。你还需要已安装 NodeJS 和 zx。
 
+## zx安装
+
+```bash
+npm install -g zx
+```
+
 然后克隆仓库。
 
 ```bash
@@ -20,7 +26,8 @@ git clone https://github.com/mx-space/docker --depth=1
 
 ```bash
 cd docker
-zx ./build.js
+npm install
+zx ./build.mjs
 ```
 
 实例输入：
@@ -41,7 +48,8 @@ zx ./build.js
 
 ```bash
 cd docker
-zx ./build.js
+npm install
+zx ./build.mjs
 ```
 
 实例输入：
