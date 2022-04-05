@@ -9,7 +9,7 @@
 ## zx安装
 
 ```bash
-npm install -g zx
+npm install -g zx 
 ```
 
 然后克隆仓库。
