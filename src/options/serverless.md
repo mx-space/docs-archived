@@ -14,7 +14,7 @@ Mix-space 的云函数实现依赖于动态的路由处理模块，通过云函�
 
 ## 自动安装
 
-进入后台，移动到 `其他 · 配置与云函数` ，点击蓝色的<svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M21 14a1 1 0 0 0-1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 0-2 0v4a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-4a1 1 0 0 0-1-1Zm-9.71 1.71a1 1 0 0 0 .33.21a.94.94 0 0 0 .76 0a1 1 0 0 0 .33-.21l4-4a1 1 0 0 0-1.42-1.42L13 12.59V3a1 1 0 0 0-2 0v9.59l-2.29-2.3a1 1 0 1 0-1.42 1.42Z"></path></svg> ，选择 kami 等待即可。
+进入后台，移动到 `其他 · 配置与云函数` ，点击蓝色的  `↓ `  按钮  ， 选择 kami ，等待即可。如果失败了，请参考下面的手动安装。
 
 ## 手动安装
 
@@ -56,28 +56,29 @@ apk add npm
 内容示例如下，请参照自己的情况进行修改
 
 ```typescript
-async function handler(ctx, require) {
-  const extra = await require("@mx-space/extra");
-  const { NeteaseMusic } = extra;
+import extra from '@mx-space/extra'
 
-  const client = new NeteaseMusic(phone, password);
-  await client.Login();
+async function handler() {
+  const { NeteaseMusic } = extra
 
-  const weekdata = await client.getWeekData();
-  const alldata = await client.getAllData();
-  const playlist = await client.getFavorite();
+  const client = new NeteaseMusic(phone, password)
+  await client.Login()
+
+  const weekdata = await client.getWeekData()
+  const alldata = await client.getAllData()
+  const playlist = await client.getFavorite()
 
   const responsePayload = {
     playlist,
     weekdata,
     alldata,
-  };
+  }
 
-  return responsePayload;
+  return responsePayload
 }
 
-const phone = "155555*****";
-const password = "66666****";
+const phone = '15922****'
+const password = 'wddw***s'
 ```
 
 注意：示例中的 `phone` 和 `password` 需要替换成自己的，其他的复制过去就行。
@@ -95,17 +96,17 @@ const password = "66666****";
 示例如下：
 
 ```typescript
+import extra from '@mx-space/extra'
 async function handler() {
-  const extra = await require("@mx-space/extra");
-  const { BiliClient } = extra;
-  const bl = await context.getMaster().then((user) => user.socialIds.bilibili);
-  const client = new BiliClient(parseInt(bl || uid));
-  const bangumi = await client.getFavoriteBangumi(parseInt(len));
-  return bangumi;
+  const { BiliClient } = extra
+  const bl = await context.getMaster().then((user) => user.socialIds.bilibili)
+  const client = new BiliClient(parseInt(bl || uid))
+  const bangumi = await client.getFavoriteBangumi(parseInt(len.toString()))
+  return bangumi
 }
-
-const uid = 121212;
-const len = 10;
+// 如果社交平台 ID 录入中有哔哩哔哩 ID 可不填，留空
+const uid = 11111
+const len = 10
 ```
 
 注意：`uid` 是自己的 哔哩哔哩 ID，`len` 是允许获取自己看过的番的最大个数，实际展示个数受限于实际的追番数。
@@ -127,18 +128,19 @@ const len = 10;
 示例如下：
 
 ```typescript
-async function handler(ctx, require) {
-  const { NeteaseCloudMusicApi } = await require("@mx-space/extra");
-  const { song_url } = NeteaseCloudMusicApi;
-  const id = ctx.req.query.id;
+import { NeteaseCloudMusicApi } from '@mx-space/extra'
+
+async function handler() {
+  const { song_url } = NeteaseCloudMusicApi
+  const id = context.req.query.id
   if (!id) {
-    return { message: "id must be not empty stringnumber" };
+    return { message: 'id must be not empty stringnumber' }
   }
   const data = await song_url({
     id: +id,
-  });
+  })
 
-  return data.body.data;
+  return data.body.data
 }
 ```
 
