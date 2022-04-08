@@ -58,8 +58,8 @@ npm config set registry http://mirrors.cloud.tencent.com/npm/
 
 ```bash
 # 下载 docker-compose
-wget https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64
-#(备用)  wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64
+wget https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64
+#(备用)  wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64
 # 新建文件夹（非必须），可能需要
 sudo mkdir -p /usr/local/lib/docker/cli-plugins/
 # 复制到指定位置
@@ -120,7 +120,7 @@ sudo docker compose up -d
 cd
 cd mx-space
 git clone https://github.com/mx-space/kami.git
-# 网络不好的情况，请使用下面的。注：该镜像点同步较慢
+# 网络不好的情况，请使用下面的命令。注：该镜像点同步较慢，且无法拉取 Git LFS 文件。
 git clone https://gitee.com/a1435241/kami.git
 ```
 
