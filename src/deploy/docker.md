@@ -4,9 +4,9 @@
 
 ## 准备
 
-开始之前，你需要安装完成 Docker 和 docker compose。你还需要已安装 NodeJS 和 zx。
+开始之前，你需要安装好 Docker 和 Docker Compose，没安装的可参考[此处教程](https://mx-docs.iucky.cn/deploy/bt-panel.html#%E5%AE%89%E8%A3%85-docker)。你还需要安装好 NodeJS 和 zx。
 
-## zx安装
+## 安装 zx
 
 ```bash
 npm install -g zx 
@@ -65,7 +65,7 @@ zx ./build.mjs
 
 ```bash
 wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
-docker-compose up -d
+docker compose up -d
 ```
 
 待流程执行完毕，进入 127.0.0.1:2333/proxy/qaqdmin。

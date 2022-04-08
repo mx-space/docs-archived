@@ -22,7 +22,7 @@ title: 介绍
 | 设置     | 项目各部分设置的介绍               | [起飞](/options/)                                        |
 | 常见问题 | 部署及使用中未提到的问题，收录于此 | [起飞](/help/)                                           |
 | 开发     | 介绍项目的开发，请求处理流程等     | [起飞](/dev/)                                            |
-| 旧版文档 | 旧的文档                           | [走你](https://github.com/mx-space/docs/tree/master/old) |
+| 旧版文档 | 旧的文档                           | [走你](https://github.com/mx-space/docs-legacy/tree/master/old) |
 
 ## 前后端分离
 
