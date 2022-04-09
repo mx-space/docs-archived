@@ -1,6 +1,10 @@
 # 一键式部署
 
-使用 Docker Compose 可以很容易的部署整个环境。
+>  使用 Docker Compose 可以很容易的部署整个环境。
+
+::: warning
+❗ 注意：Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1GiB
+:::
 
 ## 准备
 
