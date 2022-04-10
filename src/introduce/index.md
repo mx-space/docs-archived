@@ -74,7 +74,7 @@ title: 介绍
 
   该功能可以将所有文章导出为 Markdown YAML 兼容的格式，或者导入 Markdown YAML 兼容的文件。（Hexo 兼容的 Markdown）![导出页](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/server-md.png)
 
-- ​ 搜索功能，基于 Algolia Search，在前端唤出搜索框 `Command` +`K` 或者 `/` 。注意：Windows 下为 `Ctrl` + ` K` 或者 `/`
+-  搜索功能，基于 Algolia Search，在前端唤出搜索框 `Command` +`K` 或者 `/` 。注意：Windows 下为 `Ctrl` + ` K` 或者 `/`
 - PTY
 
   ![](https://user-images.githubusercontent.com/41265413/153223043-b211b0b8-977d-474e-8b51-80f77624dd75.jpg)
@@ -91,6 +91,7 @@ title: 介绍
 - [提莫酱](https://www.timochan.cn)
 - [Wibus](https://github.com/wibus-wee)
 - [wuhang2003](https://github.com/wuhang2003)
+- [Sayyiku](https://github.com/Sayyiku)
 - [zsbai](https://github.com/zsbai)
 
 当然，整个项目的开发者是 [innei](https://innei.ren) 。
