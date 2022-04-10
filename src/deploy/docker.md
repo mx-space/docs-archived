@@ -38,7 +38,7 @@ zx ./build.mjs
 
 ```
 你的域名为：（需要提前绑定）: innei.ren
-你的邮箱为: (此步留空，则不部署 Caddy 服务): tukon@gmail.com
+你的邮箱为: (若该步留空，则不部署 Caddy 服务): tukon@gmail.com
 是否部署 Caddy 2.0？ (y/n): y
 ```
 
