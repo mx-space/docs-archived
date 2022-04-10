@@ -83,15 +83,15 @@ title: 介绍
 
 ## 鸣谢
 
-本版文档由以下贡献者编写（按照字母顺序排序）：
+本版文档由以下贡献者编写（按照贡献者名字首字母顺序进行排序）：
 
 - [623337308](https://blog.cqsjyz.com)
 - [Elmge](https://github.com/Elmge)
 - [喵二](https://www.miaoer.xyz)
+- [Sayyiku](https://github.com/Sayyiku)
 - [提莫酱](https://www.timochan.cn)
 - [Wibus](https://github.com/wibus-wee)
 - [wuhang2003](https://github.com/wuhang2003)
-- [Sayyiku](https://github.com/Sayyiku)
 - [zsbai](https://github.com/zsbai)
 
 当然，整个项目的开发者是 [innei](https://innei.ren) 。

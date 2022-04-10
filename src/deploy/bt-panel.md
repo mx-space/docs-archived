@@ -392,11 +392,11 @@ location ^~ /
 
 ## 歌单 / 追番设置
 
-该节内容在 [云函数配置示例](/options/serverless.html)，且是 Kami v 3.5.0 及以上必须的过程。
+该节内容在 [云函数配置示例](/options/serverless.html)，且是 Kami v3.5.0 及以上版本必须完成的配置过程。
 
 ## 搜索
 
-kami V3 已经搜索功能已经完成，具体配置方法请参考[后台设置-algolia](/options/adsetting.html#algolia-search)。
+kami V3 已经搜索功能已经完成，具体配置方法请参考 [后台设置-Algolia Search](/options/adsetting.html#algolia-search)。
 
 ## Kami 设置
 
