@@ -1,0 +1,25 @@
+
+name: 问题
+description: 如果是部署遇到的问题，选择这个
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请在标题写“问题名称”！
+  - type: input
+    id: name
+    attributes:
+      label: 问题名称
+      description: 你认为的问题是什么
+      placeholder: 
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: question
+      description: |
+        你的问题是什么
+    validations:
+      required: true
