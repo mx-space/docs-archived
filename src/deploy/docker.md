@@ -14,6 +14,8 @@
 
 ```bash
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+# 如果无法访问 Github raw 的话就执行下面这条命令
+# curl -L https://github.do/https://raw.githubusercontent.com/tj/n/master/bin/n -o n
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 # export N_NODE_MIRROR=https://npmmirror.com/mirrors/node  #如果官方源下载慢的话可以执行这条换国内源
