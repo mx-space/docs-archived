@@ -8,15 +8,22 @@
 
 ## 准备
 
-开始之前，你需要安装好 Docker 和 Docker Compose，没安装的可参考[此处教程](https://mx-docs.iucky.cn/deploy/bt-panel.html#%E5%AE%89%E8%A3%85-docker)。你还需要安装好 NodeJS 和 zx。
+开始之前，你需要安装好 Docker 和 Docker Compose，没安装的可参考[此处教程](https://mx-docs.iucky.cn/deploy/bt-panel.html#%E5%AE%89%E8%A3%85-docker)。你还需要安装好 Node.js 和 zx。
 
-## 安装 zx
+## 安装 Node.js 和 zx
 
 ```bash
-npm install -g zx 
+curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+# export N_NODE_MIRROR=https://npmmirror.com/mirrors/node  #如果官方源下载慢的话可以执行这条换国内源
+bash n lts
+export N_PRESERVE_NPM=1
+npm i -g npm@latest
+npm i -g yarn zx pnpm n
 ```
 
-然后克隆仓库。
+## 克隆仓库
 
 ```bash
 git clone https://github.com/mx-space/docker --depth=1
@@ -24,7 +31,7 @@ git clone https://github.com/mx-space/docker --depth=1
 
 ## 部署整个环境
 
-整个环境：kami + mx-server + caddy2
+所部署的环境：kami + mx-server + caddy2
 
 在此之前，你需要把域名指向当前服务器 IP。
 
@@ -46,7 +53,7 @@ zx ./build.mjs
 
 ## 仅部署服务和主站前端
 
-部署的环境：kami + mx-server
+所部署的环境：kami + mx-server
 
 你不需要 IP 指向。但是需要手动处理服务器反代。
 
