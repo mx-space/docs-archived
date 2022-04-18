@@ -4,7 +4,7 @@
 
 这个站点使用的是 [VitePress](https://github.com/vuejs/vitepress)，并基于 [@vue/theme](https://github.com/vuejs/vue-theme)。站点内容使用Markdown编写，文件都在`src`文件夹中. 如果只有一些简单的修改，你可以直接在GitHub网页端修改并新建一个Pull Request.
 
-在本地开发中，[pnpm](https://pnpm.io/)被选用为项目的包管理器，你需要使用pnpm安装依赖：
+在本地开发中，[pnpm](https://pnpm.io/) 被选用为项目的包管理器，你需要使用pnpm安装依赖：
 
 ```bash
 pnpm i
@@ -17,7 +17,7 @@ pnpm run docs:serve
 
 ## Working on the content 修改文字
 
-- 关于支持的Markdown扩展和在Markdown内部使用Vue语法的能力，请参阅VitePress文档
+- 关于支持的 Markdown 扩展和在 Markdown 内部使用 Vue 语法的能力，请参阅VitePress文档
 - 有关编写和维护文档内容的规则和建议，请参阅编写指南。
 
 ## Guide 编写指南
@@ -25,7 +25,7 @@ pnpm run docs:serve
 <u>**新增一个章节**</u>：
 
 1. 克隆此项目
-2. 在`src`文件夹中，新增一个文件夹，请语义化命名，假设为`test`
+2. 在 `src` 文件夹中，新增一个文件夹，请语义化命名，假设为 `test`
 3. 编写内容，具体可以借鉴其他文档文件夹
 4. 创建 Pull Request. 其余事情只需要交给我们来做就好了
 
