@@ -26,12 +26,14 @@
 ### 系统
 
 ::: warning
-❗ 注意：Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1GiB
+❗ 注意：文档未考虑对 WIndows 的支持工作，Windows 的使用者请自行处理兼容性问题；
+        Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB ！
 :::
 
-例如 Tencent Server OS、Ubuntu20.04、Debian 最新版等等，不建议使用 CentOS（终究是要停更的）。
+例如 Ubuntu20.04、Debian 最新版等等，不建议使用 CentOS（终究是要停更的）。
 
-**推荐使用较高版本的 Linux 内核，目前只有 Tencent Server OS 能用 4.18 版本的内核进行部署**
+
+**推荐使用较高版本的 Linux 内核。**
 
 ### 安装面板
 
