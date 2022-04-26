@@ -80,6 +80,11 @@ title: 介绍
   ![](https://user-images.githubusercontent.com/41265413/153223043-b211b0b8-977d-474e-8b51-80f77624dd75.jpg)
 
 - [云函数](https://github.com/mx-space/mx-server/blob/master/src/modules/serverless/serverless.readme.md)
+  云函数可以自己写一些好玩的小东西！
+
+- [公共面板](https://mx.shizuri.net) 该项功能需要允许跨域
+
+  该功能不需要你自己单独部署后台了！
 
 ## 鸣谢
 
