@@ -75,11 +75,11 @@ const config: UserConfig = {
   scrollOffset: 'header',
 
   themeConfig: {
-    editLink: {
-      repo: 'mx-space/docs',
-      text: '编辑此页',
-    },
-    editLinks: true,
+    // editLink: {
+    //   repo: 'mx-space/docs',
+    //   text: '编辑此页',
+    // },
+    // editLinks: false,
 
     algolia: {
       apiKey: '17c9be610f7f8fac9911a340c35ef34f',
