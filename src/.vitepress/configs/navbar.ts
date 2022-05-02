@@ -9,8 +9,13 @@
 
 export const introduceBar = [
   { text: '介绍', link: '/introduce/' },
-  { text: '现有功能', link: '/introduce/#现有功能' },
+  { text: '预览', link: '/introduce/#现有功能-部分' },
   { text: '目录', link: '/introduce/#目录' },
+]
+
+export const experimentBar = [
+  { text: '文本宏', link: '/feature/text-macors' },
+  { text: '云函数', link: '/feature/serverless-functions' },
 ]
 
 export const optionsBar = [

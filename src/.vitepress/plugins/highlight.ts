@@ -8,16 +8,12 @@
  */
 import { getHighlighter } from 'shiki'
 
-export default async() => {
+export default async () => {
   const highlighter = await getHighlighter({
-    themes: [
-      'vitesse-dark',
-      'vitesse-light',
-    ],
+    themes: ['vitesse-dark', 'vitesse-light'],
   })
 
   return (code: string, lang: string) => {
-
     const dark = highlighter
       .codeToHtml(code, { lang, theme: 'vitesse-dark' })
       .replace('<pre class="shiki"', '<pre v-pre class="shiki shiki-dark"')

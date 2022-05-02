@@ -1,10 +1,12 @@
 // @ts-ignore
 import base from '@vue/theme/config'
-import { resolve } from 'path'
+import { join, resolve } from 'path'
+import Windicss from 'vite-plugin-windicss'
 import { UserConfig } from 'vitepress'
 import navBar, {
   deployBar,
   devBar,
+  experimentBar,
   helpBar,
   introduceBar,
   optionsBar,
@@ -21,6 +23,7 @@ const themeConfig = async () => {
 
 const sidebar = [
   { text: '介绍', items: introduceBar },
+  { text: '实验性特征', items: experimentBar },
   { text: '部署', items: deployBar },
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
@@ -91,6 +94,7 @@ const config: UserConfig = {
     nav: navBar,
     sidebar: {
       '/introduce/': sidebar,
+      '/feature/': sidebar,
       '/options/': sidebar,
       '/deploy/': sidebar,
       '/help/': sidebar,
@@ -107,6 +111,7 @@ const config: UserConfig = {
   vue: {
     reactivityTransform: true,
   },
+
   vite: {
     define: {
       __VUE_OPTIONS_API__: false,
@@ -118,13 +123,19 @@ const config: UserConfig = {
     },
 
     optimizeDeps: {
-      exclude: ["@vue/theme"],
+      exclude: ['@vue/theme'],
     },
-    
+
     json: {
       stringify: true,
     },
-    plugins: [NavbarFix()],
+    plugins: [
+      NavbarFix(),
+
+      Windicss({
+        config: join(__dirname, '../../windi.config.ts'),
+      }),
+    ],
   },
 }
 
