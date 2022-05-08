@@ -52,7 +52,11 @@ zx ./build.mjs
 是否部署 Caddy 2.0？ (y/n): y
 ```
 
-待流程执行完毕，进入 `https://你的域名/proxy/qaqdmin`
+待流程执行完毕，进入 `https://你的域名/proxy/qaqdmin`  
+
+建议：
+
+移动到页面，新建两个页面 第一个路由为 `message`  ，第二个路由为 `about` ，标题任意。
 
 ## 仅部署服务和主站前端
 
