@@ -1,5 +1,5 @@
 ---
-title: Kami V3设置
+title: Kami V3 设置
 ---
 
 # Kami V3 设置
@@ -377,7 +377,7 @@ interface Social {
 
 社交账号。展示于首页。
 
-> 如果你想使用 QQ 跳转链接，你可能还需要到 [QQ 推广](https://shang.qq.com/)；在推广工具-个人 QQ 通讯组件中 2 代码里复制 如 `https://wpa.qq.com/msgrd?v=3&uin=QQ号&site=qq&menu=yes` 的链接并将其填到 `url` 里
+如果你想使用 QQ 跳转链接，你可能还需要到 [QQ 推广](https://shang.qq.com/)；在推广工具-个人 QQ 通讯组件中 2 代码里复制 如 `https://wpa.qq.com/msgrd?v=3&uin=QQ号&site=qq&menu=yes` 的链接并将其填到 `url` 里
 
 顶部菜单和社交方式那一栏的图标可在 <https://fontawesome.com/v5/search> 或者 <https://fa5.dashgame.com> 中获取（仅限 free 版本）。网站默认复制内容一般类似于 `far fa-图标名` 这样。举个例子，如果需要加入 Telegram 社交链接，搜索后的图标名为 `paper-plane` ，则需要在 `icon` 那一栏填入 `fa fa-paper-plane` 以此类推。
 
@@ -540,7 +540,7 @@ Google Analyze ID。
 - Type: `string`
 - Default: `false`
 
-跳转地址。
+捐赠跳转地址。
 
 ### function.ban_devtool.enable
 
