@@ -17,7 +17,7 @@ pnpm run docs:serve
 
 ## Working on the content 修改文字
 
-- 关于支持的 Markdown 扩展和在 Markdown 内部使用 Vue 语法的能力，请参阅VitePress文档
+- 关于支持的 Markdown 扩展和在 Markdown 内部使用 Vue 语法的能力，请参阅 VitePress 文档
 - 有关编写和维护文档内容的规则和建议，请参阅编写指南。
 
 ## Guide 编写指南
