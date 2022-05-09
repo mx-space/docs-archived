@@ -7,7 +7,7 @@
     <meta name="description" content="An alternative personal space.">
     <link rel="stylesheet" href="/assets/style.b190044d.css">
     <link rel="modulepreload" href="/assets/app.8ff84930.js">
-    <link rel="modulepreload" href="/assets/deploy_bt-panel.md.e5ef9ac4.lean.js">
+    <link rel="modulepreload" href="/assets/deploy_bt-panel.md.ce0610d8.lean.js">
     <link rel="prefetch" href="/assets/chunks/VPAlgoliaSearchBox.db52fc48.js">
     <link rel="icon" href="/logo.svg">
   <link rel="preload" href="/assets/inter-latin.7b37fe23.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -45,8 +45,8 @@
 <span class="line"><span style="color:#A0ADA0;"># 或者使用国内 daocloud 一键安装命令</span></span>
 <span class="line"><span style="color:#393A34;">sudo curl -SSL https://get.daocloud.io/docker </span><span style="color:#AB5959;">|</span><span style="color:#393A34;"> sh</span></span>
 <span class="line"></span></code></pre></div><h3 id="安装-docker-compose" tabindex="-1">安装 docker-compose <a class="header-anchor" href="#安装-docker-compose" aria-hidden="true">#</a></h3><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#758575;"># 下载 docker-compose</span></span>
-<span class="line"><span style="color:#DBD7CA;">wget https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64</span></span>
-<span class="line"><span style="color:#758575;">#(备用) wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64</span></span>
+<span class="line"><span style="color:#DBD7CA;">wget https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64</span></span>
+<span class="line"><span style="color:#758575;">#(备用) wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64</span></span>
 <span class="line"><span style="color:#758575;"># 新建文件夹（非必须），可能需要</span></span>
 <span class="line"><span style="color:#DBD7CA;">sudo mkdir -p /usr/local/lib/docker/cli-plugins/</span></span>
 <span class="line"><span style="color:#758575;"># 复制到指定位置</span></span>
@@ -54,8 +54,8 @@
 <span class="line"><span style="color:#758575;"># 赋予执行权限</span></span>
 <span class="line"><span style="color:#DBD7CA;">sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#A0ADA0;"># 下载 docker-compose</span></span>
-<span class="line"><span style="color:#393A34;">wget https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64</span></span>
-<span class="line"><span style="color:#A0ADA0;">#(备用) wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64</span></span>
+<span class="line"><span style="color:#393A34;">wget https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64</span></span>
+<span class="line"><span style="color:#A0ADA0;">#(备用) wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64</span></span>
 <span class="line"><span style="color:#A0ADA0;"># 新建文件夹（非必须），可能需要</span></span>
 <span class="line"><span style="color:#393A34;">sudo mkdir -p /usr/local/lib/docker/cli-plugins/</span></span>
 <span class="line"><span style="color:#A0ADA0;"># 复制到指定位置</span></span>
@@ -421,7 +421,7 @@
 <span class="line"><span style="color:#393A34;">   </span><span style="color:#1C6B48;"> error_log </span><span style="color:#393A34;"> /www/wwwlogs/www.test.cn.log</span><span style="color:#8E8F8B;">;</span></span>
 <span class="line"><span style="color:#393A34;">}</span></span>
 <span class="line"></span></code></pre></div><p>接下来访问 <a href="https://www.test.cn/" target="_blank" rel="noopener noreferrer">https://www.test.cn/</a> ，看看运行是否正常。</p><h2 id="后台设置" tabindex="-1">后台设置 <a class="header-anchor" href="#后台设置" aria-hidden="true">#</a></h2><p>该节内容在 <a href="/options/adsetting.html">后台设置</a></p><h2 id="歌单-追番设置" tabindex="-1">歌单 / 追番设置 <a class="header-anchor" href="#歌单-追番设置" aria-hidden="true">#</a></h2><p>该节内容在 <a href="/options/serverless.html">云函数配置示例</a>，且是 Kami v3.5.0 及以上版本必须完成的配置过程。</p><h2 id="搜索" tabindex="-1">搜索 <a class="header-anchor" href="#搜索" aria-hidden="true">#</a></h2><p>kami V3 已经搜索功能已经完成，具体配置方法请参考 <a href="/options/adsetting.html#algolia-search">后台设置-Algolia Search</a>。</p><h2 id="kami-设置" tabindex="-1">Kami 设置 <a class="header-anchor" href="#kami-设置" aria-hidden="true">#</a></h2><p>该节内容在 <a href="/options/">Kami v3 设置</a></p></div></div><!----></main><!--[--><!--]--><footer class="VPContentDocFooter" data-v-7d3b0a72 data-v-26eee970><a class="prev-link" href="/deploy/docker.html" data-v-26eee970><span class="desc" data-v-26eee970><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-26eee970><path d="M15,19c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4l6-6c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L10.4,12l5.3,5.3c0.4,0.4,0.4,1,0,1.4C15.5,18.9,15.3,19,15,19z"></path></svg> Previous</span><span class="title" data-v-26eee970>Docker 一键部署</span></a><a class="next-link" href="/deploy/tencent.html" data-v-26eee970><span class="desc" data-v-26eee970>Next <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-26eee970><path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path></svg></span><span class="title" data-v-26eee970>腾讯轻量应用服务器</span></a></footer></div></div></div></div><div class="visually-hidden" aria-live="polite" data-v-204468d7>基于宝塔环境的部署 has loaded</div></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_bt-panel.md\":\"e5ef9ac4\",\"deploy_docker.md\":\"f4914622\",\"deploy_tencent.md\":\"f279adef\",\"dev_frontend.md\":\"fcbfe984\",\"dev_index.md\":\"418437ad\",\"dev_server.md\":\"2602d5fa\",\"feature_serverless-functions.md\":\"fc7dfc58\",\"feature_text-macors.md\":\"93a5fed7\",\"help_index.md\":\"11f13155\",\"index.md\":\"67792108\",\"introduce_index.md\":\"2f8a8bbf\",\"options_adsetting.md\":\"697534df\",\"options_index.md\":\"1b15c195\",\"options_serverless.md\":\"94a526d4\"}")</script>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_bt-panel.md\":\"ce0610d8\",\"deploy_docker.md\":\"fb0e5d1f\",\"deploy_tencent.md\":\"0c5b162d\",\"dev_frontend.md\":\"fcbfe984\",\"dev_index.md\":\"418437ad\",\"dev_server.md\":\"2602d5fa\",\"feature_serverless-functions.md\":\"fc7dfc58\",\"feature_text-macors.md\":\"93a5fed7\",\"help_index.md\":\"11f13155\",\"index.md\":\"67792108\",\"introduce_index.md\":\"2f8a8bbf\",\"options_adsetting.md\":\"697534df\",\"options_index.md\":\"92627835\",\"options_serverless.md\":\"94a526d4\"}")</script>
     <script type="module" async src="/assets/app.8ff84930.js"></script>
     
   </body>
