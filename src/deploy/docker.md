@@ -11,7 +11,7 @@
 
 ## 准备
 
-开始之前，你需要安装好 Docker 和 Docker Compose，没安装的可参考[此处教程](https://mx-docs.iucky.cn/deploy/bt-panel.html#%E5%AE%89%E8%A3%85-docker)。你还需要安装好 Node.js 和 zx。
+开始之前，你需要安装好 Docker 和 Docker Compose，没安装的可参考[此处教程](https://mx-docs.iucky.cn/deploy/bt-panel.html#%E5%AE%89%E8%A3%85-docker)。同时你还需要安装好 Node.js 和 zx。
 
 ## 安装 Node.js 和 zx
 
