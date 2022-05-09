@@ -27,7 +27,9 @@
 
 ::: warning
 ❗ 注意：文档未考虑对 Windows 的支持工作，Windows 的使用者请自行处理兼容性问题；
-        Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB ！
+        
+
+​      Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB ！
 :::
 
 例如 Ubuntu20.04、Debian 最新版等等，不建议使用 CentOS（终究是要停更的）。
@@ -39,7 +41,7 @@
 
 安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)，在宝塔面板—软件商店，安装 `pm2管理器` ，`Nginx`。
 
-Node 版本选择 Node 16.X ，稳定版本是 Node 16.13.x
+Node 版本选择 Node 16.X ，稳定版本是 Node 16.15.x
 
 Debian / Ubuntu ，RedHat 系同理（自行参考）。
 
@@ -115,7 +117,7 @@ wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
 wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/.env.example -O .env
 ```
 
-用宝塔或者 `vim` 编辑这个 `.env ` 文件，文件示例如下
+用宝塔或者 `vim` 编辑这个 `.env` 文件，文件示例如下
 
 ```
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
