@@ -31,7 +31,7 @@
     "markdown-it-checkbox": "1.1.0",
     "prismjs": "*",
     "shiki": "0.10.1",
-    "vite": "2.9.1",
+    "vite": "2.9.8",
     "vitepress": "0.22.3",
     "vue": "3.2.33"
   },
