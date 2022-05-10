@@ -33,7 +33,7 @@
     "shiki": "0.10.1",
     "vite": "2.9.1",
     "vitepress": "0.22.3",
-    "vue": "3.2.31"
+    "vue": "3.2.33"
   },
   "pnpm": {
     "peerDependencyRules": {
