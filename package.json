@@ -24,7 +24,7 @@
   "dependencies": {
     "@types/markdown-it": "*",
     "@types/prismjs": "*",
-    "@vue/theme": "1.0.1",
+    "@vue/theme": "1.0.2",
     "@vueuse/core": "8.3.1",
     "@vueuse/head": "0.7.6",
     "markdown-it": "*",
