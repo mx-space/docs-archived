@@ -5,6 +5,7 @@ import Windicss from 'vite-plugin-windicss'
 import { UserConfig } from 'vitepress'
 import navBar, {
   deployBar,
+  deploySideBar,
   devBar,
   experimentBar,
   helpBar,
@@ -24,7 +25,7 @@ const themeConfig = async () => {
 const sidebar = [
   { text: '介绍', items: introduceBar },
   { text: '实验性特征', items: experimentBar },
-  { text: '部署', items: deployBar },
+  { text: '部署', items: deploySideBar},
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
   { text: '开发', items: devBar },
