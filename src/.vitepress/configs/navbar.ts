@@ -3,7 +3,7 @@
  * @author: Wibus
  * @Date: 2022-04-03 20:14:54
  * @LastEditors: Wibus
- * @LastEditTime: 2022-04-03 21:02:25
+ * @LastEditTime: 2022-05-12 17:07:37
  * Coding With IU
  */
 
@@ -24,11 +24,33 @@ export const optionsBar = [
   { text: '云函数', link: '/options/serverless' },
 ]
 
-export const deployBar = [
-  { text: 'Docker 一键部署', link: '/deploy/docker' },
-  { text: '宝塔环境', link: '/deploy/bt-panel' },
-  { text: '腾讯轻量应用服务器', link: '/deploy/tencent' },
+export const deployServerBar = [
+  { text: 'Docker 部署', link: '/deploy/server/server' },
 ]
+
+export const deployKamiBar = [
+  { text: 'Kami 部署', link: '/deploy/kami/' },
+]
+
+export const deployYunBar = [
+  { text: 'Yun 部署(WIP)', link: '/deploy/yun/' },
+]
+
+export const deploySideBar = [
+  { text: 'Docker 一键部署', link: '/deploy/' },
+  { text: '部署 Server', link: '/deploy/server/server' },
+  { text: '部署 Kami', link: '/deploy/kami/' },
+  { text: '部署 Yun (WIP)', link: '/deploy/yun/' },
+]
+
+export const deployBar = [
+  { text: 'Global', items: [
+    { text: '一键部署全站', link: '/deploy/' },
+  ]},
+  { text: 'Server', items: deployServerBar },
+  { text: 'Kami', items: deployKamiBar },
+  { text: 'Yun', items: deployYunBar },
+] 
 
 export const helpBar = [
   { text: '构建类', link: '/help/#构建类' },
@@ -44,7 +66,7 @@ export const devBar = [
 
 const navBar = [
   { text: '介绍', items: introduceBar },
-  { text: '部署', items: [{ text: 'TYPES', items: deployBar }] },
+  { text: '部署', items: deployBar },
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
   { text: '开发', items: devBar },

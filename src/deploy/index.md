@@ -1,4 +1,4 @@
-# 一键式部署
+# Docker 部署
 
 >  使用 Docker Compose 可以很容易的部署整个环境。
 
@@ -9,11 +9,44 @@
 ​      Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB ！
 :::
 
+其他安装方法：[从零开始·从服务器编译部署](/deploy/server/server.md)
+
 ## 准备
 
-开始之前，你需要安装好 Docker 和 Docker Compose，没安装的可参考[此处教程](https://mx-docs.iucky.cn/deploy/bt-panel.html#%E5%AE%89%E8%A3%85-docker)。同时你还需要安装好 Node.js 和 zx。
 
-## 安装 Node.js 和 zx
+### 安装 docker
+
+```bash
+sudo curl -fsSL https://get.docker.com | bash -s docker
+# 如果安装比较慢，推荐使用以下命令
+sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+# 或者使用国内 daocloud 一键安装命令
+sudo curl -SSL https://get.daocloud.io/docker | sh
+```
+
+### 安装 docker-compose
+
+```bash
+# 下载 docker-compose
+wget https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64
+#(备用) wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64
+# 新建文件夹（非必须），可能需要
+sudo mkdir -p /usr/local/lib/docker/cli-plugins/
+# 复制到指定位置
+sudo cp ./docker-compose-linux-x86_64  /usr/local/lib/docker/cli-plugins/docker-compose
+# 赋予执行权限
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+```
+
+检查是否安装完成
+
+```bash
+docker compose version
+```
+
+正常输出版本号即可。
+
+### 安装 Node.js 和 zx
 
 ```bash
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
