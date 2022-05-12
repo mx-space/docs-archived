@@ -1,4 +1,4 @@
-# 从服务器编译 部署
+# Server(Mx-server) 部署
 
 ::: tip
 推荐使用 Docker Compose 部署整个环境。[请点这里](/deploy/)
