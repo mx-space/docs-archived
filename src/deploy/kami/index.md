@@ -1,33 +1,10 @@
 # 部署 Kami
 
 ::: tip
-本文默认您已安装 服务端，若未安装请移步至[服务端安装](/deploy/server/server.md)
+本文默认您已安装 服务端，若未安装请移步至[Server 安装](/deploy/server/server.md)，即本节内容从[Server 安装](/deploy/server/server.md)继承，所需要的前置内容已经在该节阐明！
 :::
 
-## 域名解析
-
-国内服务器请完成备案后再进行。
-
-本文档示例域名：
-
-`Mx-Server` : `server.test.cn`
-
-`kami` : `www.test.cn`
-
-## 准备环境
-
-## 系统
-
-::: warning
-❗ 注意：文档未考虑对 Windows 的支持工作，Windows 的使用者请自行处理兼容性问题；
-        
-
-​      Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB ！
-:::
-
-例如 Ubuntu20.04、Debian 最新版等等，不建议使用 CentOS（终究是要停更的）。
-
-**推荐使用较高版本的 Linux 内核。**
+## 开始！
 
 ## 拉取源文件
 
@@ -177,4 +154,4 @@ location ^~ /
 }
 ```
 
-接下来访问 https://www.test.cn/ ，看看运行是否正常。
+接下来访问 https://www.test.cn/ ，看看运行是否正常，若有不正常请自行参与文档解决，或者提 [issue](https://github.com/mx-space/docs/issues)

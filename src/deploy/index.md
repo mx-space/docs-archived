@@ -9,7 +9,7 @@
 ​      Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB ！
 :::
 
-其他安装方法：[从零开始·从服务器编译部署](/deploy/server/server.md)
+其他安装方法：[从零开始·Server 部署](/deploy/server/server.md)，如果遇到自己不能解决的问题，参阅文档无果后，请提 [issue](https://github.com/mx-space/docs/issues)！
 
 ## 准备
 

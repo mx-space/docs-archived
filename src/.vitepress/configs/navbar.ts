@@ -2,8 +2,8 @@
  * @FilePath: /docs-next/src/.vitepress/configs/navbar.ts
  * @author: Wibus
  * @Date: 2022-04-03 20:14:54
- * @LastEditors: Wibus
- * @LastEditTime: 2022-05-12 17:07:37
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-05-12 18:01:54
  * Coding With IU
  */
 
@@ -25,7 +25,7 @@ export const optionsBar = [
 ]
 
 export const deployServerBar = [
-  { text: 'Docker 部署', link: '/deploy/server/server' },
+  { text: 'Server 部署', link: '/deploy/server/server' },
 ]
 
 export const deployKamiBar = [
