@@ -51,6 +51,6 @@
     "lint-staged": "12.4.1",
     "prettier": "2.6.2",
     "vite-plugin-windicss": "1.8.4",
-    "windicss": "3.5.2"
+    "windicss": "3.5.3"
   }
 }

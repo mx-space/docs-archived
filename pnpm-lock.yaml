@@ -18,7 +18,7 @@ specifiers:
   vite-plugin-windicss: 1.8.4
   vitepress: 0.22.4
   vue: 3.2.33
-  windicss: 3.5.2
+  windicss: 3.5.3
 
 dependencies:
   '@types/markdown-it': 12.2.3
@@ -40,7 +40,7 @@ devDependencies:
   lint-staged: 12.4.1
   prettier: 2.6.2
   vite-plugin-windicss: 1.8.4_vite@2.9.9
-  windicss: 3.5.2
+  windicss: 3.5.3
 
 packages:
 
@@ -456,7 +456,7 @@ packages:
     dependencies:
       debug: 4.3.4
       jiti: 1.13.0
-      windicss: 3.5.2
+      windicss: 3.5.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -470,7 +470,7 @@ packages:
       fast-glob: 3.2.11
       magic-string: 0.26.1
       micromatch: 4.0.5
-      windicss: 3.5.2
+      windicss: 3.5.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1433,7 +1433,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.5.1
       vite: 2.9.9
-      windicss: 3.5.2
+      windicss: 3.5.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1524,8 +1524,8 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /windicss/3.5.2:
-    resolution: {integrity: sha512-Vy06iCcKXjR9izEViwIcwdaZHouzNWmjqWmVt3lyfZVNm6hWz6ME6s+6pIwrHMbylbal9hW3M9LRbN9mzFhccQ==}
+  /windicss/3.5.3:
+    resolution: {integrity: sha512-Zsb38RscfZJa218GUREJyFu6EF1xD5DZ+b0XL1Kac3BGDtYwVmXJMmOahMK4mZSEy3gWO8aqUQMny0nbJFG6yA==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: true
