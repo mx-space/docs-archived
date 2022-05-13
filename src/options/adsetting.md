@@ -14,7 +14,7 @@ title: 后台设置详解
 
 ### 网站设置
 
-- 前端地址：即你之前前端反向代理的站点，例如 `https://www.timochan.cn`
+- 前端地址：即你之前前端反向代理的站点，例如 `https://www.test.cn`
 - API 地址：即你之前后端反向代理的站点加上`api/v2`，例如 `https://server.test.cn/api/v2 `
 - 后台地址：即你现在后台的地址，例如 `https://server.test.cn/qaqdmin`
 - Gateway 地址：即后端地址，例如 `https://server.test.cn`
