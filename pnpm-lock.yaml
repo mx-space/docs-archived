@@ -5,7 +5,7 @@ specifiers:
   '@types/node': 17.0.23
   '@types/prismjs': '*'
   '@vue/theme': 1.0.2
-  '@vueuse/core': 8.4.2
+  '@vueuse/core': 8.5.0
   '@vueuse/head': 0.7.6
   husky: 8.0.1
   lint-staged: 12.4.1
@@ -24,7 +24,7 @@ dependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
   '@vue/theme': 1.0.2_vue@3.2.33
-  '@vueuse/core': 8.4.2_vue@3.2.33
+  '@vueuse/core': 8.5.0_vue@3.2.33
   '@vueuse/head': 0.7.6_vue@3.2.33
   markdown-it: 13.0.0
   markdown-it-checkbox: 1.1.0
@@ -392,8 +392,8 @@ packages:
       vue-demi: 0.12.4_vue@3.2.33
     dev: false
 
-  /@vueuse/core/8.4.2_vue@3.2.33:
-    resolution: {integrity: sha512-dUVU96lii1ZdWoNJXauQNt+4QrHz1DKbuW+y6pDR2N10q7rGZJMDU7pQeMcC2XeosX7kMODfaBuqsF03NozzLg==}
+  /@vueuse/core/8.5.0_vue@3.2.33:
+    resolution: {integrity: sha512-VEJ6sGNsPlUp0o9BGda2YISvDZbhWJSOJu5zlp2TufRGVrLcYUKr31jyFEOj6RXzG3k/H4aCYeZyjpItfU8glw==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -403,8 +403,8 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@vueuse/metadata': 8.4.2
-      '@vueuse/shared': 8.4.2_vue@3.2.33
+      '@vueuse/metadata': 8.5.0
+      '@vueuse/shared': 8.5.0_vue@3.2.33
       vue: 3.2.33
       vue-demi: 0.12.4_vue@3.2.33
     dev: false
@@ -417,8 +417,8 @@ packages:
       vue: 3.2.33
     dev: false
 
-  /@vueuse/metadata/8.4.2:
-    resolution: {integrity: sha512-2BIj++7P0/I5dfMsEe8q7Kw0HqVAjVcyNOd9+G22/ILUC9TVLTeYOuJ1kwa1Gpr+0LWKHc6GqHiLWNL33+exoQ==}
+  /@vueuse/metadata/8.5.0:
+    resolution: {integrity: sha512-WxsD+Cd+bn+HcjpY6Dl9FJ8ywTRTT9pTwk3bCQpzEhXVYAyNczKDSahk50fCfIJKeWHhyI4B2+/ZEOxQAkUr0g==}
     dev: false
 
   /@vueuse/shared/7.7.1_vue@3.2.33:
@@ -436,8 +436,8 @@ packages:
       vue-demi: 0.12.4_vue@3.2.33
     dev: false
 
-  /@vueuse/shared/8.4.2_vue@3.2.33:
-    resolution: {integrity: sha512-hILXMEjL8YQhj1LHN/HZ49UThyfk8irTjhele2nW+L3N55ElFUBGB/f4w0rg8EW+/suhqv7kJJPTZzvHCqxlIw==}
+  /@vueuse/shared/8.5.0_vue@3.2.33:
+    resolution: {integrity: sha512-qKG+SZb44VvGD4dU5cQ63z4JE2Yk39hQUecR0a9sEdJA01cx+XrxAvFKJfPooxwoiqalAVw/ktWK6xbyc/jS3g==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
