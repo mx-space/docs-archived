@@ -10,7 +10,7 @@
 
       <p class="actions">
         <a class="get-started" href="/introduce/"> Get Started </a>
-        <a class="setup" href="/deploy/docker">Install</a>
+        <a class="setup" href="/deploy/">Install</a>
       </p>
     </section>
 
