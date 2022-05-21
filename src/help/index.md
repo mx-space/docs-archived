@@ -24,7 +24,7 @@ A：同上，同时，请善用文档的搜索功能。
 
 Q：后台地址是什么？
 
-A：`https://server.test.cn/qaqdmin`  OR `https://sever.test.cn/proxy/qaqdmin`
+A：`https://server.test.cn/qaqdmin`  OR  `https://sever.test.cn/proxy/qaqdmin`
 
 ## 构建类
 
@@ -62,6 +62,10 @@ pm2 start
 ```bash
 docker compose pull && docker compose up -d
 ```
+
+Q：`Mx-server` 这个容器一直在重启怎么办？
+
+A：请检查你的 `Mx-server` 的 `.env` 文件，过短的 `JWT_SECRET` 配置项将会导致不能启动 `Mx-server` ，为了 `Mx-server` 安全考虑，建议不要设置过短和过于简单的的 `JWT_SECRET`
 
 ## 升级类
 

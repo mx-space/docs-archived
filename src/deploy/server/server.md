@@ -115,7 +115,7 @@ wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/.env.example -O .env
 ```
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
 # SEE https://docs.docker.com/compose/environment-variables/#the-env-file
-JWT_SECRET=aaa                       #此处填写一个随意字符串，示例如：aaa
+JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串，示例如：hash 的 md5 值
 ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是kami的域名，如果允许多个域名访问，用英文逗号,分隔
 ```
 
