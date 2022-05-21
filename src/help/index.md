@@ -12,7 +12,7 @@ Q：我输入文档中示例的域名为啥不能用？
 
 A：文档中示例域名为 `server.test.cn`， `www.test.cn`，请换成你自己的域名，如果不知道怎么设置三级域名，请问百度。
 
-## 信息类
+## 信息
 
 Q：我的备案信息怎么修改？
 
@@ -26,7 +26,7 @@ Q：后台地址是什么？
 
 A：`https://server.test.cn/qaqdmin`  OR  `https://sever.test.cn/proxy/qaqdmin`
 
-## 构建类
+## 构建
 
 Q：安装依赖的时候，返回 404 错误，怎么办？
 
@@ -42,11 +42,11 @@ nrm use yarn
 npm install -g nrm
 ```
 
-## 设置类
+## 设置
 
 NULL
 
-## 重启类
+## 重启
 
 Q：我的服务器重启后，网站进去不了？怎么办？
 
@@ -65,13 +65,13 @@ docker compose pull && docker compose up -d
 
 Q：`Mx-server` 这个容器一直在重启怎么办？
 
-A：请检查你的 `Mx-server` 的 `.env` 文件，过短的 `JWT_SECRET` 配置项将会导致不能启动 `Mx-server` ，为了 `Mx-server` 安全考虑，建议不要设置过短和过于简单的的 `JWT_SECRET`
+A：请检查你的 `Mx-server` 的 `.env` 文件，过短的 `JWT_SECRET` 配置项将会导致不能启动 `Mx-server` ，为了 `Mx-server` 安全考虑，建议不要设置过短和过于简单的的 `JWT_SECRET` 
 
-## 升级类
+## 升级
 
 Q：如何升级 server(后端) / kami(前端)？
 
-A：如果你对 kami 的内容没有进行魔改，我们可以强制同步（不适用于大版本更新）
+A：如果你对 `kami` 的内容没有进行魔改，我们可以强制同步（不适用于大版本更新）
 
 ```bash
 git pull origin master
@@ -80,7 +80,7 @@ pnpm build
 npm run prod:pm2
 ```
 
-如果 `Kami` 有大版本更新，请重新拉取仓库，不然可能会出现奇奇怪怪的错误。
+如果 `Kami` 有大版本更新，请重新拉取仓库，不然可能会出现意料之外的 `BUG`。
 
 如果 `server` 是 `Docker` 部署的，走一遍
 
@@ -88,7 +88,7 @@ npm run prod:pm2
 docker compose pull && docker compose up -d
 ```
 
-Q：Mx-server（后端）升级后评论丢失
+Q：`Mx-server`（后端）升级后评论丢失
 
 A：非常不建议非渐进式升级（例如从 `v3.24.3` → `v3.26.6`），这种升级方式可能会出现奇奇怪怪的 `BUG` ，`Mix-space` 的开发工作仍处于相当活跃的状态，建议跟进最新版本。
 
