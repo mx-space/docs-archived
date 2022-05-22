@@ -25,7 +25,7 @@ const themeConfig = async () => {
 const sidebar = [
   { text: '介绍', items: introduceBar },
   { text: '实验性特征', items: experimentBar },
-  { text: '部署', items: deploySideBar},
+  { text: '部署', items: deploySideBar },
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
   { text: '开发', items: devBar },
@@ -41,7 +41,15 @@ const config: UserConfig = {
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-
+    [
+      'script',
+      {
+        src: 'https://analyze.innei.ren/umami.js',
+        'data-website-id': '95c14b03-a569-4e9f-b1b3-d411bf8afaf0',
+        async: 'true',
+        defer: 'true',
+      },
+    ],
     ['meta', { property: 'og:title', content: 'Mix Space' }],
     [
       'meta',
