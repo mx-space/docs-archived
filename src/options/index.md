@@ -171,7 +171,7 @@ function:
       - 563534789
       - 1447327083
       - 1450252250
-  # 分析，Google OR Baidu
+  # 分析，Google OR Baidu OR umami
   analyze:
     enable: true
     ga: ""
@@ -442,7 +442,7 @@ interface Social {
 - Type: `Navigation[]`
 - Default:
 
-```ts
+```typescript
 [
   {
     name: "关于",
@@ -474,7 +474,7 @@ interface Social {
 ];
 ```
 
-```ts
+```typescript
 interface Navigation {
   newtab?: boolean;
   name: string;
@@ -536,9 +536,17 @@ Google Analyze ID。
 ### function.analyze.umami
 
 - id : `string` 
-- Default : ``
 - url: `string`
-- Default :  `` 
+
+example(yaml)
+```yaml
+  analyze:
+    enable: true
+    #启用 umami
+    umami:
+      id: 9ea59d68-f36b-4679xxxxxx
+      url: https://analyze.xxxxx
+```
 
 id 和 url 分别对应 umami 给你的 id 和 umami 的 url，如果想知道怎么部署，具体可以看 [这里](https://www.timochan.cn/posts/jc/deploy_umami_for_analyze)
 
