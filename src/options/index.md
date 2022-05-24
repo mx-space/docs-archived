@@ -519,7 +519,7 @@ interface Navigation {
 - Type: `boolean`
 - Default: `false`
 
-开启 Google Analyze。
+开启  Analyze。
 
 ### function.analyze.ga
 
@@ -527,6 +527,20 @@ interface Navigation {
 - Default: ``
 
 Google Analyze ID。
+
+### function.analyze.baidu
+
+- Type: `string`
+- Default: ``
+
+### function.analyze.umami
+
+- id : `string` 
+- Default : ``
+- url: `string`
+- Default :  `` 
+
+id 和 url 分别对应 umami 给你的 id 和 umami 的 url，如果想知道怎么部署，具体可以看 [这里](https://www.timochan.cn/posts/jc/deploy_umami_for_analyze)
 
 ### function.donate.enable
 
