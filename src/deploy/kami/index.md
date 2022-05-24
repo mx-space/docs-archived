@@ -12,8 +12,8 @@
 cd
 cd mx-space
 git clone https://github.com/mx-space/kami.git
-# 网络不好的情况，请使用下面的命令。注：该镜像点同步较慢，且无法拉取 Git LFS 文件。
-git clone https://gitee.com/a1435241/kami.git
+# 网络不好的情况，请使用下面的命令。
+git clone https://hub.fastgit.xyz/mx-space/kami.git
 ```
 
 更换分支到最后一个稳定版本
