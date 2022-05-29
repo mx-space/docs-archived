@@ -13,6 +13,9 @@ export default Object.assign({}, VPTheme, {
     watch(
       () => router.route.data.relativePath,
       (path) => {
+        if (import.meta.env.DEV) {
+          return
+        }
         ;(window as any).umami.trackView(path)
         ;(window as any).umami.trackEvent(router.route.data.title, 'view')
       },
