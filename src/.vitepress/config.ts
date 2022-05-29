@@ -112,7 +112,7 @@ const config: UserConfig = {
     footer: {
       license: {
         text: 'AGPLv3 License',
-        link: 'https://github.com/mx-space/mx-server/blob/master/LICENSE',
+        link: 'https://github.com/mx-space/core/blob/master/LICENSE',
       },
       copyright: `Copyright © 2020-${new Date().getFullYear()} Innei`,
     },

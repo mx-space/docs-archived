@@ -1,7 +1,7 @@
 # 部署 Kami
 
 ::: tip
-本文默认您已安装 服务端，若未安装请移步至[Server 安装](/deploy/server/server.md)，即本节内容从[Server 安装](/deploy/server/server.md)继承，所需要的前置内容已经在该节阐明！
+本文默认您已安装 服务端，若未安装请移步至[Core 安装](/deploy/core/core.md)，即本节内容从[Core 安装](/deploy/core/core.md)继承，所需要的前置内容已经在该节阐明！
 :::
 
 ## 开始！

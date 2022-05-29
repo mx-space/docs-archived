@@ -25,7 +25,7 @@ export const optionsBar = [
 ]
 
 export const deployServerBar = [
-  { text: 'Server 部署', link: '/deploy/server/server' },
+  { text: 'Core 部署', link: '/deploy/core/core' },
 ]
 
 export const deployKamiBar = [
@@ -38,7 +38,7 @@ export const deployYunBar = [
 
 export const deploySideBar = [
   { text: 'Docker 一键部署', link: '/deploy/' },
-  { text: '部署 Server', link: '/deploy/server/server' },
+  { text: '部署 Core', link: '/deploy/core/core' },
   { text: '部署 Kami', link: '/deploy/kami/' },
   { text: '部署 Yun (WIP)', link: '/deploy/yun/' },
 ]

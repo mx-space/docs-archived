@@ -1,4 +1,4 @@
-# Server(Mx-server) 部署
+# Mix Space Core 部署
 
 ::: tip
 推荐使用 Docker Compose 部署整个环境。[请点这里](/deploy/)
@@ -10,7 +10,7 @@
 
 本文档示例域名：
 
-`Mx-Server` : `server.test.cn`
+`Mix Space Core` : `server.test.cn`
 
 `kami` : `www.test.cn`
 
@@ -92,7 +92,7 @@ docker compose version
 
 
 
-## 安装 Mx-Server
+## 安装 Core
 
 ### 准备
 
@@ -130,7 +130,7 @@ sudo docker compose up -d
 
 ## 反向代理
 
-### Mx-Server
+### Mix Space Core
 
 进入宝塔面板—网站，设置后端网站（server.test.cn)
 
