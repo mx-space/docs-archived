@@ -48,7 +48,7 @@
   "devDependencies": {
     "@types/node": "17.0.23",
     "husky": "8.0.1",
-    "lint-staged": "12.4.1",
+    "lint-staged": "12.4.3",
     "prettier": "2.6.2",
     "vite-plugin-windicss": "1.8.4",
     "windicss": "3.5.4"
