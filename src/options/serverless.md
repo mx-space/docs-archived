@@ -23,7 +23,7 @@ Mix Space 的云函数实现依赖于动态的路由处理模块，通过云函�
 进入后台，移动到 `其他 · 终端`
 
 如果没有开启，请自行到 设定—系统—终端设定 里面开启终端；出于安全考虑，请使用完关闭终端功能开关。
-![](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/admin-webshell.png)
+![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/admin-webshell.png)
 进入终端，执行命令
 
 ```bash
@@ -160,7 +160,7 @@ async function handler() {
 
 示例如下：
 
-![](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/api-return.png)
+![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/api-return.png)
 
 ### song 函数
 
