@@ -105,9 +105,9 @@ mkdir -p mx-space/server
 
 cd mx-space/server
 
-wget https://cdn.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
+wget https://fastly.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
 
-wget https://cdn.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
+wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 ```
 
 用宝塔或者 `vim` 编辑这个 `.env` 文件，文件示例如下

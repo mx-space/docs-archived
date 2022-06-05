@@ -117,7 +117,7 @@ zx ./build.mjs
 ## 仅部署服务
 
 ```bash
-wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
+wget https://fastly.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
 docker compose up -d
 ```
 

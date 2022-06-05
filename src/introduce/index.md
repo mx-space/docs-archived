@@ -36,43 +36,43 @@ title: 介绍
 
 - 仪表盘
 
-  可以总览各类数据，一言和今日诗句来自第三方服务。![仪表盘](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/V0BRMI.png)
+  可以总览各类数据，一言和今日诗句来自第三方服务。![仪表盘](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/V0BRMI.png)
 
 - 文章
 
-  可以发布，修改，删除，标记文章。![文章](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/Vd1kAW.png)
+  可以发布，修改，删除，标记文章。![文章](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/Vd1kAW.png)
 
 - 日记
 
-  可以发布，修改，删除，标记日记，同时为了方便回忆，兼备定位功能（需要配合高德地图 API）。![日记](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/mAwG4T.png)
+  可以发布，修改，删除，标记日记，同时为了方便回忆，兼备定位功能（需要配合高德地图 API）。![日记](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/mAwG4T.png)
 
 - 编辑器
 
-  现支持`monaco` ， `codemirror` ，`vditor` ， `plain` 这四种编辑器，其中 `vditor` 这个编辑器获得的体验不亚于 `Typora` 。![编辑页](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/ROaydk.png)
+  现支持`monaco` ， `codemirror` ，`vditor` ， `plain` 这四种编辑器，其中 `vditor` 这个编辑器获得的体验不亚于 `Typora` 。![编辑页](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/ROaydk.png)
 
 - 评论
 
-  评论有三种类型，没读过的、读过的、被判断为垃圾评论被过滤的。![评论管理](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/oNhuO0.png)
+  评论有三种类型，没读过的、读过的、被判断为垃圾评论被过滤的。![评论管理](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/oNhuO0.png)
 
 - 说说
 
-  说说可以用来记录一句话，或者直接保存发布一条[一言](https://hitokoto.cn/)。![说说编辑](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/gMs43j.png)
+  说说可以用来记录一句话，或者直接保存发布一条[一言](https://hitokoto.cn/)。![说说编辑](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/gMs43j.png)
 
 - 友链
 
-  在这里可以直接管理友链，新增的未审核的友链会通知到主人，主人通过之后也会邮件通知到对方。![友情链接](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/server-links.png)
+  在这里可以直接管理友链，新增的未审核的友链会通知到主人，主人通过之后也会邮件通知到对方。![友情链接](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/server-links.png)
 
 - 数据大盘
 
-  您可以看到今日访问的`PV` 、`UA` ，及近期访问相对频繁的`URL` 。![数据大盘](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/2ke5KU.png)
+  您可以看到今日访问的`PV` 、`UA` ，及近期访问相对频繁的`URL` 。![数据大盘](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/2ke5KU.png)
 
 - 备份
 
-  在这里可以管理备份，包括下载和直接回滚，或者上传数据文件进行恢复。（需要 mongodb-tools）![备份](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/cTOSl.png)
+  在这里可以管理备份，包括下载和直接回滚，或者上传数据文件进行恢复。（需要 mongodb-tools）![备份](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/cTOSl.png)
 
 - Markdown 导入导出
 
-  该功能可以将所有文章导出为 Markdown YAML 兼容的格式，或者导入 Markdown YAML 兼容的文件。（Hexo 兼容的 Markdown）![导出页](https://cdn.jsdelivr.net/gh/mx-space/docs-images@latest/images/server-md.png)
+  该功能可以将所有文章导出为 Markdown YAML 兼容的格式，或者导入 Markdown YAML 兼容的文件。（Hexo 兼容的 Markdown）![导出页](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/server-md.png)
 
 - 搜索功能，基于 Algolia Search，在前端唤出搜索框 `Command` +`K` 或者 `/` 。注意：Windows 下为 `Ctrl` + ` K` 或者 `/`
 
