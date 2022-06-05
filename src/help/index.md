@@ -50,7 +50,7 @@ NULL
 
 Q：我的服务器重启后，网站进去不了？怎么办？
 
-A：请到 server / kami 的文件夹重新拉起后端/前端，以下两个命令任选其一。
+A：请到 Core / kami 所在的文件夹重新拉起后端/前端，以下两个命令任选其一。
 
 ```bash
 pm2 start
@@ -65,11 +65,11 @@ docker compose pull && docker compose up -d
 
 Q：`Mx-server` 这个容器一直在重启怎么办？
 
-A：请检查你的 `Mx-server` 的 `.env` 文件，过短的 `JWT_SECRET` 配置项将会导致不能启动 `Mx-server` ，为了 `Mx-server` 安全考虑，建议不要设置过短和过于简单的的 `JWT_SECRET` 
+A：请检查你的 `.env` 文件，过短的 `JWT_SECRET` 配置项将会导致不能启动 `Mx-server` ，为了 `Mx-server` 安全考虑，建议不要设置过短和过于简单的的 `JWT_SECRET` 
 
 ## 升级
 
-Q：如何升级 server(后端) / kami(前端)？
+Q：如何升级 Core(后端) / kami(前端)？
 
 A：如果你对 `kami` 的内容没有进行魔改，我们可以强制同步（不适用于大版本更新）
 
@@ -82,15 +82,15 @@ npm run prod:pm2
 
 如果 `Kami` 有大版本更新，请重新拉取仓库，不然可能会出现意料之外的 `BUG`。
 
-如果 `server` 是 `Docker` 部署的，走一遍
+如果 `Core` 是 `Docker` 部署的，走一遍
 
 ```bash
 docker compose pull && docker compose up -d
 ```
 
-Q：`Mx-server`（后端）升级后评论丢失
+Q：`Core`（后端）升级后评论丢失
 
-A：非常不建议非渐进式升级（例如从 `v3.24.3` → `v3.26.6`），这种升级方式可能会出现奇奇怪怪的 `BUG` ，`Mix-space` 的开发工作仍处于相当活跃的状态，建议跟进最新版本。
+A：非常不建议非渐进式升级（例如从 `v3.24.3` → `v3.26.6`），这种升级方式可能会出现奇奇怪怪的 `BUG` ，`Mix-Space` 的开发工作仍处于相当活跃的状态，建议跟进最新版本。
 
 Q：跟进新版本有什么好处
 

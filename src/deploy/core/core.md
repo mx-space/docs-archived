@@ -72,8 +72,8 @@ sudo curl -SSL https://get.daocloud.io/docker | sh
 
 ```bash
 # 下载 docker-compose
-wget https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64
-#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64
+wget https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64
+#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64
 # 新建文件夹（非必须），可能需要
 sudo mkdir -p /usr/local/lib/docker/cli-plugins/
 # 复制到指定位置
@@ -105,9 +105,9 @@ mkdir -p mx-space/server
 
 cd mx-space/server
 
-wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
+wget https://cdn.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
 
-wget https://cdn.jsdelivr.net/gh/mx-space/mx-server@master/.env.example -O .env
+wget https://cdn.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 ```
 
 用宝塔或者 `vim` 编辑这个 `.env` 文件，文件示例如下
