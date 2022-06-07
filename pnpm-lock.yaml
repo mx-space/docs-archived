@@ -14,7 +14,7 @@ specifiers:
   prettier: 2.6.2
   prismjs: '*'
   shiki: 0.10.1
-  vite: 2.9.9
+  vite: 2.9.10
   vite-plugin-windicss: 1.8.4
   vitepress: 0.22.4
   vue: 3.2.37
@@ -30,7 +30,7 @@ dependencies:
   markdown-it-checkbox: 1.1.0
   prismjs: 1.27.0
   shiki: 0.10.1
-  vite: 2.9.9
+  vite: 2.9.10
   vitepress: 0.22.4
   vue: 3.2.37
 
@@ -39,7 +39,7 @@ devDependencies:
   husky: 8.0.1
   lint-staged: 13.0.0
   prettier: 2.6.2
-  vite-plugin-windicss: 1.8.4_vite@2.9.9
+  vite-plugin-windicss: 1.8.4_vite@2.9.10
   windicss: 3.5.4
 
 packages:
@@ -264,14 +264,14 @@ packages:
     resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
     dev: false
 
-  /@vitejs/plugin-vue/2.3.2_vite@2.9.9+vue@3.2.37:
+  /@vitejs/plugin-vue/2.3.2_vite@2.9.10+vue@3.2.37:
     resolution: {integrity: sha512-umyypfSHS4kQLdYAnJHhaASq7FRzNCdvcRoQ3uYGNk1/M4a+hXUd7ysN7BLhCrWH6uBokyCkFeUAaFDzSaaSrQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.9
+      vite: 2.9.10
       vue: 3.2.37
     dev: false
 
@@ -1390,7 +1390,7 @@ packages:
     resolution: {integrity: sha512-QvjkYpiD+dJJraRA8+dGAU4i7aBbb2s0S3jA45TFOvg2VgqvdCDd/3N6CqA8gluk1W91GLoXg5enMUx560QzuA==}
     dev: false
 
-  /vite-plugin-windicss/1.8.4_vite@2.9.9:
+  /vite-plugin-windicss/1.8.4_vite@2.9.10:
     resolution: {integrity: sha512-LSZAO8BZn3x406GRbYX5t5ONXXJVdqiQtN1qrznLA/Dy5/NzZVhfcrL6N1qEYYO7HsCDT4pLAjTzObvDnM9Y8A==}
     peerDependencies:
       vite: ^2.0.1
@@ -1398,14 +1398,14 @@ packages:
       '@windicss/plugin-utils': 1.8.4
       debug: 4.3.4
       kolorist: 1.5.1
-      vite: 2.9.9
+      vite: 2.9.10
       windicss: 3.5.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/2.9.9:
-    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
+  /vite/2.9.10:
+    resolution: {integrity: sha512-TwZRuSMYjpTurLqXspct+HZE7ONiW9d+wSWgvADGxhDPPyoIcNywY+RX4ng+QpK30DCa1l/oZgi2PLZDibhzbQ==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -1434,9 +1434,9 @@ packages:
     dependencies:
       '@docsearch/css': 3.0.0
       '@docsearch/js': 3.0.0
-      '@vitejs/plugin-vue': 2.3.2_vite@2.9.9+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.2_vite@2.9.10+vue@3.2.37
       prismjs: 1.27.0
-      vite: 2.9.9
+      vite: 2.9.10
       vue: 3.2.37
     transitivePeerDependencies:
       - '@algolia/client-search'
