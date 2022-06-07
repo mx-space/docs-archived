@@ -222,3 +222,8 @@ location /
     error_log  /www/wwwlogs/server.test.cn.log;
 }
 ```
+
+## 初始化
+
+访问 `https://server.test.cn/proxy/qaqdmin` 来进行初始化，否则前端将会出现异常报错。
+

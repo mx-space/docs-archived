@@ -155,3 +155,10 @@ location ^~ /
 ```
 
 接下来访问 https://www.test.cn/ ，看看运行是否正常，若有不正常请自行参与文档解决，或者提 [issue](https://github.com/mx-space/docs/issues)
+
+
+## PS
+
+可能需要的章节 [Kami 设置](/options/)
+
+可能需要的章节 [云函数配置](/options/serverless.md)
