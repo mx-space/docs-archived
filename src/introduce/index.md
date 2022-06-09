@@ -48,7 +48,7 @@ title: 介绍
 
 - 编辑器
 
-  现支持`monaco` ， `codemirror` ，`vditor` ， `plain` 这四种编辑器，其中 `vditor` 这个编辑器获得的体验不亚于 `Typora` 。![编辑页](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/ROaydk.png)
+  现支持`monaco` ， `codemirror`  ， `plain` 三种编辑器。![编辑页](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/ROaydk.png)
 
 - 评论
 
