@@ -7,7 +7,7 @@
     <meta name="description" content="An alternative personal space.">
     <link rel="stylesheet" href="/assets/style.960e0ad2.css">
     <link rel="modulepreload" href="/assets/app.89c100db.js">
-    <link rel="modulepreload" href="/assets/deploy_core_core.md.398f3475.lean.js">
+    <link rel="modulepreload" href="/assets/deploy_core_core.md.62ab62c3.lean.js">
     <link rel="prefetch" href="/assets/chunks/VPAlgoliaSearchBox.a464f21e.js">
     <link rel="icon" href="/logo.svg">
   <link rel="preload" href="/assets/inter-latin.7b37fe23.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -36,32 +36,56 @@
 <span class="line"><span style="color:#A0ADA0;"># 如果安装比较慢，可以使用以下命令切换镜像源</span></span>
 <span class="line"><span style="color:#393A34;">npm config </span><span style="color:#B58451;">set</span><span style="color:#393A34;"> registry http://mirrors.cloud.tencent.com/npm/</span></span>
 <span class="line"></span></code></pre></div><h3 id="新建网站并配置-ssl" tabindex="-1">新建网站并配置 SSL <a class="header-anchor" href="#新建网站并配置-ssl" aria-hidden="true">#</a></h3><p>在宝塔面板上新建以上网站，部署好 SSL 证书并开启强制 HTTPS</p><div class="danger custom-block"><p class="custom-block-title">WARNING</p><p>🧨 警告：前端要求强制 HTTPS，未配置 SSL 将无法正常访问。</p></div><h3 id="安装-docker" tabindex="-1">安装 docker <a class="header-anchor" href="#安装-docker" aria-hidden="true">#</a></h3><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#DBD7CA;">sudo curl -fsSL https://get.docker.com </span><span style="color:#CB7676;">|</span><span style="color:#DBD7CA;"> bash -s docker</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#758575;"># 如果安装比较慢，推荐使用以下命令</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo curl -fsSL https://get.docker.com </span><span style="color:#CB7676;">|</span><span style="color:#DBD7CA;"> bash -s docker --mirror Aliyun</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#758575;"># 或者使用国内 daocloud 一键安装命令</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo curl -SSL https://get.daocloud.io/docker </span><span style="color:#CB7676;">|</span><span style="color:#DBD7CA;"> sh</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#393A34;">sudo curl -fsSL https://get.docker.com </span><span style="color:#AB5959;">|</span><span style="color:#393A34;"> bash -s docker</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;"># 如果安装比较慢，推荐使用以下命令</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo curl -fsSL https://get.docker.com </span><span style="color:#AB5959;">|</span><span style="color:#393A34;"> bash -s docker --mirror Aliyun</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;"># 或者使用国内 daocloud 一键安装命令</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo curl -SSL https://get.daocloud.io/docker </span><span style="color:#AB5959;">|</span><span style="color:#393A34;"> sh</span></span>
 <span class="line"></span></code></pre></div><h3 id="安装-docker-compose" tabindex="-1">安装 docker-compose <a class="header-anchor" href="#安装-docker-compose" aria-hidden="true">#</a></h3><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#758575;"># 下载 docker-compose</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">wget https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#758575;">#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#758575;"># 新建文件夹（非必须），可能需要</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo mkdir -p /usr/local/lib/docker/cli-plugins/</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#758575;"># 复制到指定位置</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo cp ./docker-compose-linux-x86_64  /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#758575;"># 赋予执行权限</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#A0ADA0;"># 下载 docker-compose</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">wget https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;">#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;"># 新建文件夹（非必须），可能需要</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo mkdir -p /usr/local/lib/docker/cli-plugins/</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;"># 复制到指定位置</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo cp ./docker-compose-linux-x86_64  /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;"># 赋予执行权限</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
 <span class="line"></span></code></pre></div><p>检查是否安装完成</p><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#DBD7CA;">docker compose version</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#393A34;">docker compose version</span></span>
@@ -92,12 +116,18 @@
 <span class="line"><span style="color:#393a34;">JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串，示例如：hash 的 md5 值</span></span>
 <span class="line"><span style="color:#393a34;">ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是kami的域名，如果允许多个域名访问，用英文逗号,分隔</span></span>
 <span class="line"><span style="color:#393a34;"></span></span></code></pre></div><h3 id="生成容器" tabindex="-1">生成容器 <a class="header-anchor" href="#生成容器" aria-hidden="true">#</a></h3><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#758575;"># 拉取最新镜像</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo docker compose pull</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#758575;"># 启动容器</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo docker compose up -d</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#A0ADA0;"># 拉取最新镜像</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo docker compose pull</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;"># 启动容器</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo docker compose up -d</span></span>
 <span class="line"></span></code></pre></div><h2 id="反向代理" tabindex="-1">反向代理 <a class="header-anchor" href="#反向代理" aria-hidden="true">#</a></h2><h3 id="mix-space-core" tabindex="-1">Mix Space Core <a class="header-anchor" href="#mix-space-core" aria-hidden="true">#</a></h3><p>进入宝塔面板—网站，设置后端网站（<a href="http://server.test.cn" target="_blank" rel="noopener noreferrer">server.test.cn</a>)</p><p>我们点击左侧的 <code>配置文件</code>（网站设置）</p><p>在 <code>access_log</code> 字段上面，添加如下配置:</p><div class="language-nginx"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#758575;">#PROXY-START/</span></span>
 <span class="line"><span style="color:#CB7676;">location</span><span style="color:#DBD7CA;"> </span><span style="color:#A1B567;">/socket.io </span><span style="color:#DBD7CA;">{</span></span>
@@ -250,7 +280,7 @@
 <span class="line"><span style="color:#393A34;">   </span><span style="color:#1C6B48;"> error_log </span><span style="color:#393A34;"> /www/wwwlogs/server.test.cn.log</span><span style="color:#8E8F8B;">;</span></span>
 <span class="line"><span style="color:#393A34;">}</span></span>
 <span class="line"></span></code></pre></div><h2 id="初始化" tabindex="-1">初始化 <a class="header-anchor" href="#初始化" aria-hidden="true">#</a></h2><p>访问 <code>https://server.test.cn/proxy/qaqdmin</code> 来进行初始化，否则前端将会出现异常报错。</p></div></div><p class="edit-link" data-v-2133ebc1><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" class="vt-icon" data-v-2133ebc1><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg><a class="vt-link link" href="https://github.com/mx-space/docs/edit/main/src/deploy/core/core.md" target="_blank" rel="noopener noreferrer" data-v-2133ebc1><!--[-->编辑此页<!--]--><!----></a></p></main><!--[--><!--]--><footer class="VPContentDocFooter" data-v-2133ebc1 data-v-bb45092a><a class="prev-link" href="/deploy/" data-v-bb45092a><span class="desc" data-v-bb45092a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-bb45092a><path d="M15,19c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4l6-6c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L10.4,12l5.3,5.3c0.4,0.4,0.4,1,0,1.4C15.5,18.9,15.3,19,15,19z"></path></svg> Previous</span><span class="title" data-v-bb45092a>Docker 一键部署</span></a><a class="next-link" href="/deploy/kami/" data-v-bb45092a><span class="desc" data-v-bb45092a>Next <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-bb45092a><path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path></svg></span><span class="title" data-v-bb45092a>部署 Kami</span></a></footer></div></div></div></div><div class="visually-hidden" aria-live="polite" data-v-3d128358>Mix Space Core 部署 has loaded</div></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_core_core.md\":\"398f3475\",\"deploy_index.md\":\"7d537f78\",\"deploy_kami_index.md\":\"e1a028d9\",\"deploy_yun_index.md\":\"4f6943a4\",\"dev_frontend.md\":\"3a5d0a50\",\"dev_index.md\":\"63ac3e3d\",\"dev_server.md\":\"c640281b\",\"feature_serverless-functions.md\":\"554ff17f\",\"feature_text-macors.md\":\"8fe9e22f\",\"help_index.md\":\"ab8b3f2d\",\"index.md\":\"a2acfb53\",\"introduce_index.md\":\"fce579db\",\"options_adsetting.md\":\"010cd52e\",\"options_index.md\":\"e3a7f228\",\"options_serverless.md\":\"582d4794\"}")</script>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_core_core.md\":\"62ab62c3\",\"deploy_index.md\":\"23a72631\",\"deploy_kami_index.md\":\"95dc5f6a\",\"deploy_yun_index.md\":\"4f6943a4\",\"dev_frontend.md\":\"3a5d0a50\",\"dev_index.md\":\"63ac3e3d\",\"dev_server.md\":\"c640281b\",\"feature_serverless-functions.md\":\"554ff17f\",\"feature_text-macors.md\":\"8fe9e22f\",\"help_index.md\":\"ab8b3f2d\",\"index.md\":\"a2acfb53\",\"introduce_index.md\":\"fce579db\",\"options_adsetting.md\":\"010cd52e\",\"options_index.md\":\"e3a7f228\",\"options_serverless.md\":\"582d4794\"}")</script>
     <script type="module" async src="/assets/app.89c100db.js"></script>
     
   </body>
