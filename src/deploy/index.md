@@ -112,7 +112,7 @@ zx ./build.mjs
 你的邮箱为: (此步留空，则不部署 Caddy 服务):
 ```
 
-待流程执行完毕，进入 127.0.0.1:2333/proxy/qaqdmin。
+待流程执行完毕，进入 `http://127.0.0.1:2333/proxy/qaqdmin`。
 
 ## 仅部署服务
 
@@ -121,4 +121,4 @@ wget https://fastly.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
 docker compose up -d
 ```
 
-待流程执行完毕，进入 127.0.0.1:2333/proxy/qaqdmin。
+待流程执行完毕，进入 `http://127.0.0.1:2333/proxy/qaqdmin`。

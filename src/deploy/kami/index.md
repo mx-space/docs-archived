@@ -11,9 +11,12 @@
 ```bash
 cd
 cd mx-space
-git clone https://github.com/mx-space/kami.git
+
+git clone https://github.com/mx-space/kami.git --depth=1
+
 # 网络不好的情况，请使用下面的命令。
-git clone https://hub.fastgit.xyz/mx-space/kami.git
+
+git clone https://hub.fastgit.xyz/mx-space/kami.git --depth=1
 ```
 
 更换分支到最后一个稳定版本
@@ -26,6 +29,7 @@ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 
 ```bash
 git lfs fetch --all
+
 git lfs pull
 ```
 
