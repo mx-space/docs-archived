@@ -50,10 +50,11 @@ NULL
 
 Q：我的服务器重启后，网站进去不了？怎么办？
 
-A：请到 Core / kami 所在的文件夹重新拉起后端/前端，以下两个命令任选其一。
+A：kami 所在的文件夹重新拉起后端/前端，以下两个命令任选其一。
 
 ```bash
 pm2 start
+
 # npm run prod:pm2
 ```
 
@@ -71,16 +72,19 @@ A：请检查你的 `.env` 文件，过短的 `JWT_SECRET` 配置项将会导致
 
 Q：如何升级 Core(后端) / kami(前端)？
 
-A：如果你对 `kami` 的内容没有进行魔改，我们可以强制同步（不适用于大版本更新）
+A：如果你对 `kami` 的内容没有进行魔改，我们可以同步远程仓库
 
 ```bash
 git pull origin master
+
 pnpm i
+
 pnpm build
+
 npm run prod:pm2
 ```
 
-如果 `Kami` 有大版本更新，请重新拉取仓库，不然可能会出现意料之外的 `BUG`。
+该方法适合于对 `Kami` 源代码没有做改动的懒人用户
 
 如果 `Core` 是 `Docker` 部署的，走一遍
 

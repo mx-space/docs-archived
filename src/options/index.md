@@ -182,7 +182,7 @@ function:
     link: https://afdian.net/@Innei
   # 是否禁用调试工具（访客）
   ban_devtool:
-    enable: true
+    enable: false
 ```
 
 ## 更为详细的配置项（JSON）

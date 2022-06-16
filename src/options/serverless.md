@@ -16,7 +16,7 @@ Mix Space 的云函数实现依赖于动态的路由处理模块，通过云函�
 
 进入后台，移动到 `其他 · 配置与云函数` ，点击蓝色的  `↓`  按钮  ， 选择 kami ，等待即可。如果失败了，请参考下面的手动安装。
 
-## 手动安装（备用 | 自动安装失败可选）
+## 手动安装(备用 | 自动安装失败可选)
 
 ### 安装库
 
@@ -28,13 +28,18 @@ Mix Space 的云函数实现依赖于动态的路由处理模块，通过云函�
 
 ```bash
 # 检查npm是否存在
+
 npm -v
+
 # 如果缺失npm 请先使用容器内已存在的管理器安装 npm，例如 apk，yarn。
+
 apk add npm
-# （可选） yarn global add npm
+
+#(可选)  yarn global add npm
+
 # 安装必须库
- cd /app
- npm install @mx-space/extra
+
+npm install @mx-space/extra
 ```
 
 退出后台的终端（webshell），并关闭该功能开关（建议）。
