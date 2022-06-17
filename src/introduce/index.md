@@ -40,7 +40,7 @@ title: 介绍
 
 - 文章
 
-  可以发布，修改，删除，标记文章。![文章](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/Vd1kAW.png)
+  可以发布，修改，删除，标记文章，还可以对你自己喜欢的文章进行置顶！![文章](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/Vd1kAW.png) 
 
 - 日记
 
@@ -52,7 +52,7 @@ title: 介绍
 
 - 评论
 
-  评论有三种类型，没读过的、读过的、被判断为垃圾评论被过滤的。![评论管理](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/oNhuO0.png)
+  评论有三种类型，没读过的、读过的、被判断为垃圾评论被过滤的。在 `Kami` 主站，登陆后可以对评论进行置顶！ ![评论管理](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/oNhuO0.png)
 
 - 说说
 
