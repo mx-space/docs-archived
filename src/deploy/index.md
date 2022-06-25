@@ -11,10 +11,6 @@
 
 其他安装方法：[从零开始·Core 部署](/deploy/core/core.md)，如果遇到自己不能解决的问题，参阅文档无果后，请提 [issue](https://github.com/mx-space/docs/issues)！
 
-## 视频教程
-
-<iframe src="//player.bilibili.com/player.html?aid=897657356&amp;cid=753224871&amp;page=1" scrolling="no" allowfullscreen="true" style="width: 100%; height: 35em; height: 60vmin"> </iframe>
-
 
 ## 准备
 

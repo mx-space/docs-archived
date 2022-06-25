@@ -4,6 +4,11 @@
 推荐使用 Docker Compose 部署整个环境。[请点这里](/deploy/)
 :::
 
+## 视频教程
+
+<iframe src="//player.bilibili.com/player.html?aid=897657356&amp;cid=753224871&amp;page=1" scrolling="no" allowfullscreen="true" style="width: 100%; height: 35em; height: 60vmin"> </iframe>
+
+
 ## 域名解析
 
 国内服务器请完成备案后再进行。
