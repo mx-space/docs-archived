@@ -8,7 +8,7 @@ specifiers:
   '@vueuse/core': 8.7.3
   '@vueuse/head': 0.7.6
   husky: 8.0.1
-  lint-staged: 13.0.1
+  lint-staged: 13.0.3
   markdown-it: '*'
   markdown-it-checkbox: 1.1.0
   prettier: 2.7.1
@@ -37,7 +37,7 @@ dependencies:
 devDependencies:
   '@types/node': 17.0.23
   husky: 8.0.1
-  lint-staged: 13.0.1
+  lint-staged: 13.0.3
   prettier: 2.7.1
   vite-plugin-windicss: 1.8.4_vite@2.9.12
   windicss: 3.5.4
@@ -980,8 +980,8 @@ packages:
       uc.micro: 1.0.6
     dev: false
 
-  /lint-staged/13.0.1:
-    resolution: {integrity: sha512-Ykaf4QTi0a02BF7cnq7JIPGOJxH4TkNMWhSlJdH9wOekd0X+gog47Jfh/0L31DqZe5AiydLGC7LkPqpaNm+Kvg==}
+  /lint-staged/13.0.3:
+    resolution: {integrity: sha512-9hmrwSCFroTSYLjflGI8Uk+GWAwMB4OlpU4bMJEAT5d/llQwtYKoim4bLOyLCuWFAhWEupE0vkIFqtw/WIsPug==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -1358,7 +1358,7 @@ packages:
     engines: {node: '>= 0.4'}
 
   /through/2.3.8:
-    resolution: {integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=}
+    resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
     dev: true
 
   /to-fast-properties/2.0.0:
