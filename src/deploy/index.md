@@ -29,8 +29,8 @@ sudo curl -SSL https://get.daocloud.io/docker | sh
 
 ```bash
 # 下载 docker-compose
-wget https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64
-#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64
+wget https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64
+#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64
 # 新建文件夹（非必须），可能需要
 sudo mkdir -p /usr/local/lib/docker/cli-plugins/
 # 复制到指定位置
@@ -52,7 +52,7 @@ docker compose version
 ```bash
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
 # 如果无法访问 Github raw 的话就执行下面这条命令
-# curl -L https://github.do/https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+# curl -L https://raw.fastgit.org/tj/n/master/bin/n -o n
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 # export N_NODE_MIRROR=https://npmmirror.com/mirrors/node  #如果官方源下载慢的话可以执行这条换国内源
