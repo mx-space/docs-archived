@@ -82,9 +82,9 @@ sudo curl -SSL https://get.daocloud.io/docker | sh
 ```bash
 # 下载 docker-compose
 
-wget https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64
+wget https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64
 
-#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64
+#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64
 
 # 新建文件夹（非必须），可能需要
 
@@ -197,7 +197,7 @@ location /
 #PROXY-END/
 ```
 
-保存即可。
+保存即可。或者也可以像视频一样在 网站设置-反向代理 处添加一个目标 URL 为 `http://127.0.0.1:2333` 的反代后再直接用上面的内容覆盖原来的反代配置文件。
 
 然后那么局部配置文件示例如下：
 
