@@ -537,6 +537,7 @@ Google Analyze ID。
 
 - id : `string` 
 - url: `string`
+- jsname: `string`
 
 example(yaml)
 ```yaml
@@ -546,9 +547,14 @@ example(yaml)
     umami:
       id: 9ea59d68-f36b-4679xxxxxx
       url: https://analyze.xxxxx
+      jsname: umami
 ```
 
-id 和 url 分别对应 umami 给你的 id 和 umami 的 url，如果想知道怎么部署，具体可以看 [这里](https://www.timochan.cn/posts/jc/deploy_umami_for_analyze)
+id 和 url 分别对应 Umami 给你的 id 和 Umami 的 url，jsname 对应你在 Umami 中设置 `TRACKER_SCRIPT_NAME` 这个变量的值（没有设的话则默认为 `umami`），如果想知道怎么部署 Umami，可以看 [这个教程](https://www.timochan.cn/posts/jc/deploy_umami_for_analyze)
+
+::: tip
+如果你有用 CloudFlare Worker 反代 Umami 的统计脚本的话，别忘了更改 url 和 jsname 为你在 CloudFlare 设置的值
+:::
 
 ### function.donate.enable
 
