@@ -35,14 +35,14 @@ npm -v
 
 apk add npm
 
-#(可选)  yarn global add npm
+#yarn global add npm
 
 # 安装必须库
 cd ~/.mx-space
 npm install @mx-space/extra
 ```
 
-退出后台的终端（webshell），并关闭该功能开关（建议）。
+退出后台的终端(webshell)，并关闭该功能开关(建议)。
 
 ### 功能
 
@@ -66,7 +66,7 @@ import extra from '@mx-space/extra'
 async function handler() {
   const { NeteaseMusic, NeteaseCloudMusicApi } = extra
 
-  const client = new NeteaseMusic(phone, password)
+  const client = new NeteaseMusic(phone, password / md5_password ) //此处md5_password 与 password 任选其一，同时与下面 const 定义的相对应即可
   await client.Login()
 
   const uid = await client.getAccount()
@@ -89,12 +89,13 @@ async function handler() {
   return responsePayload
 }
 /// CONFIGS ///
-const phone = '15922****'
-const password = 'wddw***s'
+const phone = '15922****'  //网易云登录手机号
+const password = 'wddw***s' // 登录密码 password 与 md5_password 任选其一
+const md5_password = '0800fc577294c34e0b28ad2839435945'   //登录密码的md5值(@mx-space/extra ^0.5.7 版本及以上 支持该选项)
 /// CONFIGS END ///
 ```
 
-注意：示例中的 `phone` 和 `password` 需要替换成自己的，其他的复制过去就行。
+注意：示例中的 `phone` 和 `password` 或 `md5_password`  需要替换成自己的，其他的复制过去就行。
 
 #### 追番
 
