@@ -38,7 +38,7 @@ apk add npm
 #(可选)  yarn global add npm
 
 # 安装必须库
-
+cd ~/.mx-space
 npm install @mx-space/extra
 ```
 
@@ -64,26 +64,34 @@ npm install @mx-space/extra
 import extra from '@mx-space/extra'
 
 async function handler() {
-  const { NeteaseMusic } = extra
+  const { NeteaseMusic, NeteaseCloudMusicApi } = extra
 
   const client = new NeteaseMusic(phone, password)
   await client.Login()
+
+  const uid = await client.getAccount()
 
   const weekdata = await client.getWeekData()
   const alldata = await client.getAllData()
   const playlist = await client.getFavorite()
 
+  const detail = await NeteaseCloudMusicApi.user_detail({
+    uid,
+  }).then((res) => (res.body.code === 200 ? res.body.profile : null))
+
   const responsePayload = {
     playlist,
     weekdata,
     alldata,
+    detail,
   }
 
   return responsePayload
 }
-
+/// CONFIGS ///
 const phone = '15922****'
 const password = 'wddw***s'
+/// CONFIGS END ///
 ```
 
 注意：示例中的 `phone` 和 `password` 需要替换成自己的，其他的复制过去就行。
