@@ -44,10 +44,11 @@ const config: UserConfig = {
     [
       'script',
       {
-        src: 'https://analyze.innei.ren/umami.js',
+        src: 'https://analyze.innei.ren/ramu.js',
         'data-website-id': '95c14b03-a569-4e9f-b1b3-d411bf8afaf0',
         async: 'true',
         defer: 'true',
+        'data-endpoint': 'ramu',
       },
     ],
     ['meta', { property: 'og:title', content: 'Mix Space' }],
