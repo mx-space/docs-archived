@@ -4,7 +4,7 @@ specifiers:
   '@types/markdown-it': '*'
   '@types/node': 17.0.23
   '@types/prismjs': '*'
-  '@vue/theme': 1.0.3
+  '@vue/theme': 1.0.4
   '@vueuse/core': 8.9.1
   '@vueuse/head': 0.7.6
   husky: 8.0.1
@@ -23,7 +23,7 @@ specifiers:
 dependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
-  '@vue/theme': 1.0.3_vue@3.2.37
+  '@vue/theme': 1.0.4_vue@3.2.37
   '@vueuse/core': 8.9.1_vue@3.2.37
   '@vueuse/head': 0.7.6_vue@3.2.37
   markdown-it: 13.0.0
@@ -423,8 +423,8 @@ packages:
     resolution: {integrity: sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==}
     dev: false
 
-  /@vue/theme/1.0.3_vue@3.2.37:
-    resolution: {integrity: sha512-q5XKgtdy1/T+gmnymfXJuihr3bbD0SaVIRZG2it47XyZ+hpYQH8jWzGfcbzqPkZ8RuUUOXize+iWzG/++ZXCWQ==}
+  /@vue/theme/1.0.4_vue@3.2.37:
+    resolution: {integrity: sha512-vJGwN2TbDCwjL4FnRdpUm4Ly/fmnPFpZmdURrvMznm6P9ZTKHpGSzQ8A/yYt4JTjkhyyCg1VsTIJipskWEoUDQ==}
     dependencies:
       '@docsearch/css': 3.1.1
       '@docsearch/js': 3.1.1
