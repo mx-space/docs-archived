@@ -5,7 +5,7 @@ specifiers:
   '@types/node': 17.0.23
   '@types/prismjs': '*'
   '@vue/theme': 1.0.4
-  '@vueuse/core': 8.9.1
+  '@vueuse/core': 8.9.2
   '@vueuse/head': 0.7.6
   husky: 8.0.1
   lint-staged: 13.0.3
@@ -24,7 +24,7 @@ dependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
   '@vue/theme': 1.0.4_vue@3.2.37
-  '@vueuse/core': 8.9.1_vue@3.2.37
+  '@vueuse/core': 8.9.2_vue@3.2.37
   '@vueuse/head': 0.7.6_vue@3.2.37
   markdown-it: 13.0.0
   markdown-it-checkbox: 1.1.0
@@ -457,8 +457,8 @@ packages:
       vue-demi: 0.12.4_vue@3.2.37
     dev: false
 
-  /@vueuse/core/8.9.1_vue@3.2.37:
-    resolution: {integrity: sha512-a7goYb/gJxjXRBw4Fr/jEACiN33ghwM1ohJVu+Zwsr3lNL4qCQ1nU+ogta98lNg5hXJxWj7mYEmQDjjyWOu5nA==}
+  /@vueuse/core/8.9.2_vue@3.2.37:
+    resolution: {integrity: sha512-dE3/JgwqIHmmtmRBdZAnq87rZCSFbYVps2t3gWy9Jv/+Qp6sHSSKuPFtwguJVZ2OnaGnB/AMRmx4CuFRxFin3A==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -469,8 +469,8 @@ packages:
         optional: true
     dependencies:
       '@types/web-bluetooth': 0.0.14
-      '@vueuse/metadata': 8.9.1
-      '@vueuse/shared': 8.9.1_vue@3.2.37
+      '@vueuse/metadata': 8.9.2
+      '@vueuse/shared': 8.9.2_vue@3.2.37
       vue: 3.2.37
       vue-demi: 0.12.4_vue@3.2.37
     dev: false
@@ -483,8 +483,8 @@ packages:
       vue: 3.2.37
     dev: false
 
-  /@vueuse/metadata/8.9.1:
-    resolution: {integrity: sha512-6LADOlyl3oENHa9dsoY7LXjU1Mh14DnpM6ztETI3hpm5ZffOMIG5CB2Q6aEZfIvYr1lkJVmG2L82wFKk7VRfIA==}
+  /@vueuse/metadata/8.9.2:
+    resolution: {integrity: sha512-g2s2BeyeEtJElmMFfFPnM+BTvnt0omniyvz8U18/zXDpQIMGozlNQgHoFeratyMfgVBhH/u2VKzmchChtDsgPQ==}
     dev: false
 
   /@vueuse/shared/7.7.1_vue@3.2.37:
@@ -502,8 +502,8 @@ packages:
       vue-demi: 0.12.4_vue@3.2.37
     dev: false
 
-  /@vueuse/shared/8.9.1_vue@3.2.37:
-    resolution: {integrity: sha512-klZfn7ijI3juqVgpfQVrrlBh4uTFajwSCWm8Cdt45Kg26b1LZ9jn9n7J6GhmkFay5016GnjjivQoekQSMeJNUg==}
+  /@vueuse/shared/8.9.2_vue@3.2.37:
+    resolution: {integrity: sha512-s4Nk82oheL5z1GywyGnqjob0MzbAt88olMZa0vgt/p3gcMsT8Ff7+SqmNgEFC6AAs6xiuhOAZpnew9Zs3d90yQ==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
