@@ -19,25 +19,14 @@
 
 ```bash
 sudo curl -fsSL https://get.docker.com | bash -s docker
+
 # 如果安装比较慢，推荐使用以下命令
+
 sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-# 或者使用国内 daocloud 一键安装命令
-sudo curl -SSL https://get.daocloud.io/docker | sh
+
 ```
 
-### 安装 docker-compose
 
-```bash
-# 下载 docker-compose
-wget https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64
-#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64
-# 新建文件夹（非必须），可能需要
-sudo mkdir -p /usr/local/lib/docker/cli-plugins/
-# 复制到指定位置
-sudo cp ./docker-compose-linux-x86_64  /usr/local/lib/docker/cli-plugins/docker-compose
-# 赋予执行权限
-sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
-```
 
 检查是否安装完成
 
