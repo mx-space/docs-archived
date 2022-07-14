@@ -7,7 +7,7 @@
     <meta name="description" content="An alternative personal space.">
     <link rel="stylesheet" href="/assets/style.1b9b274e.css">
     <link rel="modulepreload" href="/assets/app.b0118de6.js">
-    <link rel="modulepreload" href="/assets/deploy_core_core.md.819223e4.lean.js">
+    <link rel="modulepreload" href="/assets/deploy_core_core.md.4a1690e1.lean.js">
     <link rel="prefetch" href="/assets/chunks/VPAlgoliaSearchBox.a4dad1e7.js">
     <link rel="icon" href="/logo.svg">
   <link rel="preload" href="/assets/inter-latin.7b37fe23.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -43,55 +43,15 @@
 <span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">sudo curl -fsSL https://get.docker.com </span><span style="color:#CB7676;">|</span><span style="color:#DBD7CA;"> bash -s docker --mirror Aliyun</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#758575;"># 或者使用国内 daocloud 一键安装命令</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#DBD7CA;">sudo curl -SSL https://get.daocloud.io/docker </span><span style="color:#CB7676;">|</span><span style="color:#DBD7CA;"> sh</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#393A34;">sudo curl -fsSL https://get.docker.com </span><span style="color:#AB5959;">|</span><span style="color:#393A34;"> bash -s docker</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0ADA0;"># 如果安装比较慢，推荐使用以下命令</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#393A34;">sudo curl -fsSL https://get.docker.com </span><span style="color:#AB5959;">|</span><span style="color:#393A34;"> bash -s docker --mirror Aliyun</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0ADA0;"># 或者使用国内 daocloud 一键安装命令</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#393A34;">sudo curl -SSL https://get.daocloud.io/docker </span><span style="color:#AB5959;">|</span><span style="color:#393A34;"> sh</span></span>
-<span class="line"></span></code></pre></div><h3 id="安装-docker-compose" tabindex="-1">安装 docker-compose <a class="header-anchor" href="#安装-docker-compose" aria-hidden="true">#</a></h3><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#758575;"># 下载 docker-compose</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#DBD7CA;">wget https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#758575;">#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#758575;"># 新建文件夹（非必须），可能需要</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#DBD7CA;">sudo mkdir -p /usr/local/lib/docker/cli-plugins/</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#758575;"># 复制到指定位置</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#DBD7CA;">sudo cp ./docker-compose-linux-x86_64  /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#758575;"># 赋予执行权限</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#DBD7CA;">sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
-<span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#A0ADA0;"># 下载 docker-compose</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#393A34;">wget https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0ADA0;">#(备用) wget https://download.fastgit.org/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0ADA0;"># 新建文件夹（非必须），可能需要</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#393A34;">sudo mkdir -p /usr/local/lib/docker/cli-plugins/</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0ADA0;"># 复制到指定位置</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#393A34;">sudo cp ./docker-compose-linux-x86_64  /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0ADA0;"># 赋予执行权限</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#393A34;">sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose</span></span>
 <span class="line"></span></code></pre></div><p>检查是否安装完成</p><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#DBD7CA;">docker compose version</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#393A34;">docker compose version</span></span>
-<span class="line"></span></code></pre></div><p>正常输出版本号即可。</p><h2 id="安装-core" tabindex="-1">安装 Core <a class="header-anchor" href="#安装-core" aria-hidden="true">#</a></h2><h3 id="准备" tabindex="-1">准备 <a class="header-anchor" href="#准备" aria-hidden="true">#</a></h3><p>为了方便管理建议将 <code>docker-compose.yml</code> 放到 <code>mx-space/server</code> 下</p><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#E0A569;">cd</span></span>
+<span class="line"></span></code></pre></div><p>正常输出版本号即可</p><h2 id="安装-core" tabindex="-1">安装 Core <a class="header-anchor" href="#安装-core" aria-hidden="true">#</a></h2><h3 id="准备" tabindex="-1">准备 <a class="header-anchor" href="#准备" aria-hidden="true">#</a></h3><p>为了方便管理建议将 <code>docker-compose.yml</code> 放到 <code>mx-space/server</code> 下</p><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#E0A569;">cd</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">mkdir -p mx-space/server</span></span>
 <span class="line"></span>
@@ -282,7 +242,7 @@
 <span class="line"><span style="color:#393A34;">   </span><span style="color:#1C6B48;"> error_log </span><span style="color:#393A34;"> /www/wwwlogs/server.test.cn.log</span><span style="color:#8E8F8B;">;</span></span>
 <span class="line"><span style="color:#393A34;">}</span></span>
 <span class="line"></span></code></pre></div><h2 id="初始化" tabindex="-1">初始化 <a class="header-anchor" href="#初始化" aria-hidden="true">#</a></h2><p>访问 <code>https://server.test.cn/proxy/qaqdmin</code> 来进行初始化，否则前端将会出现异常报错。</p></div></div><p class="edit-link" data-v-699ddc7f><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" class="vt-icon" data-v-699ddc7f><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg><a class="vt-link link" href="https://github.com/mx-space/docs/edit/main/src/deploy/core/core.md" target="_blank" rel="noopener noreferrer" data-v-699ddc7f><!--[-->编辑此页<!--]--><!----></a></p></main><!--[--><!--]--><footer class="VPContentDocFooter" data-v-699ddc7f data-v-30bdb0ed><a class="prev-link" href="/deploy/" data-v-30bdb0ed><span class="desc" data-v-30bdb0ed><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-30bdb0ed><path d="M15,19c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4l6-6c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L10.4,12l5.3,5.3c0.4,0.4,0.4,1,0,1.4C15.5,18.9,15.3,19,15,19z"></path></svg> Previous</span><span class="title" data-v-30bdb0ed>Docker 一键部署</span></a><a class="next-link" href="/deploy/kami/" data-v-30bdb0ed><span class="desc" data-v-30bdb0ed>Next <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-30bdb0ed><path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path></svg></span><span class="title" data-v-30bdb0ed>部署 Kami</span></a></footer></div></div></div></div><div class="visually-hidden" aria-live="polite" data-v-41534012>Mix Space Core 部署 has loaded</div></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_core_core.md\":\"819223e4\",\"deploy_index.md\":\"e1ca9a73\",\"deploy_kami_index.md\":\"4b1fabe5\",\"deploy_yun_index.md\":\"8c5c2354\",\"dev_frontend.md\":\"e861f99e\",\"dev_index.md\":\"57ea5d01\",\"dev_server.md\":\"b970a3dc\",\"feature_serverless-functions.md\":\"12efe887\",\"feature_text-macors.md\":\"a3448b9e\",\"help_index.md\":\"bfa823cd\",\"index.md\":\"33a9abf8\",\"introduce_index.md\":\"a1c054a3\",\"options_adsetting.md\":\"dd8b0ad5\",\"options_index.md\":\"f563e260\",\"options_serverless.md\":\"4e9ae2d5\"}")</script>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_core_core.md\":\"4a1690e1\",\"deploy_index.md\":\"06be3da0\",\"deploy_kami_index.md\":\"4b1fabe5\",\"deploy_yun_index.md\":\"8c5c2354\",\"dev_frontend.md\":\"e861f99e\",\"dev_index.md\":\"57ea5d01\",\"dev_server.md\":\"b970a3dc\",\"feature_serverless-functions.md\":\"12efe887\",\"feature_text-macors.md\":\"a3448b9e\",\"help_index.md\":\"bfa823cd\",\"index.md\":\"33a9abf8\",\"introduce_index.md\":\"a1c054a3\",\"options_adsetting.md\":\"dd8b0ad5\",\"options_index.md\":\"f563e260\",\"options_serverless.md\":\"4e9ae2d5\"}")</script>
     <script type="module" async src="/assets/app.b0118de6.js"></script>
     
   </body>
