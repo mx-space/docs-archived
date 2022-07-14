@@ -37,7 +37,7 @@ Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB �
 
 安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)，在宝塔面板—软件商店，安装 `pm2管理器` ，`Nginx`。
 
-Node 版本选择 Node 16.X ，稳定版本是 Node 16.15.x
+Node 版本选择 Node 16.X ，稳定版本是 Node 16.16.x
 
 Debian / Ubuntu ，RedHat (CentOS)系同理（自行参考）
 
@@ -71,11 +71,11 @@ npm config set registry http://mirrors.cloud.tencent.com/npm/
 ### 安装 docker
 
 ```bash
-sudo curl -fsSL https://get.docker.com | bash -s docker
+curl -fsSL https://get.docker.com | bash -s docker
 
 # 如果安装比较慢，推荐使用以下命令
 
-sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 ```
 

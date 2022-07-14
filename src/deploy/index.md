@@ -18,11 +18,11 @@
 ### 安装 docker
 
 ```bash
-sudo curl -fsSL https://get.docker.com | bash -s docker
+curl -fsSL https://get.docker.com | bash -s docker
 
 # 如果安装比较慢，推荐使用以下命令
 
-sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 ```
 
