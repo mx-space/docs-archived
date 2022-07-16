@@ -1,7 +1,7 @@
 # 部署 Kami
 
 ::: tip
-本文默认您已安装 服务端，若未安装请移步至 [Core 安装](/deploy/core/core.md)，即本节内容从 [Core 安装](/deploy/core/core.md)继承，所需要的前置内容已经在该节阐明！
+本文默认您已安装 服务端，若未安装请移步至 [Core 安装](/deploy/core/core.md)，即本节内容从 [Core 安装](/deploy/core/core.md) 继承，所需要的前置内容已经在该节阐明！
 :::
 
 ## 开始！
@@ -10,6 +10,7 @@
 
 ```bash
 cd
+
 cd mx-space
 
 git clone https://github.com/mx-space/kami.git --depth=1
@@ -19,7 +20,7 @@ git clone https://github.com/mx-space/kami.git --depth=1
 git clone https://hub.fastgit.xyz/mx-space/kami.git --depth=1
 ```
 
-更换分支到最后一个稳定版本
+更换分支到最后一个稳定版本(tag)
 
 ```bash
 cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
@@ -35,7 +36,7 @@ git lfs pull
 
 注意：如果无法正常拉取，可以到 GitHub 上手动下载文件并放到相应目录。
 
-执行该命令
+复制配置文件
 
 ```bash
  cp .env.example .env
@@ -164,6 +165,7 @@ location ^~ /
 
 在 `Kami` 前端，可以在链接的后面带上 `/login` (例如 https://www.test.cn/login)  进行登录(或者双击 logo)，对评论进行操作，例如：置顶，删除，回复....
 
-可能需要的章节 [Kami 设置](/options/)
+## 后续
+需要的章节 [Kami 设置](/options/)
 
-可能需要的章节 [云函数配置](/options/serverless.md)
+需要的章节 [云函数配置](/options/serverless.md)
