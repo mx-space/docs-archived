@@ -72,7 +72,9 @@ A：请检查你的 `.env` 文件，过短的 `JWT_SECRET` 配置项将会导致
 
 Q：如何升级 Core(后端) / kami(前端)？
 
-A：如果你对 `kami` 的内容没有进行魔改，我们可以同步远程仓库
+A：如果是前后端分开部署的，请参考下面的方法：
+
+对于前端，若你对 `kami` 的内容没有进行魔改，我们可以直接同步远程仓库
 
 ```bash
 git pull origin master
@@ -84,12 +86,20 @@ pnpm build
 npm run prod:pm2
 ```
 
-该方法适合于对 `Kami` 源代码没有做改动的懒人用户
+若进行过魔改的，可能需要注意一下文件冲突，必要时建议重新 clone 一遍仓库后再升级。
 
-如果 `Core` 是 `Docker` 部署的，走一遍
+对于后端，只需走一遍
 
 ```bash
 docker compose pull && docker compose up -d
+```
+
+完事。
+
+如果是使用 Docker 一键部署的，直接在 `docker` 目录下执行
+
+```bash
+zx ./update.mjs
 ```
 
 Q：`Core`（后端）升级后评论丢失

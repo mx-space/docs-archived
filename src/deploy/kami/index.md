@@ -159,13 +159,14 @@ location ^~ /
 }
 ```
 
-接下来访问 https://www.test.cn/ ，看看运行是否正常，若有不正常请自行参与文档解决，或者提 [issue](https://github.com/mx-space/docs/issues)
+接下来访问 https://www.test.cn/ ，看看运行是否正常，若有不正常请自行参考文档进行解决，或者提 [issue](https://github.com/mx-space/docs/issues)
 
 ## PS
 
-在 `Kami` 前端，可以在链接的后面带上 `/login` (例如 https://www.test.cn/login)  进行登录(或者双击 logo)，对评论进行操作，例如：置顶，删除，回复....
+在 `Kami` 前端，可以在链接的后面带上 `/login` (例如 https://www.test.cn/login) 或者双击左上角 logo 进行登录，对评论进行操作，例如：置顶，删除，回复....
 
 ## 后续
+
 需要的章节 [Kami 设置](/options/)
 
 需要的章节 [云函数配置](/options/serverless.md)
