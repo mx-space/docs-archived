@@ -84,7 +84,7 @@ npm run prod:pm2
 
 我们点击左侧的 `配置文件`（网站设置）
 
-在 `access_log` 字段上面，添加如下配置:
+在 `error_log` 这行下面，添加如下配置:
 
 ```nginx
 #PROXY-START/
@@ -124,6 +124,8 @@ location ^~ /
 然后那么局部配置文件示例如下：
 
 ```nginx
+    access_log  /www/wwwlogs/www.test.cn.log;
+    error_log  /www/wwwlogs/www.test.cn.log;
 #PROXY-START/
 
 location ^~ /
@@ -154,9 +156,8 @@ location ^~ /
 
 
 #PROXY-END/
-    access_log  /www/wwwlogs/www.test.cn.log;
-    error_log  /www/wwwlogs/www.test.cn.log;
-}
+
+
 ```
 
 接下来访问 https://www.test.cn/ ，看看运行是否正常，若有不正常请自行参考文档进行解决，或者提 [issue](https://github.com/mx-space/docs/issues)

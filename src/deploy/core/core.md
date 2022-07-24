@@ -38,9 +38,42 @@ Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB �
 
 ### 安装面板
 
-安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)，在宝塔面板 — 软件商店，安装 `pm2管理器` ，`Nginx`。
+- 安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)
+
+- 在宝塔面板 — 软件商店，安装 `Nginx`。
+
+### Node.js 安装
+
+#### 方法一
+
+宝塔面板 - 软件商店，选择 `pm2 管理器`(nvm) , 另外一个 `Node.js 版本管理器` 未做校验，不予讨论
 
 Node 版本选择 Node 16.X ，稳定版本是 Node 16.16.x
+
+#### 方法二
+
+使用 nvm OR n 作为 Node.js 管理器
+
+这里推荐小巧可爱的 n
+
+假设你的 shell 解释器 是 bash，如果你的是其他，请类比参考哦？
+
+```bash
+curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+# 如果无法访问 Github raw 的话就执行下面这条命令
+# curl -L https://raw.fastgit.org/tj/n/master/bin/n -o n
+echo "export N_PREFIX=$HOME/.n" >> ~/.bashrc
+echo "export PATH=$N_PREFIX/bin:$PATH" >> ~/.bashrc
+# echo "export N_NODE_MIRROR=https://npmmirror.com/mirrors/node" >> ~/.bashrc  #如果官方源下载慢的话可以执行这条换国内源
+bash n lts
+echo "export N_PRESERVE_NPM=1" >> ~/.bashrc
+npm i -g npm@latest
+npm i -g pnpm 
+```
+
+
+
+### 安装一些必备软件
 
 Debian / Ubuntu ，RedHat (CentOS)系同理（自行参考）
 
@@ -138,7 +171,7 @@ sudo docker compose up -d
 
 我们点击左侧的 `配置文件`（网站设置）
 
-在 `access_log` 字段上面，添加如下配置:
+在 `error_log` 这行下面，添加如下配置:
 
 ```nginx
 #PROXY-START/
@@ -184,6 +217,8 @@ location /
 然后那么局部配置文件示例如下：
 
 ```nginx
+    access_log  /www/wwwlogs/server.test.cn.log;
+    error_log  /www/wwwlogs/server.test.cn.log;
 #PROXY-START/
 location /socket.io {
     proxy_http_version 1.1;
@@ -220,9 +255,7 @@ location /
 }
 
 #PROXY-END/
-    access_log  /www/wwwlogs/server.test.cn.log;
-    error_log  /www/wwwlogs/server.test.cn.log;
-}
+
 ```
 
 ## 初始化
