@@ -65,8 +65,11 @@ curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
 echo "export N_PREFIX=$HOME/.n" >> ~/.bashrc
 echo "export PATH=$N_PREFIX/bin:$PATH" >> ~/.bashrc
 # echo "export N_NODE_MIRROR=https://npmmirror.com/mirrors/node" >> ~/.bashrc  #如果官方源下载慢的话可以执行这条换国内源
-bash n lts
 echo "export N_PRESERVE_NPM=1" >> ~/.bashrc
+source ~/.bashrc
+
+bash n lts
+
 npm i -g npm@latest
 npm i -g pnpm 
 ```
