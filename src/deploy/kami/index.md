@@ -168,6 +168,6 @@ location ^~ /
 
 ## 后续
 
-需要的章节 [Kami 设置](/options/)
+自定义 Kami 可定义的元素，需要的章节 [Kami 设置](/options/)
 
-需要的章节 [云函数配置](/options/serverless.md)
+设置歌单，音乐播放器等，需要的章节 [云函数配置](/options/serverless.md)

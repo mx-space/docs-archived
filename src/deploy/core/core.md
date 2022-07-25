@@ -36,6 +36,7 @@ Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB �
 
 **推荐使用较高版本的 Linux 内核。**
 
+
 ### 安装面板
 
 - 安装[宝塔面板](https://www.bt.cn/bbs/thread-19376-1-1.html)
@@ -78,6 +79,8 @@ npm i -g pnpm
 
 ### 安装一些必备软件
 
+**在下面的内容中，假设你是普通用户权限**
+
 Debian / Ubuntu ，RedHat (CentOS)系同理（自行参考）
 
 ```bash
@@ -93,7 +96,6 @@ yum/dnf check-update && yum/dnf git curl vim wget git-lfs
 
 ```bash
 # 安装相关软件
-sudo su
 npm install -g pnpm pm2
 # 如果安装比较慢，可以使用以下命令切换镜像源
 npm config set registry http://mirrors.cloud.tencent.com/npm/
@@ -121,9 +123,9 @@ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 检查是否安装完成
 
 ```bash
-docker -v
+sudo docker -v
 
-docker compose version
+sudo docker compose version
 ```
 正常输出版本号即可
 
