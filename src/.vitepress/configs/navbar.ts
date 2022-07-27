@@ -10,7 +10,7 @@
 export const introduceBar = [
   { text: '介绍', link: '/introduce/' },
   { text: '预览', link: '/introduce/#现有功能-部分' },
-  { text: '目录', link: '/introduce/#目录' },
+  { text: '开始', link: '/introduce/#开始' },
 ]
 
 export const experimentBar = [
