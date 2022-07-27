@@ -77,7 +77,7 @@ Mix-Space 的 [Core](https://github.com/mx-space/core) 提供后端服务支持�
 
 - [云函数](https://github.com/mx-space/mx-server/blob/master/src/modules/serverless/serverless.readme.md)
   
-kami 的歌单，追番功能就是使用云函数支持噢？如果你具有一点编程能力，你可以很方便地使用云函数扩展你想要的功能
+  kami 的歌单，追番功能就是使用云函数支持噢？如果你具有一点编程能力，你可以很方便地使用云函数扩展你想要的功能
 
   
 - [公共面板](https://mx.shizuri.net) 该项功能需要允许跨域
@@ -87,7 +87,7 @@ kami 的歌单，追番功能就是使用云函数支持噢？如果你具有一
 当然，这只是部分示例，如果你想了解更多功能，请访问 Demo 
 
  - [Kami Demo](https://mx-demo.shizuri.net/) 
- - [后台 Demo](https://mx-demo.shizuri.net/proxy/qaqdmin) demo 后台密码 : `demo`
+ - [后台 Demo](https://mx-demo.shizuri.net/proxy/qaqdmin)   demo 后台密码 : `demo`
 
 ## 采用 Mix-Space 网站示例
 
@@ -100,13 +100,13 @@ kami 的歌单，追番功能就是使用云函数支持噢？如果你具有一
 
 看到这里，你可能会觉得非常不错，那么希望你有耐心，开始吧？
 
-[很方便的前后端部署部署](/deploy)
+[很方便的前后端部署部署](/deploy/index.md)
 
 如果你分别部署前后端，接下来就是了
 
 ### 后端单独部署
 
-部署后端(Core)，[Go](/deploy/core/index.md) 
+部署后端(Core)，[Go](/deploy/core/core.md) 
 
 ### 前端部署
 
