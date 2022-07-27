@@ -106,13 +106,13 @@ kami 的歌单，追番功能就是使用云函数支持噢？如果你具有一
 
 ### 后端单独部署
 
-部署后端(Core)，[Go](/deploy/core) 
+部署后端(Core)，[Go](/deploy/core/index.md) 
 
 ### 前端部署
 
-Kami 前端部署，[Go](/deploy/kami)
+Kami 前端部署，[Go](/deploy/kami/index.md)
 
-Mx-Yun 前端部署，[Go](/deploy/yun)
+Mx-Yun 前端部署，[Go](/deploy/yun/index.md)
 
 ## 鸣谢
 
