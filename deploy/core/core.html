@@ -7,7 +7,7 @@
     <meta name="description" content="An alternative personal space.">
     <link rel="stylesheet" href="/assets/style.1b9b274e.css">
     <link rel="modulepreload" href="/assets/app.83533af9.js">
-    <link rel="modulepreload" href="/assets/deploy_core_core.md.eae08e15.lean.js">
+    <link rel="modulepreload" href="/assets/deploy_core_core.md.fe5b546e.lean.js">
     <link rel="prefetch" href="/assets/chunks/VPAlgoliaSearchBox.a84ebb6b.js">
     <link rel="icon" href="/logo.svg">
   <link rel="preload" href="/assets/inter-latin.7b37fe23.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -33,9 +33,6 @@
 <span class="line"><span style="color:#E0A569;">source</span><span style="color:#DBD7CA;"> </span><span style="color:#CB7676;">~</span><span style="color:#DBD7CA;">/.bashrc</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#DBD7CA;">bash n lts</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#DBD7CA;">npm i -g npm@latest</span></span>
-<span class="line"><span style="color:#DBD7CA;">npm i -g pnpm </span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#393A34;">curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n</span></span>
 <span class="line"><span style="color:#A0ADA0;"># 如果无法访问 Github raw 的话就执行下面这条命令</span></span>
 <span class="line"><span style="color:#A0ADA0;"># curl -L https://raw.fastgit.org/tj/n/master/bin/n -o n</span></span>
@@ -46,18 +43,17 @@
 <span class="line"><span style="color:#B58451;">source</span><span style="color:#393A34;"> </span><span style="color:#AB5959;">~</span><span style="color:#393A34;">/.bashrc</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#393A34;">bash n lts</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#393A34;">npm i -g npm@latest</span></span>
-<span class="line"><span style="color:#393A34;">npm i -g pnpm </span></span>
 <span class="line"></span></code></pre></div><h3 id="安装一些必备软件" tabindex="-1">安装一些必备软件 <a class="header-anchor" href="#安装一些必备软件" aria-hidden="true">#</a></h3><p><strong>在下面的内容中，假设你是普通用户权限</strong></p><p>Debian / Ubuntu ，RedHat (CentOS)系同理（自行参考）</p><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#DBD7CA;">sudo apt update </span><span style="color:#CB7676;">&amp;&amp;</span><span style="color:#DBD7CA;"> sudo apt install git curl vim wget git-lfs -y</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#393A34;">sudo apt update </span><span style="color:#AB5959;">&amp;&amp;</span><span style="color:#393A34;"> sudo apt install git curl vim wget git-lfs -y</span></span>
 <span class="line"></span></code></pre></div><p>RedHat系，例如 CentOS</p><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#DBD7CA;">yum/dnf check-update </span><span style="color:#CB7676;">&amp;&amp;</span><span style="color:#DBD7CA;"> yum/dnf git curl vim wget git-lfs</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#393A34;">yum/dnf check-update </span><span style="color:#AB5959;">&amp;&amp;</span><span style="color:#393A34;"> yum/dnf git curl vim wget git-lfs</span></span>
 <span class="line"></span></code></pre></div><p>安装相关软件</p><div class="language-bash"><pre class="shiki shiki-dark" style="background-color:#121212;"><code><span class="line"><span style="color:#758575;"># 安装相关软件</span></span>
+<span class="line"><span style="color:#DBD7CA;">npm i -g npm@latest</span></span>
 <span class="line"><span style="color:#DBD7CA;">npm install -g pnpm pm2</span></span>
 <span class="line"><span style="color:#758575;"># 如果安装比较慢，可以使用以下命令切换镜像源</span></span>
 <span class="line"><span style="color:#DBD7CA;">npm config </span><span style="color:#E0A569;">set</span><span style="color:#DBD7CA;"> registry http://mirrors.cloud.tencent.com/npm/</span></span>
 <span class="line"></span></code></pre><pre class="shiki shiki-light" style="background-color:#ffffff;"><code><span class="line"><span style="color:#A0ADA0;"># 安装相关软件</span></span>
+<span class="line"><span style="color:#393A34;">npm i -g npm@latest</span></span>
 <span class="line"><span style="color:#393A34;">npm install -g pnpm pm2</span></span>
 <span class="line"><span style="color:#A0ADA0;"># 如果安装比较慢，可以使用以下命令切换镜像源</span></span>
 <span class="line"><span style="color:#393A34;">npm config </span><span style="color:#B58451;">set</span><span style="color:#393A34;"> registry http://mirrors.cloud.tencent.com/npm/</span></span>
@@ -270,7 +266,7 @@
 <span class="line"><span style="color:#A0ADA0;">#PROXY-END/</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre></div><h2 id="初始化" tabindex="-1">初始化 <a class="header-anchor" href="#初始化" aria-hidden="true">#</a></h2><p>访问 <code>https://server.test.cn/proxy/qaqdmin</code> 来进行初始化，否则前端将会出现异常报错。</p></div></div><p class="edit-link" data-v-699ddc7f><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" class="vt-icon" data-v-699ddc7f><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg><a class="vt-link link" href="https://github.com/mx-space/docs/edit/main/src/deploy/core/core.md" target="_blank" rel="noopener noreferrer" data-v-699ddc7f><!--[-->编辑此页<!--]--><!----></a></p></main><!--[--><!--]--><footer class="VPContentDocFooter" data-v-699ddc7f data-v-30bdb0ed><a class="prev-link" href="/deploy/" data-v-30bdb0ed><span class="desc" data-v-30bdb0ed><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-30bdb0ed><path d="M15,19c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4l6-6c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L10.4,12l5.3,5.3c0.4,0.4,0.4,1,0,1.4C15.5,18.9,15.3,19,15,19z"></path></svg> Previous</span><span class="title" data-v-30bdb0ed>Docker 一键部署</span></a><a class="next-link" href="/deploy/kami/" data-v-30bdb0ed><span class="desc" data-v-30bdb0ed>Next <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="vt-link-icon" data-v-30bdb0ed><path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path></svg></span><span class="title" data-v-30bdb0ed>部署 Kami</span></a></footer></div></div></div></div><div class="visually-hidden" aria-live="polite" data-v-41534012>Mix Space Core 部署 has loaded</div></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_core_core.md\":\"eae08e15\",\"deploy_index.md\":\"02b4eb92\",\"deploy_kami_index.md\":\"9f3cd2aa\",\"deploy_yun_index.md\":\"ecc13d3b\",\"dev_frontend.md\":\"a2808ac3\",\"dev_index.md\":\"c6fa8326\",\"dev_server.md\":\"98f1a0b1\",\"feature_serverless-functions.md\":\"d989a05c\",\"feature_text-macors.md\":\"5d97c238\",\"help_index.md\":\"4f9840c6\",\"index.md\":\"f414aa68\",\"introduce_index.md\":\"7d591fe9\",\"options_adsetting.md\":\"54c29e86\",\"options_index.md\":\"f334d660\",\"options_serverless.md\":\"ab02c599\"}")</script>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"deploy_core_core.md\":\"fe5b546e\",\"deploy_index.md\":\"02b4eb92\",\"deploy_kami_index.md\":\"9f3cd2aa\",\"deploy_yun_index.md\":\"ecc13d3b\",\"dev_frontend.md\":\"a2808ac3\",\"dev_index.md\":\"c6fa8326\",\"dev_server.md\":\"98f1a0b1\",\"feature_serverless-functions.md\":\"d989a05c\",\"feature_text-macors.md\":\"5d97c238\",\"help_index.md\":\"4f9840c6\",\"index.md\":\"f414aa68\",\"introduce_index.md\":\"7d591fe9\",\"options_adsetting.md\":\"54c29e86\",\"options_index.md\":\"f334d660\",\"options_serverless.md\":\"ab02c599\"}")</script>
     <script type="module" async src="/assets/app.83533af9.js"></script>
     
   </body>
