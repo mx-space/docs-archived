@@ -70,9 +70,6 @@ echo "export N_PRESERVE_NPM=1" >> ~/.bashrc
 source ~/.bashrc
 
 bash n lts
-
-npm i -g npm@latest
-npm i -g pnpm 
 ```
 
 
@@ -96,6 +93,7 @@ yum/dnf check-update && yum/dnf git curl vim wget git-lfs
 
 ```bash
 # 安装相关软件
+npm i -g npm@latest
 npm install -g pnpm pm2
 # 如果安装比较慢，可以使用以下命令切换镜像源
 npm config set registry http://mirrors.cloud.tencent.com/npm/
