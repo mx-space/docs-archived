@@ -45,13 +45,13 @@ Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB �
 
 ### Node.js 安装
 
-#### 方法一
+#### 方法一（可用，但存在问题，不推荐）
 
 宝塔面板 - 软件商店，选择 `pm2 管理器`(nvm) , 另外一个 `Node.js 版本管理器` 未做校验，不予讨论
 
 Node 版本选择 Node 16.X ，稳定版本是 Node 16.16.x
 
-#### 方法二
+#### 方法二（虽麻烦，但推荐 🌟）
 
 使用 nvm OR n 作为 Node.js 管理器
 
@@ -63,13 +63,24 @@ Node 版本选择 Node 16.X ，稳定版本是 Node 16.16.x
 curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
 # 如果无法访问 Github raw 的话就执行下面这条命令
 # curl -L https://raw.fastgit.org/tj/n/master/bin/n -o n
+
 echo "export N_PREFIX=$HOME/.n" >> ~/.bashrc
 echo "export PATH=$N_PREFIX/bin:$PATH" >> ~/.bashrc
 # echo "export N_NODE_MIRROR=https://npmmirror.com/mirrors/node" >> ~/.bashrc  #如果官方源下载慢的话可以执行这条换国内源
+
 echo "export N_PRESERVE_NPM=1" >> ~/.bashrc
 source ~/.bashrc
 
 bash n lts
+npm i -g n@latest
+```
+
+接下来你即可使用 n 管理 node.js 版本了。
+
+只需执行 `n <version>` 即可下载并安装Node.js版本。如果 `<version>` 已经下载，`n` 将从其缓存中安装。
+
+```bash
+n lts
 ```
 
 
@@ -93,7 +104,6 @@ yum/dnf check-update && yum/dnf git curl vim wget git-lfs
 
 ```bash
 # 安装相关软件
-npm i -g npm@latest
 npm install -g pnpm pm2
 # 如果安装比较慢，可以使用以下命令切换镜像源
 npm config set registry http://mirrors.cloud.tencent.com/npm/
