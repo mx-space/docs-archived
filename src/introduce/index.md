@@ -95,6 +95,7 @@ Mix-Space 的 [Core](https://github.com/mx-space/core) 提供后端服务支持�
  - [秉松博客 - 有秉性且正直的松](https://blog.iucky.cn)
  - [TimochanのBlog - Let's start learning!](https://www.timochan.cn)
  - [喵二の小博客 - 缘，妙不可言](https://www.miaoer.xyz)
+ - [SuemorのBlog-所谓自由就是可以说二加二等于四的自由](https://www.suemor.com/)
 
 ## 开始
 
