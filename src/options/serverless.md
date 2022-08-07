@@ -46,7 +46,7 @@ npm install @mx-space/extra
 
 ### 功能
 
-#### 歌单（网易云）
+#### 歌单(歌词)
 
 进入后台，移动到 `其他 · 配置与云函数`
 
@@ -160,6 +160,57 @@ async function handler() {
 
 注意：背景音乐的歌单依赖于 Kami v3 那节中设置的网易云歌曲 ID；若没有设置，则使用默认的。
 
+#### 歌词获取
+
+新建一个项
+
+- 名字：`lyrics`
+
+- 引用：`kami`
+
+- 元类型：`kami`
+
+- 数据类型：`Function`
+
+- 公开： `是`
+
+示例如下：
+
+```typescript
+import extra from '@mx-space/extra'
+
+const cacheKey = 'netease-lyrics'
+async function handler() {
+  const { NeteaseCloudMusicApi } = extra
+  const {
+    req: { query },
+
+    storage: { cache },
+  } = context
+
+  if (!query.id) {
+    context.throws(400, 'id is required')
+  }
+
+  const { get, set } = cache
+  const fromCache = await get(cacheKey + ':' + query.id)
+  if (fromCache) {
+    return fromCache
+  }
+
+  const { lyric } = NeteaseCloudMusicApi
+  const result =
+    (
+      await lyric({
+        id: query.id,
+      })
+    ).body?.lrc?.lyric || ''
+  result && (await set(`${cacheKey}:${query.id}`, result))
+  return result
+}
+```
+该歌必须要有歌词，不然不显示歌词
+
 到这里，Kami 默认功能需要的云函数已经配置完毕。
 
 ## 测试
@@ -187,6 +238,10 @@ async function handler() {
 访问 https://server.test.cn/api/v2/serverless/kami/bangumi
 
 状态码 返回 200，且返回你自己的追番数据
+
+### lyrics 函数
+
+歌曲播放时，左侧有歌词滚动即为正常(该歌必须要有歌词)
 
 ## 结束
 
