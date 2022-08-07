@@ -77,7 +77,9 @@ Mix-Space 的 [Core](https://github.com/mx-space/core) 提供后端服务支持�
 
 - [云函数](https://github.com/mx-space/mx-server/blob/master/src/modules/serverless/serverless.readme.md)
   
-  kami 的歌单，追番功能就是使用云函数支持噢？如果你具有一点编程能力，你可以很方便地使用云函数扩展你想要的功能
+  kami 的歌单，追番功能就是使用云函数支持噢？如果你具有一点编程能力，你可以很方便地使用云函数扩展你想要的功能；当然，这个支持歌词显示的惹~
+
+  ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/lyrics.png)
 
   
 - [公共面板](https://mx.shizuri.net) 该项功能需要允许跨域
@@ -91,11 +93,11 @@ Mix-Space 的 [Core](https://github.com/mx-space/core) 提供后端服务支持�
 
 ## 采用 Mix-Space 网站示例
 
- - [静かな森 - 致虚极，守静笃。](https://innei.ren)
+ - [静かな森 - 致虚极，守静笃](https://innei.ren)
  - [秉松博客 - 有秉性且正直的松](https://blog.iucky.cn)
- - [TimochanのBlog - Let's start learning!](https://www.timochan.cn)
+ - [TimochanのBlog - Let's start learning](https://www.timochan.cn)
  - [喵二の小博客 - 缘，妙不可言](https://www.miaoer.xyz)
- - [SuemorのBlog-所谓自由就是可以说二加二等于四的自由](https://www.suemor.com/)
+ - [SuemorのBlog - 所谓自由就是可以说二加二等于四的自由](https://www.suemor.com/)
 
 ## 开始
 
