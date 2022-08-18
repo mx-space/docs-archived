@@ -95,7 +95,45 @@ const md5_password = '0800fc577294c34e0b28ad2839435945'   //登录密码的md5�
 /// CONFIGS END ///
 ```
 
-注意：示例中的 `phone` 和 `password` 或 `md5_password`  需要替换成自己的，其他的复制过去就行。
+注意：
+本函数中包含两种登录方式，一种是密码登录，另一种是密码的 `md5` 值登录，对应的选项就是 `password` 和 `md5_password` ；在您将函数复制过去后，需要按照注释内容，自行删除掉你不需要的登录方式，和与之对应的 `CONFIGS` 注释区域的 `const` 定义，如果您不进行修改，则无法使用
+
+举个例子，密码登录
+```typescript
+import extra from '@mx-space/extra'
+
+async function handler() {
+  const { NeteaseMusic, NeteaseCloudMusicApi } = extra
+
+  const client = new NeteaseMusic(phone, password ) //此处md5_password 与 password 任选其一，同时与下面 const 定义的相对应即可
+  await client.Login()
+
+  const uid = await client.getAccount()
+
+  const weekdata = await client.getWeekData()
+  const alldata = await client.getAllData()
+  const playlist = await client.getFavorite()
+
+  const detail = await NeteaseCloudMusicApi.user_detail({
+    uid,
+  }).then((res) => (res.body.code === 200 ? res.body.profile : null))
+
+  const responsePayload = {
+    playlist,
+    weekdata,
+    alldata,
+    detail,
+  }
+
+  return responsePayload
+}
+/// CONFIGS ///
+const phone = '15922****'  //网易云登录手机号
+const password = 'wddw***s' // 登录密码 password 
+/// CONFIGS END ///
+
+```
+同理，md5 登录也是按照这种写法(将文中 `password` 换成 `md5_password` 即可)
 
 #### 追番
 
@@ -119,7 +157,7 @@ async function handler() {
   return bangumi
 }
 // 如果社交平台 ID 录入中有哔哩哔哩 ID 可不填，留空
-const uid = 11111
+const uid = '11111'
 const len = 10
 ```
 
