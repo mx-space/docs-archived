@@ -6,7 +6,7 @@
 
 ## 视频教程
 
-<iframe src="https://api.paugram.com/bili?av=897657356&style=gray" style="height: 10em; width: 100%"></iframe>
+<iframe src="https://api.paugram.com/bili?av=897657356&style=gray" style="height: 200px; width: 100%"></iframe>
 
 配合文档食用效果更佳。
 
