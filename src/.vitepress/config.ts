@@ -1,5 +1,5 @@
 // @ts-ignore
-import base from '@vue/theme/config'
+// import base from '@vue/theme/config'
 import { join, resolve } from 'path'
 import Windicss from 'vite-plugin-windicss'
 import { UserConfig } from 'vitepress'
@@ -12,16 +12,7 @@ import navBar, {
   introduceBar,
   optionsBar,
 } from './configs/navbar'
-import highlight from './plugins/highlight'
 import { NavbarFix } from './plugins/navbar'
-
-const themeConfig = async () => {
-  const config = await base()
-  // @ts-ignore
-  config.markdown.highlight = await highlight()
-  return config
-}
-
 const sidebar = [
   { text: '介绍', items: introduceBar },
   { text: '实验性特征', items: experimentBar },
@@ -32,12 +23,12 @@ const sidebar = [
 ]
 
 const config: UserConfig = {
-  extends: themeConfig,
 
   title: 'Mix Space',
   description: 'An alternative personal space.',
   lang: 'zh-CN',
   outDir: resolve(__dirname, '../../dist'),
+  
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
@@ -88,8 +79,10 @@ const config: UserConfig = {
   scrollOffset: 'header',
 
   themeConfig: {
+    logo: '/favicon.svg',
     editLink: {
-      repo: 'mx-space/docs',
+      // repo: 'mx-space/docs',
+      pattern: 'https://github.com/mx-space/docs/edit/main/docs/:path',
       text: '编辑此页',
     },
     editLinks: true,
@@ -132,15 +125,15 @@ const config: UserConfig = {
       chunkSizeWarningLimit: Infinity,
     },
 
-    optimizeDeps: {
-      exclude: ['@vue/theme'],
-    },
+    // optimizeDeps: {
+    //   exclude: ['@vue/theme'],
+    // },
 
     json: {
       stringify: true,
     },
     plugins: [
-      NavbarFix(),
+      // NavbarFix(),
 
       Windicss({
         config: join(__dirname, '../../windi.config.ts'),
