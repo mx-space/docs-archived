@@ -6,9 +6,7 @@
 
 ## 视频教程
 
-[哔哩哔哩 - 超可爱的前后端分离博客Mix-space搭建教程](https://www.bilibili.com/video/BV14N4y137ZW)
-
-<iframe src="//player.bilibili.com/player.html?aid=897657356&amp;cid=753224871&amp;page=1" scrolling="no" allowfullscreen="true" style="width: 100%; height: 35em; height: 60vmin"> </iframe>
+<iframe src="https://api.paugram.com/bili?av=897657356&style=gray" style="height: 10em; width: 100%"></iframe>
 
 配合文档食用效果更佳。
 
