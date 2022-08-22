@@ -1,12 +1,14 @@
-import { VPTheme } from '@vue/theme'
+// import './styles/code.css'
 import { createHead } from '@vueuse/head'
-import { useRouter } from 'vitepress'
-import { App, h, watch } from 'vue'
 // @ts-ignore
 import Banner from './components/Banner.vue'
+import DefaultTheme from 'vitepress/theme'
+import { App, h, watch } from 'vue'
 import './styles/code.css'
+import { useRouter } from 'vitepress'
 
-export default Object.assign({}, VPTheme, {
+export default {
+  ...DefaultTheme,
   Layout: () => {
     const router = useRouter()
 
@@ -21,13 +23,13 @@ export default Object.assign({}, VPTheme, {
       },
       { immediate: true }
     )
-    // @ts-ignore
-    return h(VPTheme.Layout, null, {
-      banner: () => h(Banner),
+    //@ts-ignore
+    return h(DefaultTheme.Layout, null, {
+      // 'home-hero-before': () => h(Banner)
     })
   },
-  enhanceApp({ app }: { app: App }) {
-    const head = createHead()
-    app.use(head)
-  },
-})
+  enhanceHead({ app }: { app: App }) {
+    const heads = createHead()
+    app.use(heads)
+  }
+}
