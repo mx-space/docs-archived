@@ -64,6 +64,7 @@ title: 介绍
 
 etc...
 
+这么多功能，难道你不心动么？
 ## Demo
 
 你可以通过以下 Demo 来查看整个系统
@@ -83,6 +84,22 @@ etc...
 
 etc ...
 
+## Thanks
+
+本版文档由以下贡献者编写（按照贡献者名字首字母顺序进行排序）
+
+- [623337308](https://blog.cqsjyz.com)
+- [Elmge](https://github.com/Elmge)
+- [喵二](https://www.miaoer.xyz)
+- [Sayyiku](https://github.com/Sayyiku)
+- [Timochan](https://www.timochan.cn)
+- [Wibus](https://blog.iucky.cn)
+- [wuhang2003](https://github.com/wuhang2003)
+- [zsbai](https://github.com/zsbai)
+
+当然，整个项目的开发者是 [innei](https://innei.ren) 
+
+感谢社区提出的问题及解决方案，帮助笔者简化许多步骤，也欢迎更多人能够参与到我们的开源社区中[帮助我们优化项目](https://github.com/mx-space)。
 
 ## 打赏本项目
 
