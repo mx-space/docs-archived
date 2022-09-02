@@ -1,114 +1,118 @@
-# Docker 部署
+---
+title: 部署 Mix-Space
+---
 
->  使用 Docker Compose 可以很容易的部署整个环境。
-
-::: warning
-❗ 注意：文档未考虑对 Windows 的支持工作，Windows 的使用者请自行处理兼容性问题；
-        
-
-​      Linux 内核版本 > 4.18，建议使用 5.X 版本的内核；内存 > 1 GiB ！
+:::tip 
+本节内容带你部署 Mix-Space，请有耐心的一点点看完；国内服务器请完成备案后再进行
 :::
 
-其他安装方法：[从零开始·Core 部署](/deploy/core/core.md)，如果遇到自己不能解决的问题，参阅文档无果后，请提 [issue](https://github.com/mx-space/docs/issues)！
+### 准备
 
+操作系统: 建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
 
-## 准备
+Linux 内核版本: 大于 4.18 ，建议 5.x 
 
+:::danger
+使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix-Space
+:::
+## 环境安装
 
-### 安装 docker
+### 安装软件包
 
-```bash
-curl -fsSL https://get.docker.com | bash -s docker
-
-# 如果安装比较慢，推荐使用以下命令
-
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-
-```
-
-
-
-检查是否安装完成
+Debian / Ubuntu
 
 ```bash
-docker compose version
+# apt update && apt install git curl vim wget git-lfs -y
 ```
-
-正常输出版本号即可。
-
-### 安装 Node.js 和 zx
+CentOS
 
 ```bash
-curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
-# 如果无法访问 Github raw 的话就执行下面这条命令
-# curl -L https://raw.fastgit.org/tj/n/master/bin/n -o n
-export N_PREFIX=$HOME/.n
-export PATH=$N_PREFIX/bin:$PATH
-# export N_NODE_MIRROR=https://npmmirror.com/mirrors/node  #如果官方源下载慢的话可以执行这条换国内源
-bash n lts
-export N_PRESERVE_NPM=1
-npm i -g npm@latest
-npm i -g yarn zx pnpm n
+# yum check-update && yum git curl vim wget git-lfs
 ```
+### 安装 Docker
 
-## 克隆仓库
+SSH 连接到服务器，使用一键脚本，可以迅速安装 Docker 和 Docker Compose
 
 ```bash
-git clone https://github.com/mx-space/docker --depth=1
+$ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
+:::warning 
+该过程可能比较慢，请不要断开 SSH 连接；该脚本仅支持 Debian 、Ubuntu，CentOS，其他系统请自行安装
+:::
 
-## 部署整个环境
+### 安装 nvm
 
-所部署的环境：kami + mx-server + caddy2
+nvm 用于管理 Node.js 
 
-在此之前，你需要把域名指向当前服务器 IP。
+打开终端，使用一键脚本，可以迅速安装 nvm
 
 ```bash
-cd docker
-npm install
-zx ./build.mjs
+$ bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
 ```
+重启终端即可生效
 
+安装 Node.js 16
+
+```bash
+$ nvm install 16
+```
+安装需要的模块
+```bash
+$ npm i -g yarn zx pnpm
+```
+## 部署系统
+
+### 使用预设脚本部署
+
+克隆仓库
+
+```bash
+$ cd && mkdir mx-space && cd mx-space
+$ git clone https://github.com/mx-space/docker --depth=1
+```
+#### 整个环境
+
+所部署的环境：Kami + Core + Caddy2
+
+在此之前，你需要将域名解析完毕
+
+使用一键脚本
+
+```bash
+$ cd docker
+$ npm i
+$ zx ./build.mjs
+```
 实例输入：
-
-```
+```bash
 你的域名为：（需要提前绑定）: innei.ren
 你的邮箱为: (若该步留空，则不部署 Caddy 服务): tukon@gmail.com
 是否部署 Caddy 2.0？ (y/n): y
 ```
+待流程执行完毕，进入 https://你的域名/proxy/qaqdmin，进行初始化
 
-待流程执行完毕，进入 `https://你的域名/proxy/qaqdmin`  
+##### 仅部署服务和主站前端
 
-建议：
+所部署的环境：Kami + Core
 
-移动到页面，新建两个页面 第一个路由为 `message`  ，第二个路由为 `about` ，标题任意。
+你不需要 IP 指向。但是需要手动处理服务器反代
 
-## 仅部署服务和主站前端
-
-所部署的环境：kami + mx-server
-
-你不需要 IP 指向。但是需要手动处理服务器反代。
-
+使用一键脚本
 ```bash
-cd docker
-npm install
-zx ./build.mjs
+$ cd docker
+$ npm i
+$ zx ./build.mjs
 ```
-
 实例输入：
-
-```
+```bash
 你的域名为：（需要提前绑定）: innei.ren
 你的邮箱为: (此步留空，则不部署 Caddy 服务):
 ```
+待流程执行完毕，进入 http://127.0.0.1:2333/proxy/qaqdmin
 
-待流程执行完毕，进入 `http://127.0.0.1:2333/proxy/qaqdmin`。
+### 手动部署
 
-## 仅部署服务
+#### 部署 Core
 
-```bash
-wget https://fastly.jsdelivr.net/gh/mx-space/mx-server@master/docker-compose.yml
-docker compose up -d
-```
-
-待流程执行完毕，进入 `http://127.0.0.1:2333/proxy/qaqdmin`。
+//TODO docs: rewrite core install
+//TODO docs: rewirte kami install 
