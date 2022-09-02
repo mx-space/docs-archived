@@ -27,7 +27,7 @@ Debian / Ubuntu
 CentOS
 
 ```bash
-# yum check-update && yum git curl vim wget git-lfs
+# yum check-update && yum install git curl vim wget git-lfs -y
 ```
 ### 安装 Docker
 
@@ -37,7 +37,7 @@ SSH 连接到服务器，使用一键脚本，可以迅速安装 Docker 和 Dock
 $ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 :::warning 
-该过程可能比较慢，请不要断开 SSH 连接；该脚本仅支持 Debian 、Ubuntu，CentOS，其他系统请自行安装
+该过程可能比较慢，请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装
 :::
 
 ### 安装 nvm
@@ -57,9 +57,11 @@ $ bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)
 $ nvm install 16
 ```
 安装需要的模块
+
 ```bash
 $ npm i -g yarn zx pnpm
 ```
+
 ## 部署系统
 
 ### 使用预设脚本部署
@@ -70,6 +72,7 @@ $ npm i -g yarn zx pnpm
 $ cd && mkdir mx-space && cd mx-space
 $ git clone https://github.com/mx-space/docker --depth=1
 ```
+
 #### 整个环境
 
 所部署的环境：Kami + Core + Caddy2
