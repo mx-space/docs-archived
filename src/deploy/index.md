@@ -51,11 +51,12 @@ $ bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)
 ```
 重启终端即可生效
 
-安装 Node.js 16
+安装 Node.js 最新的 LTS 版本
 
 ```bash
-$ nvm install 16
+$ nvm install --lts
 ```
+
 安装需要的模块
 
 ```bash
