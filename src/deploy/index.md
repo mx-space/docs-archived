@@ -189,7 +189,14 @@ $ git clone https://hub.0z.gs/mx-space/kami.git --depth 1
 ```bash
 $ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
+#### 拉取图片文件
 
+```bash
+$ git lfs fetch --all
+
+$ git lfs pull
+```
+注意：如果无法正常拉取，可以到 GitHub 上手动下载文件并放到相应目录。
 #### 配置文件
 
 复制 .env.example 为 .env
