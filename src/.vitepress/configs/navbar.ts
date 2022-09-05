@@ -8,9 +8,7 @@
  */
 
 export const introduceBar = [
-  { text: '介绍', link: '/introduce/' },
-  { text: '预览', link: '/introduce/#现有功能-部分' },
-  { text: '开始', link: '/introduce/#开始' },
+  { text: '介绍', link: '/guide/' },
 ]
 
 export const experimentBar = [
@@ -19,28 +17,28 @@ export const experimentBar = [
 ]
 
 export const optionsBar = [
-  { text: 'Kami v3', link: '/options/' },
-  { text: '后台设置', link: '/options/adsetting' },
-  { text: '云函数', link: '/options/serverless' },
+  { text: '使用', link: '/use/' },
+  { text: '后台设置', link: '/use/#后台设置' },
+  { text: '歌单', link: '/use/#歌单听歌追番' },
 ]
 
 export const deployServerBar = [
-  { text: 'Core 部署', link: '/deploy/core/core' },
+  { text: 'Core 部署', link: '/deploy/index.md#部署-core' },
 ]
 
 export const deployKamiBar = [
-  { text: 'Kami 部署', link: '/deploy/kami/' },
+  { text: 'Kami 部署', link: '/deploy/index.md#部署-kami' },
 ]
 
 export const deployYunBar = [
-  { text: 'Yun 部署(WIP)', link: '/deploy/yun/' },
+  { text: 'Yun 部署(WIP)', link: '/deploy/' },
 ]
 
 export const deploySideBar = [
-  { text: 'Docker 一键部署', link: '/deploy/' },
-  { text: '部署 Core', link: '/deploy/core/core' },
-  { text: '部署 Kami', link: '/deploy/kami/' },
-  { text: '部署 Yun (WIP)', link: '/deploy/yun/' },
+  { text: 'Docker 一键部署', link: '/deploy/index.md#部署系统' },
+  { text: '部署 Core', link: '/deploy/index.md#手动部署' },
+  { text: '部署 Kami', link: '/deploy/index.md#部署-kami' },
+  { text: '部署 Yun (WIP)', link: '/deploy/' },
 ]
 
 export const deployBar = [
