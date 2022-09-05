@@ -83,8 +83,7 @@ Mix-Space 支持以下安装方法
 $ cd && mkdir mx-space && cd mx-space
 $ git clone https://github.com/mx-space/docker --depth=1
 
-# 如果克隆缓慢，可以使用以下镜像地址
-
+如果克隆缓慢，可以使用以下镜像地址
 $ git clone https://hub.0z.gs/mx-space/docker.git --depth 1
 ```
 
@@ -135,11 +134,13 @@ $ zx ./build.mjs
 一般情况下，我们推荐使用 Docker 进行部署，接下来将带你使用 Docker 部署 Core，步骤非常简单
 
 ```bash
-# 新建文件夹
+新建文件夹
 $ cd && mkdir -p mx-space/core && cd $_
-# 拉取docker-compose.yml 文件
+
+拉取docker-compose.yml 文件
 $ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
-# 拉取 Core 配置文件
+
+拉取 Core 配置文件
 $ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 ```
 我们编辑 .env 文件，它看起来应该是这个样子的
@@ -179,8 +180,7 @@ Kami 是 Mix-Space 的默认前端，不过如果你想尝试其他风格的话�
 $ cd && cd mx-space
 $ git clone https://github.com/mx-space/kami.git --depth 1
 
-# 如果克隆缓慢，可以使用下面的镜像地址
-
+如果克隆缓慢，可以使用下面的镜像地址
 $ git clone https://hub.0z.gs/mx-space/kami.git --depth 1
 ```
 
@@ -194,7 +194,7 @@ $ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=
 
 复制 .env.example 为 .env
 ```bash
-cp .env.example .env
+$ cp .env.example .env
 ```
 编辑 .env 文件，它看起来应该是这个样子的
 
@@ -214,16 +214,16 @@ ASSETPREFIX=
 这里选用 pnpm 作为包管理器
 
 ```bash
-# 安装必需的模块
+安装必需的模块
 $ pnpm i
-# 构建
+构建
 $ pnpm build
 ```
 #### 启动前端
 
 ```bash
 $ pnpm prod:pm2
-# 可选
+可选
 $ pm2 start
 ```
 我们可以查看前端是否正常运行
