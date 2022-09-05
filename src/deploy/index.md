@@ -6,7 +6,7 @@ title: 部署 Mix-Space
 本节内容带你部署 Mix-Space，请有耐心的一点点看完；国内服务器请完成备案后再进行
 :::
 
-### 准备
+# 准备
 
 操作系统: 建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
 
@@ -15,9 +15,9 @@ Linux 内核版本: 大于 4.18 ，建议 5.x
 :::danger
 使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix-Space
 :::
-## 环境安装
+# 环境安装
 
-### 安装软件包
+## 安装软件包
 
 Debian / Ubuntu
 
@@ -29,7 +29,7 @@ CentOS
 ```bash
 # yum check-update && yum install git curl vim wget git-lfs -y
 ```
-### 安装 Docker
+## 安装 Docker
 
 SSH 连接到服务器，使用一键脚本，可以迅速安装 Docker 和 Docker Compose
 
@@ -40,7 +40,7 @@ $ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 该过程可能比较慢，请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装
 :::
 
-### 安装 nvm
+## 安装 nvm
 
 nvm 用于管理 Node.js 
 
@@ -63,15 +63,15 @@ $ nvm install --lts
 $ npm i -g yarn zx pnpm
 ```
 
-## 部署系统
+# 部署系统
 
 Mix-Space 支持以下安装方法
 
-**使用预设脚本部署** ： 安装方便，但是前端可以魔改的地方非常有限，更新频率较快
+[**使用预设脚本部署**](#使用预设脚本部署) ： 安装方便，但是前端可以魔改的地方非常有限，更新频率较快
 
-**手动部署** ： 安装略微麻烦，前端可以魔改任意地方，更新频率最快
+[**手动部署**](#手动部署) ： 安装略微麻烦，前端可以魔改任意地方，更新频率最快
 
-### 使用预设脚本部署
+## 使用预设脚本部署
 
 克隆仓库
 
@@ -80,7 +80,7 @@ $ cd && mkdir mx-space && cd mx-space
 $ git clone https://github.com/mx-space/docker --depth=1
 ```
 
-#### 整个环境
+### 整个环境
 
 所部署的环境：Kami + Core + Caddy2
 
@@ -101,7 +101,7 @@ $ zx ./build.mjs
 ```
 待流程执行完毕，进入 https://你的域名/proxy/qaqdmin，进行初始化
 
-##### 仅部署服务和主站前端
+### 仅部署服务和主站前端
 
 所部署的环境：Kami + Core
 
@@ -120,10 +120,45 @@ $ zx ./build.mjs
 ```
 待流程执行完毕，进入 http://127.0.0.1:2333/proxy/qaqdmin
 
-### 手动部署
+## 手动部署
 
-#### 部署 Core
+### 部署 Core
 
-//TODO docs: rewrite core install
+一般情况下，我们推荐使用 Docker 进行部署，接下来将带你使用 Docker 部署 Core，步骤非常简单
 
-//TODO docs: rewirte kami install 
+```bash
+# 新建文件夹
+$ cd && mkdir -p mx-space/core && cd $_
+# 拉取docker-compose.yml 文件
+$ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
+# 拉取 Core 配置文件
+$ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
+```
+我们编辑 .env 文件，它看起来应该是这个样子的
+
+```text
+# THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
+# SEE https://docs.docker.com/compose/environment-variables/#the-env-file
+JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串
+ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是kami的域名，如果允许多个域名访问，用英文逗号,分隔
+```
+如此，就可以了，接下来我们启动后端
+
+```bash
+# docker compose up -d
+```
+我们可以查看后端是否正常运行
+
+```bash
+$ curl  http://127.0.0.1:2333/api/v2
+```
+返回如下内容，认为正常
+
+```bash
+➜  ~ curl  http://127.0.0.1:2333/api/v2
+{"name":"@mx-space/core","author":"Innei <https://innei.ren>","version":"3.36.4","homepage":"https://github.com/mx-space/core#readme","issues":"https://github.com/mx-space/core/issues"}
+```
+
+### 部署 Kami
+
+//TODO : rewrite kami install
