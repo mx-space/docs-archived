@@ -15,6 +15,7 @@ title: 部署 Mix-Space
 
 Linux 内核版本: 大于 4.18 ，建议 5.x 
 
+内存建议: 大于 1 Gib
 :::danger
 使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix-Space
 :::
