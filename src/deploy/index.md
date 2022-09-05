@@ -6,6 +6,9 @@ title: 部署 Mix-Space
 本节内容带你部署 Mix-Space，请有耐心的一点点看完；国内服务器请完成备案后再进行
 :::
 
+后端示例域名 ：server.test.cn
+
+前端示例域名 ：www.test.cn
 # 准备
 
 操作系统: 建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
@@ -67,9 +70,9 @@ $ npm i -g yarn zx pnpm
 
 Mix-Space 支持以下安装方法
 
-[**使用预设脚本部署**](#使用预设脚本部署) ： 安装方便，但是前端可以魔改的地方非常有限，更新频率较快
+[**使用预设脚本部署**](#使用预设脚本部署) ： 安装方便，但是前端可以修改的地方非常有限，更新频率较快
 
-[**手动部署**](#手动部署) ： 安装略微麻烦，前端可以魔改任意地方，更新频率最快
+[**手动部署**](#手动部署) ： 安装略微麻烦，前端可以修改任意地方，更新频率最快
 
 ## 使用预设脚本部署
 
@@ -78,6 +81,10 @@ Mix-Space 支持以下安装方法
 ```bash
 $ cd && mkdir mx-space && cd mx-space
 $ git clone https://github.com/mx-space/docker --depth=1
+
+# 如果克隆缓慢，可以使用以下镜像地址
+
+$ git clone https://hub.0z.gs/mx-space/docker.git --depth 1
 ```
 
 ### 整个环境
@@ -161,4 +168,66 @@ $ curl  http://127.0.0.1:2333/api/v2
 
 ### 部署 Kami
 
-//TODO : rewrite kami install
+Kami 是 Mix-Space 的默认前端，不过如果你想尝试其他风格的话，可以去 [mx-web-yun](https://github.com/mx-space/mx-web-yun) 看看。
+
+废话不多说，开始~
+
+#### 拉取源文件
+
+```bash
+$ cd && cd mx-space
+$ git clone https://github.com/mx-space/kami.git --depth 1
+
+# 如果克隆缓慢，可以使用下面的镜像地址
+
+$ git clone https://hub.0z.gs/mx-space/kami.git --depth 1
+```
+
+#### 切换到最新的 tag
+
+```bash
+$ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
+```
+
+#### 配置文件
+
+复制 .env.example 为 .env
+```bash
+cp .env.example .env
+```
+编辑 .env 文件，它看起来应该是这个样子的
+
+```text
+# API 地址
+NEXT_PUBLIC_API_URL=https://server.test.cn/api/v2
+# GATEWAY 地址
+NEXT_PUBLIC_GATEWAY_URL=https://server.test.cn
+#前端使用的配置项名字
+NEXT_PUBLIC_SNIPPET_NAME=kami
+# 如果使用 CDN, 修改产物前缀；一般留空
+ASSETPREFIX=
+```
+
+#### 构建
+
+这里选用 pnpm 作为包管理器
+
+```bash
+# 安装必需的模块
+$ pnpm i
+# 构建
+$ pnpm build
+```
+#### 启动前端
+
+```bash
+$ pnpm prod:pm2
+# 可选
+$ pm2 start
+```
+我们可以查看前端是否正常运行
+
+```bash
+curl http://127.0.0.1:2323
+```
+如果有返回数据，则认为正常
