@@ -15,7 +15,7 @@ hero:
      link: /deploy/
    - theme: alt
      text: 介绍
-     link: /introduce/
+     link: /guide/
    - theme: alt
      text: GitHub 仓库
      link: https://github.com/mx-space
