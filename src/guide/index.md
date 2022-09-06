@@ -74,6 +74,7 @@ etc...
 
  - 维护 Kami 前端（仓库地址 [@mx-space/kami](https://github.com/mx-space/kami)）
  - 维护 Mix-Space 后端（仓库地址 [@mx-space/core](https://github.com/mx-space/core)）
+ - 维护 Mix-Space 后台 （仓库地址 [@mx-space/mx-admin](https://github.com/mx-space/mx-admin)）
  - 完善 Mix-Space 文档（仓库地址 [@mx-space/docs](https://github.com/mx-space/docs)）
 
 :::
