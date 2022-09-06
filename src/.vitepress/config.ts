@@ -82,7 +82,7 @@ const config: UserConfig = {
     logo: '/favicon.svg',
     editLink: {
       // repo: 'mx-space/docs',
-      pattern: 'https://github.com/ttimochan/mx-docs/edit/main/src/:path',
+      pattern: 'https://github.com/mx-space/docs/edit/main/src/:path',
       text: '编辑此页',
     },
     editLinks: true,
