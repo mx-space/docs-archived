@@ -35,7 +35,7 @@ export const deployYunBar = [
 ]
 
 export const deploySideBar = [
-  { text: 'Docker 一键部署', link: '/deploy/index.md#部署系统' },
+  { text: '预设脚本部署', link: '/deploy/index.md#部署系统' },
   { text: '部署 Core', link: '/deploy/index.md#手动部署' },
   { text: '部署 Kami', link: '/deploy/index.md#部署-kami' },
   { text: '部署 Yun (WIP)', link: '/deploy/' },
