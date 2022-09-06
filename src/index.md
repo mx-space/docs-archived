@@ -15,15 +15,15 @@ hero:
      link: /deploy/
    - theme: alt
      text: 介绍
-     link: /introduce/
+     link: /guide/
    - theme: alt
      text: GitHub 仓库
      link: https://github.com/mx-space
 
 features:
   - title: 开箱即用
-    details: 上 Docker！
-  - title: 速度快不快
+    details: Docker 简单部署
+  - title: 速度快
     details: 支持 Node 集群，高并发起飞
   - title: 指标
     details: Kami 100% SEO && 80% Performance

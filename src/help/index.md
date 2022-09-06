@@ -16,7 +16,7 @@ A：文档中示例域名为 `server.test.cn`， `www.test.cn`，请换成你自
 
 Q：我的备案信息怎么修改？
 
-A：请详细参阅文档，[Kami v3 设置部分](/options/)。
+A：请详细参阅文档，[Kami v3 设置部分](/use/index.md#kami-设置)。
 
 Q：GitHub 链接，QQ 链接等如何修改？
 
