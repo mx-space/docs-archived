@@ -15,10 +15,10 @@ import navBar, {
 import { NavbarFix } from './plugins/navbar'
 const sidebar = [
   { text: '介绍', items: introduceBar },
-  { text: '实验性特征', items: experimentBar },
   { text: '部署', items: deploySideBar },
-  { text: '设置', items: optionsBar },
+  { text: '使用', items: optionsBar },
   { text: '帮助', items: helpBar },
+  { text: '实验性特征', items: experimentBar },
   { text: '开发', items: devBar },
 ]
 
@@ -82,7 +82,7 @@ const config: UserConfig = {
     logo: '/favicon.svg',
     editLink: {
       // repo: 'mx-space/docs',
-      pattern: 'https://github.com/mx-space/docs/edit/main/docs/:path',
+      pattern: 'https://github.com/ttimochan/mx-docs/edit/main/src/:path',
       text: '编辑此页',
     },
     editLinks: true,
@@ -96,9 +96,9 @@ const config: UserConfig = {
 
     nav: navBar,
     sidebar: {
-      '/introduce/': sidebar,
+      '/guide/': sidebar,
       '/feature/': sidebar,
-      '/options/': sidebar,
+      '/use/': sidebar,
       '/deploy/': sidebar,
       '/help/': sidebar,
       '/dev/': sidebar,
