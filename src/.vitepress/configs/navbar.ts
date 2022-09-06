@@ -18,8 +18,10 @@ export const experimentBar = [
 
 export const optionsBar = [
   { text: '使用', link: '/use/' },
+  { text: '反向代理', link: '/use/#反向代理' },
   { text: '后台设置', link: '/use/#后台设置' },
-  { text: '歌单', link: '/use/#歌单听歌追番' },
+  { text: '主题设置', link: '/use/#kami-设置' },
+  { text: '歌单', link: '/use/#歌单-听歌-追番' },
 ]
 
 export const deployServerBar = [
