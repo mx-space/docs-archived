@@ -11,11 +11,12 @@ title: 部署 Mix-Space
 前端示例域名 ：www.test.cn
 # 准备
 
-操作系统: 建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
+操作系统 :  建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
 
-Linux 内核版本: 大于 4.18 ，建议 5.x 
+Linux 内核版本 :  大于 4.18 ，建议 5.x 
 
-内存建议: 大于 1 Gib
+内存建议 : 大于 1 Gib
+
 :::danger
 使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix-Space
 :::
