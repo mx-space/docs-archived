@@ -40,7 +40,7 @@ export const deployBar = [
   { text: 'Global', items: [
     { text: '一键部署全站', link: '/deploy/' },
   ]},
-  { text: 'Server', items: deployServerBar },
+  { text: 'Core', items: deployServerBar },
   { text: 'Kami', items: deployKamiBar },
 ] 
 
