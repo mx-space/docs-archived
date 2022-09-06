@@ -200,6 +200,9 @@ location ^~ /
 
 后端的 API 地址 ： https://server.test.cn/api/v2 (server.test.cn 请换成你自己的，下同)
 网关的地址 : https://server.test.cn
+
+建议：新建两个页面，第一个路由是 `message` ，第二个是 `about` ，标题，内容任意
+
 ### 用户设定
 
 这个应该比较简单，就不再赘述了。但是要注意的是头像的 URL 不要带入其他的参数，否则可能会导致包括但不限于 feed 输出异常。

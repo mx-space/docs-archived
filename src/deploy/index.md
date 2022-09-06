@@ -129,6 +129,13 @@ $ zx ./build.mjs
 
 ## 手动部署
 
+
+### 视频
+
+很高兴，我们的文档贡献者提供了视频教程
+
+<iframe src="https://api.paugram.com/bili?av=897657356&style=gray" style="height: 176px; width: 100%"></iframe>
+
 ### 部署 Core
 
 一般情况下，我们推荐使用 Docker 进行部署，接下来将带你使用 Docker 部署 Core，步骤非常简单
