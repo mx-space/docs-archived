@@ -461,7 +461,7 @@ function:
 
 ### 手动安装
 
-#### 安装库
+#### 安装模块
 
 进入后台，移动到 其他 - 终端
 
@@ -476,11 +476,11 @@ function:
 
 # npm -v
 
-如果缺失npm 请先使用容器内已存在的管理器安装 npm，例如 apk，yarn。
+如果缺失 npm 请先使用容器内已存在的管理器安装 npm，例如 apk，yarn。
 
 # yarn global add npm
 
-安装库
+假设你的 npm 是正常的，我们安装必需模块
 
 # cd ~/.mx-space
 # npm install @mx-space/extra
