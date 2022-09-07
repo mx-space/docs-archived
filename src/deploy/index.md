@@ -147,8 +147,6 @@ $ zx ./build.mjs
 
 待流程执行完毕，进入 http://127.0.0.1:2333/proxy/qaqdmin
 
-***
-
 ## 手动部署
 
 ### 视频
@@ -156,6 +154,8 @@ $ zx ./build.mjs
 很高兴，我们的文档贡献者提供了视频教程；建议配合本文档进行操作
 
 <iframe src="https://api.paugram.com/bili?av=897657356&style=gray" style="height: 176px; width: 100%"></iframe>
+
+***
 
 ### 部署 Core
 
@@ -195,6 +195,8 @@ $ curl  http://127.0.0.1:2333/api/v2
 ➜  ~ curl  http://127.0.0.1:2333/api/v2
 {"name":"@mx-space/core","author":"Innei <https://innei.ren>","version":"3.36.4","homepage":"https://github.com/mx-space/core#readme","issues":"https://github.com/mx-space/core/issues"}
 ```
+
+***
 
 ### 部署 Kami
 
@@ -258,6 +260,7 @@ $ pnpm i
 构建
 $ pnpm build
 ```
+
 #### 启动前端
 
 ```bash
@@ -273,8 +276,6 @@ $ curl http://127.0.0.1:2323
 ```
 
 如果有返回数据，则认为正常
-
-***
 
 ## 下一步
 
