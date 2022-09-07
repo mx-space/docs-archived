@@ -6,8 +6,9 @@ title: 介绍
 
 Mix-Space 是一款简洁而不简单的个人博客系统，它具有良好的动效设计，可爱的风格，以及比较丰富的功能。
 
-它够快，更现代，能享受到比较新的技术栈带来的惊艳。
+它够**快**，更**现代**，其活跃的开源社区能享受到比较新的技术栈带来的惊艳。
 
+![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/kami.jpg)
 
 ## 功能亮点
 
@@ -81,7 +82,6 @@ etc...
 
 
 ## 部署
-
 
 [开始部署~](/deploy/index.md)
 
