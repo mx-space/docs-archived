@@ -9,7 +9,7 @@ Mix-Space 是一款简洁而不简单的个人博客系统，它具有良好的�
 它够快，更现代，能享受到比较新的技术栈带来的惊艳。
 
 
-# 功能亮点
+## 功能亮点
 
  - 前后端分离设计
 
@@ -35,7 +35,7 @@ etc...
 
 穷举不是我们的特长，更多有趣的功能期待你来探索！难道你不心动么？
 
-# Demo
+## Demo
 
 你可以通过以下 Demo 来查看整个系统
 
@@ -45,7 +45,7 @@ etc...
 
 [Mx-Yun Demo](https://yun.innei.ren)
 
-# 网站示例
+## 网站示例
 
  - [静かな森 · 致虚极，守静笃](https://innei.ren)
  - [TimochanのBlog · Let's start learning](https://www.timochan.cn)
@@ -53,7 +53,7 @@ etc...
  - [SuemorのBlog - 所谓自由就是可以说二加二等于四的自由](https://www.suemor.com)
 
 
-# Thanks
+## Thanks
 
 本版文档由以下贡献者编写（按照贡献者名字首字母顺序进行排序）
 
@@ -68,7 +68,7 @@ etc...
 - [zsbai](https://github.com/zsbai)
 
 
-# 参与到本项目
+## 参与到本项目
 
 ::: tip 立即为社区贡献力量？
 
@@ -80,14 +80,14 @@ etc...
 :::
 
 
-# 部署
+## 部署
 
 
 [开始部署~](/deploy/index.md)
 
-# 打赏本项目
+## 打赏本项目
 
-## 微信二维码
+### 微信二维码
 
 <div align="center">
 <img src="https://fastly.jsdelivr.net/gh/Innei/img-bed@master/20191211132347.png" style="width:40%;" />
