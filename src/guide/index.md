@@ -50,8 +50,8 @@ etc...
 
  - [静かな森 · 致虚极，守静笃](https://innei.ren)
  - [TimochanのBlog · Let's start learning](https://www.timochan.cn)
- - [喵二の小博客 - 缘，妙不可言](https://www.miaoer.xyz)
- - [SuemorのBlog - 所谓自由就是可以说二加二等于四的自由](https://www.suemor.com)
+ - [喵二の小博客 · 缘，妙不可言](https://www.miaoer.xyz)
+ - [SuemorのBlog · 所谓自由就是可以说二加二等于四的自由](https://www.suemor.com)
 
 
 ## Thanks
