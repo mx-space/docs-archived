@@ -6,6 +6,8 @@ import Md from '../.vitepress/components/fetch-md.vue'
 
 # 云函数
 
-太懒了，这里居然没有任何信息！ಥ_ಥ
+
+
+请访问 [云函数说明](https://github.com/mx-space/core/blob/master/src/modules/serverless/serverless.readme.md)
 
 <Md src="https://fastly.jsdelivr.net/gh/mx-space/core@master/src/modules/serverless/serverless.readme.md" />
