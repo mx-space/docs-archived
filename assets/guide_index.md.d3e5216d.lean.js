@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as a,a as i}from"./app.184ada54.js";const l=JSON.parse('{"title":"介绍","description":"","frontmatter":{"title":"介绍"},"headers":[{"level":2,"title":"微信二维码","slug":"微信二维码"}],"relativePath":"guide/index.md"}'),t={name:"guide/index.md"},h=[i("",24)];const n=e(t,[["render",function(e,i,l,t,n,o){return r(),a("div",null,h)}]]);export{l as __pageData,n as default};
