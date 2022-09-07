@@ -2,14 +2,20 @@
 title: 部署 Mix-Space
 ---
 
+# 开始
+
 :::tip 
-本节内容带你部署 Mix-Space，请有耐心的一点点看完；国内服务器请完成备案后再进行
+在看完介绍后你一定很想尝试部署 Mix-space !
+那本节内容带你完成部署，请有耐心的一点点看完
 :::
+
+## 示例和准备
+
+国内服务器部署请完成备案后再进行
 
 后端示例域名 ：server.test.cn
 
 前端示例域名 ：www.test.cn
-# 准备
 
 操作系统 :  建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
 
@@ -20,6 +26,9 @@ Linux 内核版本 :  大于 4.18 ，建议 5.x
 :::danger
 使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix-Space
 :::
+
+***
+
 # 环境安装
 
 ## 安装软件包
@@ -34,6 +43,7 @@ CentOS
 ```bash
 # yum check-update && yum install git curl vim wget git-lfs -y
 ```
+
 ## 安装 Docker
 
 SSH 连接到服务器，使用一键脚本，可以迅速安装 Docker 和 Docker Compose
@@ -68,13 +78,15 @@ $ nvm install --lts
 $ npm i -g yarn zx pnpm
 ```
 
+***
+
 # 部署系统
 
-Mix-Space 支持以下安装方法
+Mix-Space 目前支持以下安装方法
 
 [**使用预设脚本部署**](#使用预设脚本部署) ： 安装方便，但是前端可以修改的地方非常有限
 
-[**手动部署**](#手动部署) ： 安装略微麻烦，前端可以修改任意地方，更新频率最快
+[**手动部署**](#手动部署) ： 安装略微麻烦，前端可以修改任意地方更细分，更新频率最快
 
 ## 使用预设脚本部署
 
@@ -101,13 +113,16 @@ $ cd docker
 $ npm i
 $ zx ./build.mjs
 ```
+
 实例输入：
+
 ```bash
 你的域名为：（需要提前绑定）: innei.ren
 你的邮箱为: (若该步留空，则不部署 Caddy 服务): tukon@gmail.com
 是否部署 Caddy 2.0？ (y/n): y
 ```
-待流程执行完毕，进入 https://你的域名/proxy/qaqdmin，进行初始化
+
+待流程执行完毕，进入 https://server.test.cn/proxy/qaqdmin，进行初始化
 
 ### 仅部署服务和主站前端
 
@@ -116,24 +131,29 @@ $ zx ./build.mjs
 你不需要 IP 指向。但是需要手动处理服务器反代
 
 使用一键脚本
+
 ```bash
 $ cd docker
 $ npm i
 $ zx ./build.mjs
 ```
+
 实例输入：
+
 ```bash
 你的域名为：（需要提前绑定）: innei.ren
 你的邮箱为: (此步留空，则不部署 Caddy 服务):
 ```
+
 待流程执行完毕，进入 http://127.0.0.1:2333/proxy/qaqdmin
+
+***
 
 ## 手动部署
 
-
 ### 视频
 
-很高兴，我们的文档贡献者提供了视频教程
+很高兴，我们的文档贡献者提供了视频教程；建议配合本文档进行操作
 
 <iframe src="https://api.paugram.com/bili?av=897657356&style=gray" style="height: 176px; width: 100%"></iframe>
 
@@ -204,13 +224,17 @@ $ git lfs fetch --all
 
 $ git lfs pull
 ```
+
 注意：如果无法正常拉取，可以到 GitHub 上手动下载文件并放到相应目录。
+
 #### 配置文件
 
 复制 .env.example 为 .env
+
 ```bash
 $ cp .env.example .env
 ```
+
 编辑 .env 文件，它看起来应该是这个样子的
 
 ```text
@@ -241,13 +265,16 @@ $ pnpm prod:pm2
 可选
 $ pm2 start
 ```
+
 我们可以查看前端是否正常运行
 
 ```bash
 $ curl http://127.0.0.1:2323
 ```
+
 如果有返回数据，则认为正常
 
+***
 
 ## 下一步
 
