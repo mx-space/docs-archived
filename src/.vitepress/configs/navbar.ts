@@ -37,6 +37,7 @@ export const deploySideBar = [
   { text: '预设脚本部署', link: '/deploy/index.md#部署系统' },
   { text: '部署 Core', link: '/deploy/index.md#手动部署' },
   { text: '部署 Kami', link: '/deploy/index.md#部署-kami' },
+  { text: 'Windows 部署', link: '/deploy/windows.md' },
 ]
 
 export const deployBar = [

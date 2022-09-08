@@ -19,9 +19,12 @@ title: 部署 Mix-Space
 
 操作系统 :  建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
 
+如果你想在 Windows 部署，请看这里 [Windows 安装 Mix-Space](/deploy/windows.md)
+
 Linux 内核版本 :  大于 4.18 ，建议 5.x 
 
 内存建议 : 大于 1 Gib
+
 
 :::danger
 使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix-Space
@@ -161,6 +164,9 @@ $ zx ./build.mjs
 
 ### 部署 Core
 
+
+***
+#### Docker 部署
 一般情况下，我们推荐使用 Docker 进行部署，接下来将带你使用 Docker 部署 Core，步骤非常简单
 
 ```bash
@@ -198,7 +204,97 @@ $ curl  http://127.0.0.1:2333/api/v2
 {"name":"@mx-space/core","author":"Innei <https://innei.ren>","version":"3.36.4","homepage":"https://github.com/mx-space/core#readme","issues":"https://github.com/mx-space/core/issues"}
 ```
 
+
+#### 从源码进行部署
+
+:::tip
+如果你是为了使用，而不是开发，建议使用 [Docker 部署](/deploy/index.md#docker-部署) ，当然，如果你有比较好的功能，欢迎 PR
+:::
+
+拉取源代码
+
+```bash
+$ git clone https://github.com/mx-space/core.git --depth 1
+```
+
+安装依赖
+
+```bash
+$ pnpm i
+```
+
+本地开发
+
+```bash
+$ pnpm dev
+```
+
+如果你想这样部署 Core 并对外提供服务 ，请移动到 `/src/app.config.ts` 文件
+
+它 13-30 行的内容如下，看起来似乎是这样的
+
+```ts
+export const CROSS_DOMAIN = {
+  allowedOrigins: argv.allowed_origins
+    ? argv.allowed_origins?.split?.(',')
+    : [
+        'innei.ren',
+        '*.innei.ren',
+        'shizuri.net',
+        '*.shizuri.net',
+        'localhost:*',
+        '127.0.0.1',
+        'mbp.cc',
+        'local.innei.test',
+        '22333322.xyz',
+        '*.dev',
+      ],
+
+  // allowedReferer: 'innei.ren',
+}
+```
+其中，按照 17-26 行一样，按照格式，追加你的域名
+
+例如，我想要添加 `server.example.com` ，那么仅仅这样追加一行即可。
+
+```ts
+export const CROSS_DOMAIN = {
+  allowedOrigins: argv.allowed_origins
+    ? argv.allowed_origins?.split?.(',')
+    : [
+        'innei.ren',
+        '*.innei.ren',
+        'shizuri.net',
+        '*.shizuri.net',
+        'localhost:*',
+        '127.0.0.1',
+        'mbp.cc',
+        'local.innei.test',
+        '22333322.xyz',
+        '*.dev',
+        'server.example.com', //追加的新域名
+      ],
+
+  // allowedReferer: 'innei.ren',
+}
+```
+构建 & 启动
+
+```bash
+$ pnpm build
+```
+我们可以使用 pm2 托管
+
+```bash
+$ pm2 start
+
+或者
+
+$ pnpm prod:pm2
+```
 ***
+
+
 
 ### 部署 Kami
 

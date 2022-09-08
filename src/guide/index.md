@@ -83,7 +83,8 @@ etc...
 
 ## 部署
 
-[开始部署~](/deploy/index.md)
+
+[开始部署，Let's go !](/deploy/index.md)
 
 ## 打赏本项目
 
