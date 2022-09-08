@@ -5,7 +5,7 @@ title: Windows 安装
 # Windows 安装 Mix-Space
 
 :::tip
-本节内容是文档贡献者单方面的支持，文中提到的问题不会被修复，不推荐 Windows 部署 Mix-Space
+本节内容是文档贡献者单方面的支持，文中提到的问题不会被修复，不推荐使用 Windows 部署 Mix-Space
 :::
 
 
@@ -59,7 +59,7 @@ $ npm i -g pm2 pnpm yarn
 
 ### 安装 msvc 编译环境
 
-因为 mscv 环境目前获取的渠道只有 VS 安装 C++ 的桌面开发环境才能获得
+因为 mscv 编译环境目前获取的渠道只有使用 VS 安装 C++ 的桌面开发环境才能获得
 
 我们去 VS 官网下载 VS 的构建工具，链接如下 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
@@ -231,7 +231,7 @@ $ git clone https://github.com/mx-space/kami.git --depth 1
 
 ### 安装依赖
 
-由于使用 `pnpm` 会存在目录链接等容易出现错误，导致炸裂的问题，故这里采用 `yarn` 作为依赖管理器
+由于使用 `pnpm` 会存在目录链接等容易出现错误，导致心态炸裂的问题，故这里采用 `yarn` 作为依赖管理器
 
 ```powershell
 $ yarn 
