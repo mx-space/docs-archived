@@ -322,7 +322,9 @@ site:
   # 背景图
   background:
     src:
+      # 亮色背景
       light: https://fastly.jsdelivr.net/gh/mx-space/docs-images@master/assets/background.png
+      # 暗色背景
       dark: https://fastly.jsdelivr.net/gh/mx-space/docs-images@master/assets/background-night.png
     position: top center fixed
   # 定义网站顶栏
@@ -396,10 +398,13 @@ site:
         dark: |-
         light: https://fastly.jsdelivr.net/gh/mx-space/docs-images@master/assets/footer.png
       position: top/cover
+    # 默认返回的地址
     home_page: https://innei.ren
+    # 底部座右铭
     motto:
       content: Stay hungry. Stay foolish.
       author: Steve Jobs
+    # icp 备案
     icp:
       enable: false
       label: "浙ICP备 20028356 号"
@@ -423,14 +428,18 @@ site:
         newtab: true
   # 自定义脚本、样式和JS（支持外链引入，不需要script标签）
   custom:
+    # 自定义脚本
     script: |-
       console.log('Hello')
+    # 自定义样式
     style: |-
       .foo {
         color: red
       }
+    # 引入外部 JS ，不需要 script 表情
     js:
       - https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+    # 引入外部 CSS 
     css:
       - https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css
 # 定义功能，例如歌单，追番
