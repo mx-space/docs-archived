@@ -222,7 +222,7 @@ $ pm2 start
 
 ### 拉取仓库
 
-在你喜欢的地方打开 powershell / cmd /other terminal
+在你喜欢的地方打开 powershell / cmd / other terminal
 
 ```powershell
 $ git clone https://github.com/mx-space/kami.git --depth 1
