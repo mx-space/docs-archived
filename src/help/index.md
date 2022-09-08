@@ -21,8 +21,8 @@ title: 常见问题
 直接在 `mx-space/kami` 文件夹下执行 `git pull origin master`
 
 ```bash
-# cd
-# cd mx-space/kami
+
+$ cd ~/mx-space/kami
 
 $ git pull origin master
 ```
@@ -36,7 +36,9 @@ $ pnpm build
 
 $ pm2 start
 
-# 假如我确定修改项万无一失: pnpm i && pnpm build && pm2 start
+假如我确定修改项万无一失 
+
+$ pnpm i && pnpm build && pm2 start
 ```
 
 ### 魔改升级
@@ -46,8 +48,8 @@ $ pm2 start
 然后拉取 kami 前端仓库，更新到稳定版本
 
 ```bash
-# cd
-# cd mx-space
+
+$ cd ~/mx-space
 
 $ git clone https://github.com/mx-space/kami.git --depth=1
 
@@ -79,10 +81,10 @@ $ pm2 start
 进入 server 文件夹执行
 
 ```bash
-# cd
-# cd mx-space/server
 
-$ docker compose pull && docker compose up -d
+$ cd ~/mx-space/server
+
+# docker compose pull && docker compose up -d
 ```
 
 # 备份与回滚
@@ -93,7 +95,7 @@ $ docker compose pull && docker compose up -d
 
 在后端中 其他-备份 中点击立即备份，即备份到绝对目录: 
 
-`/root/mx-space/server/data/mx-space/backup/20xx-xx-xx_xx:xx:xx/backup-20xx-xx-xx_xx:xx:xx.zip`
+`~/mx-space/server/data/mx-space/backup/20xx-xx-xx_xx:xx:xx/backup-20xx-xx-xx_xx:xx:xx.zip`
 
 如果你没修改的话，详见后端面板 设定-系统-备份
 
@@ -101,7 +103,7 @@ $ docker compose pull && docker compose up -d
 ## 回滚
 
 :::tip
-Linux 和 MacOS 可直接上传备份包并且，无需修改包名一致即可回滚以下操作仅针对使用 Windows 用户访问后端的情况
+Linux 和 MacOS 可直接上传备份包，并且无需修改包名一致即可回滚，以下操作仅针对使用 Windows 用户访问后端的情况
 :::
 
 在后端中 其他-备份 中点击立即备份，将之前在电脑里的 `backup.zip` 上传到刚刚生成的备份目录里进行重命名替换
@@ -111,12 +113,12 @@ Linux 和 MacOS 可直接上传备份包并且，无需修改包名一致即可�
 例: 假如刚刚生成的备份是 backup-2022-09-01_23:33:33.zip 将想进行回滚的备份包 backup-2022-01-14_05:14:19.zip 修改为刚刚生成的备份一样的名字
 
 ```bash
-mv /root/mx-space/server/data/mx-space/backup/2022-01-14_05:14:19/backup-2022-01-14_05:14:19.zip backup-2022-09-01_23:33:33.zip
+# mv ~/mx-space/server/data/mx-space/backup/2022-01-14_05:14:19/backup-2022-01-14_05:14:19.zip backup-2022-09-01_23:33:33.zip
 ```
 :::
 
 :::danger
-⚠️ 该操作涉及修改数据库，请多备份几个工作日的 backup，数据无价请谨慎操作！
+该操作涉及修改数据库，请多备份几个工作日的 backup，数据无价请谨慎操作！
 
 一般情况下回滚只会导致 analyze 数据页丢失 IP & PV 的数据
 :::
