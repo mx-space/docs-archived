@@ -426,7 +426,7 @@ site:
       - name: 开往
         path: https://travellings.link/
         newtab: true
-  # 自定义脚本、样式和JS（支持外链引入，不需要script标签）
+  # 自定义脚本、样式和JS（支持外链引入，不需要 script 标签）
   custom:
     # 自定义脚本
     script: |-
@@ -456,6 +456,7 @@ function:
     enable: false
     ga: ""
     baidu: ""
+    umami: ""
   # 打赏
   donate:
     enable: false
@@ -475,6 +476,7 @@ function:
 
 ### 手动安装
 
+***
 #### 安装模块
 
 进入后台，移动到 其他 - 终端
@@ -501,6 +503,7 @@ function:
 ```
 #### 功能
 
+***
 ##### 歌单
 
 进入后台，移动到 其他 · 配置与云函数
@@ -513,7 +516,7 @@ function:
 - 数据类型：Function
 - 请求方式：GET
 - 公开： 是
-```typescript
+```ts
 import extra from '@mx-space/extra'
 
 async function handler() {
@@ -551,7 +554,7 @@ const md5_password = '0800fc577294c34e0b28ad2839435945'   //登录密码的md5�
 
 举个例子，密码登录
 
-```typescript
+```ts
 import extra from '@mx-space/extra'
 
 async function handler() {
@@ -598,7 +601,7 @@ const password = 'wddw***s' // 登录密码 password
 - 请求方式：GET
 - 公开： 是
 
-```typescript
+```ts
 import extra from '@mx-space/extra'
 async function handler() {
   const { BiliClient } = extra
@@ -627,7 +630,7 @@ const len = 10
 - 请求方式：GET
 - 公开： 是
 
-```typescript
+```ts
 import { NeteaseCloudMusicApi } from '@mx-space/extra'
 
 async function handler() {
@@ -657,7 +660,7 @@ async function handler() {
 - 请求方式：GET
 - 公开： 是
 
-```typescript
+```ts
 import extra from '@mx-space/extra'
 
 const cacheKey = 'netease-lyrics'

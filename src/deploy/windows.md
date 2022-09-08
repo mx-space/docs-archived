@@ -4,7 +4,7 @@ title: Windows 安装
 
 # Windows 安装 Mix-Space
 
-:::tip
+:::warning
 本节内容是文档贡献者单方面的支持，文中提到的问题不会被修复，不推荐使用 Windows 部署 Mix-Space
 :::
 
