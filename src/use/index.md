@@ -436,7 +436,7 @@ site:
       .foo {
         color: red
       }
-    # 引入外部 JS ，不需要 script 表情
+    # 引入外部 JS ，不需要 script 标签
     js:
       - https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
     # 引入外部 CSS 
