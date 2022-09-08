@@ -20,7 +20,7 @@ Mix-Space 的 Core 需要 MongoDB ，Node.js 以及 Redis ，如果你有 Scoop 
 ```powershell
 $ scoop install mongodb redis nodejs-lts
 ```
-如果你没有 Scoop 作为包管理器，你需要手动下载，并处理环境变量问题(可选)
+如果你没有 Scoop 作为包管理器，接下来带你手动下载安装，并处理环境变量问题(可选)
 
 ### 安装 MongoDB
 
@@ -59,9 +59,9 @@ $ npm i -g pm2 pnpm yarn
 
 ### 安装 msvc 编译环境
 
-因为 mscv 编译环境目前获取的渠道只有使用 VS 安装 C++ 的桌面开发环境才能获得
+mscv 编译环境，目前获取的渠道只有使用 VS 安装 C++ 的桌面开发环境才能获得
 
-我们去 VS 官网下载 VS 的构建工具，链接如下 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
+所以，我们去 VS 官网下载 VS 的构建工具，链接如下 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 我们仅需安装以下功能组件即可
 
@@ -231,7 +231,7 @@ $ git clone https://github.com/mx-space/kami.git --depth 1
 
 ### 安装依赖
 
-由于使用 `pnpm` 会存在目录链接等容易出现错误，导致心态炸裂的问题，故这里采用 `yarn` 作为依赖管理器
+由于使用 `pnpm` 会存在目录链接，符号链接等，容易出现权限问题，导致心态炸裂的问题，故这里采用 `yarn` 作为依赖管理器
 
 ```powershell
 $ yarn 
