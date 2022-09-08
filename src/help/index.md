@@ -21,8 +21,7 @@ title: 常见问题
 直接在 `mx-space/kami` 文件夹下执行 `git pull origin master`
 
 ```bash
-# cd
-# cd mx-space/kami
+$ cd ~/mx-space/kami
 
 $ git pull origin master
 ```
@@ -46,8 +45,7 @@ $ pm2 start
 然后拉取 kami 前端仓库，更新到稳定版本
 
 ```bash
-# cd
-# cd mx-space
+$ cd ~/mx-space
 
 $ git clone https://github.com/mx-space/kami.git --depth=1
 
@@ -79,22 +77,17 @@ $ pm2 start
 进入 server 文件夹执行
 
 ```bash
-# cd
-# cd mx-space/server
 
-$ docker compose pull && docker compose up -d
+$ cd ~/mx-space/server
+
+# docker compose pull && docker compose up -d
 ```
 
 ## 重启
 重启时 Mix-sapce 可能不会跟随系统自启
 
 ```bash
-# 后端
-$ cd mx-space/server && docker compose up -d
-
-# 前端
-# cd
-$ cd mx-space/kami && pm2 start
+$ cd ~/mx-space/kami && pm2 start
 ```
 
 # 备份与回滚
@@ -105,7 +98,7 @@ $ cd mx-space/kami && pm2 start
 
 在后端中 其他-备份 中点击立即备份，即备份到绝对目录: 
 
-`/root/mx-space/server/data/mx-space/backup/20xx-xx-xx_xx:xx:xx/backup-20xx-xx-xx_xx:xx:xx.zip`
+`~/mx-space/server/data/mx-space/backup/20xx-xx-xx_xx:xx:xx/backup-20xx-xx-xx_xx:xx:xx.zip`
 
 如果你没修改的话，详见后端面板 设定-系统-备份
 
@@ -123,7 +116,7 @@ Linux 和 MacOS 可直接上传备份包并且，无需修改包名一致即可�
 例: 假如刚刚生成的备份是 backup-2022-09-01_23:33:33.zip 将想进行回滚的备份包 backup-2022-01-14_05:14:19.zip 修改为刚刚生成的备份一样的名字
 
 ```bash
-mv /root/mx-space/server/data/mx-space/backup/2022-01-14_05:14:19/backup-2022-01-14_05:14:19.zip backup-2022-09-01_23:33:33.zip
+# mv ~/mx-space/server/data/mx-space/backup/2022-01-14_05:14:19/backup-2022-01-14_05:14:19.zip backup-2022-09-01_23:33:33.zip
 ```
 :::
 
