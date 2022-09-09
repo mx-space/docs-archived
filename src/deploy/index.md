@@ -302,7 +302,6 @@ $ pnpm prod:pm2
 
 Kami 是 Mix-Space 的默认前端，不过如果你想尝试其他风格的话，可以去 [mx-web-yun](https://github.com/mx-space/mx-web-yun) 看看。
 
-废话不多说，开始~
 
 #### 拉取源文件
 
