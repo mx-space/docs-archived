@@ -205,6 +205,7 @@ $ curl  http://127.0.0.1:2333/api/v2
 {"name":"@mx-space/core","author":"Innei <https://innei.ren>","version":"3.36.4","homepage":"https://github.com/mx-space/core#readme","issues":"https://github.com/mx-space/core/issues"}
 ```
 
+***
 
 #### 从源码进行部署
 
