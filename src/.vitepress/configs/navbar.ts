@@ -49,10 +49,10 @@ export const deployBar = [
 ] 
 
 export const helpBar = [
-  { text: '构建', link: '/help/#构建' },
-  { text: '设置', link: '/help/#设置' },
-  { text: '重启', link: '/help/#重启' },
   { text: '升级', link: '/help/#升级' },
+  { text: '重启', link: '/help/#重启' },
+  { text: '备份', link: '/help/#备份与回滚' },
+  { text: '常见问题', link: '/help/#常见问题' },
 ]
 
 export const devBar = [
