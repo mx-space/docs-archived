@@ -165,6 +165,7 @@ $ zx ./build.mjs
 ***
 
 ### 部署 Core
+
 一般情况下，我们推荐使用 Docker 进行部署，接下来将带你使用 Docker 部署 Core，步骤非常简单
 
 ***
