@@ -231,7 +231,7 @@ $ git clone https://github.com/mx-space/kami.git --depth 1
 
 ### 安装依赖
 
-由于使用 `pnpm` 会存在目录链接，符号链接等，容易出现权限问题，导致心态炸裂的问题，故这里采用 `yarn` 作为依赖管理器
+由于使用 `pnpm` 会存在目录链接，符号链接等，容易出现权限问题，导致心态炸裂，故这里采用 `yarn` 作为依赖管理器
 
 ```powershell
 $ yarn 
