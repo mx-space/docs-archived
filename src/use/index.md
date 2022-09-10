@@ -695,3 +695,8 @@ async function handler() {
 ```
 
 到这里，Kami 默认功能需要的云函数已经配置完毕。
+
+
+## PS
+
+你可能需要的 [Kami 扩展语法](https://github.com/mx-space/kami#markdown-%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95)
