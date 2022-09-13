@@ -73,10 +73,10 @@ etc...
 
 ::: tip 立即为社区贡献力量？
 
- - Kami Bug 反馈 （ 提 issue [@mx-space/kami](https://github.com/mx-space/kami/issues)）
- - Core Bug 反馈 （提 issue [@mx-space/core/https://github.com/mx-space/core/issues]）
- - 后台 Bug 反馈 （提 issue [@mx-space/mx-admin](https://github.com/mx-space/mx-admin/issues)）
- - 文档问题反馈 （提 issue [@mx-space/docs](https://github.com/mx-space/docs/issues)）
+ - Kami Bug 反馈 （[@mx-space/kami](https://github.com/mx-space/kami/issues)）
+ - Core Bug 反馈 （[@mx-space/core](https://github.com/mx-space/core/issues)）
+ - 后台 Bug 反馈 （[@mx-space/mx-admin](https://github.com/mx-space/mx-admin/issues)）
+ - 文档问题反馈 （[@mx-space/docs](https://github.com/mx-space/docs/issues)）
  - 维护 Kami 前端（仓库地址 [@mx-space/kami](https://github.com/mx-space/kami)）
  - 维护 Mix-Space 后端（仓库地址 [@mx-space/core](https://github.com/mx-space/core)）
  - 维护 Mix-Space 后台 （仓库地址 [@mx-space/mx-admin](https://github.com/mx-space/mx-admin)）
