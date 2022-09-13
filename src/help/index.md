@@ -7,18 +7,18 @@ title: 常见问题
 因为前端分手动部署和 Docker 部署，请按照文档中部署方式选择对应的更新方法。
 
 :::danger
-前端更新目前仅针对手动部署更新，请 pr
+前端更新目前仅针对手动部署更新，请 PR
 :::
 
 ## 前端升级
 
-### 强制同步
+### 同步仓库
 
 :::tip
-该方法适合于对 Kami 源代码没有做改动的懒人用户
+该方法适合于对 Kami 源代码没有做改动的用户
 :::
 
-直接在 `mx-space/kami` 文件夹下执行 `git pull origin master`
+直接在 `kami` 文件夹下执行 `git pull origin master`
 
 ```bash
 $ cd ~/mx-space/kami
@@ -34,17 +34,18 @@ $ pnpm i
 $ pnpm build
 
 $ pm2 start
-
-# 假如我确定修改项万无一失: pnpm i && pnpm build && pm2 start
 ```
+:::warning
+你应该理解的是，即便是你没有对 Kami 进行任何魔改，仍有可能出代码不能自动合并
+:::
 
 ### 魔改升级
 
 :::tip
-此方法适用于对前端进行魔改升级
+此方法适用于对前端魔改后的升级，我们认为你修改了 'kami/src' 里面的源代码，这样的话，容易出现合并冲突，建议手动替换
 :::
 
-将 `mx-space/kami` 文件夹改为任意名字，这里修改为 `kami.d`
+将 `kami` 文件夹改为任意名字，例如修改为 `kami.d`
 
 然后拉取 kami 前端仓库，更新到稳定版本
 
@@ -56,13 +57,12 @@ $ git clone https://github.com/mx-space/kami.git --depth=1
 $ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
 
-然后将更新前之前配置时修改过的文件，如在 `mx-space/kami.d`
+然后将更新前之前配置时修改过的文件，如在 `kami.d`
 
-中的 `.env` 和 `public` 文件夹复制到 `mx-space/kami`
+中的 `.env` 和 `public` 文件夹复制到 `kami`
 
-假设这里还修改了友链的页面文件这里也一一进行替换
+将你的修改的部分依次修改
 
-> 如果友链页源码有更新，又将更新前的文件替换上去可能导致构建错误。
 
 替换完成；安装依赖、构建、启动前端
 
@@ -72,8 +72,6 @@ $ pnpm i
 $ pnpm build
 
 $ pm2 start
-
-# 万无一失: pnpm i && pnpm build && pm2 start
 ```
 
 ## 后端升级
@@ -88,7 +86,8 @@ $ cd ~/mx-space/server
 ```
 
 ## 重启
-重启时 Mix-sapce 可能不会跟随系统自启
+
+重启时 Mix-sapce Kami 前端可能不会跟随系统自启
 
 ```bash
 $ cd ~/mx-space/kami && pm2 start
