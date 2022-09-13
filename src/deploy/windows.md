@@ -2,10 +2,10 @@
 title: Windows 安装
 ---
 
-# Windows 安装 Mix-Space
+# Windows 安装 Mix Space
 
 :::warning
-本节内容是文档贡献者单方面的支持，文中提到的问题不会被修复，不推荐使用 Windows 部署 Mix-Space
+本节内容是文档贡献者单方面的支持，文中提到的问题不会被修复，不推荐使用 Windows 部署 Mix Space
 :::
 
 
@@ -15,7 +15,7 @@ title: Windows 安装
 :::tip
 如果你的不是基于虚拟化的服务器（即可以进行虚拟化），还是非常推荐使用 [Docker Desktop For Windows](https://www.docker.com/products/docker-desktop/) 去部署 Core；如果你是基于虚拟化的服务器上（即不支持再次虚拟化），那仅能使用源码进行部署，这种存在安装方式比较繁琐，且存在将来也不会修复的 BUG
 :::
-Mix-Space 的 Core 需要 MongoDB ，Node.js 以及 Redis ，如果你有 Scoop 管理器，可以很方便的安装
+Mix Space 的 Core 需要 MongoDB ，Node.js 以及 Redis ，如果你有 Scoop 管理器，可以很方便的安装
 
 ```powershell
 $ scoop install mongodb redis nodejs-lts

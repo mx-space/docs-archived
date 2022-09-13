@@ -4,7 +4,7 @@ title: 介绍
 
 # 👋 Hello Friend
 
-Mix-Space 是一款简洁而不简单的个人博客系统，它具有良好的动效设计，可爱的风格，以及比较丰富的功能。
+Mix Space 是一款简洁而不简单的个人博客系统，它具有良好的动效设计，可爱的风格，以及比较丰富的功能。
 
 它够**快**，更**现代**，其活跃的开源社区能享受到比较新的技术栈带来的惊艳。
 
@@ -78,9 +78,9 @@ etc...
  - 后台 Bug 反馈 （[@mx-space/mx-admin](https://github.com/mx-space/mx-admin/issues)）
  - 文档问题反馈 （[@mx-space/docs](https://github.com/mx-space/docs/issues)）
  - 维护 Kami 前端（仓库地址 [@mx-space/kami](https://github.com/mx-space/kami)）
- - 维护 Mix-Space 后端（仓库地址 [@mx-space/core](https://github.com/mx-space/core)）
- - 维护 Mix-Space 后台 （仓库地址 [@mx-space/mx-admin](https://github.com/mx-space/mx-admin)）
- - 完善 Mix-Space 文档（仓库地址 [@mx-space/docs](https://github.com/mx-space/docs)）
+ - 维护 Mix Space 后端（仓库地址 [@mx-space/core](https://github.com/mx-space/core)）
+ - 维护 Mix Space 后台 （仓库地址 [@mx-space/mx-admin](https://github.com/mx-space/mx-admin)）
+ - 完善 Mix Space 文档（仓库地址 [@mx-space/docs](https://github.com/mx-space/docs)）
 
 :::
 

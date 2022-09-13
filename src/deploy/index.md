@@ -1,11 +1,11 @@
 ---
-title: 部署 Mix-Space
+title: 部署 Mix Space
 ---
 
 # 开始
 
 :::tip 
-在看完介绍后你一定很想尝试部署 Mix-space !
+在看完介绍后你一定很想尝试部署 Mix Space !
 那本节内容带你完成部署，请有耐心的一点点看完
 :::
 
@@ -19,7 +19,7 @@ title: 部署 Mix-Space
 
 操作系统 :  建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
 
-如果你想在 Windows 部署，请看这里 [Windows 安装 Mix-Space](/deploy/windows.md)
+如果你想在 Windows 部署，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
 
 Linux 内核版本 :  大于 4.18 ，建议 5.x 
 
@@ -27,7 +27,7 @@ Linux 内核版本 :  大于 4.18 ，建议 5.x
 
 
 :::danger
-使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix-Space
+使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix Space
 :::
 
 ***
@@ -87,7 +87,7 @@ $ npm i -g yarn zx pnpm
 
 # 部署系统
 
-Mix-Space 目前支持以下安装方法
+Mix Space 目前支持以下安装方法
 
 [**使用预设脚本部署**](#使用预设脚本部署) ： 安装方便，但是前端可以修改的地方非常有限
 
@@ -301,7 +301,7 @@ $ pnpm prod:pm2
 
 ### 部署 Kami
 
-Kami 是 Mix-Space 的默认前端，不过如果你想尝试其他风格的话，可以去 [mx-web-yun](https://github.com/mx-space/mx-web-yun) 看看。
+Kami 是 Mix Space 的默认前端，不过如果你想尝试其他风格的话，可以去 [mx-web-yun](https://github.com/mx-space/mx-web-yun) 看看。
 
 
 #### 拉取源文件
