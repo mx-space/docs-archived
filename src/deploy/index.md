@@ -80,7 +80,7 @@ $ nvm install --lts
 安装需要的模块
 
 ```bash
-$ npm i -g yarn zx pnpm
+$ npm i -g yarn zx pnpm pm2
 ```
 
 ***
