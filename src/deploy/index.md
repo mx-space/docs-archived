@@ -127,7 +127,7 @@ $ zx ./build.mjs
 是否部署 Caddy 2.0？ (y/n): y
 ```
 
-待流程执行完毕，进入 https://server.test.cn/proxy/qaqdmin，进行初始化
+待流程执行完毕，进入 `https://server.test.cn/proxy/qaqdmin` ，进行初始化
 
 ### 仅部署服务和主站前端
 
@@ -150,7 +150,7 @@ $ zx ./build.mjs
 你的邮箱为: (此步留空，则不部署 Caddy 服务):
 ```
 
-待流程执行完毕，进入 http://127.0.0.1:2333/proxy/qaqdmin
+待流程执行完毕，进入 `http://127.0.0.1:2333/proxy/qaqdmin`
 
 ## 手动部署
 
