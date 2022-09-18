@@ -128,7 +128,7 @@ location /
 ```nginx
 #PROXY-START/
 
-// 在 Kami v3.5.1 版本及以上，移除了该项的转发，建议直接把请求打到 api 上
+// 在 Kami v3.15.1 版本及以上，移除了该项的转发，建议直接把请求打到 api 上
 // 请不要随意更改示例的顺序，匹配的优先级不一样；如果你熟悉的话，请随意
 location ~* \/(feed|sitemap|atom.xml)
 {
