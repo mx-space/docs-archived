@@ -179,8 +179,20 @@ location /
     access_log  /www/wwwlogs/www.test.cn.log;
     error_log  /www/wwwlogs/www.test.cn.log;
 #PROXY-START/
+location ~* \/(feed|sitemap|atom.xml)
+{
+    proxy_pass http://127.0.0.1:2333/$1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    
+    add_header X-Cache $upstream_cache_status;
+     
+    add_header Cache-Control max-age=60;
+} 
 
-location ^~ /
+location /
 {
     proxy_pass http://127.0.0.1:2323;
     proxy_set_header Host $host;
@@ -198,7 +210,7 @@ location ^~ /
     {
     	set $static_fileSw1Jy3nG 1;
     	expires 12h;
-        }
+    }
     if ( $static_fileSw1Jy3nG = 0 )
     {
     add_header Cache-Control no-cache;
