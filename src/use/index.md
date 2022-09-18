@@ -128,7 +128,22 @@ location /
 ```nginx
 #PROXY-START/
 
-location ^~ /
+// 在 Kami v3.5.1 版本及以上，移除了该项的转发，建议直接把请求打到 api 上
+// 请不要随意更改示例的顺序，匹配的优先级不一样；如果你熟悉的话，请随意
+location ~* \/(feed|sitemap|atom.xml)
+{
+    proxy_pass http://127.0.0.1:2333/api/v2/$1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    
+    add_header X-Cache $upstream_cache_status;
+     
+    add_header Cache-Control max-age=60;
+} 
+
+location /
 {
     proxy_pass http://127.0.0.1:2323;
     proxy_set_header Host $host;
@@ -146,7 +161,7 @@ location ^~ /
     {
     	set $static_fileSw1Jy3nG 1;
     	expires 12h;
-        }
+    }
     if ( $static_fileSw1Jy3nG = 0 )
     {
     add_header Cache-Control no-cache;
