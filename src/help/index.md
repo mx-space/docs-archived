@@ -79,7 +79,6 @@ $ pm2 start
 进入 server 文件夹执行
 
 ```bash
-
 $ cd ~/mx-space/server
 
 # docker compose pull && docker compose up -d
@@ -87,7 +86,7 @@ $ cd ~/mx-space/server
 
 ## 重启
 
-重启时 Mix-sapce Kami 前端可能不会跟随系统自启
+重启时 Kami 前端可能不会跟随系统自启
 
 ```bash
 $ cd ~/mx-space/kami && pm2 start
