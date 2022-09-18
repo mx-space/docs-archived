@@ -132,7 +132,7 @@ location /
 // 请不要随意更改示例的顺序，匹配的优先级不一样；如果你熟悉的话，请随意
 location ~* \/(feed|sitemap|atom.xml)
 {
-    proxy_pass http://127.0.0.1:2333/api/v2/$1;
+    proxy_pass http://127.0.0.1:2333/$1;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
