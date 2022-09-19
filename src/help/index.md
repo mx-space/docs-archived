@@ -89,7 +89,8 @@ $ cd ~/mx-space/server
 对于预设脚本部署方式，仓库已提供对应的升级脚本，直接过一遍
 
 ```bash
-# zx ./update.mjs
+$ cd ~/docker
+$ zx ./update.mjs
 ```
 
 即可完成升级
