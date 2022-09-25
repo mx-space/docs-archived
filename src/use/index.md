@@ -13,7 +13,7 @@
 
 本节内容以 Nginx 举例
 
-如果你想使用 Caddy 2 完成反向代理，[配置文件实例](https://github.com/mx-space/docker/blob/master/Caddyfile.example)
+如果你想使用 Caddy 2 完成反向代理，[配置文件示例](https://github.com/mx-space/docker/blob/master/Caddyfile.example)
 
 当然，你想单个域名部署前后端，这里也有[配置文件示例](https://github.com/mx-space/docker/blob/master/configs/nginx.conf)
 
