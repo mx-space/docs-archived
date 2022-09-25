@@ -55,20 +55,20 @@ CentOS
 
 ## 安装 Docker
 
-SSH 连接到服务器，使用一键脚本，可以迅速安装 Docker 和 Docker Compose
+SSH 连接到服务器，使用一键脚本，可以便捷地安装 Docker 和 Docker Compose
 
 ```bash
 $ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 :::warning 
-该过程可能比较慢，请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装
+该过程可能比较慢（受限于你的服务器配置和网络），请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装
 :::
 
 ## 安装 nvm
 
 nvm 用于管理 Node.js 
 
-打开终端，使用一键脚本，可以迅速安装 nvm
+打开终端，使用一键脚本，可以便捷地安装 nvm
 
 ```bash
 $ bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
