@@ -23,7 +23,11 @@ title: 部署 Mix Space
 
 Linux 内核版本 :  大于 4.18 ，建议 5.x 
 
-内存建议 : 大于 1 Gib
+构建需要的内存 ： > 1 GiB
+
+运行需要的内存 ： >= 768 MiB
+
+内存建议 : > 1 GiB
 
 
 :::danger
