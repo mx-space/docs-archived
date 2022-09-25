@@ -265,11 +265,11 @@ location /
 
 ## 邮件通知设置
 
- - 发件邮箱 host : 发送邮件的 smtp 域名，例如：smtp.mxhichina.com
+ - 发件邮箱 host : 发送邮件的 smtp 域名，例如：smtp.example.com
 
  - 发件邮箱端口：仅能为 465
 
- - 发件邮箱地址：这是你自己的发信邮箱，例如 no-reply@innei.ren
+ - 发件邮箱地址：这是你自己的发信邮箱，例如 no-reply@example.com
 
  - 发件邮箱密码：与邮箱对应的密码
 
@@ -322,7 +322,7 @@ Algolia Search 是一个第三方搜索服务。让前端具有搜索功能，�
 参照以下内容，复制到右边的框中，并根据自己的情况进行修改。以下是 YAML 格式的示例，可以根据示例修改。
 
 :::warning
-里面有大量的 jsd 链接，请自行做好处理，如果想要更详细的参数，请查看[Kami 配置参数](/use/kami-setting.md)
+里面有大量的 jsd 链接，请自行做好处理
 :::
 
 ### 配置示例
@@ -498,6 +498,11 @@ function:
   ban_devtool:
     enable: false
 ```
+
+:::tip
+如果想要更详细的参数，请查看[Kami 配置参数](/use/kami-setting.md)
+:::
+
 
 ## 歌单/听歌/追番
 
