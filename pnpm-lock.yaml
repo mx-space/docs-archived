@@ -17,7 +17,7 @@ specifiers:
   terser: ^5.14.2
   vite: 3.0.8
   vite-plugin-windicss: 1.8.8
-  vitepress: 1.0.0-alpha.17
+  vitepress: 1.0.0-alpha.18
   vue: 3.2.40
   windicss: 3.5.6
 
@@ -32,7 +32,7 @@ dependencies:
   prismjs: 1.27.0
   shiki: 0.10.1
   vite: 3.0.8_terser@5.14.2
-  vitepress: 1.0.0-alpha.17_terser@5.14.2
+  vitepress: 1.0.0-alpha.18_terser@5.14.2
   vue: 3.2.40
 
 devDependencies:
@@ -414,8 +414,8 @@ packages:
       '@vue/shared': 3.2.40
     dev: false
 
-  /@vue/devtools-api/6.2.1:
-    resolution: {integrity: sha512-OEgAMeQXvCoJ+1x8WyQuVZzFo0wcyCmUR3baRVLmKBo1LmYZWMlRiXlux5jd0fqVJu6PfDbOrZItVqUEzLobeQ==}
+  /@vue/devtools-api/6.4.2:
+    resolution: {integrity: sha512-6hNZ23h1M2Llky+SIAmVhL7s6BjLtZBCzjIz9iRSBUsysjE7kC39ulW0dH4o/eZtycmSt4qEr6RDVGTIuWu+ow==}
     dev: false
 
   /@vue/reactivity-transform/3.2.40:
@@ -1463,10 +1463,6 @@ packages:
       path-key: 4.0.0
     dev: true
 
-  /nprogress/0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-    dev: false
-
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
     dev: true
@@ -1839,17 +1835,16 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /vitepress/1.0.0-alpha.17_terser@5.14.2:
-    resolution: {integrity: sha512-8qsR0PPcvxZFDKSU7b7VenxDoqlEbWuWgogeyRhp1pQ96QIAlWPS9BbGGHWlnEfgdtLVDxEfAmCBRE0YJX/Thg==}
+  /vitepress/1.0.0-alpha.18_terser@5.14.2:
+    resolution: {integrity: sha512-6Co3/t+oeF6vxJxG7/uy5/wIr+P/8szeFjn3gu/dpJ1aOGA0gnQ+61P8J52b2VTFSDpFC63adLvUFacdCJXywg==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.2.1
       '@docsearch/js': 3.2.1
       '@vitejs/plugin-vue': 3.1.0_vite@3.1.4+vue@3.2.40
-      '@vue/devtools-api': 6.2.1
+      '@vue/devtools-api': 6.4.2
       '@vueuse/core': 9.3.0_vue@3.2.40
       body-scroll-lock: 4.0.0-beta.0
-      nprogress: 0.2.0
       shiki: 0.11.1
       vite: 3.1.4_terser@5.14.2
       vue: 3.2.40
