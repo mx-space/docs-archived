@@ -14,7 +14,7 @@ specifiers:
   prettier: 2.7.1
   prismjs: '*'
   shiki: 0.10.1
-  terser: ^5.14.2
+  terser: 5.15.0
   vite: 3.0.8
   vite-plugin-windicss: 1.8.8
   vitepress: 1.0.0-alpha.18
@@ -31,8 +31,8 @@ dependencies:
   markdown-it-checkbox: 1.1.0
   prismjs: 1.27.0
   shiki: 0.10.1
-  vite: 3.0.8_terser@5.14.2
-  vitepress: 1.0.0-alpha.18_terser@5.14.2
+  vite: 3.0.8_terser@5.15.0
+  vitepress: 1.0.0-alpha.18_terser@5.15.0
   vue: 3.2.40
 
 devDependencies:
@@ -40,7 +40,7 @@ devDependencies:
   husky: 8.0.1
   lint-staged: 13.0.3
   prettier: 2.7.1
-  terser: 5.14.2
+  terser: 5.15.0
   vite-plugin-windicss: 1.8.8_vite@3.0.8
   windicss: 3.5.6
 
@@ -372,7 +372,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.1.4_terser@5.14.2
+      vite: 3.1.4_terser@5.15.0
       vue: 3.2.40
     dev: false
 
@@ -1723,8 +1723,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /terser/5.14.2:
-    resolution: {integrity: sha512-oL0rGeM/WFQCUd0y2QrWxYnq7tfSuKBiqTjRPWrRgB46WD/kiwHwF8T23z78H6Q6kGCuuHcPB+KULHRdxvVGQA==}
+  /terser/5.15.0:
+    resolution: {integrity: sha512-L1BJiXVmheAQQy+as0oF3Pwtlo4s3Wi1X2zNZ2NxOB4wx9bdS9Vk67XQENLFdLYGCK/Z2di53mTj/hBafR+dTA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -1774,13 +1774,13 @@ packages:
       '@windicss/plugin-utils': 1.8.8
       debug: 4.3.4
       kolorist: 1.5.1
-      vite: 3.0.8_terser@5.14.2
+      vite: 3.0.8_terser@5.15.0
       windicss: 3.5.6
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/3.0.8_terser@5.14.2:
+  /vite/3.0.8_terser@5.15.0:
     resolution: {integrity: sha512-AOZ4eN7mrkJiOLuw8IA7piS4IdOQyQCA81GxGsAQvAZzMRi9ZwGB3TOaYsj4uLAWK46T5L4AfQ6InNGlxX30IQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1803,11 +1803,11 @@ packages:
       postcss: 8.4.16
       resolve: 1.22.1
       rollup: 2.77.3
-      terser: 5.14.2
+      terser: 5.15.0
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite/3.1.4_terser@5.14.2:
+  /vite/3.1.4_terser@5.15.0:
     resolution: {integrity: sha512-JoQI08aBjY9lycL7jcEq4p9o1xUjq5aRvdH4KWaXtkSx7e7RpAh9D3IjzDWRD4Fg44LS3oDAIOG/Kq1L+82psA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1830,12 +1830,12 @@ packages:
       postcss: 8.4.16
       resolve: 1.22.1
       rollup: 2.78.1
-      terser: 5.14.2
+      terser: 5.15.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: false
 
-  /vitepress/1.0.0-alpha.18_terser@5.14.2:
+  /vitepress/1.0.0-alpha.18_terser@5.15.0:
     resolution: {integrity: sha512-6Co3/t+oeF6vxJxG7/uy5/wIr+P/8szeFjn3gu/dpJ1aOGA0gnQ+61P8J52b2VTFSDpFC63adLvUFacdCJXywg==}
     hasBin: true
     dependencies:
@@ -1846,7 +1846,7 @@ packages:
       '@vueuse/core': 9.3.0_vue@3.2.40
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.11.1
-      vite: 3.1.4_terser@5.14.2
+      vite: 3.1.4_terser@5.15.0
       vue: 3.2.40
     transitivePeerDependencies:
       - '@algolia/client-search'
