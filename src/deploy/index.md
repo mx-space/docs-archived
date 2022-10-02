@@ -164,7 +164,7 @@ $ zx ./build.mjs
 
 很高兴，我们的文档贡献者提供了视频教程；建议配合本文档进行操作
 
-<iframe src="https://api.paugram.com/bili?bv=14N4y137ZW&style=gray" style="height: 176px; width: 100%"></iframe>
+<iframe src="https://api.paugram.com/bili?bv=BV14N4y137ZW&style=gray" style="height: 176px; width: 100%"></iframe>
 
 ***
 
