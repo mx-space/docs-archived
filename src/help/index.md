@@ -21,16 +21,16 @@ title: 常见问题
 直接在 `kami` 文件夹下执行 `git pull origin master`
 
 ```bash
-$ cd ~/mx-space/kami
-$ git pull origin master
+cd ~/mx-space/kami
+git pull origin master
 ```
 
 安装依赖、构建、启动前端
 
 ```bash
-$ pnpm i
-$ pnpm build
-$ pm2 start
+pnpm i
+pnpm build
+pm2 start
 ```
 
 :::warning
@@ -48,9 +48,9 @@ $ pm2 start
 然后拉取 kami 前端仓库，更新到稳定版本
 
 ```bash
-$ cd ~/mx-space
-$ git clone https://github.com/mx-space/kami.git --depth=1
-$ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
+cd ~/mx-space
+git clone https://github.com/mx-space/kami.git --depth=1
+cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
 
 然后将更新前之前配置时修改过的文件，如在 `kami.d`
@@ -63,9 +63,9 @@ $ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=
 替换完成；安装依赖、构建、启动前端
 
 ```bash
-$ pnpm i
-$ pnpm build
-$ pm2 start
+pnpm i
+pnpm build
+pm2 start
 ```
 
 ### 后端（Core）升级
@@ -73,8 +73,8 @@ $ pm2 start
 进入 server 文件夹执行
 
 ```bash
-$ cd ~/mx-space/server
-$ docker compose pull && docker compose up -d
+cd ~/mx-space/server
+docker compose pull && docker compose up -d
 ```
 
 ## 预设脚本部署
@@ -82,8 +82,8 @@ $ docker compose pull && docker compose up -d
 对于预设脚本部署方式，仓库已提供对应的升级脚本，直接过一遍
 
 ```bash
-$ cd ~/docker
-$ bash ./update.sh
+cd ~/docker
+bash ./update.sh
 ```
 
 即可完成升级
@@ -93,7 +93,7 @@ $ bash ./update.sh
 重启时 Kami 前端可能不会跟随系统自启
 
 ```bash
-$ cd ~/mx-space/kami && pm2 start
+cd ~/mx-space/kami && pm2 start
 ```
 
 # 备份与回滚

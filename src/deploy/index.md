@@ -6,6 +6,7 @@ title: 部署 Mix Space
 
 :::tip
 在看完介绍后你一定很想尝试部署 Mix Space !
+
 那本节内容带你完成部署，请有耐心的一点点看完
 :::
 
@@ -30,12 +31,10 @@ Linux 内核版本：大于 4.18 ，建议 5.x
 内存建议：大于 1 GiB
 
 :::danger
-使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix Space
+使用小于 4.18 版本的 Linux 内核将无法正常部署 Kami.
 :::
 
 ---
-
-<br>
 
 # 环境安装
 
@@ -44,13 +43,13 @@ Linux 内核版本：大于 4.18 ，建议 5.x
 Debian / Ubuntu
 
 ```bash
-$ apt update && apt install git curl vim wget git-lfs -y
+apt update && apt install git curl vim wget git-lfs -y
 ```
 
 CentOS
 
 ```bash
-$ yum check-update && yum install git curl vim wget git-lfs -y
+yum check-update && yum install git curl vim wget git-lfs -y
 ```
 
 ## 安装 Docker
@@ -58,21 +57,21 @@ $ yum check-update && yum install git curl vim wget git-lfs -y
 SSH 连接到服务器，使用一键脚本，可以便捷地安装 Docker 和 Docker Compose
 
 ```bash
-$ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 
 :::warning
 该过程可能比较慢（受限于你的服务器配置和网络），请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装
 :::
 
-## 安装 nvm
+## 安装 nvm (可选)
 
 nvm 用于管理 Node.js
 
 打开终端，使用一键脚本，可以便捷地安装 nvm
 
 ```bash
-$ bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
+bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
 ```
 
 重启终端即可生效
@@ -80,13 +79,13 @@ $ bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)
 安装 Node.js 最新的 LTS 版本
 
 ```bash
-$ nvm install --lts
+nvm install --lts
 ```
 
 安装需要的模块
 
 ```bash
-$ npm i -g pnpm pm2
+npm i -g pnpm pm2
 ```
 
 ---
@@ -95,20 +94,28 @@ $ npm i -g pnpm pm2
 
 Mix Space 目前支持以下安装方法
 
-[**使用预设脚本部署**](#使用预设脚本部署) ： 安装方便，但是前端可以修改的地方非常有限
+[**一键 Docker 部署**](#一键Docker部署)：最快的方式。
 
-[**手动部署**](#手动部署) ： 安装略微麻烦，前端可以修改任意地方更细分，更新频率最快
+[**使用预设脚本部署**](#使用预设脚本部署)：安装方便，但是前端可以修改的地方非常有限。
+
+[**手动部署**](#手动部署)：安装略微麻烦，前端可以修改任意地方更细分，更新频率最快。
+
+## 一键Docker部署
+
+```bash
+bash <(curl -s https://fastly.jsdelivr.net/gh/mx-space/docker@master/install.sh)
+```
 
 ## 使用预设脚本部署
 
-克隆仓库
+克隆仓库。
 
 ```bash
-$ cd && mkdir mx-space && cd mx-space
-$ git clone https://github.com/mx-space/docker --depth=1
+cd && mkdir mx-space && cd mx-space
+git clone https://github.com/mx-space/docker --depth=1
 
-如果克隆缓慢，可以使用以下镜像地址
-$ git clone https://github.1qi777.com/mx-space/docker.git --depth 1
+# 如果克隆缓慢，可以使用以下镜像地址
+git clone https://github.1qi777.com/mx-space/docker.git --depth 1
 ```
 
 ### 整个环境
@@ -120,8 +127,8 @@ $ git clone https://github.1qi777.com/mx-space/docker.git --depth 1
 使用一键脚本
 
 ```bash
-$ cd docker
-$ bash install.sh
+cd docker
+bash install.sh
 ```
 
 实例输入：
@@ -143,8 +150,8 @@ $ bash install.sh
 使用一键脚本
 
 ```bash
-$ cd docker
-$ bash ./build.sh
+cd docker
+bash ./build.sh
 ```
 
 实例输入：
@@ -178,13 +185,13 @@ $ bash ./build.sh
 
 ```bash
 新建文件夹
-$ cd && mkdir -p mx-space/core && cd $_
+cd && mkdir -p mx-space/core && cd $_
 
 拉取docker-compose.yml 文件
-$ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
+wget https://fastly.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
 
 拉取 Core 配置文件
-$ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
+wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 ```
 
 我们编辑 .env 文件，它看起来应该是这个样子的
@@ -205,7 +212,7 @@ ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是
 我们可以查看后端是否正常运行
 
 ```bash
-$ curl  http://127.0.0.1:2333/api/v2
+curl  http://127.0.0.1:2333/api/v2
 ```
 
 返回如下内容，认为正常
@@ -226,19 +233,19 @@ $ curl  http://127.0.0.1:2333/api/v2
 拉取源代码
 
 ```bash
-$ git clone https://github.com/mx-space/core.git --depth 1
+git clone https://github.com/mx-space/core.git --depth 1
 ```
 
 安装依赖
 
 ```bash
-$ pnpm i
+pnpm i
 ```
 
 本地开发
 
 ```bash
-$ pnpm dev
+pnpm dev
 ```
 
 如果你想这样部署 Core 并对外提供服务 ，请移动到 `/src/app.config.ts` 文件
@@ -295,17 +302,17 @@ export const CROSS_DOMAIN = {
 构建 & 启动
 
 ```bash
-$ pnpm build
+pnpm build
 ```
 
 我们可以使用 pm2 托管
 
 ```bash
-$ pm2 start
+pm2 start
 
 或者
 
-$ pnpm prod:pm2
+pnpm prod:pm2
 ```
 
 ---
@@ -317,25 +324,25 @@ Kami 是 Mix Space 的默认前端，不过如果你想尝试其他风格的话�
 #### 拉取源文件
 
 ```bash
-$ cd && cd mx-space
-$ git clone https://github.com/mx-space/kami.git --depth 1
+cd && cd mx-space
+git clone https://github.com/mx-space/kami.git --depth 1
 
 如果克隆缓慢，可以使用下面的镜像地址
-$ git clone https://github.1qi777.com/mx-space/kami.git --depth 1
+git clone https://github.1qi777.com/mx-space/kami.git --depth 1
 ```
 
 #### 切换到最新的 tag
 
 ```bash
-$ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
+cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
 
 #### 拉取图片文件
 
 ```bash
-$ git lfs fetch --all
+git lfs fetch --all
 
-$ git lfs pull
+git lfs pull
 ```
 
 注意：如果无法正常拉取，可以到 GitHub 上手动下载文件并放到相应目录。
@@ -345,7 +352,7 @@ $ git lfs pull
 复制 .env.example 为 .env
 
 ```bash
-$ cp .env.example .env
+cp .env.example .env
 ```
 
 编辑 .env 文件，它看起来应该是这个样子的
@@ -367,23 +374,23 @@ ASSETPREFIX=
 
 ```bash
 安装必需的模块
-$ pnpm i
+pnpm i
 构建
-$ pnpm build
+pnpm build
 ```
 
 #### 启动前端
 
 ```bash
-$ pnpm prod:pm2
+pnpm prod:pm2
 可选
-$ pm2 start
+pm2 start
 ```
 
 我们可以查看前端是否正常运行
 
 ```bash
-$ curl http://127.0.0.1:2323
+curl http://127.0.0.1:2323
 ```
 
 如果有返回数据，则认为正常

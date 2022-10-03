@@ -18,7 +18,7 @@ title: Windows 安装
 Mix Space 的 Core 需要 MongoDB ，Node.js 以及 Redis ，如果你有 Scoop 管理器，可以很方便的安装
 
 ```powershell
-$ scoop install mongodb redis nodejs-lts
+scoop install mongodb redis nodejs-lts
 ```
 如果你没有 Scoop 作为包管理器，接下来带你手动下载安装，并处理环境变量问题(可选)
 
@@ -53,7 +53,7 @@ Redis 对 Windows 的原生支持停留在了 3.x 版本，不过有人实现了
 当你添加完成后，我们需要安装 pm2 pnpm yarn
 
 ```powershell
-$ npm i -g pm2 pnpm yarn
+npm i -g pm2 pnpm yarn
 ```
 
 
@@ -75,7 +75,7 @@ mscv 编译环境，目前获取的渠道只有使用 VS 安装 C++ 的桌面开
 在你喜欢的地方打开 powershell / cmd / other terminal
 
 ```powershell
-$ git clone https://github.com/mx-space/core.git --depth 1
+git clone https://github.com/mx-space/core.git --depth 1
 ```
 
 或者下载 [`core` 的稳定发行包](https://github.com/mx-space/core/releases)  `Source code (zip)` ，解压到你喜欢的地方
@@ -83,7 +83,7 @@ $ git clone https://github.com/mx-space/core.git --depth 1
 ### 安装依赖
 
 ```powershell
-$ pnpm i
+pnpm i
 ```
 
 修改允许的域名
@@ -143,7 +143,7 @@ export const CROSS_DOMAIN = {
 构建
 
 ```powershell
-$ pnpm build
+pnpm build
 ```
 使用 pm2 托管 Core ，我们还需要修改一下脚本，移动到 `ecosystem.config.js`
 
@@ -212,11 +212,11 @@ module.exports = {
 使用 pm2 托管
 
 ```powershell
-$ pnpm prod:pm2
+pnpm prod:pm2
 
 或者
 
-$ pm2 start
+pm2 start
 ```
 ## 安装 kami
 
@@ -225,7 +225,7 @@ $ pm2 start
 在你喜欢的地方打开 powershell / cmd / other terminal
 
 ```powershell
-$ git clone https://github.com/mx-space/kami.git --depth 1
+git clone https://github.com/mx-space/kami.git --depth 1
 ```
 或者下载 [`kami` 的稳定发行包](https://github.com/mx-space/kami/releases)  `Source code (zip)` ，解压到你喜欢的地方
 
@@ -234,7 +234,7 @@ $ git clone https://github.com/mx-space/kami.git --depth 1
 由于使用 `pnpm` 会存在目录链接，符号链接等，容易出现权限问题，导致心态炸裂，故这里采用 `yarn` 作为依赖管理器
 
 ```powershell
-$ yarn 
+yarn 
 ```
 
 ### 配置
@@ -256,7 +256,7 @@ ASSETPREFIX=
 ### 构建
 
 ```powershell
-$ yarn build
+yarn build
 ```
 
 ### 启动 kami
@@ -264,7 +264,7 @@ $ yarn build
 在 Kami 的目录下，打开 powershell / cmd / other terminal
 
 ```powershell
-$ npx next start -p 2323
+npx next start -p 2323
 ```
 该终端窗口不能关闭，否则前端将会关闭，你可以把它最小化
 
