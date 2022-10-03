@@ -4,7 +4,7 @@ title: 部署 Mix Space
 
 # 开始
 
-:::tip 
+:::tip
 在看完介绍后你一定很想尝试部署 Mix Space !
 那本节内容带你完成部署，请有耐心的一点点看完
 :::
@@ -13,28 +13,27 @@ title: 部署 Mix Space
 
 国内服务器部署请完成备案后再进行
 
-后端示例域名 ：server.test.cn
+后端示例域名：server.test.cn
 
-前端示例域名 ：www.test.cn
+前端示例域名：www.test.cn
 
-操作系统 :  建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
+操作系统：建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
 
 如果你想在 Windows 部署，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
 
-Linux 内核版本 :  大于 4.18 ，建议 5.x 
+Linux 内核版本：大于 4.18 ，建议 5.x
 
-构建需要的内存 ： 大于 1 GiB
+构建需要的内存：大于 1 GiB
 
-运行需要的内存 ： 不小于 768 MiB
+运行需要的内存：不小于 768 MiB
 
-内存建议 : 大于 1 GiB
-
+内存建议：大于 1 GiB
 
 :::danger
 使用小于 4.18 版本的 Linux 内核将无法正常部署 Mix Space
 :::
 
-***
+---
 
 <br>
 
@@ -45,12 +44,13 @@ Linux 内核版本 :  大于 4.18 ，建议 5.x
 Debian / Ubuntu
 
 ```bash
-# apt update && apt install git curl vim wget git-lfs -y
+$ apt update && apt install git curl vim wget git-lfs -y
 ```
+
 CentOS
 
 ```bash
-# yum check-update && yum install git curl vim wget git-lfs -y
+$ yum check-update && yum install git curl vim wget git-lfs -y
 ```
 
 ## 安装 Docker
@@ -60,19 +60,21 @@ SSH 连接到服务器，使用一键脚本，可以便捷地安装 Docker 和 D
 ```bash
 $ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
-:::warning 
+
+:::warning
 该过程可能比较慢（受限于你的服务器配置和网络），请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装
 :::
 
 ## 安装 nvm
 
-nvm 用于管理 Node.js 
+nvm 用于管理 Node.js
 
 打开终端，使用一键脚本，可以便捷地安装 nvm
 
 ```bash
 $ bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
 ```
+
 重启终端即可生效
 
 安装 Node.js 最新的 LTS 版本
@@ -84,10 +86,10 @@ $ nvm install --lts
 安装需要的模块
 
 ```bash
-$ npm i -g yarn zx pnpm pm2
+$ npm i -g pnpm pm2
 ```
 
-***
+---
 
 # 部署系统
 
@@ -119,8 +121,7 @@ $ git clone https://github.1qi777.com/mx-space/docker.git --depth 1
 
 ```bash
 $ cd docker
-$ npm i
-$ zx ./build.mjs
+$ bash install.sh
 ```
 
 实例输入：
@@ -143,8 +144,7 @@ $ zx ./build.mjs
 
 ```bash
 $ cd docker
-$ npm i
-$ zx ./build.mjs
+$ bash ./build.sh
 ```
 
 实例输入：
@@ -166,13 +166,14 @@ $ zx ./build.mjs
 
 <iframe src="https://api.paugram.com/bili?bv=BV14N4y137ZW&style=gray" style="height: 176px; width: 100%"></iframe>
 
-***
+---
 
 ### 部署 Core
 
 一般情况下，我们推荐使用 Docker 进行部署，接下来将带你使用 Docker 部署 Core，步骤非常简单
 
-***
+---
+
 #### Docker 部署
 
 ```bash
@@ -185,6 +186,7 @@ $ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/docker-compose.yml
 拉取 Core 配置文件
 $ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 ```
+
 我们编辑 .env 文件，它看起来应该是这个样子的
 
 ```text
@@ -193,16 +195,19 @@ $ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串
 ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是kami的域名，如果允许多个域名访问，用英文逗号,分隔
 ```
+
 如此，就可以了，接下来我们启动后端
 
 ```bash
 # docker compose up -d
 ```
+
 我们可以查看后端是否正常运行
 
 ```bash
 $ curl  http://127.0.0.1:2333/api/v2
 ```
+
 返回如下内容，认为正常
 
 ```bash
@@ -210,7 +215,7 @@ $ curl  http://127.0.0.1:2333/api/v2
 {"name":"@mx-space/core","author":"Innei <https://innei.ren>","version":"3.36.4","homepage":"https://github.com/mx-space/core#readme","issues":"https://github.com/mx-space/core/issues"}
 ```
 
-***
+---
 
 #### 从源码进行部署
 
@@ -260,6 +265,7 @@ export const CROSS_DOMAIN = {
   // allowedReferer: 'innei.ren',
 }
 ```
+
 其中，按照 17-26 行一样，按照格式，追加你的域名
 
 例如，我想要添加 `server.example.com` ，那么仅仅这样追加一行即可。
@@ -285,11 +291,13 @@ export const CROSS_DOMAIN = {
   // allowedReferer: 'innei.ren',
 }
 ```
+
 构建 & 启动
 
 ```bash
 $ pnpm build
 ```
+
 我们可以使用 pm2 托管
 
 ```bash
@@ -299,14 +307,12 @@ $ pm2 start
 
 $ pnpm prod:pm2
 ```
-***
 
-
+---
 
 ### 部署 Kami
 
 Kami 是 Mix Space 的默认前端，不过如果你想尝试其他风格的话，可以去 [mx-web-yun](https://github.com/mx-space/mx-web-yun) 看看。
-
 
 #### 拉取源文件
 
@@ -323,6 +329,7 @@ $ git clone https://github.1qi777.com/mx-space/kami.git --depth 1
 ```bash
 $ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
+
 #### 拉取图片文件
 
 ```bash

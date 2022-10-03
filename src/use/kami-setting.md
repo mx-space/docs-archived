@@ -393,3 +393,10 @@ id 和 url 分别对应 Umami 给你的 id 和 Umami 的 url，jsname 对应你�
 - Default: `false`
 
 开启 [devtools-detector](https://github.com/AEPKILL/devtools-detector)
+
+### function.comment.disable
+
+- Type: `boolean`
+- Default: `false`
+
+全站禁用评论模块，禁止评论和所有评论不透出。（敏感时期专用）

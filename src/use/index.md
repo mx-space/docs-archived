@@ -2,8 +2,8 @@
 
 ## 前提
 
- - 已完成 Mix Space 的部署并且运行正常
- - 域名已经解析到对应的服务器，国内用户请备案
+- 已完成 Mix Space 的部署并且运行正常
+- 域名已经解析到对应的服务器，国内用户请备案
 
 ## 反向代理
 
@@ -21,9 +21,9 @@
 
 考虑到读者水平，这里建议使用宝塔面板安装 Nginx
 
- - 安装 [宝塔面板](https://www.bt.cn/new/download.html)
+- 安装 [宝塔面板](https://www.bt.cn/new/download.html)
 
- - 在宝塔面板 — 软件商店，安装 Nginx
+- 在宝塔面板 — 软件商店，安装 Nginx
 
 ### 反向代理后端
 
@@ -71,6 +71,7 @@ location /
 
 #PROXY-END/
 ```
+
 保存即可。
 
 或者也可以像视频一样在 网站设置-反向代理 处添加一个目标 URL 为 `http://127.0.0.1:2333` 的反代后再直接用上面的内容覆盖原来的反代配置文件。
@@ -117,6 +118,7 @@ location /
 
 #PROXY-END/
 ```
+
 ### 反向代理前端
 
 新建网站，例如 `www.test.cn` 并安装好 SSL 证书
@@ -132,46 +134,93 @@ location /
 :::
 
 ```nginx
-#PROXY-START/
+# See: https://github.com/mx-space/docker/blob/master/configs/nginx.conf
 
-location ~* \/(feed|sitemap|atom.xml)
-{
-    proxy_pass http://127.0.0.1:2333/$1;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header REMOTE-HOST $remote_addr;
-    
-    add_header X-Cache $upstream_cache_status;
-     
-    add_header Cache-Control max-age=60;
-} 
-
-location /
-{
-    proxy_pass http://127.0.0.1:2323;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header REMOTE-HOST $remote_addr;
-
-    add_header X-Cache $upstream_cache_status;
-
-    #Set Nginx Cache
-
-
-    set $static_fileSw1Jy3nG 0;
-    if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
-    {
-    	set $static_fileSw1Jy3nG 1;
-    	expires 12h;
-    }
-    if ( $static_fileSw1Jy3nG = 0 )
-    {
-    add_header Cache-Control no-cache;
-    }
+# This is a example for nginx configure if you host mx-space manually
+location ~* \.(gif|png|jpg|css|js|woff|woff2)$ {
+  proxy_pass http://127.0.0.1:2323;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+  expires 30d;
 }
-#PROXY-END/
+
+location / {
+  proxy_pass http://127.0.0.1:2323;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+
+  add_header X-Cache $upstream_cache_status;
+
+  add_header Cache-Control no-cache;
+  proxy_intercept_errors on;
+}
+
+
+location ~* \/(feed|sitemap|atom.xml) {
+  proxy_pass http://127.0.0.1:2333/$1;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+
+  add_header X-Cache $upstream_cache_status;
+
+  add_header Cache-Control max-age=60;
+}
+
+location ^~ /api/v2 {
+  proxy_pass http://127.0.0.1:2333/api/v2;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+  proxy_set_header Host $host;
+
+  add_header server PHP/8;
+}
+
+
+location /proxy/qaqdmin {
+  proxy_pass http://127.0.0.1:2333/proxy/qaqdmin;
+  proxy_ignore_headers Set-Cookie Cache-Control expires;
+  add_header Cache-Control no-store;
+  expires 12h;
+}
+
+
+location ^~ /proxy/ {
+  proxy_pass http://127.0.0.1:2333/proxy/;
+
+  add_header X-Cache $upstream_cache_status;
+  #Set Nginx Cache
+
+  add_header Cache-Control max-age=36000000;
+}
+
+location ^~ /render/ {
+  proxy_pass http://127.0.0.1:2333/render/;
+
+  add_header X-Cache $upstream_cache_status;
+  add_header Cache-Control max-age=10;
+  expires 1h;
+}
+
+location ^~ /socket.io {
+  proxy_pass http://127.0.0.1:2333/socket.io;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection "upgrade";
+  proxy_set_header Host $host;
+
+  add_header X-Cache $upstream_cache_status;
+}
 ```
 
 保存即可。
@@ -190,11 +239,11 @@ location ~* \/(feed|sitemap|atom.xml)
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header REMOTE-HOST $remote_addr;
-    
+
     add_header X-Cache $upstream_cache_status;
-     
+
     add_header Cache-Control max-age=60;
-} 
+}
 
 location /
 {
@@ -227,51 +276,50 @@ location /
 
 进入后台
 
-访问 https://server.test.cn/proxy/qaqdmin
+访问 https://server.test.cn/proxy/qaqdmin，
 
-进行初始化
+进行初始化，
 
-第一次访问可能遇到填写 API 的情况
+第一次访问可能遇到填写 API 的情况，
 
-后端的 API 地址 ： `https://server.test.cn/api/v2` ( `server.test.cn` 请换成你自己的，下同)
+后端的 API 地址: `https://server.test.cn/api/v2` (`server.test.cn` 请换成你自己的，下同)，
 
-网关的地址 : `https://server.test.cn`
+网关的地址: `https://server.test.cn`。
 
 :::tip
-建议：新建两个页面，第一个路由是 `message` ，第二个是 `about` ，标题，内容任意
+建议：新建两个页面，第一个路由是 `message` ，第二个是 `about` ，标题，内容任意。
 :::
 
 ## 用户设定
 
 这个应该比较简单，就不再赘述了。但是要注意的是头像的 URL 不要带入其他的参数，否则可能会导致包括但不限于 `feed` 输出异常。
 
-
 # 系统设定
 
 ## 网站设置
 
- - 前端地址：即你之前前端反向代理的站点，例如 https://www.test.cn
- - API 地址：即你之前后端反向代理的站点加上api/v2，例如 https://server.test.cn/api/v2
- - 后台地址：即你现在后台的地址，例如 https://server.test.cn/proxy/qaqdmin
- - Gateway 地址：即后端地址，例如 https://server.test.cn
+- 前端地址：即你之前前端反向代理的站点，例如 https://www.test.cn
+- API 地址：即你之前后端反向代理的站点加上 api/v2，例如 https://server.test.cn/api/v2
+- 后台地址：即你现在后台的地址，例如 https://server.test.cn/proxy/qaqdmin
+- Gateway 地址：即后端地址，例如 https://server.test.cn
 
 ## 后台附加设置
 
 高德查询 API key
 
-这个需要在 高德开放平台 上注册并创建应用，大致是这样
+这个需要在 [高德开放平台](https://lbs.amap.com/) 上注册并创建应用，大致是这样
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/G7De6D.png)
 
 ## 邮件通知设置
 
- - 发件邮箱 host : 发送邮件的 smtp 域名，例如：smtp.example.com
+- 发件邮箱 host : 发送邮件的 smtp 域名，例如：smtp.example.com
 
- - 发件邮箱端口：仅能为 465
+- 发件邮箱端口：仅能为 465
 
- - 发件邮箱地址：这是你自己的发信邮箱，例如 no-reply@example.com
+- 发件邮箱地址：这是你自己的发信邮箱，例如 no-reply@example.com
 
- - 发件邮箱密码：与邮箱对应的密码
+- 发件邮箱密码：与邮箱对应的密码
 
 :::warning
 注意：该邮箱是给访客评论回复发的通知邮箱，也是给主人发送通知邮件的邮箱，请不要和主人的邮箱搞混！
@@ -327,7 +375,7 @@ Algolia Search 是一个第三方搜索服务。让前端具有搜索功能，�
 
 ### 配置示例
 
-```YAML
+```yaml
 name: kami
 
 site:
@@ -407,23 +455,23 @@ site:
             icon: faMusic
             type: Music
             path: /favorite/music
-      - title: ""
+      - title: ''
         icon: faSubway
-        path: "https://travellings.link"
+        path: 'https://travellings.link'
   # 定义头像下的社交ID
   social:
-    - url: "https://github.com/Innei"
+    - url: 'https://github.com/Innei'
       title: GitHub
       icon: faGithub
       color: var(--black)
-    - url: "https://jq.qq.com/?_wv=1027&k=5t9N0mw"
+    - url: 'https://jq.qq.com/?_wv=1027&k=5t9N0mw'
       title: QQ
       icon: faQq
-      color: "#12b7f5"
-    - url: "https://twitter.com/__oQuery"
+      color: '#12b7f5'
+    - url: 'https://twitter.com/__oQuery'
       title: twitter
       icon: faTwitter
-      color: "#02A4ED"
+      color: '#02A4ED'
   # 定义网站底部
   footer:
     background:
@@ -440,21 +488,21 @@ site:
     # icp 备案
     icp:
       enable: false
-      label: "浙ICP备 20028356 号"
+      label: '浙ICP备 20028356 号'
       link: http://beian.miit.gov.cn/
     # 自定义底部文字以及链接
     navigation:
       - name: 关于
-        path: "/about"
+        path: '/about'
       - name: 留言
-        path: "/message"
+        path: '/message'
       - name: 友链
-        path: "/friends"
+        path: '/friends'
       - name: RSS 订阅
-        path: "/feed"
+        path: '/feed'
         newtab: true
       - name: 站点地图
-        path: "/sitemap"
+        path: '/sitemap'
         newtab: true
       - name: 开往
         path: https://travellings.link/
@@ -472,7 +520,7 @@ site:
     # 引入外部 JS ，不需要 script 标签
     js:
       - https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
-    # 引入外部 CSS 
+    # 引入外部 CSS
     css:
       - https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css
 # 定义功能，例如歌单，追番
@@ -487,9 +535,9 @@ function:
   # 分析，Google OR Baidu OR umami
   analyze:
     enable: false
-    ga: ""
-    baidu: ""
-    umami: ""
+    ga: ''
+    baidu: ''
+    umami: ''
   # 打赏
   donate:
     enable: false
@@ -497,12 +545,14 @@ function:
   # 是否禁用调试工具（访客）
   ban_devtool:
     enable: false
+  # 全站禁用评论
+  comment:
+    disable: false
 ```
 
 :::tip
 如果想要更详细的参数，请查看[Kami 配置参数](/use/kami-setting.md)
 :::
-
 
 ## 歌单/听歌/追番
 
@@ -514,7 +564,8 @@ function:
 
 ### 手动安装
 
-***
+---
+
 #### 安装模块
 
 进入后台，移动到 其他 - 终端
@@ -539,9 +590,11 @@ function:
 # cd ~/.mx-space
 # npm install @mx-space/extra
 ```
+
 #### 功能
 
-***
+---
+
 ##### 歌单
 
 进入后台，移动到 其他 · 配置与云函数
@@ -554,13 +607,14 @@ function:
 - 数据类型：Function
 - 请求方式：GET
 - 公开： 是
+
 ```ts
 import extra from '@mx-space/extra'
 
 async function handler() {
   const { NeteaseMusic, NeteaseCloudMusicApi } = extra
 
-  const client = new NeteaseMusic(phone, password / md5_password ) //此处md5_password 与 password 任选其一，同时与下面 const 定义的相对应即可
+  const client = new NeteaseMusic(phone, password / md5_password) //此处md5_password 与 password 任选其一，同时与下面 const 定义的相对应即可
   await client.Login()
 
   const uid = await client.getAccount()
@@ -583,11 +637,12 @@ async function handler() {
   return responsePayload
 }
 /// CONFIGS ///
-const phone = '15922****'  //网易云登录手机号
+const phone = '15922****' //网易云登录手机号
 const password = 'wddw***s' // 登录密码 password 与 md5_password 任选其一
-const md5_password = '0800fc577294c34e0b28ad2839435945'   //登录密码的md5值(@mx-space/extra ^0.5.7 版本及以上 支持该选项)
+const md5_password = '0800fc577294c34e0b28ad2839435945' //登录密码的md5值(@mx-space/extra ^0.5.7 版本及以上 支持该选项)
 /// CONFIGS END ///
 ```
+
 注意： 本函数中包含两种登录方式，一种是密码登录，另一种是密码的 **md5** 值登录，对应的选项就是 **password** 和 **md5_password** ；在您将函数复制过去后，需要按照注释内容，自行删除掉你不需要的登录方式，和与之对应的 **CONFIGS** 注释区域的 **const** 定义，如果您不进行修改，则无法使用
 
 举个例子，密码登录
@@ -598,7 +653,7 @@ import extra from '@mx-space/extra'
 async function handler() {
   const { NeteaseMusic, NeteaseCloudMusicApi } = extra
 
-  const client = new NeteaseMusic(phone, password ) //此处使用 password ，同时与下面 const 定义的相对应即可
+  const client = new NeteaseMusic(phone, password) //此处使用 password ，同时与下面 const 定义的相对应即可
   await client.Login()
 
   const uid = await client.getAccount()
@@ -621,11 +676,11 @@ async function handler() {
   return responsePayload
 }
 /// CONFIGS ///
-const phone = '15922****'  //网易云登录手机号
-const password = 'wddw***s' // 登录密码 password 
+const phone = '15922****' //网易云登录手机号
+const password = 'wddw***s' // 登录密码 password
 /// CONFIGS END ///
-
 ```
+
 同理，md5 登录也是按照这种写法(将文中 password 换成 md5_password 即可)
 
 ##### 追番
@@ -733,7 +788,6 @@ async function handler() {
 ```
 
 到这里，Kami 默认功能需要的云函数已经配置完毕。
-
 
 ## PS
 

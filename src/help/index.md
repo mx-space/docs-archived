@@ -22,7 +22,6 @@ title: 常见问题
 
 ```bash
 $ cd ~/mx-space/kami
-
 $ git pull origin master
 ```
 
@@ -30,11 +29,10 @@ $ git pull origin master
 
 ```bash
 $ pnpm i
-
 $ pnpm build
-
 $ pm2 start
 ```
+
 :::warning
 你应该理解的是，即便是你没有对 Kami 进行任何魔改，仍有可能出现代码不能自动合并的问题，对于这种情况，建议参考下面的已魔改部分完成升级
 :::
@@ -51,9 +49,7 @@ $ pm2 start
 
 ```bash
 $ cd ~/mx-space
-
 $ git clone https://github.com/mx-space/kami.git --depth=1
-
 $ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 ```
 
@@ -68,9 +64,7 @@ $ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=
 
 ```bash
 $ pnpm i
-
 $ pnpm build
-
 $ pm2 start
 ```
 
@@ -80,8 +74,7 @@ $ pm2 start
 
 ```bash
 $ cd ~/mx-space/server
-
-# docker compose pull && docker compose up -d
+$ docker compose pull && docker compose up -d
 ```
 
 ## 预设脚本部署
@@ -90,7 +83,7 @@ $ cd ~/mx-space/server
 
 ```bash
 $ cd ~/docker
-$ zx ./update.mjs
+$ bash ./update.sh
 ```
 
 即可完成升级
@@ -149,6 +142,6 @@ Linux 和 macOS 可直接上传备份包，并且无需修改包名一致即可�
 这里是读者出现的常见问题
 :::
 
-//TODO : help rewrite
+<!-- TODO : help rewrite -->
 
 这块内容将会把最近收集到的 issue 整合起来
