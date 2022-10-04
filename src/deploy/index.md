@@ -103,7 +103,7 @@ Mix Space 目前支持以下安装方法
 ## 一键Docker部署
 
 ```bash
-bash <(curl -s https://fastly.jsdelivr.net/gh/mx-space/docker@master/install.sh)
+bash <(curl -s https://fastly.jsdelivr.net/gh/mx-space/docker@master/install.sh)>
 ```
 
 ## 使用预设脚本部署
