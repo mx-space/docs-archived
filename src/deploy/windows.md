@@ -32,7 +32,7 @@ scoop install mongodb redis nodejs-lts
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/windows-mongodb.png)
 
-### Redis
+### 安装 Redis
 
 Redis 对 Windows 的原生支持停留在了 3.x 版本，不过有人实现了部分 POSIX 接口标准，以此来复刻实现 Windows 版本的 Redis。
 
@@ -59,7 +59,7 @@ npm i -g pm2 pnpm yarn
 
 ### 安装 msvc 编译环境
 
-mscv 编译环境，目前获取的渠道只有使用 VS 安装 C++ 的桌面开发环境才能获得
+msvc 编译环境，目前获取的渠道只有使用 VS 安装 C++ 的桌面开发环境才能获得
 
 所以，我们去 VS 官网下载 VS 的构建工具，链接如下 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
@@ -214,7 +214,7 @@ module.exports = {
 ```powershell
 pnpm prod:pm2
 
-或者
+# 或者
 
 pm2 start
 ```
@@ -231,7 +231,7 @@ git clone https://github.com/mx-space/kami.git --depth 1
 
 ### 安装依赖
 
-由于使用 `pnpm` 会存在目录链接，符号链接等，容易出现权限问题，导致心态炸裂，故这里采用 `yarn` 作为依赖管理器
+由于使用 `pnpm` 会存在目录链接，符号链接等，极易出现权限问题，导致构建失败，故这里采用 `yarn` 作为依赖管理器
 
 ```powershell
 yarn 

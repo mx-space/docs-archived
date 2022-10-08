@@ -145,6 +145,18 @@ location ~* \.(gif|png|jpg|css|js|woff|woff2)$ {
   proxy_set_header REMOTE-HOST $remote_addr;
   expires 30d;
 }
+location ~* \/(feed|sitemap|atom.xml) {
+  proxy_pass http://127.0.0.1:2333/$1;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+
+  add_header X-Cache $upstream_cache_status;
+
+  add_header Cache-Control max-age=60;
+}
+
 
 location / {
   proxy_pass http://127.0.0.1:2323;
@@ -160,6 +172,26 @@ location / {
 }
 
 
+
+```
+
+保存即可。
+或者也可以像视频一样在 网站设置-反向代理 处添加一个目标 URL 为 `http://127.0.0.1:2323` 的反代后再直接用上面的内容覆盖原来的反代配置文件。
+
+那么局部配置文件示例如下
+
+```nginx
+    access_log  /www/wwwlogs/www.test.cn.log;
+    error_log  /www/wwwlogs/www.test.cn.log;
+#PROXY-START/
+location ~* \.(gif|png|jpg|css|js|woff|woff2)$ {
+  proxy_pass http://127.0.0.1:2323;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+  expires 30d;
+}
 location ~* \/(feed|sitemap|atom.xml) {
   proxy_pass http://127.0.0.1:2333/$1;
   proxy_set_header Host $host;
@@ -172,102 +204,18 @@ location ~* \/(feed|sitemap|atom.xml) {
   add_header Cache-Control max-age=60;
 }
 
-location ^~ /api/v2 {
-  proxy_pass http://127.0.0.1:2333/api/v2;
+
+location / {
+  proxy_pass http://127.0.0.1:2323;
   proxy_set_header Host $host;
   proxy_set_header X-Real-IP $remote_addr;
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
   proxy_set_header REMOTE-HOST $remote_addr;
-  proxy_set_header Host $host;
-
-  add_header server PHP/8;
-}
-
-
-location /proxy/qaqdmin {
-  proxy_pass http://127.0.0.1:2333/proxy/qaqdmin;
-  proxy_ignore_headers Set-Cookie Cache-Control expires;
-  add_header Cache-Control no-store;
-  expires 12h;
-}
-
-
-location ^~ /proxy/ {
-  proxy_pass http://127.0.0.1:2333/proxy/;
 
   add_header X-Cache $upstream_cache_status;
-  #Set Nginx Cache
 
-  add_header Cache-Control max-age=36000000;
-}
-
-location ^~ /render/ {
-  proxy_pass http://127.0.0.1:2333/render/;
-
-  add_header X-Cache $upstream_cache_status;
-  add_header Cache-Control max-age=10;
-  expires 1h;
-}
-
-location ^~ /socket.io {
-  proxy_pass http://127.0.0.1:2333/socket.io;
-  proxy_set_header Host $host;
-  proxy_set_header X-Real-IP $remote_addr;
-  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-  proxy_set_header REMOTE-HOST $remote_addr;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection "upgrade";
-  proxy_set_header Host $host;
-
-  add_header X-Cache $upstream_cache_status;
-}
-```
-
-保存即可。
-或者也可以像视频一样在 网站设置-反向代理 处添加一个目标 URL 为 `http://127.0.0.1:2323` 的反代后再直接用上面的内容覆盖原来的反代配置文件。
-
-那么局部配置文件示例如下
-
-```nginx
-    access_log  /www/wwwlogs/www.test.cn.log;
-    error_log  /www/wwwlogs/www.test.cn.log;
-#PROXY-START/
-location ~* \/(feed|sitemap|atom.xml)
-{
-    proxy_pass http://127.0.0.1:2333/$1;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header REMOTE-HOST $remote_addr;
-
-    add_header X-Cache $upstream_cache_status;
-
-    add_header Cache-Control max-age=60;
-}
-
-location /
-{
-    proxy_pass http://127.0.0.1:2323;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header REMOTE-HOST $remote_addr;
-
-    add_header X-Cache $upstream_cache_status;
-
-    #Set Nginx Cache
-
-
-    set $static_fileSw1Jy3nG 0;
-    if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
-    {
-    	set $static_fileSw1Jy3nG 1;
-    	expires 12h;
-    }
-    if ( $static_fileSw1Jy3nG = 0 )
-    {
-    add_header Cache-Control no-cache;
-    }
+  add_header Cache-Control no-cache;
+  proxy_intercept_errors on;
 }
 #PROXY-END/
 ```
@@ -282,7 +230,7 @@ location /
 
 第一次访问可能遇到填写 API 的情况，
 
-后端的 API 地址: `https://server.test.cn/api/v2` (`server.test.cn` 请换成你自己的，下同)，
+后端的 API 地址: `https://server.test.cn/api/v2`  (`server.test.cn` 请换成你自己的，下同)，
 
 网关的地址: `https://server.test.cn`。
 
@@ -579,16 +527,16 @@ function:
 ```bash
 检查npm是否存在
 
-# npm -v
+npm -v
 
-如果缺失 npm 请先使用容器内已存在的管理器安装 npm，例如 apk，yarn。
+# 如果缺失 npm 请先使用容器内已存在的管理器安装 npm，例如 apk，yarn。
 
-# yarn global add npm
+yarn global add npm
 
-假设你的 npm 是正常的，我们安装必需模块
+# 假设你的 npm 是正常的，我们安装必需模块
 
-# cd ~/.mx-space
-# npm install @mx-space/extra
+cd ~/.mx-space
+npm install @mx-space/extra
 ```
 
 #### 功能
