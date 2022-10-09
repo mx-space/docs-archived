@@ -206,7 +206,7 @@ ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是
 如此，就可以了，接下来我们启动后端
 
 ```bash
-# docker compose up -d
+docker compose up -d
 ```
 
 我们可以查看后端是否正常运行
@@ -310,7 +310,7 @@ pnpm build
 ```bash
 pm2 start
 
-或者
+# 或者
 
 pnpm prod:pm2
 ```
