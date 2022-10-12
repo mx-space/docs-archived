@@ -6,7 +6,7 @@ specifiers:
   '@types/prismjs': '*'
   '@vue/theme': 1.0.4
   '@vueuse/core': 9.3.0
-  '@vueuse/head': 0.7.6
+  '@vueuse/head': 0.9.8
   husky: 8.0.1
   lint-staged: 13.0.3
   markdown-it: '*'
@@ -26,7 +26,7 @@ dependencies:
   '@types/prismjs': 1.26.0
   '@vue/theme': 1.0.4_vue@3.2.40
   '@vueuse/core': 9.3.0_vue@3.2.40
-  '@vueuse/head': 0.7.6_vue@3.2.40
+  '@vueuse/head': 0.9.8_vue@3.2.40
   markdown-it: 13.0.0
   markdown-it-checkbox: 1.1.0
   prismjs: 1.27.0
@@ -509,12 +509,17 @@ packages:
       - vue
     dev: false
 
-  /@vueuse/head/0.7.6_vue@3.2.40:
-    resolution: {integrity: sha512-cOWqCkT3WiF5oEpw+VVEWUJd9RLD5rc7DmnFp3cePsejp+t7686uKD9Z9ZU7Twb7R/BI8iexKTmXo9D/F3v6UA==}
+  /@vueuse/head/0.9.8_vue@3.2.40:
+    resolution: {integrity: sha512-zt8+JksoVFKxRvmABlaUHA62w+8nOcD8cJnaJ0+SHcr6xaIP3GXgh7/n2TzUoWw4l3d9UxRNs+tapgHdsQ7RbA==}
     peerDependencies:
-      vue: '>=3'
+      vue: '>=2.7 || >=3'
     dependencies:
+      '@vueuse/shared': 9.3.0_vue@3.2.40
+      '@zhead/schema': 0.8.5
+      '@zhead/schema-vue': 0.8.5_vue@3.2.40
       vue: 3.2.40
+    transitivePeerDependencies:
+      - '@vue/composition-api'
     dev: false
 
   /@vueuse/metadata/9.3.0:
@@ -568,6 +573,29 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@zhead/schema-raw/0.8.5:
+    resolution: {integrity: sha512-Aq+9mksf5zbtj7HYluT6PVyfpQ6z7mja9MzjFxg76Vt+Q9i0oL1XN6ZYaCXImWRafwbyAxjFQ5aUCVyFn79OpA==}
+    dependencies:
+      '@zhead/schema': 0.8.5
+    dev: false
+
+  /@zhead/schema-vue/0.8.5_vue@3.2.40:
+    resolution: {integrity: sha512-6aXjYy3fZVeYBLrHcJQqzqwzC/2tafRO5UxZEgBHnryRnzeLNZV6nTptDvIPWiJObMoJTK21vbg3gkfLNQg84g==}
+    peerDependencies:
+      vue: '>=2.7 || >=3'
+    dependencies:
+      '@vueuse/shared': 9.3.0_vue@3.2.40
+      '@zhead/schema': 0.8.5
+      '@zhead/schema-raw': 0.8.5
+      vue: 3.2.40
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+    dev: false
+
+  /@zhead/schema/0.8.5:
+    resolution: {integrity: sha512-1S3Otr2zpl1zwP72dNseVXQNG9tnTQ6hHUEUYwINvBjRj6bHcUwdE+Itc9OLxnGAJT/7p8P7GHGo5sshXJNJsA==}
+    dev: false
 
   /acorn/8.8.0:
     resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
