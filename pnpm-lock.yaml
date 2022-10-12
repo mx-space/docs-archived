@@ -5,7 +5,7 @@ specifiers:
   '@types/node': 17.0.23
   '@types/prismjs': '*'
   '@vue/theme': 1.0.4
-  '@vueuse/core': 9.0.2
+  '@vueuse/core': 9.3.0
   '@vueuse/head': 0.7.6
   husky: 8.0.1
   lint-staged: 13.0.3
@@ -25,7 +25,7 @@ dependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
   '@vue/theme': 1.0.4_vue@3.2.40
-  '@vueuse/core': 9.0.2_vue@3.2.40
+  '@vueuse/core': 9.3.0_vue@3.2.40
   '@vueuse/head': 0.7.6_vue@3.2.40
   markdown-it: 13.0.0
   markdown-it-checkbox: 1.1.0
@@ -497,18 +497,6 @@ packages:
       vue-demi: 0.12.4_vue@3.2.40
     dev: false
 
-  /@vueuse/core/9.0.2_vue@3.2.40:
-    resolution: {integrity: sha512-kOIqaQPSs7OSByWg1ulEKRUJbsq3FmbJiUr0RhEKpt3O1Uhl4DrDj85DUbQBABVYgPvSaY6AE/fP3/FOcRIOoQ==}
-    dependencies:
-      '@types/web-bluetooth': 0.0.15
-      '@vueuse/metadata': 9.0.2
-      '@vueuse/shared': 9.0.2_vue@3.2.40
-      vue-demi: 0.12.4_vue@3.2.40
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
   /@vueuse/core/9.3.0_vue@3.2.40:
     resolution: {integrity: sha512-64Rna8IQDWpdrJxgitDg7yv1yTp41ZmvV8zlLEylK4QQLWAhz1OFGZDPZ8bU4lwcGgbEJ2sGi2jrdNh4LttUSQ==}
     dependencies:
@@ -529,10 +517,6 @@ packages:
       vue: 3.2.40
     dev: false
 
-  /@vueuse/metadata/9.0.2:
-    resolution: {integrity: sha512-TRh+TNUYXiodatSAxd0xZc7sh4RfktVVgNFIN7TCQXKyancbCAcWfHvKfgdlX8LcqSBxKoHVa90n0XdUbboTkw==}
-    dev: false
-
   /@vueuse/metadata/9.3.0:
     resolution: {integrity: sha512-GnnfjbzIPJIh9ngL9s9oGU1+Hx/h5/KFqTfJykzh/1xjaHkedV9g0MASpdmPZIP+ynNhKAcEfA6g5i8KXwtoMA==}
     dev: false
@@ -550,15 +534,6 @@ packages:
     dependencies:
       vue: 3.2.40
       vue-demi: 0.12.4_vue@3.2.40
-    dev: false
-
-  /@vueuse/shared/9.0.2_vue@3.2.40:
-    resolution: {integrity: sha512-KwBDefK2ljLESpt0ffe2w8EGUCb3IaMfTzeytB/uHHjHOGOEIHLHHyn8W2C48uGQEvoe5iwaW4Bfp8cRUM6IFA==}
-    dependencies:
-      vue-demi: 0.12.4_vue@3.2.40
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
     dev: false
 
   /@vueuse/shared/9.3.0_vue@3.2.40:
