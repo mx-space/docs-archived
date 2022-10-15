@@ -165,7 +165,7 @@ bash ./build.sh
 
 ## 手动部署
 
-手动部署，是使用最多更新速度最快的部署方式，如果后续需要魔改前端，推荐使用手动部署
+手动部署，是使用最多的部署方式，如果后续需要魔改前端，推荐使用手动部署
 
 ### 视频
 
@@ -177,7 +177,7 @@ bash ./build.sh
 
 ### 部署 Core
 
-一般情况下，我们推荐使用 Docker 进行部署，接下来将带你使用 Docker 部署 Core，步骤非常简单
+一般情况下，我们推荐使用 Docker 进行部署，步骤非常简单
 
 ---
 
@@ -227,7 +227,7 @@ curl  http://127.0.0.1:2333/api/v2
 #### 从源码进行部署
 
 :::tip
-如果你是为了使用，而不是开发，建议使用 [Docker 部署](/deploy/index.md#docker-部署) ，当然，如果你有比较好的功能，欢迎 PR
+如果你不对 Core 进行修改，建议使用 [Docker 部署](/deploy/index.md#docker-部署) ，当然，您如果有一些有意思的想法，欢迎提 issue
 :::
 
 拉取源代码
@@ -398,3 +398,77 @@ curl http://127.0.0.1:2323
 ## 下一步
 
 [开始使用~](/use/index.md)
+
+## 可能需要(可选)
+
+:::tip 
+以下内容是可选的，如果你不需要，可以跳过，在正常情况，你不需要这些内容。
+:::
+
+## 对 Redis 配置
+
+### Docker 部署
+
+如果你在安装过程中想要使用来自远端的 `Redis` 服务，您可以在 `argv` 传入 `--redis_host` 和 `--redis_port` 参数，如果你需要密码，可以在 argv 传入 `--redis_password` 参数，这个可以在 `docker-compose.yml` 中的 `command` 中配置，当然 `host` 可以传入域名，例如我想传入 `redis_host` 和 `redis_password` ，那么我的 `command` 就是这样的
+
+```yaml
+version: '3.8'
+
+services:
+  app:
+    container_name: mx-server
+    image: innei/mx-server:latest
+    command: node index.js --redis_host=远端地址 --db_host=mongo --redis_password=redis?passwd --allowed_origins=${ALLOWED_ORIGINS} --jwt_secret=${JWT_SECRET} --color
+```
+
+### 源码部署 & 手动部署
+
+请移动到 `/src/app.config.ts` 第 43 行，修改 `redis` 配置，举个例子，假设我的 Redis 服务在 1.1.1.1 的 6379 端口，密码是 `redis?passwd` ，那么我的配置就是这样的
+
+```ts
+export const REDIS = {
+  host: argv.redis_host || '1.1.1.1',
+  port: argv.redis_port || 6379,
+  password: argv.redis_password || 'redis?passwd',
+  ttl: null,
+  httpCacheTTL: 5,
+  max: 5,
+  disableApiCache:
+    (isDev || argv.disable_cache) && !process.env['ENABLE_CACHE_DEBUG'],
+}
+
+```
+
+或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command` 
+
+## 对 MongoDB 配置
+
+### Docker 部署
+
+当然，MongoDB 也是同理，如果你想要使用来自远端的 `MongoDB` 服务，您可以在 `argv` 传入 `--db_host` 和 `--db_port` 参数，当然如果你配置有 `User` 和 `Password`，同样可以使用 `--db_user` 和 `--db_password` 参数，这个可以在 `docker-compose.yml` 中的 `command` 中配置，当然 `host` 可以传入域名，例如我想传入 `db_host` `db_user=test` 和 `db_password=pwd` ，那么我的 `command` 就是这样的
+
+
+```yaml
+version: '3.8'
+
+services:
+  app:
+    container_name: mx-server
+    image: innei/mx-server:latest
+    command: node index.js --redis_host=redis --db_host=远端地址 --db_port=1111 --db_user=test --db_password=pwd --allowed_origins=${ALLOWED_ORIGINS} --jwt_secret=${JWT_SECRET} --color
+
+```
+
+### 源码部署 & 手动部署
+
+请移动到 `/src/app.config.ts` 第 32 行，修改 `mongodb` 配置，举个例子，假设我的 MongoDB 服务在 1.1.1.1 的 1111 端口，用户名是 `test` ，密码是 `pwd` ，那么我的配置就是这样的
+
+```ts
+  dbName: argv.collection_name || (DEMO_MODE ? 'mx-space_demo' : 'mx-space'),
+  host: argv.db_host || '1.1.1.1',
+  port: argv.db_port || 1111,
+  user: argv.db_user || 'test',
+  password: argv.db_password || 'pwd',
+```
+
+或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command` 

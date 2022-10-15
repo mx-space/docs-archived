@@ -59,7 +59,6 @@ cd kami && git fetch --tags && git checkout $(git rev-list --tags --max-count=1)
 
 将你的修改的部分依次修改
 
-
 替换完成；安装依赖、构建、启动前端
 
 ```bash
@@ -102,12 +101,11 @@ cd ~/mx-space/kami && pm2 start
 
 ## 备份
 
-在后端中 其他-备份 中点击立即备份，即备份到绝对目录: 
+在后端中 其他-备份 中点击立即备份，即备份到绝对目录:
 
 `~/mx-space/server/data/mx-space/backup/20xx-xx-xx_xx:xx:xx/backup-20xx-xx-xx_xx:xx:xx.zip`
 
 如果你没修改的话，详见后端面板 设定-系统-备份
-
 
 ## 回滚
 
@@ -117,13 +115,13 @@ Linux 和 macOS 可直接上传备份包，并且无需修改包名一致即可�
 
 在后端中 其他-备份 中点击立即备份，将之前在电脑里的 `backup.zip` 上传到刚刚生成的备份目录里进行重命名替换
 
-
 :::tip
 例: 假如刚刚生成的备份是 backup-2022-09-01_23:33:33.zip 将想进行回滚的备份包 backup-2022-01-14_05:14:19.zip 修改为刚刚生成的备份一样的名字
 
 ```bash
 # mv ~/mx-space/server/data/mx-space/backup/2022-01-14_05:14:19/backup-2022-01-14_05:14:19.zip backup-2022-09-01_23:33:33.zip
 ```
+
 :::
 
 :::danger
@@ -144,4 +142,4 @@ Linux 和 macOS 可直接上传备份包，并且无需修改包名一致即可�
 
 <!-- TODO : help rewrite -->
 
-这块内容将会把最近收集到的 issue 整合起来
+这块内容将会把最近收集到的 issues 整合起来
