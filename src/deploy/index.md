@@ -100,7 +100,7 @@ Mix Space 目前支持以下安装方法
 
 [**手动部署**](#手动部署)：安装略微麻烦，前端可以修改任意地方更细分，更新频率最快。
 
-## 一键Docker部署
+## 一键 Docker 部署
 
 ```bash
 bash <(curl -s https://fastly.jsdelivr.net/gh/mx-space/docker@master/install.sh)>
@@ -401,7 +401,7 @@ curl http://127.0.0.1:2323
 
 ## 可能需要(可选)
 
-:::tip 
+:::tip
 以下内容是可选的，如果你不需要，可以跳过，在正常情况，你不需要这些内容。
 :::
 
@@ -423,7 +423,9 @@ services:
 
 ### 源码部署 & 手动部署
 
-请移动到 `/src/app.config.ts` 第 43 行，修改 `redis` 配置，举个例子，假设我的 Redis 服务在 1.1.1.1 的 6379 端口，密码是 `redis?passwd` ，那么我的配置就是这样的
+请移动到 `/src/app.config.ts` 第 43 行，修改 `redis` 配置。
+
+举个例子，假设我的 Redis 服务在 1.1.1.1 的 6379 端口，密码是 `redis?passwd` ，那么我应该修改为如下
 
 ```ts
 export const REDIS = {
@@ -436,17 +438,15 @@ export const REDIS = {
   disableApiCache:
     (isDev || argv.disable_cache) && !process.env['ENABLE_CACHE_DEBUG'],
 }
-
 ```
 
-或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command` 
+或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command`
 
 ## 对 MongoDB 配置
 
 ### Docker 部署
 
 当然，MongoDB 也是同理，如果你想要使用来自远端的 `MongoDB` 服务，您可以在 `argv` 传入 `--db_host` 和 `--db_port` 参数，当然如果你配置有 `User` 和 `Password`，同样可以使用 `--db_user` 和 `--db_password` 参数，这个可以在 `docker-compose.yml` 中的 `command` 中配置，当然 `host` 可以传入域名，例如我想传入 `db_host` `db_user=test` 和 `db_password=pwd` ，那么我的 `command` 就是这样的
-
 
 ```yaml
 version: '3.8'
@@ -456,12 +456,13 @@ services:
     container_name: mx-server
     image: innei/mx-server:latest
     command: node index.js --redis_host=redis --db_host=远端地址 --db_port=1111 --db_user=test --db_password=pwd --allowed_origins=${ALLOWED_ORIGINS} --jwt_secret=${JWT_SECRET} --color
-
 ```
 
 ### 源码部署 & 手动部署
 
-请移动到 `/src/app.config.ts` 第 32 行，修改 `mongodb` 配置，举个例子，假设我的 MongoDB 服务在 1.1.1.1 的 1111 端口，用户名是 `test` ，密码是 `pwd` ，那么我的配置就是这样的
+请移动到 `/src/app.config.ts` 第 32 行，修改 `mongodb` 配置。
+
+举个例子，假设我的 MongoDB 服务在 1.1.1.1 的 1111 端口，用户名是 `test` ，密码是 `pwd` ，那么我应该修改为如下
 
 ```ts
   dbName: argv.collection_name || (DEMO_MODE ? 'mx-space_demo' : 'mx-space'),
@@ -471,4 +472,4 @@ services:
   password: argv.db_password || 'pwd',
 ```
 
-或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command` 
+或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command`
