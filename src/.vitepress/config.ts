@@ -19,7 +19,7 @@ const sidebar = [
   { text: '部署', items: deploySideBar },
   { text: '使用', items: optionsBar },
   { text: '帮助', items: helpBar },
-  { text: 'Changelog', items: changelogBar },
+  { text: '文档变更日志', items: changelogBar },
   { text: '实验性特征', items: experimentBar },
   { text: '开发', items: devBar },
 ]

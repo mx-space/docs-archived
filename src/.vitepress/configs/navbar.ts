@@ -3,7 +3,7 @@
  * @author: Wibus
  * @Date: 2022-04-03 20:14:54
  * @LastEditors: ttimochan
- * @LastEditTime: 2022-10-16 11:40:53
+ * @LastEditTime: 2022-10-16 12:05:08
  * Coding With IU
  */
 
@@ -56,14 +56,16 @@ export const devBar = [
   { text: '服务端', link: '/dev/server' },
 ]
 
-export const changelogBar = [{ text: 'changelog', link: '/changelog/' }]
+export const changelogBar = [
+  { text: '文档变更日志', link: '/changelog/' }
+]
+
 const navBar = [
   { text: '介绍', items: introduceBar },
   { text: '部署', items: deployBar },
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
   { text: '开发', items: devBar },
-  { text: 'changelog', items: changelogBar },
 ]
 
 export default navBar

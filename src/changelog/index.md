@@ -1,8 +1,8 @@
 ---
-title: Changelog
+title: 文档变更日志
 ---
 
-# Changelog
+# 文档变更日志
 
 ## 10.16 (2022-10-16)
 
