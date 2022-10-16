@@ -11,6 +11,7 @@ import navBar, {
   helpBar,
   introduceBar,
   optionsBar,
+  changelogBar,
 } from './configs/navbar'
 import { NavbarFix } from './plugins/navbar'
 const sidebar = [
@@ -18,17 +19,16 @@ const sidebar = [
   { text: '部署', items: deploySideBar },
   { text: '使用', items: optionsBar },
   { text: '帮助', items: helpBar },
+  { text: 'Changelog', items: changelogBar },
   { text: '实验性特征', items: experimentBar },
   { text: '开发', items: devBar },
 ]
 
 const config: UserConfig = {
-
   title: 'Mix Space',
   description: 'An alternative personal space.',
   lang: 'zh-CN',
   outDir: resolve(__dirname, '../../dist'),
-  
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
@@ -102,6 +102,7 @@ const config: UserConfig = {
       '/deploy/': sidebar,
       '/help/': sidebar,
       '/dev/': sidebar,
+      '/changelog/': sidebar,
     },
     footer: {
       license: {

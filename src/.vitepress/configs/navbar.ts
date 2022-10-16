@@ -1,15 +1,13 @@
 /*
- * @FilePath: /docs-next/src/.vitepress/configs/navbar.ts
+ * @FilePath: /docs/src/.vitepress/configs/navbar.ts
  * @author: Wibus
  * @Date: 2022-04-03 20:14:54
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-05-12 18:01:54
+ * @LastEditors: ttimochan
+ * @LastEditTime: 2022-10-16 11:40:53
  * Coding With IU
  */
 
-export const introduceBar = [
-  { text: '介绍', link: '/guide/' },
-]
+export const introduceBar = [{ text: '介绍', link: '/guide/' }]
 
 export const experimentBar = [
   { text: '文本宏', link: '/feature/text-macors' },
@@ -22,7 +20,7 @@ export const optionsBar = [
   { text: '后台设置', link: '/use/#后台设置' },
   { text: '主题设置', link: '/use/#kami-设置' },
   { text: '歌单', link: '/use/#歌单-听歌-追番' },
-  { text: '详细配置', link: '/use/kami-setting.md'}
+  { text: '详细配置', link: '/use/kami-setting.md' },
 ]
 
 export const deployServerBar = [
@@ -41,12 +39,10 @@ export const deploySideBar = [
 ]
 
 export const deployBar = [
-  { text: 'Global', items: [
-    { text: '一键部署全站', link: '/deploy/' },
-  ]},
+  { text: 'Global', items: [{ text: '一键部署全站', link: '/deploy/' }] },
   { text: 'Core', items: deployServerBar },
   { text: 'Kami', items: deployKamiBar },
-] 
+]
 
 export const helpBar = [
   { text: '升级', link: '/help/#升级' },
@@ -60,12 +56,14 @@ export const devBar = [
   { text: '服务端', link: '/dev/server' },
 ]
 
+export const changelogBar = [{ text: 'changelog', link: '/changelog/' }]
 const navBar = [
   { text: '介绍', items: introduceBar },
   { text: '部署', items: deployBar },
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
   { text: '开发', items: devBar },
+  { text: 'changelog', items: changelogBar },
 ]
 
 export default navBar
