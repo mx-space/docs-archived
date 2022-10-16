@@ -8,8 +8,6 @@ title: Windows 安装
 本节内容是文档贡献者单方面的支持，文中提到的问题不会被修复，不推荐使用 Windows 部署 Mix Space
 :::
 
-
-
 ## 安装 Core
 
 :::tip
@@ -20,6 +18,7 @@ Mix Space 的 Core 需要 MongoDB ，Node.js 以及 Redis ，如果你有 Scoop 
 ```powershell
 scoop install mongodb redis nodejs-lts
 ```
+
 如果你没有 Scoop 作为包管理器，接下来带你手动下载安装，并处理环境变量问题(可选)
 
 ### 安装 MongoDB
@@ -56,7 +55,6 @@ Redis 对 Windows 的原生支持停留在了 3.x 版本，不过有人实现了
 npm i -g pm2 pnpm yarn
 ```
 
-
 ### 安装 msvc 编译环境
 
 msvc 编译环境，目前获取的渠道只有使用 VS 安装 C++ 的桌面开发环境才能获得
@@ -69,7 +67,6 @@ msvc 编译环境，目前获取的渠道只有使用 VS 安装 C++ 的桌面开
 
 ### 拉取仓库
 
-
 首先，你得自行安装 git
 
 在你喜欢的地方打开 powershell / cmd / other terminal
@@ -78,7 +75,7 @@ msvc 编译环境，目前获取的渠道只有使用 VS 安装 C++ 的桌面开
 git clone https://github.com/mx-space/core.git --depth 1
 ```
 
-或者下载 [`core` 的稳定发行包](https://github.com/mx-space/core/releases)  `Source code (zip)` ，解压到你喜欢的地方
+或者下载 [`core` 的稳定发行包](https://github.com/mx-space/core/releases) `Source code (zip)` ，解压到你喜欢的地方
 
 ### 安装依赖
 
@@ -112,6 +109,7 @@ export const CROSS_DOMAIN = {
   // allowedReferer: 'innei.ren',
 }
 ```
+
 其中，按照 17-26 行一样，按照格式，追加你的域名
 
 例如，我想要添加 `server.example.com` ，那么仅仅这样追加一行即可。
@@ -143,8 +141,9 @@ export const CROSS_DOMAIN = {
 构建
 
 ```powershell
-pnpm build
+pnpm bundle
 ```
+
 使用 pm2 托管 Core ，我们还需要修改一下脚本，移动到 `ecosystem.config.js`
 
 它看起来是如下内容
@@ -153,7 +152,7 @@ pnpm build
 const { cpus } = require('os')
 const { execSync } = require('child_process')
 const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
-  '\n',
+  '\n'
 )[0]
 
 const cpuLen = cpus().length
@@ -177,7 +176,7 @@ module.exports = {
 }
 ```
 
-将 12 行的 `index.js` 修改为 `dist/src/main.js` ，即把 `ecosystem.dev.config.js` 的内容复制过去
+将 12 行的 `index.js` 修改为 `out/index.js`
 
 看起如下
 
@@ -185,7 +184,7 @@ module.exports = {
 const { cpus } = require('os')
 const { execSync } = require('child_process')
 const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
-  '\n',
+  '\n'
 )[0]
 
 const cpuLen = cpus().length
@@ -193,7 +192,7 @@ module.exports = {
   apps: [
     {
       name: 'mx-server',
-      script: 'dist/src/main.js',
+      script: 'out/index.js',
       autorestart: true,
       exec_mode: 'cluster',
       watch: false,
@@ -218,6 +217,7 @@ pnpm prod:pm2
 
 pm2 start
 ```
+
 ## 安装 kami
 
 ### 拉取仓库
@@ -227,14 +227,15 @@ pm2 start
 ```powershell
 git clone https://github.com/mx-space/kami.git --depth 1
 ```
-或者下载 [`kami` 的稳定发行包](https://github.com/mx-space/kami/releases)  `Source code (zip)` ，解压到你喜欢的地方
+
+或者下载 [`kami` 的稳定发行包](https://github.com/mx-space/kami/releases) `Source code (zip)` ，解压到你喜欢的地方
 
 ### 安装依赖
 
 由于使用 `pnpm` 会存在目录链接，符号链接等，极易出现权限问题，导致构建失败，故这里采用 `yarn` 作为依赖管理器
 
 ```powershell
-yarn 
+yarn
 ```
 
 ### 配置
@@ -252,7 +253,6 @@ NEXT_PUBLIC_SNIPPET_NAME=kami
 ASSETPREFIX=
 ```
 
-
 ### 构建
 
 ```powershell
@@ -266,6 +266,7 @@ yarn build
 ```powershell
 npx next start -p 2323
 ```
+
 该终端窗口不能关闭，否则前端将会关闭，你可以把它最小化
 
 ## 存在的问题

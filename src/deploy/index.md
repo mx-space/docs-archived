@@ -302,10 +302,74 @@ export const CROSS_DOMAIN = {
 构建 & 启动
 
 ```bash
-pnpm build
+pnpm bundle
 ```
 
-我们可以使用 pm2 托管
+使用 pm2 托管 Core ，我们还需要修改一下脚本，移动到 `ecosystem.config.js`
+
+它看起来是如下内容
+
+```js
+const { cpus } = require('os')
+const { execSync } = require('child_process')
+const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
+  '\n'
+)[0]
+
+const cpuLen = cpus().length
+module.exports = {
+  apps: [
+    {
+      name: 'mx-server',
+      script: 'index.js',
+      autorestart: true,
+      exec_mode: 'cluster',
+      watch: false,
+      instances: cpuLen,
+      max_memory_restart: '200M',
+      args: '--color',
+      env: {
+        NODE_ENV: 'production',
+        NODE_PATH: nodePath,
+      },
+    },
+  ],
+}
+```
+
+将 12 行的 `index.js` 修改为 `out/index.js`
+
+看起如下
+
+```js
+const { cpus } = require('os')
+const { execSync } = require('child_process')
+const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
+  '\n'
+)[0]
+
+const cpuLen = cpus().length
+module.exports = {
+  apps: [
+    {
+      name: 'mx-server',
+      script: 'out/index.js',
+      autorestart: true,
+      exec_mode: 'cluster',
+      watch: false,
+      instances: cpuLen,
+      max_memory_restart: '200M',
+      args: '--color',
+      env: {
+        NODE_ENV: 'production',
+        NODE_PATH: nodePath,
+      },
+    },
+  ],
+}
+```
+
+使用 PM2 托管
 
 ```bash
 pm2 start
@@ -402,14 +466,26 @@ curl http://127.0.0.1:2323
 ## 可能需要(可选)
 
 :::tip
-以下内容是可选的，如果你不需要，可以跳过，在正常情况，你不需要这些内容。
+以下内容是可选的，如果你不需要，可以跳过；在正常情况，你不需要这些内容。
 :::
 
 ## 对 Redis 配置
 
-### Docker 部署
+如果你需要使用来自远端的 Redis 服务，您可以通过使用 `argv` 来传入对应的配置项
 
-如果你在安装过程中想要使用来自远端的 `Redis` 服务，您可以在 `argv` 传入 `--redis_host` 和 `--redis_port` 参数，如果你需要密码，可以在 argv 传入 `--redis_password` 参数，这个可以在 `docker-compose.yml` 中的 `command` 中配置，当然 `host` 可以传入域名，例如我想传入 `redis_host` 和 `redis_password` ，那么我的 `command` 就是这样的
+支持传入如下值
+
+- `redis_host` Redis 服务地址，域名、IP 都可以
+- `redis_port` Redis 服务端口
+- `redis_password` Redis 服务密码
+
+在默认情况下，我们认为这样已经足够了
+
+### 对于 Docker 部署
+
+编辑 `docker-compose.yml` 文件，变更 `command` 这项内容，添加你需要传入的值，如下所示
+
+以传入 `redis_host` 和 `redis_password` 为例
 
 ```yaml
 version: '3.8'
@@ -421,15 +497,40 @@ services:
     command: node index.js --redis_host=远端地址 --db_host=mongo --redis_password=redis?passwd --allowed_origins=${ALLOWED_ORIGINS} --jwt_secret=${JWT_SECRET} --color
 ```
 
-### 源码部署 & 手动部署
+然后重新创建容器即可生效
 
-请移动到 `/src/app.config.ts` 第 43 行，修改 `redis` 配置。
+```bash
+docker compose up -d
+```
 
-举个例子，假设我的 Redis 服务在 1.1.1.1 的 6379 端口，密码是 `redis?passwd` ，那么我应该修改为如下
+### 对于源码部署
+
+针对这种部署方式，我们可以修改 `ecosystem.config.js` 在 12 行，也就是 `script` 这一项，添加你需要传入的值，如下所示
+
+```js
+const { cpus } = require('os')
+const { execSync } = require('child_process')
+const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
+  '\n',
+)[0]
+
+const cpuLen = cpus().length
+module.exports = {
+  apps: [
+    {
+      name: 'mx-server',
+      script: 'out/index.js --redis_host=远端地址 --redis_password=redis?passwd',
+      autorestart: true,
+      exec_mode: 'cluster',
+```
+
+当然，我们也可以修改源码，修改对应的配置项，这样就可以不用传入了
+
+移动到 `/src/app.config.ts` 文件，在 47 行左右，修改对应的配置项
 
 ```ts
 export const REDIS = {
-  host: argv.redis_host || '1.1.1.1',
+  host: argv.redis_host || '远端',
   port: argv.redis_port || 6379,
   password: argv.redis_password || 'redis?passwd',
   ttl: null,
@@ -440,13 +541,35 @@ export const REDIS = {
 }
 ```
 
-或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command`
+当你修改完成，你需要重新构建，并重启服务
+
+```bash
+pnpm bundle
+
+pnpm prod:pm2
+```
 
 ## 对 MongoDB 配置
 
-### Docker 部署
+如果你需要使用来自远端的 MongoDB 服务，你可以通过使用 `argv` 来传入对应的配置项
 
-当然，MongoDB 也是同理，如果你想要使用来自远端的 `MongoDB` 服务，您可以在 `argv` 传入 `--db_host` 和 `--db_port` 参数，当然如果你配置有 `User` 和 `Password`，同样可以使用 `--db_user` 和 `--db_password` 参数，这个可以在 `docker-compose.yml` 中的 `command` 中配置，当然 `host` 可以传入域名，例如我想传入 `db_host` `db_user=test` 和 `db_password=pwd` ，那么我的 `command` 就是这样的
+支持传入如下值
+
+- `collection_name` 数据库集合名字
+- `db_host` MongoDB 服务地址，域名、IP 都可以
+- `db_port` MongoDB 服务端口
+- `db_user` MongoDB 服务用户名
+- `db_password` MongoDB 服务密码
+
+::: warning
+如果你需要使用密码登录，你不仅仅需要传入 password ，还需要传入 user，建议你对数据库集合划分好用户权限
+:::
+
+### 对于 Docker 部署
+
+编辑 `docker-compose.yml` 文件，变更 `command` 这项内容，添加你需要传入的值，如下所示
+
+以传入 `db_host` `db_user` 和 `db_password` 为例
 
 ```yaml
 version: '3.8'
@@ -455,21 +578,61 @@ services:
   app:
     container_name: mx-server
     image: innei/mx-server:latest
-    command: node index.js --redis_host=redis --db_host=远端地址 --db_port=1111 --db_user=test --db_password=pwd --allowed_origins=${ALLOWED_ORIGINS} --jwt_secret=${JWT_SECRET} --color
+    command: node index.js --redis_host=redis --db_host=远端地址 --db_user=mongodb-test --db_password=db?passwd --allowed_origins=${ALLOWED_ORIGINS} --jwt_secret=${JWT_SECRET} --color
 ```
 
-### 源码部署 & 手动部署
+然后我们重启创建容器即可
 
-请移动到 `/src/app.config.ts` 第 32 行，修改 `mongodb` 配置。
+```
+docker compose up -d
+```
 
-举个例子，假设我的 MongoDB 服务在 1.1.1.1 的 1111 端口，用户名是 `test` ，密码是 `pwd` ，那么我应该修改为如下
+### 对于源码部署
+
+和 Redis 一样，我们可以修改 `ecosystem.config.js` 在 12 行，也就是 `script` 这一项，添加你需要传入的值，如下所示
+
+```js
+const { cpus } = require('os')
+const { execSync } = require('child_process')
+const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
+  '\n',
+)[0]
+
+const cpuLen = cpus().length
+module.exports = {
+  apps: [
+    {
+      name: 'mx-server',
+      script: 'out/index.js --db_host=远端地址 --db_user=mongodb-test --db_password=db?passwd',
+      autorestart: true,
+      exec_mode: 'cluster',
+```
+
+当然，我们也可以修改源码，修改对应的配置项，这样就可以不用传入了
+
+移动到 `/src/app.config.ts` 文件，在 32 行左右，修改对应的配置项
 
 ```ts
+export const MONGO_DB = {
   dbName: argv.collection_name || (DEMO_MODE ? 'mx-space_demo' : 'mx-space'),
-  host: argv.db_host || '1.1.1.1',
-  port: argv.db_port || 1111,
-  user: argv.db_user || 'test',
-  password: argv.db_password || 'pwd',
+  host: argv.db_host || '远端',
+  port: argv.db_port || 27017,
+  user: argv.db_user || 'mongodb-test',
+  password: argv.db_password || 'db?passwd',
+  get uri() {
+    let userPassword =
+      this.user && this.password ? this.user + ':' + this.password + '@' : ''
+    return `mongodb://${userPassword}${this.host}:${this.port}/${
+      isTest ? 'mx-space_unitest' : this.dbName
+    }`
+  },
+}
 ```
 
-或者，你仅仅在启动的时候传入参数即可，示例就是上面的 `docker-compose.yml` 中的 `command`
+当你修改完成，你需要重新构建，并重启服务
+
+```bash
+pnpm bundle
+
+pnpm prod:pm2
+```
