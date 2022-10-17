@@ -152,7 +152,7 @@ pnpm bundle
 const { cpus } = require('os')
 const { execSync } = require('child_process')
 const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
-  '\n'
+  '\n',
 )[0]
 
 const cpuLen = cpus().length
@@ -184,7 +184,7 @@ module.exports = {
 const { cpus } = require('os')
 const { execSync } = require('child_process')
 const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
-  '\n'
+  '\n',
 )[0]
 
 const cpuLen = cpus().length
