@@ -230,7 +230,7 @@ location / {
 
 第一次访问可能遇到填写 API 的情况，
 
-后端的 API 地址: `https://server.test.cn/api/v2`  (`server.test.cn` 请换成你自己的，下同)，
+后端的 API 地址: `https://server.test.cn/api/v2` (`server.test.cn` 请换成你自己的，下同)，
 
 网关的地址: `https://server.test.cn`。
 
@@ -736,6 +736,52 @@ async function handler() {
 ```
 
 到这里，Kami 默认功能需要的云函数已经配置完毕。
+
+## 后台自定义反向代理
+
+如果你不喜欢默认的 `/qaqdmin` , `/proxy/qaqdmin` 这样的路径，可以自定义反向代理路径。
+
+以 Nginx 举例，假设你想要的路径是 `/admin` , 那么你需要在 Core 的 Nginx 反向代理配置文件中添加如下内容：
+
+```nginx
+location /admin // 这里路径可以自定义
+{
+  proxy_pass http://127.0.0.1:2333/qaqdmin;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header REMOTE-HOST $remote_addr;
+
+  add_header X-Cache $upstream_cache_status;
+
+  add_header Cache-Control no-cache;
+  proxy_intercept_errors on;
+}
+```
+
+如果你不喜欢默认的 `/proxy/qaqdmin` , 同理。
+
+```nginx
+location /admin  // 这里的路径可以自定义
+{
+  proxy_pass http://127.0.0.1:2333/proxy/qaqdmin;
+  proxy_ignore_headers Set-Cookie Cache-Control expires;
+  add_header Cache-Control no-store;
+  expires 12h;
+}
+location /proxy/ {
+  proxy_pass http://127.0.0.1:2333/proxy/;
+
+  add_header X-Cache $upstream_cache_status;
+  #Set Nginx Cache
+
+  add_header Cache-Control max-age=36000000;
+}
+```
+
+仅仅这样修改 Core 的 Nginx 配置文件即可
+
+综上，你也可以使用其他域名来访问后台，只要你配置好对应的反向代理即可。
 
 ## PS
 

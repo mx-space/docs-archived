@@ -488,6 +488,80 @@ curl http://127.0.0.1:2323
 以下内容是可选的，如果你不需要，可以跳过；在正常情况，你不需要这些内容。
 :::
 
+## 后台单独部署
+
+在正常情况下，你不需要单独部署后台，因为后台已经被打包到了后端中。
+
+如果你有以下需求：
+
+- 想使用其他域名作为后台地址
+- 想使用其他端口作为后台地址
+- 不想修改后端的反向代理配置
+
+那么你可以选择单独部署后台，或者你可以参考 [后台反向代理配置](/use/index.md#后台自定义反向代理)。
+
+### 拉取源文件
+
+```bash
+cd mx-space
+
+git clone https://github.com/mx-space/mx-admin.git --depth 1
+```
+
+### 修改配置文件
+
+移动到 `.env.production` 文件，去掉 `VITE_` 前缀的注释符号，然后修改为你的配置
+
+例如
+
+```text
+VITE_APP_BASE_API=https://server.test.cn/api/v2
+VITE_APP_WEB_URL=https://www.test.cn
+VITE_APP_GATEWAY=https://server.test.cn
+# # VITE_APP_PUBLIC_URL=https://fastly.jsdelivr.net/gh/mx-space/admin-next@gh-pages/
+```
+
+其他可以定义的配置文件 `/src/configs.ts`
+
+### 构建
+
+::: warning
+构建 Admin 需要的内存至少为 2 Gib ，如果你服务器内存不足，你可以在本地构建成功后，将产物上传到服务器。
+:::
+
+```bash
+pnpm i
+
+pnpm build
+```
+
+### 部署产物
+
+构建生成的产物在 dist 目录下，你可以直接把它们移动到你准备好的后台网站的根目录下
+
+假设你准备的后台网站域名是 `admin.test.cn`，且网站根目录为 `/var/www/admin.test.cn`
+
+那么，你把 dist 目录下的所有文件移动到 `/var/www/admin.test.cn` 目录下即可。
+
+### 修改后端配置
+
+编辑 Core 的 `.env` 文件，修改 `ALLOWED_ORIGINS` ，添加你的后台域名
+
+例如
+
+```text
+# THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
+# SEE https://docs.docker.com/compose/environment-variables/#the-env-file
+JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串
+ALLOWED_ORIGINS=test.cn,www.test.cn,admin.test.cn
+```
+
+然后重新启动 Core 即可
+
+```bash
+docker compose up -d
+```
+
 ## 对 Redis 配置
 
 如果你需要使用来自(远端 / 非容器)的 Redis 服务，你可以通过使用 `argv` 来动态传入对应的配置项
