@@ -18,7 +18,7 @@ title: 部署 Mix Space
 
 前端示例域名：www.test.cn
 
-操作系统：建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本
+操作系统：建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本；不推荐 CentOS，除非你自己会升级内核
 
 如果你想在 Windows 部署，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
 
@@ -38,7 +38,6 @@ Linux 内核版本：大于 4.18 ，建议 5.x
 
 # 环境准备
 
-
 ## 检查 Linux 内核版本
 
 打开终端，输入以下命令
@@ -46,15 +45,17 @@ Linux 内核版本：大于 4.18 ，建议 5.x
 ```bash
 uname -r
 ```
+
 应该返回如下内容
+
 ```bash
 ➜  ~ uname -r
 5.15.74-3-MANJARO
 ```
+
 可以看到，我的内核版本是 5.15
 
-再次强调，**Linux 内核版本大于 4.18** 才能构建 Kami
-
+再次强调，**Linux 内核版本大于 4.18** 才能构建 Kami；不推荐 CentOS ，不论是 CentOS 7，还是 CentOS 8 ；CentOS 8 早已停止维护，CentOS 7 的内核版本太低；建议使用 Ubuntu 20.04，Debian 11 或者其他 Linux 发行版本
 
 ## 安装软件包
 
