@@ -1,18 +1,18 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@types/markdown-it': '*'
+  '@types/markdown-it': 12.2.3
   '@types/node': 17.0.23
-  '@types/prismjs': '*'
+  '@types/prismjs': 1.26.0
   '@vue/theme': 1.0.4
   '@vueuse/core': 9.3.0
   '@vueuse/head': 0.9.8
   husky: 8.0.1
   lint-staged: 13.0.3
-  markdown-it: '*'
+  markdown-it: 13.0.1
   markdown-it-checkbox: 1.1.0
   prettier: 2.7.1
-  prismjs: '*'
+  prismjs: 1.29.0
   shiki: 0.11.1
   terser: 5.15.1
   vite: 3.0.8
@@ -27,9 +27,9 @@ dependencies:
   '@vue/theme': 1.0.4_vue@3.2.40
   '@vueuse/core': 9.3.0_vue@3.2.40
   '@vueuse/head': 0.9.8_vue@3.2.40
-  markdown-it: 13.0.0
+  markdown-it: 13.0.1
   markdown-it-checkbox: 1.1.0
-  prismjs: 1.27.0
+  prismjs: 1.29.0
   shiki: 0.11.1
   vite: 3.0.8_terser@5.15.1
   vitepress: 1.0.0-alpha.21_terser@5.15.1
@@ -1399,8 +1399,8 @@ packages:
       underscore: 1.13.3
     dev: false
 
-  /markdown-it/13.0.0:
-    resolution: {integrity: sha512-WArlIpVFvVwb8t3wgJuOsbMLhNWlzuQM7H2qXmuUEnBtXRqKjLjwFUMbZOyJgHygVZSjvcLR4EcXcRilqMavrA==}
+  /markdown-it/13.0.1:
+    resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}
     hasBin: true
     dependencies:
       argparse: 2.0.1
@@ -1411,7 +1411,7 @@ packages:
     dev: false
 
   /mdurl/1.0.1:
-    resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
     dev: false
 
   /merge-stream/2.0.0:
@@ -1536,8 +1536,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prismjs/1.27.0:
-    resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
+  /prismjs/1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
     engines: {node: '>=6'}
     dev: false
 
