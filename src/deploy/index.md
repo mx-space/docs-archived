@@ -527,6 +527,8 @@ VITE_APP_GATEWAY=https://server.test.cn
 
 ::: warning
 构建 Admin 需要的内存至少为 2 Gib ，如果你服务器内存不足，你可以在本地构建成功后，将产物上传到服务器。
+
+在 Windows 系统上，mx-admin 无法正常构建，你可以使用 WSL2 或者 Linux 系统。
 :::
 
 ```bash

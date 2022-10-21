@@ -141,7 +141,7 @@ export const CROSS_DOMAIN = {
 构建
 
 ```powershell
-pnpm bundle
+pnpm build
 ```
 
 使用 pm2 托管 Core ，我们还需要修改一下脚本，移动到 `ecosystem.config.js`
@@ -176,7 +176,7 @@ module.exports = {
 }
 ```
 
-将 12 行的 `index.js` 修改为 `out/index.js`
+将 12 行的 `index.js` 修改为 `dist/src/main.js`
 
 看起如下
 
@@ -192,7 +192,7 @@ module.exports = {
   apps: [
     {
       name: 'mx-server',
-      script: 'out/index.js',
+      script: 'dist/src/main.js',
       autorestart: true,
       exec_mode: 'cluster',
       watch: false,
