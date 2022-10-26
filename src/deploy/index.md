@@ -10,28 +10,20 @@ title: 部署 Mix Space
 那本节内容带你完成部署，请有耐心的一点点看完
 :::
 
-## 示例和准备
+## 前置
 
-国内服务器部署请完成备案后再进行
-
-后端示例域名：server.test.cn
-
-前端示例域名：www.test.cn
-
-操作系统：建议 Ubuntu 20.04 / Debian 11 及以上版本，或其他 Linux 发行版本；不推荐 CentOS，除非你自己会升级内核
-
-如果你想在 Windows 部署，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
-
-Linux 内核版本：大于 4.18 ，建议 5.x
-
-构建需要的内存：大于 1 GiB
-
-运行需要的内存：不小于 768 MiB
-
-内存建议：大于 1 GiB
+- 前置要求：
+  - 后端示例域名：`server.test.cn`
+  - 前端示例域名：`www.test.cn`
+  - 操作系统：建议**最新的 Ubuntu / Debian** ，或其他 **Linux 内核版本大于 `4.18`** 的发行版本；如果你想在 **Windows 部署**，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
+  - Linux 内核版本：**大于 4.18 ，建议 5.x**
+  - 内存建议：**大于 1 GiB**
+- 内存要求说明：
+- 构建需要的内存：**大于 1 GiB**
+- 运行需要的内存：**不小于 768 MiB**
 
 :::danger
-使用小于 4.18 版本的 Linux 内核将无法正常部署 Kami.
+使用小于 `4.19` 版本的 Linux 内核将无法正常部署 Kami
 :::
 
 ---
@@ -50,12 +42,12 @@ uname -r
 
 ```bash
 ➜  ~ uname -r
-5.15.74-3-MANJARO
+6.0.2-2-MANJARO
 ```
 
-可以看到，我的内核版本是 5.15
+可以看到，我的内核版本是 6.0 ，大于 4.19 ，所以可以正常部署 Kami
 
-再次强调，**Linux 内核版本大于 4.18** 才能构建 Kami；不推荐 CentOS ，不论是 CentOS 7，还是 CentOS 8 ；CentOS 8 早已停止维护，CentOS 7 的内核版本太低；建议使用 Ubuntu 20.04，Debian 11 或者其他 Linux 发行版本
+再次强调，**Linux 内核版本不小于 4.19** 才能构建 Kami，如果你的 Linux 内核版本不满足，或许你可以考虑一下最新版本的 Ubuntu / Debian ？
 
 ## 安装软件包
 
