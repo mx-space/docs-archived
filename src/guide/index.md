@@ -6,7 +6,7 @@ title: 介绍
 
 Mix Space 是一款简洁而不简单的个人博客系统，它具有良好的动效设计，可爱的风格，以及比较丰富的功能。
 
-它够**快**，更**现代**，其活跃的开源社区能享受到比较新的技术栈带来的惊艳。
+它够**快**，更**现代**，其活跃的开源社区能让你享受到新技术栈带来的惊艳。
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/kami.jpg)
 
@@ -14,11 +14,11 @@ Mix Space 是一款简洁而不简单的个人博客系统，它具有良好的�
 
  - 前后端分离设计
 
-   前端采用了 Next.js ，自带 SSR ，提供最全的支持，享有 Core 的全部功能，具有良好的动效，各种很可爱的小彩蛋。
+   前端采用了 Next.js ，自带 SSR，可使用 Core 的全部功能，具有良好的动效，各种很可爱的小彩蛋。
 
    后端采用了 Nest.js ，性能非常不错，打包成了 Docker 镜像，部署方便。
 
-   后台采用了 Vue ，风格上简洁而优雅。
+   后台采用了 Vue 和 Naive UI，风格上简洁而优雅。
 
  - 功能丰富
    - Markdown 语法 + 代码高亮 + 多图展示 + 自定义提示
@@ -26,7 +26,7 @@ Mix Space 是一款简洁而不简单的个人博客系统，它具有良好的�
    - 评论 - 反垃圾 / 邮件通知
    - 文件管理 - 图片 上传 / 删除
    - 通知 - 说说 / 动态 / 文章/ 日记发布后通知
-   - 友联 - 可用性检查 / 自助申请
+   - 友连 - 可用性检查 / 自助申请
    - 计划任务 - 备份数据 / 推送站点地图
    - 音乐 - 原生支持全站 BGM / 歌单
    - 其他 - 动态化配置前端 / 终端功能 / 云函数 / 暗色模式 / Algolia Search
@@ -38,7 +38,7 @@ etc...
 
 ## Demo
 
-你可以通过以下 Demo 来查看整个系统
+你可以通过以下 Demo 来查看整个系统：
 
 [后台 Demo](https://mx-demo.shizuri.net/proxy/qaqdmin)，密码 `demo`
 
@@ -56,7 +56,7 @@ etc...
 
 ## Thanks
 
-本版文档由以下贡献者编写（按照贡献者名字首字母顺序进行排序）
+本版文档由以下贡献者编写（按照贡献者名字首字母顺序进行排序）：
 
 - [623337308](https://blog.cqsjyz.com)
 - [Elmge](https://github.com/Elmge)
@@ -67,6 +67,7 @@ etc...
 - [Wibus](https://blog.iucky.cn)
 - [wuhang2003](https://github.com/wuhang2003)
 - [zsbai](https://github.com/zsbai)
+- [AkaraChen](https://github.com/akarachen)
 
 
 ## 参与到本项目
@@ -87,10 +88,7 @@ etc...
 
 ## 部署
 
-
 [开始部署，Let's go !](/deploy/index.md)
-
-
 
 ## 打赏本项目
 

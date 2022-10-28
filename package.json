@@ -19,7 +19,7 @@
       "prettier --ignore-path ./.prettierignore --write "
     ]
   },
-  "author": "Mix Space Term",
+  "author": "Mix Space Team",
   "license": "CC 3.0",
   "dependencies": {
     "@types/markdown-it": "*",
