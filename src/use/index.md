@@ -2,24 +2,19 @@
 
 ## 前提
 
-- 已完成 Mix Space 的部署并且运行正常
-- 域名已经解析到对应的服务器，国内用户请备案
+- 已完成 Mix Space 的部署并且运行正常。
+- 域名已经解析到对应的服务器，国内用户请备案。
 
 ## 反向代理
 
-使用 [预设脚本部署整个环境](https://mx-space.js.org/deploy/index.html#%E6%95%B4%E4%B8%AA%E7%8E%AF%E5%A2%83) 的用户，请跳过反向代理这一节
+使用 [预设脚本部署整个环境](https://mx-space.js.org/deploy/index.html#%E6%95%B4%E4%B8%AA%E7%8E%AF%E5%A2%83) 的用户，请跳过反向代理这一节。
 
-通常情况下，使用 Caddy 2 或者 Nginx 都可以很好的完成反向代理
-
-本节内容以 Nginx 举例
-
-如果你想使用 Caddy 2 完成反向代理，[配置文件示例](https://github.com/mx-space/docker/blob/master/Caddyfile.example)
-
-当然，你想单个域名部署前后端，这里也有[配置文件示例](https://github.com/mx-space/docker/blob/master/configs/nginx.conf)
+通常情况下，使用 Caddy 2 或者 Nginx 都可以很好的完成反向代理，本节内容以 Nginx 举例
+。如果你想使用 Caddy 2 完成反向代理，这里有 [配置文件示例](https://github.com/mx-space/docker/blob/master/Caddyfile.example)，当然，你想单个域名部署前后端，这里也有[配置文件示例](https://github.com/mx-space/docker/blob/master/configs/nginx.conf)。
 
 ### 安装 Nginx
 
-考虑到读者水平，这里建议使用宝塔面板安装 Nginx
+考虑到读者可能不了解相关技术，我们推荐使用宝塔面板安装 Nginx。
 
 - 安装 [宝塔面板](https://www.bt.cn/new/download.html)
 
@@ -27,11 +22,9 @@
 
 ### 反向代理后端
 
-新建网站，例如 `server.test.cn` 并安装好 SSL 证书
+新建网站，例如 `server.test.cn` 并安装好 SSL 证书。
 
-我们点击左侧的 配置文件（网站设置）
-
-在 error_log 这行下面，添加如下配置
+我们点击左侧的 配置文件（网站设置），在 error_log 这行下面，添加如下配置：
 
 ```nginx
 #PROXY-START/
@@ -76,7 +69,7 @@ location /
 
 或者也可以像视频一样在 网站设置-反向代理 处添加一个目标 URL 为 `http://127.0.0.1:2333` 的反代后再直接用上面的内容覆盖原来的反代配置文件。
 
-然后那么局部配置文件示例如下
+然后那么局部配置文件示例如下：
 
 ```nginx
   access_log  /www/wwwlogs/server.test.cn.log;
@@ -121,16 +114,14 @@ location /
 
 ### 反向代理前端
 
-新建网站，例如 `www.test.cn` 并安装好 SSL 证书
+新建网站，例如 `www.test.cn` 并安装好 SSL 证书。
 
-我们点击左侧的 配置文件（网站设置）
-
-在 error_log 这行下面，添加如下配置
+我们点击左侧的 配置文件（网站设置），在 error_log 这行下面，添加如下配置：
 
 :::warning
-在 Kami v3.15.1 版本及以上，移除了该项的转发，建议直接把请求打到 api 上
+在 Kami v3.15.1 版本及以上，移除了该项的转发，建议直接把请求打到 api 上。
 
-请不要随意更改示例的顺序，匹配的优先级不一样；如果你熟悉的话，请随意
+请不要随意更改示例的顺序，匹配的优先级不一样；如果你熟悉的话，请随意。
 :::
 
 ```nginx
@@ -178,7 +169,7 @@ location / {
 保存即可。
 或者也可以像视频一样在 网站设置-反向代理 处添加一个目标 URL 为 `http://127.0.0.1:2323` 的反代后再直接用上面的内容覆盖原来的反代配置文件。
 
-那么局部配置文件示例如下
+那么局部配置文件示例如下：
 
 ```nginx
     access_log  /www/wwwlogs/www.test.cn.log;
@@ -222,17 +213,9 @@ location / {
 
 ## 后台设置
 
-进入后台
+访问 https://server.test.cn/proxy/qaqdmin 进入后台，进行初始化。
 
-访问 https://server.test.cn/proxy/qaqdmin，
-
-进行初始化，
-
-第一次访问可能遇到填写 API 的情况，
-
-后端的 API 地址: `https://server.test.cn/api/v2` (`server.test.cn` 请换成你自己的，下同)，
-
-网关的地址: `https://server.test.cn`。
+第一次访问可能遇到填写 API 的情况，后端的 API 地址: `https://server.test.cn/api/v2` (`server.test.cn` 请换成你自己的，下同)，网关的地址: `https://server.test.cn`。
 
 :::tip
 建议：新建两个页面，第一个路由是 `message` ，第二个是 `about` ，标题，内容任意。
@@ -255,7 +238,7 @@ location / {
 
 高德查询 API key
 
-这个需要在 [高德开放平台](https://lbs.amap.com/) 上注册并创建应用，大致是这样
+这个需要在 [高德开放平台](https://lbs.amap.com/) 上注册并创建应用，大致是这样：
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/G7De6D.png)
 
@@ -279,7 +262,7 @@ location / {
 
 同时可以填写腾讯 COS 信息，同时会把备份上传到 COS。
 
-备份是一个计划任务，将会在每天凌晨自动进行。你可以在 其他 - 任务 中看到这个任务。
+备份是一个计划任务，将会在每天凌晨自动进行。你可以在 其他 - 任务 中看到这个任务：
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/AfN20h.png)
 
@@ -293,7 +276,7 @@ location / {
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/zEgXj5.png)
 
 :::warning
-注意 ：请先确保 系统 - 网站设置 - 前端地址 填写正确
+注意：请先确保 系统 - 网站设置 - 前端地址 填写正确！
 :::
 
 ## Algolia Search
@@ -306,9 +289,7 @@ Algolia Search 是一个第三方搜索服务。让前端具有搜索功能，�
 
 配置项用于自定义部分文案和 UI 视觉。
 
-进入后台，移动到 其他 · 配置与云函数
-
-新建一个项:
+进入后台，移动到 其他 · 配置与云函数，新建一个项:
 
 - 名字：kami
 - 引用：theme
@@ -499,12 +480,12 @@ function:
 ```
 
 :::tip
-如果想要更详细的参数，请查看[Kami 配置参数](/use/kami-setting.md)
+如果想要更详细的参数，请查看[Kami 配置参数](/use/kami-setting.md)。
 :::
 
 ## 歌单/听歌/追番
 
-目前来看，只有 Kami 具备这个功能，这个功能依赖于云函数模块
+目前来看，只有 Kami 具备这个功能，这个功能依赖于云函数模块。
 
 ### 自动安装
 
@@ -516,16 +497,16 @@ function:
 
 #### 安装模块
 
-进入后台，移动到 其他 - 终端
+进入后台，移动到 其他 - 终端。
 
 如果没有开启，请自行到 设定—系统—终端设定 里面开启终端；出于安全考虑，请使用完关闭终端功能开关。
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/admin-webshell.png)
 
-进入终端，执行命令
+进入终端，执行命令：
 
 ```bash
-检查npm是否存在
+# 检查npm是否存在
 
 npm -v
 
@@ -545,9 +526,7 @@ npm install @mx-space/extra
 
 ##### 歌单
 
-进入后台，移动到 其他 · 配置与云函数
-
-新建一个项
+进入后台，移动到 其他 · 配置与云函数，新建一个项：
 
 - 名字：netease
 - 引用：kami
@@ -591,9 +570,9 @@ const md5_password = '0800fc577294c34e0b28ad2839435945' //登录密码的md5值(
 /// CONFIGS END ///
 ```
 
-注意： 本函数中包含两种登录方式，一种是密码登录，另一种是密码的 **md5** 值登录，对应的选项就是 **password** 和 **md5_password** ；在您将函数复制过去后，需要按照注释内容，自行删除掉你不需要的登录方式，和与之对应的 **CONFIGS** 注释区域的 **const** 定义，如果您不进行修改，则无法使用
+注意：本函数中包含两种登录方式，一种是密码登录，另一种是密码的 **md5** 值登录，对应的选项就是 **password** 和 **md5_password** ；在您将函数复制过去后，需要按照注释内容，自行删除掉你不需要的登录方式，和与之对应的 **CONFIGS** 注释区域的 **const** 定义，如果您不进行修改，则无法使用。
 
-举个例子，密码登录
+举个例子，密码登录：
 
 ```ts
 import extra from '@mx-space/extra'
@@ -629,11 +608,11 @@ const password = 'wddw***s' // 登录密码 password
 /// CONFIGS END ///
 ```
 
-同理，md5 登录也是按照这种写法(将文中 password 换成 md5_password 即可)
+同理，md5 登录也是按照这种写法(将文中 password 换成 md5_password 即可)。
 
 ##### 追番
 
-新建一个项
+新建一个项：
 
 - 名字：bangumi
 - 引用：kami
@@ -662,7 +641,7 @@ const len = 10
 
 ##### 背景音乐
 
-新建一个项
+新建一个项：
 
 - 名字：song
 - 引用：kami
@@ -692,7 +671,7 @@ async function handler() {
 
 ##### 歌词
 
-新建一个项
+新建一个项：
 
 - 名字：lyrics
 - 引用：kami
@@ -779,10 +758,10 @@ location /proxy/ {
 }
 ```
 
-仅仅这样修改 Core 的 Nginx 配置文件即可
+仅仅这样修改 Core 的 Nginx 配置文件即可。
 
 综上，你也可以使用其他域名来访问后台，只要你配置好对应的反向代理即可。
 
 ## PS
 
-你可能需要的 [Kami 扩展语法](https://github.com/mx-space/kami#markdown-%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95)
+你可能需要的 [Kami 扩展语法](https://github.com/mx-space/kami#markdown-%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95)。
