@@ -11,7 +11,7 @@ title: Windows 安装
 ## 安装 Core
 
 :::tip
-如果你的不是基于虚拟化的服务器（即可以进行虚拟化），还是非常推荐使用 [Docker Desktop For Windows](https://www.docker.com/products/docker-desktop/) 去部署 Core；如果你是基于虚拟化的服务器上（即不支持再次虚拟化），那仅能使用源码进行部署，这种存在安装方式比较繁琐，且存在将来也不会修复的 BUG
+如果不是基于虚拟化的服务器（即可以进行虚拟化），还是非常推荐使用 [Docker Desktop For Windows](https://www.docker.com/products/docker-desktop/) 去部署 Core；如果是基于虚拟化的服务器上（即不支持再次虚拟化），那仅能使用源码进行部署，这种存在安装方式比较繁琐，且存在将来也不会修复的 BUG
 :::
 Mix Space 的 Core 需要 MongoDB ，Node.js 以及 Redis ，如果你有 Scoop 管理器，可以很方便的安装
 
@@ -43,11 +43,11 @@ Redis 对 Windows 的原生支持停留在了 3.x 版本，不过有人实现了
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/windows-redis-server.png)
 
-当然如果你觉得这样启动麻烦，你可以创建快捷方式，或者将两者的执行目录添加到 Windows 环境变量
+当然如果觉得这样启动麻烦，你可以创建快捷方式，或者将两者的执行目录添加到 Windows 环境变量
 
 ### 安装 Node.js
 
-我们可以在官网上下载 Node.js 安装包，链接如下 [https://nodejs.org/en/](https://nodejs.org/en/) ，下载 16.x 版本，一路下一步即可。当你安装完成后，请自行把 Node.js 的执行目录添加到 Windows 环境变量，如果你不会，请自行搜索
+我们可以在官网上下载 Node.js 安装包，链接如下 [https://nodejs.org/en/](https://nodejs.org/en/) ，下载 18.x 版本，一路下一步即可。当你安装完成后，请自行把 Node.js 的执行目录添加到 Windows 环境变量，如果你不会，请自行搜索
 
 当你添加完成后，我们需要安装 pm2 pnpm yarn
 
