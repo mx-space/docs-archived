@@ -9,8 +9,8 @@
 
 使用 [预设脚本部署整个环境](https://mx-space.js.org/deploy/index.html#%E6%95%B4%E4%B8%AA%E7%8E%AF%E5%A2%83) 的用户，请跳过反向代理这一节。
 
-通常情况下，使用 Caddy 2 或者 Nginx 都可以很好的完成反向代理，本节内容以 Nginx 举例
-。如果你想使用 Caddy 2 完成反向代理，这里有 [配置文件示例](https://github.com/mx-space/docker/blob/master/Caddyfile.example)，当然，你想单个域名部署前后端，这里也有[配置文件示例](https://github.com/mx-space/docker/blob/master/configs/nginx.conf)。
+通常情况下，使用 Caddy 2 或者 Nginx 都可以很好的完成反向代理，本节内容以 Nginx 举例。
+如果你想使用 Caddy 2 完成反向代理，这里有 [配置文件示例](https://github.com/mx-space/docker/blob/master/Caddyfile.example)，当然，你想单个域名部署前后端，这里也有[配置文件示例](https://github.com/mx-space/docker/blob/master/configs/nginx.conf)。
 
 ### 安装 Nginx
 
