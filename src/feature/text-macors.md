@@ -16,7 +16,7 @@ import Badge from '../.vitepress/components/badge.vue'
 ## 简介
 
 ::: tip
-使用使功能需要先在后台中开启，设置 - 系统 - 文本设定 - 文本宏替换
+使用使功能需要先在后台中开启，设置 - 系统 - 文本设定 - 文本宏替换。
 :::
 
 Required: <Badge text="mx-server >=3.26.0" />
@@ -31,7 +31,7 @@ Environment: Server/NodeJS
 一个句子。[[ $title ]]
 ```
 
-将会输出。
+将会输出：
 
 ```md
 一个句子。实例标题
@@ -43,7 +43,7 @@ Environment: Server/NodeJS
 <p align="right">更新于 [[ #dayjs($modified).format('YY-MM') ]]</p>
 ```
 
-将会输出。
+将会输出：
 
 ```md
 <p align="right">更新于 22-04</p>
