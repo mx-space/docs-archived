@@ -27,7 +27,7 @@ Favorite 的路径。
 
 开屏中间的图标和头部左侧图标，填写为 HTML SVG 标签。
 
-例如
+例如：
 
 ```html
 <svg
@@ -392,11 +392,11 @@ id 和 url 分别对应 Umami 给你的 id 和 Umami 的 url，jsname 对应你�
 - Type: `string`
 - Default: `false`
 
-开启 [devtools-detector](https://github.com/AEPKILL/devtools-detector)
+开启 [devtools-detector](https://github.com/AEPKILL/devtools-detector)。
 
 ### function.comment.disable
 
 - Type: `boolean`
 - Default: `false`
 
-全站禁用评论模块，禁止评论和所有评论不透出。（敏感时期专用）
+全站禁用评论模块，禁止评论和所有评论不透出（敏感时期专用）。
