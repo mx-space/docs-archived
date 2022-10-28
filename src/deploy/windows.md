@@ -47,9 +47,9 @@ Redis 对 Windows 的原生支持停留在了 3.x 版本，不过有人实现了
 
 ### 安装 Node.js
 
-我们可以在官网上下载 Node.js 安装包，链接如下 [https://nodejs.org/en/](https://nodejs.org/en/) ，下载 18.x 版本，一路下一步即可。当你安装完成后，请自行把 Node.js 的执行目录添加到 Windows 环境变量，如果你熟悉相关知识，请使用搜索引擎了解相关知识。
+我们可以在官网上下载 Node.js 安装包，链接如下 [https://nodejs.org/en/](https://nodejs.org/en/) ，下载 LTS 版本并进行安装，在 Custom Setup 处需勾选 `Add to PATH`（添加环境变量）。如果没勾选，请自行把 Node.js 的执行目录添加到 Windows 环境变量，如果你不知道怎么做，请使用搜索引擎了解相关知识。
 
-当你添加完成后，我们需要安装 pm2 pnpm yarn：
+当你完成以上步骤后，我们需要安装 pm2 pnpm yarn：
 
 ```powershell
 npm i -g pm2 pnpm yarn
