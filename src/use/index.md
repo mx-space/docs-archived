@@ -215,8 +215,12 @@ location / {
 
 访问 https://server.test.cn/proxy/qaqdmin 进入后台，进行初始化。
 
-第一次访问可能遇到填写 API 的情况，后端的 API 地址: `https://server.test.cn/api/v2` (`server.test.cn` 请换成你自己的，下同)，网关的地址: `https://server.test.cn`。
+第一次访问可能遇到填写 API 的情况，在默认的的情况下，填写示例如下：
 
+- API 地址：https://server.test.cn/api/v2
+- GATEWAY 地址：https://server.test.cn
+
+记得勾选持久化。
 :::tip
 建议：新建两个页面，第一个路由是 `message` ，第二个是 `about` ，标题，内容任意。
 :::
@@ -225,16 +229,16 @@ location / {
 
 这个应该比较简单，就不再赘述了。但是要注意的是头像的 URL 不要带入其他的参数，否则可能会导致包括但不限于 `feed` 输出异常。
 
-# 系统设定
+## 系统设定
 
-## 网站设置
+### 网站设置
 
 - 前端地址：即你之前前端反向代理的站点，例如 https://www.test.cn
 - API 地址：即你之前后端反向代理的站点加上 api/v2，例如 https://server.test.cn/api/v2
 - 后台地址：即你现在后台的地址，例如 https://server.test.cn/proxy/qaqdmin
 - Gateway 地址：即后端地址，例如 https://server.test.cn
 
-## 后台附加设置
+### 后台附加设置
 
 高德查询 API key
 
@@ -242,7 +246,7 @@ location / {
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/G7De6D.png)
 
-## 邮件通知设置
+### 邮件通知设置
 
 - 发件邮箱 host : 发送邮件的 smtp 域名，例如：smtp.example.com
 
@@ -256,7 +260,7 @@ location / {
 注意：该邮箱是给访客评论回复发的通知邮箱，也是给主人发送通知邮件的邮箱，请不要和主人的邮箱搞混！
 :::
 
-## 备份
+### 备份
 
 该功能提供数据库的备份，使用 mongodump 完成这个操作，请确保已安装 mongodb-tools。
 
@@ -266,7 +270,7 @@ location / {
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/AfN20h.png)
 
-## 百度推送
+### 百度推送
 
 该功能提供自动上传站点信息到百度，众所周知百度的收录能力过于糟糕。
 
@@ -279,7 +283,7 @@ location / {
 注意：请先确保 系统 - 网站设置 - 前端地址 填写正确！
 :::
 
-## Algolia Search
+### Algolia Search
 
 Algolia Search 是一个第三方搜索服务。让前端具有搜索功能，该项服务需要在后台填入 Algolia API 才能正常使用。到 [Algolia 官网](https://www.algolia.com/) 注册并新建应用，然后查看用户自己的 [API Key](https://www.algolia.com/account/api-keys/) ，后端具备自动推送功能，建议在后台填入 Admin API Key ，保存即可。
 
@@ -387,7 +391,7 @@ site:
       - title: ''
         icon: faSubway
         path: 'https://travellings.link'
-  # 定义头像下的社交ID
+  # 定义头像下的社交 ID
   social:
     - url: 'https://github.com/Innei'
       title: GitHub
@@ -405,7 +409,7 @@ site:
   footer:
     background:
       src:
-        dark: |-
+        dark:
         light: https://fastly.jsdelivr.net/gh/mx-space/docs-images@master/assets/footer.png
       position: top/cover
     # 默认返回的地址

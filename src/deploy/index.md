@@ -15,8 +15,8 @@ title: 部署 Mix Space
 - 前置要求：
   - 后端示例域名：`server.test.cn`
   - 前端示例域名：`www.test.cn`
-  - 操作系统：建议**最新的 Ubuntu / Debian** ，或其他 **Linux 内核版本大于 `4.18`** 的发行版本；如果你想在 **Windows 部署**，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
-  - Linux 内核版本：**大于 4.18 ，建议 5.x**
+  - 操作系统：建议**最新的 Ubuntu / Debian** ，或其他 **Linux 内核版本不小于 `4.19`** 的发行版本；如果你想在 **Windows 部署**，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
+  - Linux 内核版本：**不小于 4.19 ，建议 5.x**
   - 内存建议：**大于 1 GiB**
 - 内存要求说明：
   - 构建需要的内存：**大于 1 GiB**
@@ -488,7 +488,6 @@ curl http://127.0.0.1:2323
 
 - 想使用其他域名作为后台地址
 - 想使用其他端口作为后台地址
-- 不想修改后端的反向代理配置
 
 那么你可以选择单独部署后台，或者你可以参考 [后台反向代理配置](/use/index.md#后台自定义反向代理)。
 
@@ -518,7 +517,7 @@ VITE_APP_GATEWAY=https://server.test.cn
 ### 构建
 
 ::: warning
-构建 Admin 需要的内存至少为 2 Gib ，如果你服务器内存不足，你可以在本地构建成功后，将产物上传到服务器。
+构建 mx-admin 需要的内存至少为 2 Gib ，如果你服务器内存不足，你可以在本地构建成功后，将产物上传到服务器。
 
 在 Windows 系统上，mx-admin 无法正常构建，你可以使用 WSL2 或者 Linux 系统。
 :::
@@ -533,11 +532,17 @@ pnpm build
 
 构建生成的产物在 dist 目录下，你可以直接把它们移动到你准备好的后台网站的根目录下。
 
-假设你准备的后台网站域名是 `admin.test.cn`，且网站根目录为 `/var/www/admin.test.cn`，那么，你把 dist 目录下的所有文件移动到 `/var/www/admin.test.cn` 目录下即可。
+假设你准备的后台网站域名是 `admin.test.cn`，
+
+网站根目录为 `/var/www/admin.test.cn/`，
+
+那么，你把 dist 目录下的所有文件移动到 `/var/www/admin.test.cn/` 目录下即可。
 
 ### 修改后端配置
 
 编辑 Core 的 `.env` 文件，修改 `ALLOWED_ORIGINS` ，添加你的后台域名。
+
+示例域名为 `admin.test.cn` 。
 
 例如：
 
