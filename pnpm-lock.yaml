@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/markdown-it': '*'
-  '@types/node': 17.0.23
+  '@types/node': 18.11.8
   '@types/prismjs': '*'
   '@vue/theme': 1.0.4
   '@vueuse/core': 9.3.0
@@ -36,7 +36,7 @@ dependencies:
   vue: 3.2.40
 
 devDependencies:
-  '@types/node': 17.0.23
+  '@types/node': 18.11.8
   husky: 8.0.1
   lint-staged: 13.0.3
   prettier: 2.7.1
@@ -353,8 +353,8 @@ packages:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
     dev: false
 
-  /@types/node/17.0.23:
-    resolution: {integrity: sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==}
+  /@types/node/18.11.8:
+    resolution: {integrity: sha512-uGwPWlE0Hj972KkHtCDVwZ8O39GmyjfMane1Z3GUBGGnkZ2USDq7SxLpVIiIHpweY9DS0QTDH0Nw7RNBsAAZ5A==}
     dev: true
 
   /@types/prismjs/1.26.0:
