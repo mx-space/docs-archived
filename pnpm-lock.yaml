@@ -4,7 +4,7 @@ specifiers:
   '@types/markdown-it': '*'
   '@types/node': 17.0.23
   '@types/prismjs': '*'
-  '@vue/theme': 1.0.4
+  '@vue/theme': 1.2.2
   '@vueuse/core': 9.3.0
   '@vueuse/head': 0.9.8
   husky: 8.0.1
@@ -24,7 +24,7 @@ specifiers:
 dependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
-  '@vue/theme': 1.0.4_vue@3.2.40
+  '@vue/theme': 1.2.2_vue@3.2.40
   '@vueuse/core': 9.3.0_vue@3.2.40
   '@vueuse/head': 0.9.8_vue@3.2.40
   markdown-it: 13.0.0
@@ -184,24 +184,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@docsearch/css/3.1.1:
-    resolution: {integrity: sha512-utLgg7E1agqQeqCJn05DWC7XXMk4tMUUnL7MZupcknRu2OzGN13qwey2qA/0NAKkVBGugiWtON0+rlU0QIPojg==}
-    dev: false
-
   /@docsearch/css/3.2.1:
     resolution: {integrity: sha512-gaP6TxxwQC+K8D6TRx5WULUWKrcbzECOPA2KCVMuI+6C7dNiGUk5yXXzVhc5sld79XKYLnO9DRTI4mjXDYkh+g==}
-    dev: false
-
-  /@docsearch/js/3.1.1:
-    resolution: {integrity: sha512-bt7l2aKRoSnLUuX+s4LVQ1a7AF2c9myiZNv5uvQCePG5tpvVGpwrnMwqVXOUJn9q6FwVVhOrQMO/t+QmnnAEUw==}
-    dependencies:
-      '@docsearch/react': 3.1.1
-      preact: 10.6.6
-    transitivePeerDependencies:
-      - '@algolia/client-search'
-      - '@types/react'
-      - react
-      - react-dom
     dev: false
 
   /@docsearch/js/3.2.1:
@@ -214,28 +198,6 @@ packages:
       - '@types/react'
       - react
       - react-dom
-    dev: false
-
-  /@docsearch/react/3.1.1:
-    resolution: {integrity: sha512-cfoql4qvtsVRqBMYxhlGNpvyy/KlCoPqjIsJSZYqYf9AplZncKjLBTcwBu6RXFMVCe30cIFljniI4OjqAU67pQ==}
-    peerDependencies:
-      '@types/react': '>= 16.8.0 < 19.0.0'
-      react: '>= 16.8.0 < 19.0.0'
-      react-dom: '>= 16.8.0 < 19.0.0'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@algolia/autocomplete-core': 1.7.1
-      '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.13.0
-      '@docsearch/css': 3.1.1
-      algoliasearch: 4.13.0
-    transitivePeerDependencies:
-      - '@algolia/client-search'
     dev: false
 
   /@docsearch/react/3.2.1:
@@ -463,15 +425,14 @@ packages:
     resolution: {integrity: sha512-0PLQ6RUtZM0vO3teRfzGi4ltLUO5aO+kLgwh4Um3THSR03rpQWLTuRCkuO5A41ITzwdWeKdPHtSARuPkoo5pCQ==}
     dev: false
 
-  /@vue/theme/1.0.4_vue@3.2.40:
-    resolution: {integrity: sha512-vJGwN2TbDCwjL4FnRdpUm4Ly/fmnPFpZmdURrvMznm6P9ZTKHpGSzQ8A/yYt4JTjkhyyCg1VsTIJipskWEoUDQ==}
+  /@vue/theme/1.2.2_vue@3.2.40:
+    resolution: {integrity: sha512-Unj1mVLOMxw094+zpKjjdnoHRDN0ZV7UutBFoGHhvrmEBfwzcwo/0JT/v0gDczd5hjleqKnHbeQxrnF1VadkXQ==}
     dependencies:
-      '@docsearch/css': 3.1.1
-      '@docsearch/js': 3.1.1
-      '@vueuse/core': 7.7.1_vue@3.2.40
+      '@docsearch/css': 3.2.1
+      '@docsearch/js': 3.2.1
+      '@vueuse/core': 9.3.0_vue@3.2.40
       body-scroll-lock: 3.1.5
       normalize.css: 8.0.1
-      shiki: 0.9.15
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -479,22 +440,6 @@ packages:
       - react
       - react-dom
       - vue
-    dev: false
-
-  /@vueuse/core/7.7.1_vue@3.2.40:
-    resolution: {integrity: sha512-PRRgbATMpoeUmkCEBtUeJgOwtew8s+4UsEd+Pm7MhkjL2ihCNrSqxNVtM6NFE4uP2sWnkGcZpCjPuNSxowJ1Ow==}
-    peerDependencies:
-      '@vue/composition-api': ^1.1.0
-      vue: ^2.6.0 || ^3.2.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-      vue:
-        optional: true
-    dependencies:
-      '@vueuse/shared': 7.7.1_vue@3.2.40
-      vue: 3.2.40
-      vue-demi: 0.12.4_vue@3.2.40
     dev: false
 
   /@vueuse/core/9.3.0_vue@3.2.40:
@@ -524,21 +469,6 @@ packages:
 
   /@vueuse/metadata/9.3.0:
     resolution: {integrity: sha512-GnnfjbzIPJIh9ngL9s9oGU1+Hx/h5/KFqTfJykzh/1xjaHkedV9g0MASpdmPZIP+ynNhKAcEfA6g5i8KXwtoMA==}
-    dev: false
-
-  /@vueuse/shared/7.7.1_vue@3.2.40:
-    resolution: {integrity: sha512-rN2qd22AUl7VdBxihagWyhUNHCyVk9IpvBTTfHoLH9G7rGE552X1f+zeCfehuno0zXif13jPw+icW/wn2a0rnQ==}
-    peerDependencies:
-      '@vue/composition-api': ^1.1.0
-      vue: ^2.6.0 || ^3.2.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-      vue:
-        optional: true
-    dependencies:
-      vue: 3.2.40
-      vue-demi: 0.12.4_vue@3.2.40
     dev: false
 
   /@vueuse/shared/9.3.0_vue@3.2.40:
@@ -1617,14 +1547,6 @@ packages:
       vscode-textmate: 6.0.0
     dev: false
 
-  /shiki/0.9.15:
-    resolution: {integrity: sha512-/Y0z9IzhJ8nD9nbceORCqu6NgT9X6I8Fk8c3SICHI5NbZRLdZYFaB233gwct9sU0vvSypyaL/qaKvzyQGJBZSw==}
-    dependencies:
-      jsonc-parser: 3.0.0
-      vscode-oniguruma: 1.6.2
-      vscode-textmate: 5.2.0
-    dev: false
-
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
@@ -1857,10 +1779,6 @@ packages:
 
   /vscode-oniguruma/1.6.2:
     resolution: {integrity: sha512-KH8+KKov5eS/9WhofZR8M8dMHWN2gTxjMsG4jd04YhpbPR91fUj7rYQ2/XjeHCJWbg7X++ApRIU9NUwM2vTvLA==}
-    dev: false
-
-  /vscode-textmate/5.2.0:
-    resolution: {integrity: sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==}
     dev: false
 
   /vscode-textmate/6.0.0:
