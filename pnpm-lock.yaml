@@ -4,7 +4,7 @@ specifiers:
   '@types/markdown-it': '*'
   '@types/node': 18.11.9
   '@types/prismjs': '*'
-  '@vue/theme': 1.2.2
+  '@vue/theme': 1.3.0
   '@vueuse/core': 9.5.0
   '@vueuse/head': 0.9.8
   husky: 8.0.2
@@ -24,7 +24,7 @@ specifiers:
 dependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
-  '@vue/theme': 1.2.2_vue@3.2.45
+  '@vue/theme': 1.3.0_vue@3.2.45
   '@vueuse/core': 9.5.0_vue@3.2.45
   '@vueuse/head': 0.9.8_vue@3.2.45
   markdown-it: 13.0.0
@@ -46,29 +46,10 @@ devDependencies:
 
 packages:
 
-  /@algolia/autocomplete-core/1.7.1:
-    resolution: {integrity: sha512-eiZw+fxMzNQn01S8dA/hcCpoWCOCwcIIEUtHHdzN5TGB3IpzLbuhqFeTfh2OUhhgkE8Uo17+wH+QJ/wYyQmmzg==}
-    dependencies:
-      '@algolia/autocomplete-shared': 1.7.1
-    dev: false
-
   /@algolia/autocomplete-core/1.7.2:
     resolution: {integrity: sha512-eclwUDC6qfApNnEfu1uWcL/rudQsn59tjEoUYZYE2JSXZrHLRjBUGMxiCoknobU2Pva8ejb0eRxpIYDtVVqdsw==}
     dependencies:
       '@algolia/autocomplete-shared': 1.7.2
-    dev: false
-
-  /@algolia/autocomplete-preset-algolia/1.7.1_algoliasearch@4.13.0:
-    resolution: {integrity: sha512-pJwmIxeJCymU1M6cGujnaIYcY3QPOVYZOXhFkWVM7IxKzy272BwCvMFMyc5NpG/QmiObBxjo7myd060OeTNJXg==}
-    peerDependencies:
-      '@algolia/client-search': ^4.9.1
-      algoliasearch: ^4.9.1
-    peerDependenciesMeta:
-      '@algolia/client-search':
-        optional: true
-    dependencies:
-      '@algolia/autocomplete-shared': 1.7.1
-      algoliasearch: 4.13.0
     dev: false
 
   /@algolia/autocomplete-preset-algolia/1.7.2_algoliasearch@4.13.0:
@@ -82,10 +63,6 @@ packages:
     dependencies:
       '@algolia/autocomplete-shared': 1.7.2
       algoliasearch: 4.13.0
-    dev: false
-
-  /@algolia/autocomplete-shared/1.7.1:
-    resolution: {integrity: sha512-eTmGVqY3GeyBTT8IWiB2K5EuURAqhnumfktAEoHxfDY2o7vg2rSnO16ZtIG0fMgt3py28Vwgq42/bVEuaQV7pg==}
     dev: false
 
   /@algolia/autocomplete-shared/1.7.2:
@@ -207,24 +184,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@docsearch/css/3.2.1:
-    resolution: {integrity: sha512-gaP6TxxwQC+K8D6TRx5WULUWKrcbzECOPA2KCVMuI+6C7dNiGUk5yXXzVhc5sld79XKYLnO9DRTI4mjXDYkh+g==}
-    dev: false
-
   /@docsearch/css/3.3.0:
     resolution: {integrity: sha512-rODCdDtGyudLj+Va8b6w6Y85KE85bXRsps/R4Yjwt5vueXKXZQKYw0aA9knxLBT6a/bI/GMrAcmCR75KYOM6hg==}
-    dev: false
-
-  /@docsearch/js/3.2.1:
-    resolution: {integrity: sha512-H1PekEtSeS0msetR2YGGey2w7jQ2wAKfGODJvQTygSwMgUZ+2DHpzUgeDyEBIXRIfaBcoQneqrzsljM62pm6Xg==}
-    dependencies:
-      '@docsearch/react': 3.2.1
-      preact: 10.6.6
-    transitivePeerDependencies:
-      - '@algolia/client-search'
-      - '@types/react'
-      - react
-      - react-dom
     dev: false
 
   /@docsearch/js/3.3.0:
@@ -237,28 +198,6 @@ packages:
       - '@types/react'
       - react
       - react-dom
-    dev: false
-
-  /@docsearch/react/3.2.1:
-    resolution: {integrity: sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ==}
-    peerDependencies:
-      '@types/react': '>= 16.8.0 < 19.0.0'
-      react: '>= 16.8.0 < 19.0.0'
-      react-dom: '>= 16.8.0 < 19.0.0'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@algolia/autocomplete-core': 1.7.1
-      '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.13.0
-      '@docsearch/css': 3.2.1
-      algoliasearch: 4.13.0
-    transitivePeerDependencies:
-      - '@algolia/client-search'
     dev: false
 
   /@docsearch/react/3.3.0:
@@ -475,11 +414,11 @@ packages:
     resolution: {integrity: sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==}
     dev: false
 
-  /@vue/theme/1.2.2_vue@3.2.45:
-    resolution: {integrity: sha512-Unj1mVLOMxw094+zpKjjdnoHRDN0ZV7UutBFoGHhvrmEBfwzcwo/0JT/v0gDczd5hjleqKnHbeQxrnF1VadkXQ==}
+  /@vue/theme/1.3.0_vue@3.2.45:
+    resolution: {integrity: sha512-79XEtpERf+yeG91XNOq4Uhz1A33bt3Kz29Z2mbBnsgREpifR7saLaCiZIrgm2Php+CIeSOIhPTNUdMKeEliCdg==}
     dependencies:
-      '@docsearch/css': 3.2.1
-      '@docsearch/js': 3.2.1
+      '@docsearch/css': 3.3.0
+      '@docsearch/js': 3.3.0
       '@vueuse/core': 9.5.0_vue@3.2.45
       body-scroll-lock: 3.1.5
       normalize.css: 8.0.1
