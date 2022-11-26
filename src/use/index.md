@@ -545,7 +545,7 @@ import extra from '@mx-space/extra'
 async function handler() {
   const { NeteaseMusic, NeteaseCloudMusicApi } = extra
 
-  const client = new NeteaseMusic(phone, password / md5_password) //此处md5_password 与 password 任选其一，同时与下面 const 定义的相对应即可
+  const client = new NeteaseMusic(phone, password / md5_password) //此处md5_password 与 password 任选其一，同时与 Secret 定义的相对应即可
   await client.Login()
 
   const uid = await client.getAccount()
@@ -567,16 +567,13 @@ async function handler() {
 
   return responsePayload
 }
-/// CONFIGS ///
-const phone = '15922****' //网易云登录手机号
-const password = 'wddw***s' // 登录密码 password 与 md5_password 任选其一
-const md5_password = '0800fc577294c34e0b28ad2839435945' //登录密码的md5值(@mx-space/extra ^0.5.7 版本及以上 支持该选项)
-/// CONFIGS END ///
 ```
 
-注意：本函数中包含两种登录方式，一种是密码登录，另一种是密码的 **md5** 值登录，对应的选项就是 **password** 和 **md5_password** ；在您将函数复制过去后，需要按照注释内容，自行删除掉你不需要的登录方式，和与之对应的 **CONFIGS** 注释区域的 **const** 定义，如果您不进行修改，则无法使用。
+在 Core v3.39.1 以后，添加函数页面新增 Secret 配置项，建议将对应的参数直接填至 Secret。
 
-举个例子，密码登录：
+注意：本函数中包含两种登录方式，一种是密码登录，另一种是密码的 **md5** 值登录，对应的选项就是 **password** 和 **md5_password** ；在您将函数复制过去后，需要按照注释内容，自行删除掉你不需要的登录方式，如果您不进行修改，则无法使用。
+
+举个例子，使用账号和密码登录：
 
 ```ts
 import extra from '@mx-space/extra'
@@ -584,7 +581,7 @@ import extra from '@mx-space/extra'
 async function handler() {
   const { NeteaseMusic, NeteaseCloudMusicApi } = extra
 
-  const client = new NeteaseMusic(phone, password) //此处使用 password ，同时与下面 const 定义的相对应即可
+  const client = new NeteaseMusic(phone, password) //此处使用 password ，同时与旁边 secret 定义的相对应即可
   await client.Login()
 
   const uid = await client.getAccount()
@@ -606,13 +603,11 @@ async function handler() {
 
   return responsePayload
 }
-/// CONFIGS ///
-const phone = '15922****' //网易云登录手机号
-const password = 'wddw***s' // 登录密码 password
-/// CONFIGS END ///
 ```
 
-同理，md5 登录也是按照这种写法(将文中 password 换成 md5_password 即可)。
+同时需要在旁边的 Secret 添加 `phone` 和 `password` 两个变量及对应的值。
+
+同理，md5 登录也是按照这种写法(将 password 换成 md5_password 即可)。
 
 ##### 追番
 
@@ -655,19 +650,40 @@ const len = 10
 - 公开： 是
 
 ```ts
-import { NeteaseCloudMusicApi } from '@mx-space/extra'
+type Song = {
+  author: string
+  /**
+   * 封面 url
+   */
+  pic: string
+  title: string
+  
+  url: string
+}
 
-async function handler() {
-  const { song_url } = NeteaseCloudMusicApi
-  const id = context.req.query.id
+async function handler(ctx, require) {
+  const { NeteaseCloudMusicApi } = await require('@mx-space/extra')
+  const { song_url, song_detail } = NeteaseCloudMusicApi
+  const id = ctx.req.query.id
   if (!id) {
     return { message: 'id must be not empty stringnumber' }
   }
-  const data = await song_url({
-    id: +id,
-  })
-
-  return data.body.data
+  const [data, data2] = await Promise.all([
+    song_url({
+      id: +id,
+    }),
+    song_detail({
+      ids: id,
+    })
+  ])
+  const song = data2.body.songs[0]
+  const songDetail: Song = {
+    title: song.name,
+    author: song.ar?.map(a => a.name).join(' & '),
+    pic: song.al?.picUrl,
+    url: data.body.data?.[0]?.url
+  }
+  return [songDetail]
 }
 ```
 
