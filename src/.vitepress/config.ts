@@ -83,7 +83,7 @@ const config: UserConfig = {
     editLink: {
       // repo: 'mx-space/docs',
       pattern: 'https://github.com/mx-space/docs/edit/main/src/:path',
-      text: '帮助社区编辑此页! (≧∇≦)ﾉ',
+      text: '帮助社区编辑此页！(≧∇≦) ﾉ',
     },
     editLinks: true,
 

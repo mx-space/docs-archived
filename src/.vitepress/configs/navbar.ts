@@ -12,6 +12,7 @@ export const introduceBar = [{ text: '介绍', link: '/guide/' }]
 export const experimentBar = [
   { text: '文本宏', link: '/feature/text-macors' },
   { text: '云函数', link: '/feature/serverless-functions' },
+  { text: '信息安全与加密', link: '/feature/security' },
 ]
 
 export const optionsBar = [
@@ -19,7 +20,7 @@ export const optionsBar = [
   { text: '反向代理', link: '/use/#反向代理' },
   { text: '后台设置', link: '/use/#后台设置' },
   { text: '主题设置', link: '/use/#kami-设置' },
-  { text: '歌单', link: '/use/#歌单-听歌-追番' },
+  { text: '歌单', link: '/use/#歌单 - 听歌 - 追番' },
   { text: '详细配置', link: '/use/kami-setting.md' },
 ]
 
@@ -56,9 +57,7 @@ export const devBar = [
   { text: '服务端', link: '/dev/server' },
 ]
 
-export const changelogBar = [
-  { text: '文档变更日志', link: '/changelog/' }
-]
+export const changelogBar = [{ text: '文档变更日志', link: '/changelog/' }]
 
 const navBar = [
   { text: '介绍', items: introduceBar },
