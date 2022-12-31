@@ -53,4 +53,4 @@
 
 > SDK 仍在 beta 阶段，未来接口可能出现变化。
 
-详见：[mx-space/api-client](https://github.com/mx-space/api-client)
+详见：[api-client](https://github.com/mx-space/core/tree/master/packages/api-client)
