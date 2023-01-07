@@ -390,7 +390,7 @@ site:
             path: /favorite/music
       - title: ''
         icon: faSubway
-        path: 'https://travellings.link'
+        path: 'https://www.travellings.cn/go.html'
   # 定义头像下的社交 ID
   social:
     - url: 'https://github.com/Innei'
@@ -438,7 +438,7 @@ site:
         path: '/sitemap'
         newtab: true
       - name: 开往
-        path: https://travellings.link/
+        path: https://www.travellings.cn/go.html
         newtab: true
   # 自定义脚本、样式和JS（支持外链引入，不需要 script 标签）
   custom:
