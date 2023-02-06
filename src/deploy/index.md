@@ -212,6 +212,10 @@ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 # SEE https://docs.docker.com/compose/environment-variables/#the-env-file
 JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串
 ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是kami的域名，如果允许多个域名访问，用英文逗号,分隔
+
+#（可选）加密密钥，具体内容可参考 https://mx-space.js.org/feature/security.html
+# 若开启加密，则需注意密钥长度必须为64位，不然会在初始化时报错
+ENCRYPT_KEY=593f62860255feb0a914534a43814b9809cc7534da7f5485cd2e3d3c8609acab
 ```
 
 如此，就可以了，接下来我们启动后端：
