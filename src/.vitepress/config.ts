@@ -79,7 +79,7 @@ const config: UserConfig = {
   scrollOffset: 'header',
 
   themeConfig: {
-    logo: '/favicon.svg',
+    logo: '/logo.png',
     editLink: {
       // repo: 'mx-space/docs',
       pattern: 'https://github.com/mx-space/docs/edit/main/src/:path',

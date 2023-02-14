@@ -10,13 +10,17 @@ title: 部署 Mix Space
 那本节内容带你完成部署，请有耐心的一点点看完。
 :::
 
+:::tip
+如果你想快速搭建并且已经安装 Docker，请移步 [Docker 构建](/deploy/#一键-docker-部署)，使用一键脚本 10s 即可搞定。
+:::
+
 ## 前置
 
 - 前置要求：
   - 后端示例域名：`server.test.cn`
   - 前端示例域名：`www.test.cn`
   - 操作系统：建议**最新的 Ubuntu / Debian** ，或其他 **Linux 内核版本不小于 `4.19`** 的发行版本；如果你想在 **Windows 部署**，请看这里 [Windows 安装 Mix Space](/deploy/windows.md)
-  - Linux 内核版本：**不小于 4.19 ，建议 5.x**
+  - Linux 内核版本：**不小于 4.19，建议 5.x**
   - 内存建议：**大于 1 GiB**
 - 内存要求说明：
   - 构建需要的内存：**大于 1 GiB**
@@ -45,7 +49,7 @@ uname -r
 6.0.2-2-MANJARO
 ```
 
-可以看到，我的内核版本是 6.0 ，大于 4.19 ，所以可以正常部署 Kami。
+可以看到，我的内核版本是 6.0，大于 4.19，所以可以正常部署 Kami。
 
 再次强调，**Linux 内核版本不小于 4.19** 才能构建 Kami，如果你的 Linux 内核版本不满足，或许你可以考虑一下最新版本的 Ubuntu / Debian？
 
@@ -210,11 +214,11 @@ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 ```text
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
 # SEE https://docs.docker.com/compose/environment-variables/#the-env-file
-JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串
-ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是kami的域名，如果允许多个域名访问，用英文逗号,分隔
+JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于 16 个字符，不大于 32 个字符的字符串
+ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是 kami 的域名，如果允许多个域名访问，用英文逗号，分隔
 
 #（可选）加密密钥，具体内容可参考 https://mx-space.js.org/feature/security.html
-# 若开启加密，则需注意密钥长度必须为64位，不然会在初始化时报错
+# 若开启加密，则需注意密钥长度必须为 64 位，不然会在初始化时报错
 ENCRYPT_KEY=593f62860255feb0a914534a43814b9809cc7534da7f5485cd2e3d3c8609acab
 ```
 
@@ -263,7 +267,7 @@ pnpm i
 pnpm dev
 ```
 
-如果你想这样部署 Core 并对外提供服务 ，请移动到 `/src/app.config.ts` 文件。
+如果你想这样部署 Core 并对外提供服务，请移动到 `/src/app.config.ts` 文件。
 
 它 13-30 行的内容如下，看起来似乎是这样的：
 
@@ -320,7 +324,7 @@ export const CROSS_DOMAIN = {
 pnpm bundle
 ```
 
-使用 pm2 托管 Core ，我们还需要修改一下脚本，移动到 `ecosystem.config.js`
+使用 pm2 托管 Core，我们还需要修改一下脚本，移动到 `ecosystem.config.js`
 
 它看起来是如下内容：
 
@@ -478,7 +482,7 @@ curl http://127.0.0.1:2323
 
 [开始使用~](/use/index.md)
 
-## 可能需要(可选)
+## 可能需要 (可选)
 
 :::tip
 以下内容是可选的，如果你不需要，可以跳过；在正常情况，你不需要这些内容。
@@ -521,7 +525,7 @@ VITE_APP_GATEWAY=https://server.test.cn
 ### 构建
 
 ::: warning
-构建 mx-admin 需要的内存至少为 2 Gib ，如果你服务器内存不足，你可以在本地构建成功后，将产物上传到服务器。
+构建 mx-admin 需要的内存至少为 2 Gib，如果你服务器内存不足，你可以在本地构建成功后，将产物上传到服务器。
 
 在 Windows 系统上，mx-admin 无法正常构建，你可以使用 WSL2 或者 Linux 系统。
 :::
@@ -553,7 +557,7 @@ pnpm build
 ```text
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
 # SEE https://docs.docker.com/compose/environment-variables/#the-env-file
-JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于16个字符，不大于32个字符的字符串
+JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于 16 个字符，不大于 32 个字符的字符串
 ALLOWED_ORIGINS=test.cn,www.test.cn,admin.test.cn
 ```
 
@@ -565,7 +569,7 @@ docker compose up -d
 
 ## 对 Redis 配置
 
-如果你需要使用来自(远端 / 非容器)的 Redis 服务，你可以通过使用 `argv` 来动态传入对应的配置项。
+如果你需要使用来自 (远端 / 非容器) 的 Redis 服务，你可以通过使用 `argv` 来动态传入对应的配置项。
 
 支持传入如下值：
 
@@ -643,7 +647,7 @@ pnpm prod:pm2
 
 ## 对 MongoDB 配置
 
-如果你需要使用来自(远端 / 非容器)的 MongoDB 服务，你可以通过使用 `argv` 来动态传入对应的配置项。
+如果你需要使用来自 (远端 / 非容器) 的 MongoDB 服务，你可以通过使用 `argv` 来动态传入对应的配置项。
 
 支持传入如下值：
 
@@ -654,7 +658,7 @@ pnpm prod:pm2
 - `db_password` MongoDB 服务密码
 
 ::: warning
-如果你需要使用密码登录，你不仅仅需要传入 password ，还需要传入 user，建议你对数据库集合划分好用户权限
+如果你需要使用密码登录，你不仅仅需要传入 password，还需要传入 user，建议你对数据库集合划分好用户权限
 :::
 
 ### 对于 Docker 部署
