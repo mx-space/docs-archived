@@ -5,6 +5,7 @@ import Banner from './components/Banner.vue'
 import DefaultTheme from 'vitepress/theme'
 import { App, h, watch } from 'vue'
 import './styles/code.css'
+import './styles/vars.css'
 import { useRouter } from 'vitepress'
 
 export default {

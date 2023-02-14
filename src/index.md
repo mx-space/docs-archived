@@ -7,7 +7,7 @@ hero:
   text: An Alternative Personal Space.
   tagline: 一个替代个人空间的新方式
   image:
-    src: /favicon.svg
+    src: /logo.png
     alt: Mix Space
   actions:
    - theme: brand

@@ -112,3 +112,4 @@ draft.md
 
 .husky
 .idea
+src/.vitepress/cache
