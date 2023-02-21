@@ -67,10 +67,10 @@ pm2 start
 
 ### 后端（Core）升级
 
-进入 server 文件夹执行：
+进入 core 文件夹执行：
 
 ```bash
-cd ~/mx-space/server
+cd ~/mx-space/core
 docker compose pull && docker compose up -d
 ```
 
