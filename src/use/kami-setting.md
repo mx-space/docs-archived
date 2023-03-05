@@ -352,11 +352,12 @@ Google Analyze ID。
 
 ### function.analyze.umami
 
-- id : `string` 
+- id : `string`
 - url: `string`
 - jsname: `string`
 
 example(yaml)
+
 ```yaml
   analyze:
     enable: true
@@ -400,3 +401,30 @@ id 和 url 分别对应 Umami 给你的 id 和 Umami 的 url，jsname 对应你�
 - Default: `false`
 
 全站禁用评论模块，禁止评论和所有评论不透出（敏感时期专用）。
+
+### 通知
+
+example(json)
+
+```json
+"notification": {
+    "welcome": {
+       "title": "标题",
+       "message": "消息",
+       "icon": "https://example.com/example.png",
+       "to-link": "//example.com"
+    }
+}
+
+```
+
+example(yaml)
+
+```yaml
+  notification:
+    welcome:
+      title: 标题
+      message: 消息
+      icon: https://example.com/example.png
+      to-link: //example.com
+```
