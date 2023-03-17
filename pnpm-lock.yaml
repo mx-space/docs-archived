@@ -4,7 +4,7 @@ specifiers:
   '@types/markdown-it': '*'
   '@types/node': 18.11.9
   '@types/prismjs': '*'
-  '@vue/theme': 1.3.0
+  '@vue/theme': 2.2.1
   '@vueuse/core': 9.12.0
   '@vueuse/head': 1.0.25
   husky: 8.0.3
@@ -24,7 +24,7 @@ specifiers:
 dependencies:
   '@types/markdown-it': 12.2.3
   '@types/prismjs': 1.26.0
-  '@vue/theme': 1.3.0_vue@3.2.47
+  '@vue/theme': 2.2.1_mzi5piyyzevl7wmlywttuprm6m
   '@vueuse/core': 9.12.0_vue@3.2.47
   '@vueuse/head': 1.0.25_vue@3.2.47
   markdown-it: 13.0.1
@@ -609,14 +609,17 @@ packages:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
     dev: false
 
-  /@vue/theme/1.3.0_vue@3.2.47:
-    resolution: {integrity: sha512-79XEtpERf+yeG91XNOq4Uhz1A33bt3Kz29Z2mbBnsgREpifR7saLaCiZIrgm2Php+CIeSOIhPTNUdMKeEliCdg==}
+  /@vue/theme/2.2.1_mzi5piyyzevl7wmlywttuprm6m:
+    resolution: {integrity: sha512-/7xL/lRmVTUo1DywzhKgAsXuqzkTgBHcXfVvr6SWSVTDlZoEPrlV1owzj4DI7eBUs+vEcZSY1yv3GIennRfYYA==}
+    peerDependencies:
+      vitepress: ^1.0.0-alpha.60
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
       '@vueuse/core': 9.12.0_vue@3.2.47
       body-scroll-lock: 3.1.5
       normalize.css: 8.0.1
+      vitepress: 1.0.0-alpha.46_z275h3ekq4usuispqbacltuxqy
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
