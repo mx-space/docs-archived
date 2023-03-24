@@ -14,7 +14,7 @@ specifiers:
   prettier: 2.8.4
   prismjs: ^1.29.0
   shiki: 0.14.1
-  terser: 5.16.3
+  terser: 5.16.8
   vite: 4.1.1
   vite-plugin-windicss: 1.8.10
   vitepress: 1.0.0-alpha.46
@@ -31,8 +31,8 @@ dependencies:
   markdown-it-checkbox: 1.1.0
   prismjs: 1.29.0
   shiki: 0.14.1
-  vite: 4.1.1_z275h3ekq4usuispqbacltuxqy
-  vitepress: 1.0.0-alpha.46_z275h3ekq4usuispqbacltuxqy
+  vite: 4.1.1_a5zl7jukmknexvkqhrvzucgxhq
+  vitepress: 1.0.0-alpha.46_a5zl7jukmknexvkqhrvzucgxhq
   vue: 3.2.47
 
 devDependencies:
@@ -40,7 +40,7 @@ devDependencies:
   husky: 8.0.3
   lint-staged: 13.1.2
   prettier: 2.8.4
-  terser: 5.16.3
+  terser: 5.16.8
   vite-plugin-windicss: 1.8.10_vite@4.1.1
   windicss: 3.5.6
 
@@ -518,7 +518,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.1_z275h3ekq4usuispqbacltuxqy
+      vite: 4.1.1_a5zl7jukmknexvkqhrvzucgxhq
       vue: 3.2.47
     dev: false
 
@@ -1438,8 +1438,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /terser/5.16.3:
-    resolution: {integrity: sha512-v8wWLaS/xt3nE9dgKEWhNUFP6q4kngO5B8eYFUuebsu7Dw/UNAnpUod6UHo04jSSkv8TzKHjZDSd7EXdDQAl8Q==}
+  /terser/5.16.8:
+    resolution: {integrity: sha512-QI5g1E/ef7d+PsDifb+a6nnVgC4F22Bg6T0xrBrz6iloVB4PUkkunp6V8nzoOOZJIzjWVdAGqCdlKlhLq/TbIA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -1489,13 +1489,13 @@ packages:
       '@windicss/plugin-utils': 1.8.10
       debug: 4.3.4
       kolorist: 1.7.0
-      vite: 4.1.1_z275h3ekq4usuispqbacltuxqy
+      vite: 4.1.1_a5zl7jukmknexvkqhrvzucgxhq
       windicss: 3.5.6
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/4.1.1_z275h3ekq4usuispqbacltuxqy:
+  /vite/4.1.1_a5zl7jukmknexvkqhrvzucgxhq:
     resolution: {integrity: sha512-LM9WWea8vsxhr782r9ntg+bhSFS06FJgCvvB0+8hf8UWtvaiDagKYWXndjfX6kGl74keHJUcpzrQliDXZlF5yg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1525,11 +1525,11 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.15.0
-      terser: 5.16.3
+      terser: 5.16.8
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress/1.0.0-alpha.46_z275h3ekq4usuispqbacltuxqy:
+  /vitepress/1.0.0-alpha.46_a5zl7jukmknexvkqhrvzucgxhq:
     resolution: {integrity: sha512-HiKiHzC0iTPsRsKs8XcsMeMzCpcCt5LWcX9mpDr288Ju+nQf1G8A2+Wm44ZkBsVv4EHxFK4ChmWyZrL1OJUXpg==}
     hasBin: true
     dependencies:
@@ -1540,7 +1540,7 @@ packages:
       '@vueuse/core': 9.12.0_vue@3.2.47
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.14.1
-      vite: 4.1.1_z275h3ekq4usuispqbacltuxqy
+      vite: 4.1.1_a5zl7jukmknexvkqhrvzucgxhq
       vue: 3.2.47
     transitivePeerDependencies:
       - '@algolia/client-search'
