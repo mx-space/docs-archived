@@ -211,7 +211,7 @@ wget https://fastly.jsdelivr.net/gh/mx-space/core@master/.env.example -O .env
 
 我们编辑 .env 文件，它看起来应该是这个样子的：
 
-```text
+```txt
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
 # SEE https://docs.docker.com/compose/environment-variables/#the-env-file
 JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于 16 个字符，不大于 32 个字符的字符串
@@ -440,7 +440,7 @@ cp .env.example .env
 
 编辑 .env 文件，它看起来应该是这个样子的
 
-```text
+```txt
 # API 地址
 NEXT_PUBLIC_API_URL=https://server.test.cn/api/v2
 # GATEWAY 地址
@@ -513,7 +513,7 @@ git clone https://github.com/mx-space/mx-admin.git --depth 1
 
 例如：
 
-```text
+```txt
 VITE_APP_BASE_API=https://server.test.cn/api/v2
 VITE_APP_WEB_URL=https://www.test.cn
 VITE_APP_GATEWAY=https://server.test.cn
@@ -554,7 +554,7 @@ pnpm build
 
 例如：
 
-```text
+```txt
 # THIS ENV FILE EXAMPLE ONLY FOR DOCKER COMPOSE
 # SEE https://docs.docker.com/compose/environment-variables/#the-env-file
 JWT_SECRET=7294c34e0b28ad28          #此处填写一个长度不小于 16 个字符，不大于 32 个字符的字符串

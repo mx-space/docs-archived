@@ -240,7 +240,7 @@ yarn
 
 将 `.env.example` 复制并重命名为 `.env` ，编辑内容如下：
 
-```text
+```txt
 # API 地址
 NEXT_PUBLIC_API_URL=https://server.test.cn/api/v2
 # GATEWAY 地址
