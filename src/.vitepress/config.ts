@@ -3,6 +3,8 @@
 import { join, resolve } from 'path'
 import Windicss from 'vite-plugin-windicss'
 import { UserConfig } from 'vitepress'
+import { SearchPlugin } from "vitepress-plugin-search";
+import flexSearchIndexOptions from "flexsearch";
 import navBar, {
   deployBar,
   deploySideBar,
@@ -13,7 +15,7 @@ import navBar, {
   optionsBar,
   changelogBar,
 } from './configs/navbar'
-import { NavbarFix } from './plugins/navbar'
+
 const sidebar = [
   { text: '介绍', items: introduceBar },
   { text: '部署', items: deploySideBar },
@@ -23,6 +25,10 @@ const sidebar = [
   { text: '实验性特征', items: experimentBar },
   { text: '开发', items: devBar },
 ]
+
+const Segment = require('segment')
+const segment = new Segment()
+segment.useDefault()
 
 const config: UserConfig = {
   title: 'Mix Space',
@@ -87,11 +93,6 @@ const config: UserConfig = {
     },
     editLinks: true,
 
-    algolia: {
-      apiKey: '17c9be610f7f8fac9911a340c35ef34f',
-      indexName: 'docs',
-    },
-
     socialLinks: [{ icon: 'github', link: 'https://github.com/mx-space' }],
 
     nav: navBar,
@@ -122,6 +123,7 @@ const config: UserConfig = {
     },
 
     build: {
+      ssr: false,
       minify: 'terser',
       chunkSizeWarningLimit: Infinity,
     },
@@ -135,7 +137,12 @@ const config: UserConfig = {
     },
     plugins: [
       // NavbarFix(),
-
+      SearchPlugin({
+        ...flexSearchIndexOptions,
+        tokenize: 'full',
+        buttonLabel: '搜索',
+        placeholder: '搜索文档',
+      }),
       Windicss({
         config: join(__dirname, '../../windi.config.ts'),
       }),
