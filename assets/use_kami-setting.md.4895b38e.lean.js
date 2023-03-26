@@ -1,1 +1,0 @@
-import{_ as s,h as a,j as n,S as l}from"./chunks/framework.53cf1b48.js";const o=JSON.parse('{"title":"Kami 配置项参数","description":"","frontmatter":{},"headers":[],"relativePath":"use/kami-setting.md"}'),p={name:"use/kami-setting.md"},e=[l("",108)];const t=s(p,[["render",function(s,l,o,p,t,c){return a(),n("div",null,e)}]]);export{o as __pageData,t as default};

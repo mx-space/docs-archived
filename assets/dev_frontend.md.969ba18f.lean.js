@@ -1,1 +1,0 @@
-import{_ as t,h as d,j as e,S as r}from"./chunks/framework.53cf1b48.js";const a=JSON.parse('{"title":"前端开发指南","description":"","frontmatter":{},"headers":[],"relativePath":"dev/frontend.md"}'),o={name:"dev/frontend.md"},c=[r("",17)];const s=t(o,[["render",function(t,r,a,o,s,l){return d(),e("div",null,c)}]]);export{a as __pageData,s as default};
