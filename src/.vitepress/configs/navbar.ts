@@ -2,8 +2,8 @@
  * @FilePath: /docs/src/.vitepress/configs/navbar.ts
  * @author: Wibus
  * @Date: 2022-04-03 20:14:54
- * @LastEditors: ttimochan
- * @LastEditTime: 2022-10-16 12:05:08
+ * @LastEditors: timochan
+ * @LastEditTime: 2023-04-06 23:42:00
  * Coding With IU
  */
 
@@ -13,6 +13,7 @@ export const experimentBar = [
   { text: '文本宏', link: '/feature/text-macors' },
   { text: '云函数', link: '/feature/serverless-functions' },
   { text: '信息安全与加密', link: '/feature/security' },
+  { text: '区块链', link: '/feature/xlog'},
 ]
 
 export const optionsBar = [
