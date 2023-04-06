@@ -283,6 +283,10 @@ location / {
 注意：请先确保 系统 - 网站设置 - 前端地址 填写正确！
 :::
 
+### 邮件推送(小铃铛)
+
+在系统 - 特征开关设定，打开邮件推送开关；你可以在其他 - 订阅中看到所有的订阅者。
+
 ### Algolia Search
 
 Algolia Search 是一个第三方搜索服务。让前端具有搜索功能，该项服务需要在后台填入 Algolia API 才能正常使用。到 [Algolia 官网](https://www.algolia.com/) 注册并新建应用，然后查看用户自己的 [API Key](https://www.algolia.com/account/api-keys/) ，后端具备自动推送功能，建议在后台填入 Admin API Key ，保存即可。
