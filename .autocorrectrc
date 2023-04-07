@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://huacnlee.github.io/autocorrect/schema.json
+rules:
+  # Default rules: https://github.com/huacnlee/autocorrect/raw/main/autocorrect/.autocorrectrc.default
+  spellcheck: 2
+textRules:
+  # Config some special rule for some texts
+
+fileTypes:
+  # Config the files associations, you config is higher priority than default.
+  '.mdx': markdown
+spellcheck:
+  words:

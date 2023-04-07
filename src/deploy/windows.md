@@ -13,19 +13,19 @@ title: Windows 安装
 :::tip
 如果不是基于虚拟化的服务器（即可以进行虚拟化），还是非常推荐使用 [Docker Desktop For Windows](https://www.docker.com/products/docker-desktop/) 去部署 Core；如果是基于虚拟化的服务器上（即不支持再次虚拟化），那仅能使用源码进行部署，这种存在安装方式比较繁琐，且存在将来也不会修复的 BUG。
 :::
-Mix Space 的 Core 需要 MongoDB ，Node.js 以及 Redis ，如果你有 Scoop 管理器，可以很方便的安装。
+Mix Space 的 Core 需要 MongoDB，Node.js 以及 Redis，如果你有 Scoop 管理器，可以很方便的安装。
 
 ```powershell
 scoop install mongodb redis nodejs-lts
 ```
 
-如果你没有 Scoop 作为包管理器，接下来带你手动下载安装，并处理环境变量问题(可选)。
+如果你没有 Scoop 作为包管理器，接下来带你手动下载安装，并处理环境变量问题 (可选)。
 
 ### 安装 MongoDB
 
 官方链接如下 [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)。
 
-下载最新版本的 `msi` 安装包 ，安装，一路下一步即可。
+下载最新版本的 `msi` 安装包，安装，一路下一步即可。
 
 启动 MongoDB 的方式也很简单，直接双击 MongoDB 安装目录下的 `mongod.exe` 即可；不过一般情况下 MongoDB 默认会作为服务启动。
 
@@ -83,7 +83,7 @@ git clone https://github.com/mx-space/core.git --depth 1
 pnpm i
 ```
 
-如果你想这样部署 Core 并对外提供服务 ，请移动到 `/src/app.config.ts` 文件。
+如果你想这样部署 Core 并对外提供服务，请移动到 `/src/app.config.ts` 文件。
 
 13-30 行的内容如下：
 
@@ -142,7 +142,7 @@ export const CROSS_DOMAIN = {
 pnpm build
 ```
 
-使用 pm2 托管 Core ，我们还需要修改一下脚本，移动到 `ecosystem.config.js`。
+使用 pm2 托管 Core，我们还需要修改一下脚本，移动到 `ecosystem.config.js`。
 
 它看起来是如下内容：
 

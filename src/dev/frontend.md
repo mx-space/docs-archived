@@ -42,7 +42,7 @@
 - React：NextJS, [RakkasJS](https://github.com/rakkasjs/rakkasjs), umi
 - Vue: Vite (vite-ssr), NuxtJS
 
-小程序:
+小程序：
 
 - React: Remax, taro
 - Vue: uni-app

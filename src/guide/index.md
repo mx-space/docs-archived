@@ -14,9 +14,9 @@ Mix Space 是一款简洁而不简单的个人博客系统，它具有良好的�
 
  - 前后端分离设计
 
-   前端采用了 Next.js ，自带 SSR，可使用 Core 的全部功能，具有良好的动效，各种很可爱的小彩蛋。
+   前端采用了 Next.js，自带 SSR，可使用 Core 的全部功能，具有良好的动效，各种很可爱的小彩蛋。
 
-   后端采用了 Nest.js ，性能非常不错，打包成了 Docker 镜像，部署方便。
+   后端采用了 Nest.js，性能非常不错，打包成了 Docker 镜像，部署方便。
 
    后台采用了 Vue 和 Naive UI，风格上简洁而优雅。
 
@@ -49,9 +49,9 @@ etc...
 ## 网站示例
 
  - [静かな森 · 致虚极，守静笃](https://innei.ren)
- - [TimochanのBlog · Let's start learning](https://www.timochan.cn)
+ - [Timochan の Blog · Let's start learning](https://www.timochan.cn)
  - [喵二の小博客 · 缘，妙不可言](https://www.miaoer.xyz)
- - [SuemorのBlog · 所谓自由就是可以说二加二等于四的自由](https://www.suemor.com)
+ - [Suemor の Blog · 所谓自由就是可以说二加二等于四的自由](https://www.suemor.com)
 
 
 ## Thanks
@@ -74,13 +74,13 @@ etc...
 
 ::: tip 立即为社区贡献力量？
 
- - Kami Bug 反馈 （[@mx-space/kami](https://github.com/mx-space/kami/issues)）
- - Core Bug 反馈 （[@mx-space/core](https://github.com/mx-space/core/issues)）
- - 后台 Bug 反馈 （[@mx-space/mx-admin](https://github.com/mx-space/mx-admin/issues)）
- - 文档问题反馈 （[@mx-space/docs](https://github.com/mx-space/docs/issues)）
+ - Kami Bug 反馈（[@mx-space/kami](https://github.com/mx-space/kami/issues)）
+ - Core Bug 反馈（[@mx-space/core](https://github.com/mx-space/core/issues)）
+ - 后台 Bug 反馈（[@mx-space/mx-admin](https://github.com/mx-space/mx-admin/issues)）
+ - 文档问题反馈（[@mx-space/docs](https://github.com/mx-space/docs/issues)）
  - 维护 Kami 前端（仓库地址 [@mx-space/kami](https://github.com/mx-space/kami)）
  - 维护 Mix Space 后端（仓库地址 [@mx-space/core](https://github.com/mx-space/core)）
- - 维护 Mix Space 后台 （仓库地址 [@mx-space/mx-admin](https://github.com/mx-space/mx-admin)）
+ - 维护 Mix Space 后台（仓库地址 [@mx-space/mx-admin](https://github.com/mx-space/mx-admin)）
  - 完善 Mix Space 文档（仓库地址 [@mx-space/docs](https://github.com/mx-space/docs)）
 
 :::
