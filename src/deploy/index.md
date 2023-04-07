@@ -11,6 +11,8 @@ title: 部署 Mix Space
 :::
 
 :::tip
+小白或者不想折腾的，无脑用 Docker 就行了。
+
 如果你想快速搭建并且已经安装 Docker，请移步 [Docker 构建](/deploy/#一键-docker-部署)，使用一键脚本 10s 即可搞定。
 :::
 
@@ -79,22 +81,28 @@ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 该过程可能比较慢（受限于你的服务器配置和网络），请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装。
 :::
 
-## 安装 nvm (可选)
+## 安装 fnm (可选)
 
-nvm 可以用于管理 Node.js。
+[fnm](https://github.com/Schniz/fnm) 可以用于管理 Node.js。
 
-打开终端，使用一键脚本，可以便捷地安装 nvm：
+打开终端，使用一键脚本，可以便捷地安装 fnm：
 
 ```bash
-bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
+curl -fsSL https://fnm.vercel.app/install | bash
+```
+
+如果使用 HomeBrew：
+
+```sh
+brew install fnm
 ```
 
 重启终端即可生效
 
-安装 Node.js 最新的 LTS 版本：
+安装 Node.js 最新版本：
 
 ```bash
-nvm install --lts
+fnm install --latest
 ```
 
 安装需要的模块：
@@ -219,6 +227,7 @@ ALLOWED_ORIGINS=test.cn,www.test.cn  #此处填写被允许的域名，通常是
 
 #（可选）加密密钥，具体内容可参考 https://mx-space.js.org/feature/security.html
 # 若开启加密，则需注意密钥长度必须为 64 位，不然会在初始化时报错
+# 注意这是不可逆的，务必保存自己的秘钥。所以并不是非常推荐使用，除非你真的需要加密。
 ENCRYPT_KEY=593f62860255feb0a914534a43814b9809cc7534da7f5485cd2e3d3c8609acab
 ```
 
@@ -603,7 +612,7 @@ docker compose up -d
 
 针对这种部署方式，我们可以修改 `ecosystem.config.js` 在 12 行，也就是 `script` 这一项，添加你需要传入的值，如下所示：
 
-```js
+```diff
 const { cpus } = require('os')
 const { execSync } = require('child_process')
 const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
@@ -615,7 +624,7 @@ module.exports = {
   apps: [
     {
       name: 'mx-server',
-      script: 'out/index.js --redis_host=远端地址 --redis_password=redis?passwd',
++     script: 'out/index.js --redis_host=远端地址 --redis_password=redis?passwd',
       autorestart: true,
       exec_mode: 'cluster',
 ```
@@ -685,7 +694,7 @@ docker compose up -d
 
 和 Redis 一样，我们可以修改 `ecosystem.config.js` 在 12 行，也就是 `script` 这一项，添加你需要传入的值，如下所示：
 
-```js
+```diff
 const { cpus } = require('os')
 const { execSync } = require('child_process')
 const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
@@ -697,7 +706,7 @@ module.exports = {
   apps: [
     {
       name: 'mx-server',
-      script: 'out/index.js --db_host=远端地址 --db_user=mongodb-test --db_password=db?passwd',
++     script: 'out/index.js --db_host=远端地址 --db_user=mongodb-test --db_password=db?passwd',
       autorestart: true,
       exec_mode: 'cluster',
 ```
@@ -706,7 +715,7 @@ module.exports = {
 
 移动到 `/src/app.config.ts` 文件，在 32 行左右，修改对应的配置项：
 
-```ts
+```diff
 export const MONGO_DB = {
   dbName: argv.collection_name || (DEMO_MODE ? 'mx-space_demo' : 'mx-space'),
   host: argv.db_host || '远端',
@@ -716,8 +725,8 @@ export const MONGO_DB = {
   get uri() {
     let userPassword =
       this.user && this.password ? this.user + ':' + this.password + '@' : ''
-    return `mongodb://${userPassword}${this.host}:${this.port}/${
-      isTest ? 'mx-space_unitest' : this.dbName
++     return `mongodb://${userPassword}${this.host}:${this.port}/${
++      isTest ? 'mx-space_unitest' : this.dbName
     }`
   },
 }
