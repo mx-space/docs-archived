@@ -86,7 +86,7 @@ nvm 可以用于管理 Node.js。
 打开终端，使用一键脚本，可以便捷地安装 nvm：
 
 ```bash
-bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
+bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/main/install.sh)"
 ```
 
 重启终端即可生效
