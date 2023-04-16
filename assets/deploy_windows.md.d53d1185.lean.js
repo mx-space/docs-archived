@@ -1,0 +1,1 @@
+import{_ as s,j as a,k as n,V as l}from"./chunks/framework.8eb2d2ed.js";const p=JSON.parse('{"title":"Windows 安装","description":"","frontmatter":{"title":"Windows 安装"},"headers":[],"relativePath":"deploy/windows.md"}'),o={name:"deploy/windows.md"},e=[l("",71)];const c=s(o,[["render",function(s,l,p,o,c,t){return a(),n("div",null,e)}]]);export{p as __pageData,c as default};

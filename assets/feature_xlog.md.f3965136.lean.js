@@ -1,1 +1,0 @@
-import{_ as e,j as a,k as o,Y as r}from"./chunks/framework.b948d756.js";const t=JSON.parse('{"title":"xLog 博客同步功能","description":"","frontmatter":{},"headers":[],"relativePath":"feature/xlog.md"}'),l={name:"feature/xlog.md"},i=[r("",12)];const p=e(l,[["render",function(e,r,t,l,p,d){return a(),o("div",null,i)}]]);export{t as __pageData,p as default};
