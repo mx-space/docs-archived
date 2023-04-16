@@ -26,16 +26,16 @@
     "@types/prismjs": "*",
     "flexsearch": "^0.7.31",
     "@vue/theme": "2.2.1",
-    "@vueuse/core": "9.13.0",
+    "@vueuse/core": "10.0.2",
     "@vueuse/head": "1.1.23",
     "markdown-it": "^13.0.1",
     "markdown-it-checkbox": "1.1.0",
     "prismjs": "^1.29.0",
     "segment": "^0.1.3",
     "shiki": "0.14.1",
-    "vitepress-plugin-search": "1.0.4-alpha.19",
+    "vitepress-plugin-search": "1.0.4-alpha.20",
     "vite": "4.2.1",
-    "vitepress": "1.0.0-alpha.61",
+    "vitepress": "1.0.0-alpha.69",
     "vue": "3.2.47"
   },
   "pnpm": {
@@ -49,11 +49,11 @@
     }
   },
   "devDependencies": {
-    "@types/node": "18.15.8",
+    "@types/node": "18.15.11",
     "husky": "8.0.3",
-    "lint-staged": "13.2.0",
+    "lint-staged": "13.2.1",
     "prettier": "2.8.7",
-    "terser": "5.16.8",
+    "terser": "5.16.9",
     "vite-plugin-windicss": "1.8.10",
     "windicss": "3.5.6"
   }
