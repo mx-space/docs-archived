@@ -16,9 +16,6 @@ dependencies:
   '@vueuse/head':
     specifier: 1.1.23
     version: 1.1.23(vue@3.2.47)
-  flexsearch:
-    specifier: ^0.7.31
-    version: 0.7.31
   markdown-it:
     specifier: ^13.0.1
     version: 13.0.1
@@ -40,9 +37,6 @@ dependencies:
   vitepress:
     specifier: 1.0.0-alpha.69
     version: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9)
-  vitepress-plugin-search:
-    specifier: 1.0.4-alpha.20
-    version: 1.0.4-alpha.20(flexsearch@0.7.31)(vitepress@1.0.0-alpha.69)(vue@3.2.47)
   vue:
     specifier: 3.2.47
     version: 3.2.47
@@ -481,10 +475,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
     dev: true
-
-  /@types/flexsearch@0.7.3:
-    resolution: {integrity: sha512-HXwADeHEP4exXkCIwy2n1+i0f1ilP1ETQOH5KDOugjkTFZPntWo0Gr8stZOaebkxsdx+k0X/K6obU/+it07ocg==}
-    dev: false
 
   /@types/linkify-it@3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
@@ -1017,10 +1007,6 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /flexsearch@0.7.31:
-    resolution: {integrity: sha512-XGozTsMPYkm+6b5QL3Z9wQcJjNYxp0CYn3U1gO7dwD6PAqU1SVWZxI9CCg3z+ml3YfqdPnrBehaBrnH2AGKbNA==}
-    dev: false
-
   /fsevents@2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1042,10 +1028,6 @@ packages:
     dependencies:
       is-glob: 4.0.3
     dev: true
-
-  /glob-to-regexp@0.4.1:
-    resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
-    dev: false
 
   /has@1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
@@ -1623,23 +1605,6 @@ packages:
       terser: 5.16.9
     optionalDependencies:
       fsevents: 2.3.2
-
-  /vitepress-plugin-search@1.0.4-alpha.20(flexsearch@0.7.31)(vitepress@1.0.0-alpha.69)(vue@3.2.47):
-    resolution: {integrity: sha512-zG+ev9pw1Mg7htABlFCNXb8XwnKN+qfTKw+vU0Ers6RIrABx+45EAAFBoaL1mEpl1FRFn1o/dQ7F4b8GP6HdGQ==}
-    engines: {node: ^14.13.1 || ^16.7.0 || >=18}
-    peerDependencies:
-      flexsearch: ^0.7.31
-      vitepress: ^1.0.0-alpha.65
-      vue: '3'
-    dependencies:
-      '@types/flexsearch': 0.7.3
-      '@types/markdown-it': 12.2.3
-      flexsearch: 0.7.31
-      glob-to-regexp: 0.4.1
-      markdown-it: 13.0.1
-      vitepress: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9)
-      vue: 3.2.47
-    dev: false
 
   /vitepress@1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9):
     resolution: {integrity: sha512-d7Vz+S/1i/7szVUSOHJf12APtoGlHXIJXzDvXLChhlE000TVzWoYX6rUAchjJzfxdFjng3Eo96ZkPs7OJxDjMg==}

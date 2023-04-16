@@ -3,10 +3,7 @@
 import { join, resolve } from 'path'
 import Windicss from 'vite-plugin-windicss'
 import { UserConfig } from 'vitepress'
-import { SearchPlugin } from "vitepress-plugin-search";
-import flexSearchIndexOptions from "flexsearch";
 import navBar, {
-  deployBar,
   deploySideBar,
   devBar,
   experimentBar,
@@ -85,6 +82,9 @@ const config: UserConfig = {
   scrollOffset: 'header',
 
   themeConfig: {
+    search: {
+      provider: "local"
+    },
     logo: '/logo.png',
     editLink: {
       // repo: 'mx-space/docs',
@@ -137,12 +137,6 @@ const config: UserConfig = {
     },
     plugins: [
       // NavbarFix(),
-      SearchPlugin({
-        ...flexSearchIndexOptions,
-        tokenize: 'full',
-        buttonLabel: '搜索',
-        placeholder: '搜索文档',
-      }),
       Windicss({
         config: join(__dirname, '../../windi.config.ts'),
       }),
