@@ -31,7 +31,7 @@ curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_
 
 再到网站中创建网站，网站类型选择 `反向代理` ，这里的主域名就是你的后端地址。
 
-创建网站，例如 server.test.cn
+创建网站，填入主域名处，例如 server.test.cn
 
 代理地址填写 `http://127.0.0.1:2333` 确认后返回到网站列表，点击创建好的网站的配置。
 
@@ -41,7 +41,7 @@ curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_
 
 在网站配置栏找到 `配置文件` 这里就是 OpenResty 的 Nginx 配置文件了
 
-在 location / { proxy_pass http://127.0.0.1:2333/ 这两行完全替换以下配置：
+配置文件在中找到 location / { proxy_pass http://127.0.0.1:2333/ } 这三行完全替换以下配置：
 
 ```nginx
     location /socket.io {
@@ -78,7 +78,7 @@ curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_
 
 填写完成后点击保存，提示更新成功即可进入配置反向代理。
 
-在 location / { proxy_pass http://127.0.0.1:2323/ 这两行完全替换以下配置：
+在配置文件中找到 location / { proxy_pass http://127.0.0.1:2323/ } 这三行完全替换以下配置：
 
 ```ngnix
 location ~* \/(feed|sitemap|atom.xml)
