@@ -13,6 +13,31 @@
 
 主题配置的名称。
 
+### site.theme_color
+
+- Type: `string | ThemeColor`
+
+控制主色调。
+
+例子：
+
+```yaml
+  theme_color:
+    light: '#ffc107'
+    dark: '#ffc107'
+    light_hover: '#ffc10780'
+    dark_hover: '#ffc10780'
+```
+
+```ts
+interface ThemeColor {
+  light: string
+  dark: string
+  lightHover?: string
+  darkHover?: string
+}
+```
+
 ### site.favicon
 
 - Type: `string`
@@ -324,6 +349,43 @@ interface Navigation {
 
 自定义外部 JS 和 CSS 资源。只需要填写地址，不需要完整的 tag。
 
+### page.home
+
+- Type: `HomePage`
+- Default: 
+
+```yaml
+  sections:
+    - post
+    - note
+    - friend
+    - more
+  title_mapping:
+    post: ''
+    note: ''
+    friend: ''
+    more: ''
+```
+
+控制首页 `日记` `文章` `友链` `更多` 模块的顺序和标题文案。
+
+`sections` 可以控制模块的顺序，和是否展示该模块。
+
+`title_mapping` 控制模块的标题文案。
+
+类型：
+
+```ts
+export type HomePageSectionName = 'post' | 'note' | 'friend' | 'more'
+
+export interface HomePage {
+  sections: HomePageSectionName[]
+  titleMapping: {
+    [key in HomePageSectionName]?: string
+  }
+}
+```
+
 ### function.player.id
 
 - Type: `number[]`
@@ -402,9 +464,11 @@ id 和 url 分别对应 Umami 给你的 id 和 Umami 的 url，jsname 对应你�
 
 全站禁用评论模块，禁止评论和所有评论不透出（敏感时期专用）。
 
-### 通知
+### function.notification
 
-example(json)
+- Type: `Record<string, Notification>`
+
+入站通知。配置此项可以在打开站点后，显示一条站内通知。
 
 ```json
 "notification": {
@@ -415,10 +479,9 @@ example(json)
        "to-link": "//example.com"
     }
 }
-
 ```
 
-example(yaml)
+或者：
 
 ```yaml
   notification:
@@ -427,4 +490,15 @@ example(yaml)
       message: 消息
       icon: https://example.com/example.png
       to-link: //example.com
+```
+
+类型：
+
+```ts
+interface Notification {
+  title?: string
+  message: string
+  toLink?: string
+  icon?: string
+}
 ```
