@@ -5,6 +5,11 @@ title: 文档变更日志
 
 这一页会说明文档最近的主要变更，在更新前端 / 后端版本后建议参考此页的内容更新配置以达到可用或者最佳效果。
 
+## 2023-4-19
+
+- 增加了对 Kami 首页文案的自定义配置 [主页](/use/kami-setting.md#page-home)
+- 增加了对 Kami 首页通知的自定义配置 [通知](/use/kami-setting.md#function-notification)
+
 ## 2023-4-6
 
 - 增加了关于 xLog 的内容，具体可见于 [区块链](/feature/xlog.md)。
