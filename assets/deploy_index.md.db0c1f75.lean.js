@@ -1,0 +1,1 @@
+import{_ as s,j as a,k as n,V as l}from"./chunks/framework.8eb2d2ed.js";const p=JSON.parse('{"title":"部署 Mix Space","description":"","frontmatter":{"title":"部署 Mix Space"},"headers":[],"relativePath":"deploy/index.md"}'),o={name:"deploy/index.md"},e=[l("",192)];const t=s(o,[["render",function(s,l,p,o,t,c){return a(),n("div",null,e)}]]);export{p as __pageData,t as default};
