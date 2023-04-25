@@ -102,7 +102,7 @@ brew install fnm
 安装 Node.js 最新版本：
 
 ```bash
-fnm install --latest
+fnm install --lts
 ```
 
 安装需要的模块：
