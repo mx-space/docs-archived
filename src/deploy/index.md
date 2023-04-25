@@ -138,7 +138,7 @@ cd && mkdir mx-space && cd mx-space
 git clone https://github.com/mx-space/docker --depth=1
 
 # 如果克隆缓慢，可以使用以下镜像地址
-git clone https://github.1qi777.com/mx-space/docker.git --depth 1
+git clone https://ghproxy.com/https://github.com/mx-space/docker.git --depth 1
 ```
 
 ### 整个环境
@@ -368,7 +368,7 @@ cd && cd mx-space
 git clone https://github.com/mx-space/kami.git --depth 1
 
 # 如果克隆缓慢，可以使用下面的镜像地址
-git clone https://github.1qi777.com/mx-space/kami.git --depth 1
+git clone https://ghproxy.com/https://github.com/mx-space/kami.git --depth 1
 ```
 
 #### 切换到最新的 tag
