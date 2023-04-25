@@ -1,8 +1,6 @@
 # Kami 配置项参数
 
-:::tip
-以下为 JSON 格式的示例，YAML 格式可以根据[之前的示例](/use/index.md#kami设置)进行修改
-:::
+要使用以下配置，请先按照 [Kami 配置](./index.md#kami-配置) 建立配置文件片段。
 
 ## 配置项
 

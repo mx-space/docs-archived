@@ -293,7 +293,7 @@ Algolia Search 是一个第三方搜索服务。让前端具有搜索功能，�
 
 ![](https://fastly.jsdelivr.net/gh/mx-space/docs-images@latest/images/algolia.png)
 
-## Kami 设置
+## Kami 配置
 
 配置项用于自定义部分文案和 UI 视觉。
 
