@@ -372,7 +372,6 @@ npm install @mx-space/extra
 
 - 名字：netease
 - 引用：kami
-- 元类型：kami
 - 数据类型：Function
 - 请求方式：GET
 - 公开：是
@@ -453,7 +452,6 @@ async function handler() {
 
 - 名字：bangumi
 - 引用：kami
-- 元类型：kami
 - 数据类型：Function
 - 请求方式：GET
 - 公开：是
@@ -482,7 +480,6 @@ const len = 10
 
 - 名字：song
 - 引用：kami
-- 元类型：kami
 - 数据类型：Function
 - 请求方式：GET
 - 公开：是
