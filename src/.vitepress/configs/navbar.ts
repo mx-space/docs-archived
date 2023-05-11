@@ -23,7 +23,6 @@ export const optionsBar = [
   { text: '主题设置', link: '/use/#kami-设置' },
   { text: '歌单', link: '/use/#歌单 - 听歌 - 追番' },
   { text: '详细配置', link: '/use/kami-setting.md' },
-  { text: '1Panel 部署', link: '/use/1panel-deploy.md' },
 ]
 
 export const deployServerBar = [
