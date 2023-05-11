@@ -1,1 +1,0 @@
-import{_ as s,j as a,k as n,V as l}from"./chunks/framework.8eb2d2ed.js";const p=JSON.parse('{"title":"使用 1Panel 部署","description":"","frontmatter":{},"headers":[],"relativePath":"use/1panel-deploy.md"}'),e={name:"use/1panel-deploy.md"},o=[l("",31)];const t=s(e,[["render",function(s,l,p,e,t,c){return a(),n("div",null,o)}]]);export{p as __pageData,t as default};
