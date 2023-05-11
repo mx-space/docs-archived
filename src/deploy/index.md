@@ -71,14 +71,14 @@ yum check-update && yum install git curl vim wget git-lfs -y
 
 ## 安装 Docker
 
-SSH 连接到服务器，使用一键脚本，可以便捷地安装 Docker 和 Docker Compose：
+SSH 连接到服务器，使用 Docker 安装脚本，可以便捷地安装 Docker 和 Docker Compose：
 
 ```bash
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 
 :::warning
-该过程可能比较慢（受限于你的服务器配置和网络），请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装。
+该过程可能比较慢（受限于你的服务器配置和网络），请不要断开 SSH 连接；该脚本仅支持 Debian，Ubuntu，CentOS，其他系统请自行安装。该方式安装的 Docker 版本为最新版；如果你有可用的镜像源，请自行配置。
 :::
 
 ## 安装 fnm (可选)
@@ -99,10 +99,10 @@ brew install fnm
 
 重启终端即可生效
 
-安装 Node.js 最新版本：
+安装 Node.js LTS 版本：
 
 ```bash
-fnm install --latest
+fnm install --lts
 ```
 
 安装需要的模块：
@@ -138,7 +138,7 @@ cd && mkdir mx-space && cd mx-space
 git clone https://github.com/mx-space/docker --depth=1
 
 # 如果克隆缓慢，可以使用以下镜像地址
-git clone https://github.1qi777.com/mx-space/docker.git --depth 1
+git clone https://ghproxy.com/https://github.com/mx-space/docker.git --depth 1
 ```
 
 ### 整个环境
@@ -278,34 +278,11 @@ pnpm dev
 
 如果你想这样部署 Core 并对外提供服务，请移动到 `/src/app.config.ts` 文件。
 
-它 13-30 行的内容如下，看起来似乎是这样的：
-
-```ts
-export const CROSS_DOMAIN = {
-  allowedOrigins: argv.allowed_origins
-    ? argv.allowed_origins?.split?.(',')
-    : [
-        'innei.ren',
-        '*.innei.ren',
-        'shizuri.net',
-        '*.shizuri.net',
-        'localhost:*',
-        '127.0.0.1',
-        'mbp.cc',
-        'local.innei.test',
-        '22333322.xyz',
-        '*.dev',
-      ],
-
-  // allowedReferer: 'innei.ren',
-}
-```
-
-其中，按照 17-26 行一样，按照格式，追加你的域名。
+其中，按照 17-26 行一样，类比，追加你的域名。
 
 例如，我想要添加 `server.example.com` ，那么仅仅这样追加一行即可。
 
-```ts
+```diff
 export const CROSS_DOMAIN = {
   allowedOrigins: argv.allowed_origins
     ? argv.allowed_origins?.split?.(',')
@@ -320,7 +297,7 @@ export const CROSS_DOMAIN = {
         'local.innei.test',
         '22333322.xyz',
         '*.dev',
-        'server.example.com', //追加的新域名
++       'server.example.com', //追加的新域名
       ],
 
   // allowedReferer: 'innei.ren',
@@ -335,41 +312,11 @@ pnpm bundle
 
 使用 pm2 托管 Core，我们还需要修改一下脚本，移动到 `ecosystem.config.js`
 
-它看起来是如下内容：
-
-```js
-const { cpus } = require('os')
-const { execSync } = require('child_process')
-const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
-  '\n'
-)[0]
-
-const cpuLen = cpus().length
-module.exports = {
-  apps: [
-    {
-      name: 'mx-server',
-      script: 'index.js',
-      autorestart: true,
-      exec_mode: 'cluster',
-      watch: false,
-      instances: cpuLen,
-      max_memory_restart: '200M',
-      args: '--color',
-      env: {
-        NODE_ENV: 'production',
-        NODE_PATH: nodePath,
-      },
-    },
-  ],
-}
-```
-
 将 12 行的 `index.js` 修改为 `out/index.js`。
 
 看起来如下：
 
-```js
+```diff
 const { cpus } = require('os')
 const { execSync } = require('child_process')
 const nodePath = execSync(`npm root --quiet -g`, { encoding: 'utf-8' }).split(
@@ -381,7 +328,8 @@ module.exports = {
   apps: [
     {
       name: 'mx-server',
-      script: 'out/index.js',
+-     script: 'index.js',
++     script: 'out/index.js',
       autorestart: true,
       exec_mode: 'cluster',
       watch: false,
@@ -420,7 +368,7 @@ cd && cd mx-space
 git clone https://github.com/mx-space/kami.git --depth 1
 
 # 如果克隆缓慢，可以使用下面的镜像地址
-git clone https://github.1qi777.com/mx-space/kami.git --depth 1
+git clone https://ghproxy.com/https://github.com/mx-space/kami.git --depth 1
 ```
 
 #### 切换到最新的 tag
@@ -624,6 +572,7 @@ module.exports = {
   apps: [
     {
       name: 'mx-server',
+-     script: 'out/index.js,
 +     script: 'out/index.js --redis_host=远端地址 --redis_password=redis?passwd',
       autorestart: true,
       exec_mode: 'cluster',
@@ -633,11 +582,14 @@ module.exports = {
 
 移动到 `/src/app.config.ts` 文件，在 47 行左右，修改对应的配置项：
 
-```ts
+```diff
 export const REDIS = {
-  host: argv.redis_host || '远端',
-  port: argv.redis_port || 6379,
-  password: argv.redis_password || 'redis?passwd',
+-  host: argv.redis_host || '127.0.0.1',
+-  port: argv.redis_port || 6379,
+-  password: argv.redis_password || '',
++  host: argv.redis_host || '远端',
++  port: argv.redis_port || 6379,
++  password: argv.redis_password || 'redis?passwd',
   ttl: null,
   httpCacheTTL: 5,
   max: 5,
@@ -718,16 +670,18 @@ module.exports = {
 ```diff
 export const MONGO_DB = {
   dbName: argv.collection_name || (DEMO_MODE ? 'mx-space_demo' : 'mx-space'),
-  host: argv.db_host || '远端',
-  port: argv.db_port || 27017,
-  user: argv.db_user || 'mongodb-test',
-  password: argv.db_password || 'db?passwd',
+-  host: argv.db_host || '127.0.0.1',
+-  port: argv.db_port || 27017,
+-  user: argv.db_user || 'mx-space',
+-  password: argv.db_password || '',
++  host: argv.db_host || '远端',
++  port: argv.db_port || 27017,
++  user: argv.db_user || 'mongodb-test',
++  password: argv.db_password || 'db?passwd',
   get uri() {
-    let userPassword =
-      this.user && this.password ? this.user + ':' + this.password + '@' : ''
-+     return `mongodb://${userPassword}${this.host}:${this.port}/${
-+      isTest ? 'mx-space_unitest' : this.dbName
-    }`
+    const userPassword =
+      this.user && this.password ? `${this.user}:${this.password}@` : ''
+    return `mongodb://${userPassword}${this.host}:${this.port}/${this.dbName}`
   },
 }
 ```

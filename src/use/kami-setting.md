@@ -1,8 +1,6 @@
 # Kami 配置项参数
 
-:::tip
-以下为 JSON 格式的示例，YAML 格式可以根据[之前的示例](/use/index.md#kami设置)进行修改
-:::
+要使用以下配置，请先按照 [Kami 配置](./index.md#kami-配置) 建立配置文件片段。
 
 ## 配置项
 
@@ -22,11 +20,11 @@
 例子：
 
 ```yaml
-  theme_color:
-    light: '#ffc107'
-    dark: '#ffc107'
-    light_hover: '#ffc10780'
-    dark_hover: '#ffc10780'
+theme_color:
+  light: '#ffc107'
+  dark: '#ffc107'
+  light_hover: '#ffc10780'
+  dark_hover: '#ffc10780'
 ```
 
 ```ts
@@ -107,97 +105,97 @@ Favorite 的路径。
 - Default:
 
 ```ts
-[
+;[
   {
-    title: "源",
-    path: "/",
-    type: "Home",
-    icon: "faDotCircle",
+    title: '源',
+    path: '/',
+    type: 'Home',
+    icon: 'faDotCircle',
     subMenu: [],
   },
   {
-    title: "文",
-    path: "/posts",
-    type: "Post",
+    title: '文',
+    path: '/posts',
+    type: 'Post',
     subMenu: [],
-    icon: "faGlasses",
+    icon: 'faGlasses',
   },
   {
-    title: "记",
-    type: "Note",
-    path: "/notes",
-    icon: "faFeatherAlt",
+    title: '记',
+    type: 'Note',
+    path: '/notes',
+    icon: 'faFeatherAlt',
   },
   {
-    title: "言",
-    path: "/says",
-    icon: "faComments",
+    title: '言',
+    path: '/says',
+    icon: 'faComments',
   },
   {
-    title: "览",
-    icon: "faHistory",
-    path: "/timeline",
+    title: '览',
+    icon: 'faHistory',
+    path: '/timeline',
     subMenu: [
       {
-        title: "生活",
-        icon: "faFeatherAlt",
-        path: "/timeline?type=note",
+        title: '生活',
+        icon: 'faFeatherAlt',
+        path: '/timeline?type=note',
       },
       {
-        title: "博文",
-        icon: "faBookOpen",
-        path: "/timeline?type=post",
+        title: '博文',
+        icon: 'faBookOpen',
+        path: '/timeline?type=post',
       },
       {
-        title: "回忆",
-        icon: "faCircle",
-        path: "/timeline?memory=1",
+        title: '回忆',
+        icon: 'faCircle',
+        path: '/timeline?memory=1',
       },
     ],
   },
   {
-    title: "友",
-    icon: "faUserFriends",
-    path: "/friends",
+    title: '友',
+    icon: 'faUserFriends',
+    path: '/friends',
   },
   {
-    title: "诉",
-    icon: "faComment",
-    path: "/recently",
+    title: '诉',
+    icon: 'faComment',
+    path: '/recently',
   },
   {
-    title: "余",
-    icon: "faCircleNotch",
-    path: "/favorite/music",
+    title: '余',
+    icon: 'faCircleNotch',
+    path: '/favorite/music',
     subMenu: [
       {
-        title: "听歌",
-        icon: "faMusic",
-        type: "Music",
-        path: "/favorite/music",
+        title: '听歌',
+        icon: 'faMusic',
+        type: 'Music',
+        path: '/favorite/music',
       },
       {
-        title: "项目",
-        icon: "faFlask",
-        path: "/favorite/project",
+        title: '项目',
+        icon: 'faFlask',
+        path: '/favorite/project',
       },
     ],
   },
   {
-    title: "",
-    icon: "faSubway",
-    path: "https://travellings.link",
+    title: '',
+    icon: 'faSubway',
+    path: 'https://travellings.link',
   },
-];
+]
 ```
 
 ```ts
 interface Menu {
-  title: string;
-  path: string;
-  type?: string;
-  icon: string;
-  subMenu?: Menu[];
+  title: string
+  path: string
+  type?: string
+  icon: string
+  subMenu?: Menu[]
 }
 ```
 
@@ -210,10 +208,10 @@ interface Menu {
 
 ```ts
 interface Social {
-  url: string;
-  title: string;
-  icon: string;
-  color: string;
+  url: string
+  title: string
+  icon: string
+  color: string
 }
 ```
 
@@ -285,42 +283,42 @@ interface Social {
 - Default:
 
 ```ts
-[
+;[
   {
-    name: "关于",
-    path: "/about",
+    name: '关于',
+    path: '/about',
   },
   {
-    name: "留言",
-    path: "/message",
+    name: '留言',
+    path: '/message',
   },
   {
-    name: "友链",
-    path: "/friends",
+    name: '友链',
+    path: '/friends',
   },
   {
-    name: "RSS 订阅",
-    path: "/feed",
+    name: 'RSS 订阅',
+    path: '/feed',
     newtab: true,
   },
   {
-    name: "站点地图",
-    path: "/sitemap",
+    name: '站点地图',
+    path: '/sitemap',
     newtab: true,
   },
   {
-    name: "开往",
-    path: "https://travellings.link/",
+    name: '开往',
+    path: 'https://travellings.link/',
     newtab: true,
   },
-];
+]
 ```
 
 ```typescript
 interface Navigation {
-  newtab?: boolean;
-  name: string;
-  path: string;
+  newtab?: boolean
+  name: string
+  path: string
 }
 ```
 
@@ -352,19 +350,36 @@ interface Navigation {
 ### page.home
 
 - Type: `HomePage`
-- Default: 
+- Default:
 
 ```yaml
-  sections:
-    - post
-    - note
-    - friend
-    - more
-  title_mapping:
-    post: ''
-    note: ''
-    friend: ''
-    more: ''
+page:
+  home:
+    sections:
+      - post
+      - note
+      - friend
+      - more
+    title_mapping:
+      post: ''
+      note: ''
+      friend: ''
+      more: ''
+    more:
+      - name: 留言
+        desc: 你的话对我很重要
+        path: '/message'
+        cover: https://cdn.innei.ren/anime/107594318_p0.jpg
+      - name: 赞助
+        desc: 饿饿，饭饭
+        path: '/sponsor'
+        cover: https://cdn.innei.ren/anime/95468130.jpg
+      - name: 点赞
+        type: 'like'
+        cover: https://cdn.innei.ren/anime/79494520.png
+      - name: 订阅
+        type: 'subscribe'
+        cover: https://cdn.innei.ren/anime/107559891_p0.jpg
 ```
 
 控制首页 `日记` `文章` `友链` `更多` 模块的顺序和标题文案。
@@ -372,6 +387,8 @@ interface Navigation {
 `sections` 可以控制模块的顺序，和是否展示该模块。
 
 `title_mapping` 控制模块的标题文案。
+
+`more` 控制底部更多的链接。
 
 类型：
 
@@ -383,6 +400,16 @@ export interface HomePage {
   titleMapping: {
     [key in HomePageSectionName]?: string
   }
+  more: IHomePageMoreSection[]
+}
+
+export interface IHomePageMoreSection {
+  desc: string
+  type?: 'like' | 'subscribe'
+  cover?: string
+  newtab?: boolean
+  name: string
+  path: string
 }
 ```
 
@@ -398,7 +425,7 @@ export interface HomePage {
 - Type: `boolean`
 - Default: `false`
 
-开启  Analyze。
+开启 Analyze。
 
 ### function.analyze.ga
 
@@ -421,13 +448,13 @@ Google Analyze ID.
 example(yaml)
 
 ```yaml
-  analyze:
-    enable: true
-    #启用 umami
-    umami:
-      id: 9ea59d68-f36b-4679xxxxxx
-      url: https://analyze.xxxxx
-      jsname: umami
+analyze:
+  enable: true
+  #启用 umami
+  umami:
+    id: 9ea59d68-f36b-4679xxxxxx
+    url: https://analyze.xxxxx
+    jsname: umami
 ```
 
 id 和 url 分别对应 Umami 给你的 id 和 Umami 的 url，jsname 对应你在 Umami 中设置 `TRACKER_SCRIPT_NAME` 这个变量的值（没有设的话则默认为 `umami`），如果想知道怎么部署 Umami，可以看 [这个教程](https://www.timochan.cn/posts/jc/deploy_umami_for_analyze)
@@ -484,12 +511,12 @@ id 和 url 分别对应 Umami 给你的 id 和 Umami 的 url，jsname 对应你�
 或者：
 
 ```yaml
-  notification:
-    welcome:
-      title: 标题
-      message: 消息
-      icon: https://example.com/example.png
-      to-link: //example.com
+notification:
+  welcome:
+    title: 标题
+    message: 消息
+    icon: https://example.com/example.png
+    to-link: //example.com
 ```
 
 类型：
