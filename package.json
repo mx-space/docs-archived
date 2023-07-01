@@ -47,7 +47,7 @@
     }
   },
   "devDependencies": {
-    "@types/node": "18.15.11",
+    "@types/node": "18.16.19",
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
     "prettier": "2.8.7",
