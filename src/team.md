@@ -154,14 +154,14 @@ const partners = _partners.sort(() => Math.random() - 0.5)
   <VPTeamPageTitle>
     <template #title>Our Team</template>
     <template #lead>
-    OSS is a team sport. We are a team of passionate developers who love open source.
-    <small> ( Random order )</small>
+    OSS 是一项团队运动。我们是一群热爱开源的开发者。
+    <small> ( 随机顺序 )</small>
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="coreMembers" />
   <VPTeamPageSection>
     <template #title>Partners</template>
-    <template #lead>They are not core members, but they are also important contributors.<small> ( Random order )</small></template>
+    <template #lead>他们不是核心成员，但他们也是重要的贡献者。<small> ( 随机顺序 )</small></template>
     <template #members>
       <VPTeamMembers size="small" :members="partners" />
     </template>

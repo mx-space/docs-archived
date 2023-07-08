@@ -7,7 +7,7 @@
  * Coding With IU
  */
 
-export const introduceBar = [{ text: '介绍', link: '/guide/' }, { text: '团队', link: '/guide/team' }]  
+export const introduceBar = [{ text: '介绍', link: '/guide/' }]  
 
 export const experimentBar = [
   { text: '文本宏', link: '/feature/text-macors' },
@@ -66,6 +66,7 @@ const navBar = [
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
   { text: '开发', items: devBar },
+  { text: '团队', link: '/team' },
 ]
 
 export default navBar
