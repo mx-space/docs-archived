@@ -1,4 +1,8 @@
-# Mix Space Documentation
+# Mix Space Documentation [ARCHIVED]
+
+<pre align="center">
+⚠️ This repository is archived. The content is not maintained anymore.
+</pre>
 
 ## Contributing 贡献
 
