@@ -7,7 +7,7 @@
  * Coding With IU
  */
 
-export const introduceBar = [{ text: '介绍', link: '/guide/' }]
+export const introduceBar = [{ text: '介绍', link: '/guide/' }, { text: '团队', link: '/guide/team' }]  
 
 export const experimentBar = [
   { text: '文本宏', link: '/feature/text-macors' },
