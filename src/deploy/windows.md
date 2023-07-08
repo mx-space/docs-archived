@@ -83,57 +83,6 @@ git clone https://github.com/mx-space/core.git --depth 1
 pnpm i
 ```
 
-如果你想这样部署 Core 并对外提供服务，请移动到 `/src/app.config.ts` 文件。
-
-13-30 行的内容如下：
-
-```ts
-export const CROSS_DOMAIN = {
-  allowedOrigins: argv.allowed_origins
-    ? argv.allowed_origins?.split?.(',')
-    : [
-        'innei.ren',
-        '*.innei.ren',
-        'shizuri.net',
-        '*.shizuri.net',
-        'localhost:*',
-        '127.0.0.1',
-        'mbp.cc',
-        'local.innei.test',
-        '22333322.xyz',
-        '*.dev',
-      ],
-
-  // allowedReferer: 'innei.ren',
-}
-```
-
-其中，按照 17-26 行一样，按照格式，追加你的域名。
-
-例如，我想要添加 `server.example.com` ，那么仅仅这样追加一行即可。
-
-```ts
-export const CROSS_DOMAIN = {
-  allowedOrigins: argv.allowed_origins
-    ? argv.allowed_origins?.split?.(',')
-    : [
-        'innei.ren',
-        '*.innei.ren',
-        'shizuri.net',
-        '*.shizuri.net',
-        'localhost:*',
-        '127.0.0.1',
-        'mbp.cc',
-        'local.innei.test',
-        '22333322.xyz',
-        '*.dev',
-        'server.example.com', //追加的新域名
-      ],
-
-  // allowedReferer: 'innei.ren',
-}
-```
-
 ### 构建 & 启动
 
 构建

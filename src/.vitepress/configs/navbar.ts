@@ -25,25 +25,19 @@ export const optionsBar = [
   { text: '详细配置', link: '/use/kami-setting.md' },
 ]
 
-export const deployServerBar = [
-  { text: 'Core 部署', link: '/deploy/index.md#部署-core' },
-]
-
-export const deployKamiBar = [
-  { text: 'Kami 部署', link: '/deploy/index.md#部署-kami' },
-]
-
 export const deploySideBar = [
-  { text: '预设脚本部署', link: '/deploy/index.md#部署系统' },
-  { text: '部署 Core', link: '/deploy/index.md#手动部署' },
-  { text: '部署 Kami', link: '/deploy/index.md#部署-kami' },
-  { text: 'Windows 部署', link: '/deploy/windows.md' },
+  { text: '前言', link: '/deploy/' },
+  { text: '[自动] Docker 部署', link: '/deploy/docker' },
+  { text: '[自动] 预设脚本 部署', link: '/deploy/docker' },
+  { text: '[手动] 部署 Core', link: '/deploy/core' },
+  { text: '[特殊] Windows 部署', link: '/deploy/windows' },
+  { text: '[进阶] 自定义部署配置', link: '/deploy/configure' },
 ]
 
-export const deployBar = [
-  { text: 'Global', items: [{ text: '一键部署全站', link: '/deploy/' }] },
-  { text: 'Core', items: deployServerBar },
-  { text: 'Kami', items: deployKamiBar },
+export const frontendsBar = [
+  { text: '@mx-space/kami', link: '/frontends/kami' },
+  { text: '@mx-space/mx-yun-theme', link: '/frontends/mx-yun' },
+  { text: '@Innei/Shiro', link: '/frontends/shiro' },
 ]
 
 export const helpBar = [
@@ -62,7 +56,7 @@ export const changelogBar = [{ text: '文档变更日志', link: '/changelog/' }
 
 const navBar = [
   { text: '介绍', items: introduceBar },
-  { text: '部署', items: deployBar },
+  { text: '部署', items: deploySideBar },
   { text: '设置', items: optionsBar },
   { text: '帮助', items: helpBar },
   { text: '开发', items: devBar },
