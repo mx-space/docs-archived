@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@types/markdown-it':
     specifier: '*'
@@ -33,18 +37,18 @@ dependencies:
     version: 0.14.1
   vite:
     specifier: 4.2.1
-    version: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+    version: 4.2.1(@types/node@18.16.19)(terser@5.16.9)
   vitepress:
     specifier: 1.0.0-alpha.69
-    version: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9)
+    version: 1.0.0-alpha.69(@types/node@18.16.19)(terser@5.16.9)
   vue:
     specifier: 3.2.47
     version: 3.2.47
 
 devDependencies:
   '@types/node':
-    specifier: 18.15.11
-    version: 18.15.11
+    specifier: 18.16.19
+    version: 18.16.19
   husky:
     specifier: 8.0.3
     version: 8.0.3
@@ -491,8 +495,8 @@ packages:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
     dev: false
 
-  /@types/node@18.15.11:
-    resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
+  /@types/node@18.16.19:
+    resolution: {integrity: sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==}
 
   /@types/prismjs@1.26.0:
     resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
@@ -548,7 +552,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+      vite: 4.2.1(@types/node@18.16.19)(terser@5.16.9)
       vue: 3.2.47
     dev: false
 
@@ -649,7 +653,7 @@ packages:
       '@vueuse/core': 9.13.0(vue@3.2.47)
       body-scroll-lock: 3.1.5
       normalize.css: 8.0.1
-      vitepress: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9)
+      vitepress: 1.0.0-alpha.69(@types/node@18.16.19)(terser@5.16.9)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -1566,13 +1570,13 @@ packages:
       '@windicss/plugin-utils': 1.8.10
       debug: 4.3.4
       kolorist: 1.7.0
-      vite: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+      vite: 4.2.1(@types/node@18.16.19)(terser@5.16.9)
       windicss: 3.5.6
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.2.1(@types/node@18.15.11)(terser@5.16.9):
+  /vite@4.2.1(@types/node@18.16.19)(terser@5.16.9):
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1597,7 +1601,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.15.11
+      '@types/node': 18.16.19
       esbuild: 0.17.13
       postcss: 8.4.21
       resolve: 1.22.1
@@ -1606,7 +1610,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress@1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9):
+  /vitepress@1.0.0-alpha.69(@types/node@18.16.19)(terser@5.16.9):
     resolution: {integrity: sha512-d7Vz+S/1i/7szVUSOHJf12APtoGlHXIJXzDvXLChhlE000TVzWoYX6rUAchjJzfxdFjng3Eo96ZkPs7OJxDjMg==}
     hasBin: true
     dependencies:
@@ -1618,7 +1622,7 @@ packages:
       body-scroll-lock: 4.0.0-beta.0
       minisearch: 6.0.1
       shiki: 0.14.1
-      vite: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+      vite: 4.2.1(@types/node@18.16.19)(terser@5.16.9)
       vue: 3.2.47
     transitivePeerDependencies:
       - '@algolia/client-search'
