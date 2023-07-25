@@ -50,7 +50,7 @@
     "@types/node": "18.15.11",
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
-    "prettier": "2.8.7",
+    "prettier": "2.8.8",
     "terser": "5.16.9",
     "vite-plugin-windicss": "1.8.10",
     "windicss": "3.5.6"
