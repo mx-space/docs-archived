@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@types/markdown-it':
     specifier: '*'
@@ -33,10 +37,10 @@ dependencies:
     version: 0.14.1
   vite:
     specifier: 4.2.1
-    version: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+    version: 4.2.1(@types/node@18.15.11)(terser@5.19.1)
   vitepress:
     specifier: 1.0.0-alpha.69
-    version: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9)
+    version: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.19.1)
   vue:
     specifier: 3.2.47
     version: 3.2.47
@@ -55,8 +59,8 @@ devDependencies:
     specifier: 2.8.7
     version: 2.8.7
   terser:
-    specifier: 5.16.9
-    version: 5.16.9
+    specifier: 5.19.1
+    version: 5.19.1
   vite-plugin-windicss:
     specifier: 1.8.10
     version: 1.8.10(vite@4.2.1)
@@ -440,8 +444,8 @@ packages:
     resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
     engines: {node: '>=6.0.0'}
 
-  /@jridgewell/source-map@0.3.2:
-    resolution: {integrity: sha512-m7O9o2uR8k2ObDysZYzdfhb08VuEml5oWGiosa1VdaPZ/A6QyPkAJuwN0Q1lhULOf6B7MtQmHENS743hWtCrgw==}
+  /@jridgewell/source-map@0.3.5:
+    resolution: {integrity: sha512-UTYAUj/wviwdsMfzoSJspJxbkH5o1snzwX0//0ENX1u/55kkZZkcTZP6u9bwKGkv+dkk9at4m1Cpt0uY80kcpQ==}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.2
       '@jridgewell/trace-mapping': 0.3.17
@@ -548,7 +552,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+      vite: 4.2.1(@types/node@18.15.11)(terser@5.19.1)
       vue: 3.2.47
     dev: false
 
@@ -649,7 +653,7 @@ packages:
       '@vueuse/core': 9.13.0(vue@3.2.47)
       body-scroll-lock: 3.1.5
       normalize.css: 8.0.1
-      vitepress: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9)
+      vitepress: 1.0.0-alpha.69(@types/node@18.15.11)(terser@5.19.1)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -1506,12 +1510,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /terser@5.16.9:
-    resolution: {integrity: sha512-HPa/FdTB9XGI2H1/keLFZHxl6WNvAI4YalHGtDQTlMnJcoqSab1UwL4l1hGEhs6/GmLHBZIg/YgB++jcbzoOEg==}
+  /terser@5.19.1:
+    resolution: {integrity: sha512-27hxBUVdV6GoNg1pKQ7Z5cbR6V9txPVyBA+FQw3BaZ1Wuzvztce5p156DaP0NVZNrMZZ+6iG9Syf7WgMNKDg2Q==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      '@jridgewell/source-map': 0.3.2
+      '@jridgewell/source-map': 0.3.5
       acorn: 8.8.2
       commander: 2.20.3
       source-map-support: 0.5.21
@@ -1566,13 +1570,13 @@ packages:
       '@windicss/plugin-utils': 1.8.10
       debug: 4.3.4
       kolorist: 1.7.0
-      vite: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+      vite: 4.2.1(@types/node@18.15.11)(terser@5.19.1)
       windicss: 3.5.6
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.2.1(@types/node@18.15.11)(terser@5.16.9):
+  /vite@4.2.1(@types/node@18.15.11)(terser@5.19.1):
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1602,11 +1606,11 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.20.2
-      terser: 5.16.9
+      terser: 5.19.1
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress@1.0.0-alpha.69(@types/node@18.15.11)(terser@5.16.9):
+  /vitepress@1.0.0-alpha.69(@types/node@18.15.11)(terser@5.19.1):
     resolution: {integrity: sha512-d7Vz+S/1i/7szVUSOHJf12APtoGlHXIJXzDvXLChhlE000TVzWoYX6rUAchjJzfxdFjng3Eo96ZkPs7OJxDjMg==}
     hasBin: true
     dependencies:
@@ -1618,7 +1622,7 @@ packages:
       body-scroll-lock: 4.0.0-beta.0
       minisearch: 6.0.1
       shiki: 0.14.1
-      vite: 4.2.1(@types/node@18.15.11)(terser@5.16.9)
+      vite: 4.2.1(@types/node@18.15.11)(terser@5.19.1)
       vue: 3.2.47
     transitivePeerDependencies:
       - '@algolia/client-search'
