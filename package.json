@@ -25,7 +25,7 @@
     "@types/markdown-it": "*",
     "@types/prismjs": "*",
     "@vue/theme": "2.2.1",
-    "@vueuse/core": "10.0.2",
+    "@vueuse/core": "10.2.1",
     "@vueuse/head": "1.1.23",
     "markdown-it": "^13.0.1",
     "markdown-it-checkbox": "1.1.0",
